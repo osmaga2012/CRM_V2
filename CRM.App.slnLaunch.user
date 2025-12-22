@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Nuevo perfil",
+    "Projects": [
+      {
+        "Path": "CRM.App.Web\\CRM.App.Web.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "CRM.App\\CRM.App.csproj",
+        "Action": "Start",
+        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
+      }
+    ]
+  }
+]
