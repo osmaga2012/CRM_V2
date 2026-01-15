@@ -1,0 +1,351 @@
+﻿/* Permite que la barra de la DataGrid haga wrap */
+/*::deep(.mud-datagrid-toolbar),
+.dg-toolbar {
+    display: flex;
+    flex-wrap: wrap;*/ /* clave */
+    /*align-items: center;
+    gap: .5rem;
+    width: 100%;
+    height: 100%;
+}*/
+
+/* Título: que pueda romper y ocupe línea completa en móvil */
+/*.dg-title {
+    white-space: normal;*/ /* rompe líneas */
+    /*word-break: break-word;
+    line-height: 1.2;
+    flex: 1 1 100%;*/ /* una fila entera en móvil */
+    /*font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+}*/
+
+/* Buscador: flexible y sin causar overflow */
+/*.dg-search {
+    flex: 1 1 260px;*/ /* crece/encoge */
+    /*min-width: 0;*/ /* evita desbordes */
+/*}*/
+
+/* El spacer estorba en móvil */
+/*.dg-spacer {
+    display: none;
+}*/
+
+/* Desde md en adelante: título a la izquierda, buscador a la derecha */
+/*@media (min-width: 960px) {
+    .dg-title {
+        flex: 0 1 auto;
+        margin-right: auto;*/ /* empuja el buscador a la derecha */
+    /*}
+
+    .dg-search {
+        flex: 0 1 360px;
+    }
+
+    .dg-spacer {
+        display: block;
+    }
+}*/
+
+/* Contenedor con altura fija y scroll */
+.grid-container {
+    height: 600px; /* Igualamos la altura de tu MudTable anterior */
+    overflow: auto;
+    /*border-radius: 12px;
+    border: 1px solid #e0e0e0;*/
+    /*box-shadow: 0 4px 12px rgba(0,0,0,0.05);*/
+    background: white;
+}
+
+/* Estilo de la tabla */
+::deep .quickgrid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    /* Header Pegajoso (Sticky) */
+    ::deep .quickgrid thead {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: var(--mud-palette-primary);
+        color: white;
+    }
+
+    ::deep .quickgrid th {
+        padding: 12px 16px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    /* Filas y Celdas */
+    ::deep .quickgrid td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--mud-palette-divider);
+        font-size: 0.9rem;
+    }
+
+    /* Efecto hover en filas */
+    ::deep .quickgrid tr:hover td {
+        background-color: var(--mud-palette-background-grey);
+    }
+
+/* --- SCROLLBAR PERSONALIZADO --- */
+.grid-container::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.grid-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+    background: var(--mud-palette-primary-lighten);
+    border-radius: 10px;
+}
+
+    .grid-container::-webkit-scrollbar-thumb:hover {
+        background: var(--mud-palette-primary);
+    }
+
+/* Estilo para el buscador dentro de la columna */
+.search-box input {
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+/* Contenedor del paginador */
+.custom-pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+}
+
+/* Personalizar los botones internos del Paginator de QuickGrid */
+::deep .nav-tabs {
+    display: none; /* Oculta pestañas si QuickGrid intentara mostrarlas */
+}
+
+::deep .paginator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+    ::deep .paginator button {
+        background-color: var(--mud-palette-surface);
+        color: var(--mud-palette-primary);
+        border: 1px solid var(--mud-palette-primary-lighten);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        ::deep .paginator button:hover:not([disabled]) {
+            background-color: var(--mud-palette-primary);
+            color: white;
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        ::deep .paginator button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+    /* Estilo para el texto "Página X de Y" */
+    ::deep .paginator .current-page-info {
+        margin: 0 15px;
+        font-size: 0.85rem;
+        color: var(--mud-palette-text-secondary);
+        font-weight: 500;
+    }
+
+/* Cuadro de búsqueda dentro del menú de columna */
+.search-box {
+    padding: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+    .search-box input {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #eef2ff;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+        .search-box input:focus {
+            border-color: var(--mud-palette-primary);
+        }
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+::deep .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+::deep .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+::deep .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus {
+            border-color: var(--mud-palette-primary);
+        }
+
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+::deep .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+::deep .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+::deep .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus {
+            border-color: var(--mud-palette-primary);
+        }
+/* Animación suave para cuando aparece el selector de empresa */
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejora el contraste de las etiquetas de sección */
+.font-bold {
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+
+/* Fondo gris sutil para áreas de control */
+::deep .mud-background-gray {
+    background-color: var(--mud-palette-background-grey) !important;
+}
+
+/* Efecto de elevación al botón de guardar */
+::deep .shadow-lg {
+    box-shadow: 0 4px 12px rgba(var(--mud-palette-primary-rgb), 0.3) !important;
+}

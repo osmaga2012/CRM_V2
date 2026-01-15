@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="CRM.App" mvid="be032591947a49da9320d4dea9b50ece">
+  <java-to-managed>
+    <entry java-name="crc64f8d8c0464c9e21dd/MainActivity" managed-name="CRM.App.MainActivity, CRM.App" managed-type-token-id="33554442" />
+    <entry java-name="crc64f8d8c0464c9e21dd/MainApplication" managed-name="CRM.App.MainApplication, CRM.App" managed-type-token-id="33554443" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64f8d8c0464c9e21dd/MainActivity" managed-name="CRM.App.MainActivity, CRM.App" managed-type-token-id="33554442" />
+    <entry java-name="crc64f8d8c0464c9e21dd/MainApplication" managed-name="CRM.App.MainApplication, CRM.App" managed-type-token-id="33554443" />
+  </managed-to-java>
+</api>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web.Client\publicación</_PublishTargetUrl>
+    <History>True|2025-12-30T05:46:14.2679787Z||;True|2025-12-29T19:41:19.0569973+01:00||;True|2025-12-29T19:15:35.3767684+01:00||;True|2025-12-29T18:52:58.2609895+01:00||;True|2025-12-29T16:36:47.7395339+01:00||;True|2025-12-29T16:31:24.9817097+01:00||;True|2025-12-29T15:58:47.4705093+01:00||;False|2025-12-29T15:57:02.0718967+01:00||;True|2025-12-29T15:51:49.3678799+01:00||;False|2025-12-29T15:49:49.4364123+01:00||;True|2025-12-29T15:45:53.3465980+01:00||;True|2025-12-29T08:53:38.6937801+01:00||;False|2025-12-29T08:51:47.1987786+01:00||;True|2025-12-29T08:11:41.7572758+01:00||;True|2025-12-28T11:39:05.6206543+01:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

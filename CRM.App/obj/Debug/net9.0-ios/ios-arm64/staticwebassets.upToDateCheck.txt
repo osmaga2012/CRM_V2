@@ -1,0 +1,6 @@
+wwwroot\index.html
+wwwroot\imagenes\logo.png
+wwwroot\imagenes\logo_gandia.png
+wwwroot\app.css
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\wwwroot\index.html
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\wwwroot\app.css

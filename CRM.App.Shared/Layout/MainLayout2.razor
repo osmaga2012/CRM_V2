@@ -1,0 +1,191 @@
+﻿@using CRM.App.Shared.Services
+@using CRM.Dtos.Enums
+@using Microsoft.AspNetCore.Components.Authorization
+@using MudBlazor
+@inherits LayoutComponentBase
+
+@inject IFormFactor FormFactorService
+
+
+<MudThemeProvider />
+<MudDialogProvider />
+
+<AuthorizeView>
+    <Authorized>
+        @if (!FormFactorService.IsNativeApp)
+        {
+            @* --- DISEÑO PARA WEB --- *@
+            @* HEADER NATIVO *@
+            <MudAppBar Elevation="1" Color="Color.Primary" Dense="true">
+                <MudIconButton Icon="@Icons.Material.Filled.Menu" 
+                        Color="Color.Inherit" Edge="Edge.Start" 
+                        OnClick="@((e) => DrawerToggle())" />
+                <MudSpacer />
+                <MudText Typo="Typo.h6">Mi Cofradía</MudText>
+                <MudSpacer />
+                <MudIconButton Icon="@Icons.Material.Filled.Notifications" Color="Color.Inherit" />
+            </MudAppBar>
+
+            @* MENU LATERAL (DRAWER) *@
+            <MudDrawer 
+                @bind-Open="_drawerOpen" 
+                Elevation="2" 
+                Variant="@DrawerVariant.Temporary"
+                >
+                <NavMenu />
+            </MudDrawer>
+
+            @* CONTENIDO PRINCIPAL CON RELLENO PARA TABS *@
+            <MudMainContent Class="native-content-area">
+                <MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
+                    <p>Prueba</p>
+                    @Body
+                </MudContainer>
+            </MudMainContent>
+
+            @* TABS INFERIORES NATIVOS *@
+            <div class="bottom-nav-bar">
+                <MudNavMenu Class="d-flex justify-space-around mud-width-full">
+                    <MudNavLink href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
+                    <MudNavLink href="/tramites" Icon="@Icons.Material.Filled.Assignment">Trámites</MudNavLink>
+                    <MudNavLink href="/perfil" Icon="@Icons.Material.Filled.Person">Perfil</MudNavLink>
+                </MudNavMenu>
+            </div>
+        }
+        else
+        {
+            @* --- DISEÑO PARA APP NATIVA (MAUI) --- *@
+            <MudLayout Class="h-100">
+                <MudAppBar Fixed="true" Color="Color.Primary" Elevation="1" Dense="true">
+                    @if (_loggedInUser?.TipoUsuario == TipoUsuarioDto.Administrador)
+                    {
+                        <InfoDatosCofradia />
+                    }
+                    <MudSpacer />
+                    <MudText Typo="Typo.subtitle2" Class="mr-2">@_loggedInUser?.Nombre</MudText>
+                    <ItemMenuPerfil Usuario="_loggedInUser" />
+                </MudAppBar>
+
+                <MudMainContent Class="pb-16">
+                    <MudContainer MaxWidth="MaxWidth.False" Class="pa-2">
+                        @Body 
+                    </MudContainer>
+                </MudMainContent>
+
+                @* Bottom Navigation personalizada para móvil *@
+                <footer>
+                    <BottomNavMenu />
+                </footer>
+            </MudLayout>
+            <footer>
+                <p>Pie de pagina</p>
+            </footer>
+        }
+    </Authorized>
+     <NotAuthorized>
+        @* Redirección automática si no está autorizado *@
+        @{
+            _navigationManager.NavigateToAsync("/login");
+        }
+    </NotAuthorized>
+</AuthorizeView>
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
+
+@code {
+
+    // [Parameter] public string Title { get; set; } = "Dashboard"; // Propiedad de título, si la usas
+    // [CascadingParameter] private Task<AuthenticationState> authenticationStateTask { get; set; } // Acceso al estado de autenticación
+
+    // private bool _drawerOpen = true;
+    // private UsuarioDto? _loggedInUser; // El perfil del usuario, puede ser null
+    // private bool _isLoading = true; // Indica si se está cargando el perfil del usuario
+
+    // // Método para alternar el estado del drawer (barra lateral)
+    // void DrawerToggle()
+    // {
+    //     _drawerOpen = !_drawerOpen;
+    // }
+
+    // private async Task CambiaModoOscuro()
+    // {
+    //     //isDarkMode = !isDarkMode;
+    //     //SetDarkModeClass();
+    //     //StateHasChanged();
+    //     await ThemeService.ToggleThemeAsync();
+    // }
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     await ThemeService.InitializeAsync();
+    //     ThemeService.OnChange += StateHasChanged;
+    //     await LoadUserProfile();
+    // }
+
+    // private async Task LoadUserProfile()
+    // {
+    //     _isLoading = true; // Empieza a cargar
+    //     try
+    //     {
+    //         // Primero, verifica si el usuario está realmente autenticado según AuthStateProvider
+    //         var authState = await authenticationStateTask;
+    //         var user = authState.User;
+
+    //         if (user.Identity?.IsAuthenticated == true)
+    //         {
+    //             // Si está autenticado, intenta obtener el perfil.
+    //             // Esta llamada usará el HttpClient con TokenRefreshHandler.
+    //             _loggedInUser = await currentUserService.GetCurrentUserAsync(user);
+
+    //             if (_loggedInUser == null)
+    //             {
+    //                 // Si GetCurrentUserAsync devuelve null (ej. API de perfil inaccesible o 401 que no se pudo refrescar)
+    //                 // Informa al usuario y redirige al login.
+    //                 Snackbar.Add("No se pudo cargar el perfil de usuario. Intente iniciar sesión de nuevo.", Severity.Error);
+    //                 _navigationManager.NavigateTo("login");
+    //             }
+    //         }
+    //         else
+    //         {
+    //             // Si el usuario no está autenticado según AuthStateProvider, redirige.
+    //             // Esto es un fallback, App.razor ya debería haberlo manejado, pero es buena práctica.
+    //             Snackbar.Add("No autenticado. Por favor, inicie sesión.", Severity.Info);
+    //             //_navigationManager.NavigateTo("./login", forceLoad: true);
+    //             _navigationManager.NavigateTo("login");
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Console.WriteLine($"Error al cargar el perfil de usuario en MainLayout: {ex.Message}");
+    //         Snackbar.Add($"Error al cargar el perfil: {ex.Message}. Redirigiendo a login.", Severity.Error);
+    //         _loggedInUser = null; // Asegura que el usuario sea null para mostrar el mensaje de error en la UI
+    //         _navigationManager.NavigateTo("login"); // Redirige en caso de error grave
+    //     }
+    //     finally
+    //     {
+    //         _isLoading = false; // Termina la carga, independientemente del resultado
+    //     }
+    // }
+
+    // // Método para cerrar sesión (si lo añades en el AppBar, por ejemplo)
+    // [Inject] private IAuthService _authService { get; set; }
+    // private async Task Logout()
+    // {
+    //     await _authService.LogoutAsync();
+    //     _loggedInUser = null; // Limpiar el usuario en el layout
+    //     Snackbar.Add("Has cerrado sesión exitosamente.", Severity.Info);
+    // }
+
+    // private async Task Configuracion()
+    // {
+
+    // }
+
+    // public void Dispose()
+    // {
+    //     ThemeService.OnChange -= StateHasChanged;
+    // }
+}

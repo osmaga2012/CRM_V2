@@ -1,0 +1,62 @@
+﻿@using CRM.App.Shared.Layout
+@using CRM.App.Shared.Pages.Redirect
+@using CRM.App.Shared.Services
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Diagnostics
+
+@inject IFormFactor FormFactorService
+
+@* <Router AppAssembly="typeof(Layout.MainLayout).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
+</Router> *@
+
+<CascadingAuthenticationState>
+    <Router AppAssembly="typeof(MainLayout).Assembly">
+        <Found Context="routeData">
+            @{
+                // LOG DE DIAGNÓSTICO
+                var layoutType = FormFactorService.IsNativeApp ? typeof(MovilLayout) : typeof(MainLayout);
+                Debug.WriteLine($"[ROUTING] IsNativeApp: {FormFactorService.IsNativeApp}");
+                Debug.WriteLine($"[ROUTING] Aplicando Layout: {layoutType.Name}");
+                Debug.WriteLine($"[ROUTING] Ruta actual: {routeData.PageType.Name}");
+            }
+
+            <AuthorizeRouteView 
+                    RouteData="@routeData"
+                    DefaultLayout="layoutType">
+                    <NotAuthorized>
+                        <LayoutView Layout="@typeof(LoginLayout)">
+                            <RedirectToLogin />
+                            <p>No tienes permiso para acceder a esta página. Redirigiendo al inicio de sesión...</p>
+                        </LayoutView>                    
+                    </NotAuthorized>
+                <Authorizing>
+                    @* Puedes mostrar un spinner o mensaje de carga mientras se autoriza *@
+                    <div class="d-flex justify-content-center align-items-center" style="min-height: 100%;">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                        <p class="ml-2">Cargando autorización...</p>
+                    </div>
+                </Authorizing> 
+            </AuthorizeRouteView>
+        </Found>
+        <NotFound>
+            @* Este es el contenido si la ruta no se encuentra *@
+            <PageTitle>No encontrado</PageTitle>
+            <LayoutView Layout="@typeof(LoginLayout)">
+                <p role="alert">Lo sentimos, no hay nada en esta dirección.</p>
+                <a href="">Volver a inicio</a>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+
+@code{
+
+  
+
+}

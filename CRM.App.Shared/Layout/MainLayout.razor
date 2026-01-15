@@ -1,0 +1,56 @@
+﻿@using CRM.App.Shared.Services
+@using CRM.App.Shared.Layout.Menus
+@using CRM.Dtos.Enums
+@using Microsoft.AspNetCore.Components.Authorization
+@using MudBlazor
+@inherits LayoutComponentBase
+
+@inject IFormFactor FormFactorService
+
+<MudThemeProvider />
+<MudDialogProvider />
+<MudPopoverProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+
+        @* --- DISEÑO PARA WEB --- *@
+        @* HEADER NATIVO *@
+        <MudAppBar Elevation="1" Color="Color.Primary" Dense="true">
+            <MudIconButton 
+                Icon="@Icons.Material.Filled.Menu" 
+                Color="Color.Inherit" 
+                Edge="Edge.Start" 
+                OnClick="DrawerToggle" />
+            <MudSpacer />
+            <MudText Typo="Typo.h6">Mi Cofradía</MudText>
+            <MudSpacer />
+            <MudIconButton 
+                Icon="@Icons.Material.Filled.Notifications" 
+                Color="Color.Inherit" />
+            <MudIconButton
+                Icon="@Icons.Material.Filled.Logout" 
+                Color="Color.Inherit" 
+                OnClick="Logout" />
+        </MudAppBar>
+
+        @* MENU LATERAL (DRAWER) *@
+    <MudDrawer @bind-Open="@_drawerOpen"
+               Elevation="2"
+               ClipMode="DrawerClipMode.Never"
+               Variant="@DrawerVariant.Responsive"
+               Fixed="true"
+               Breakpoint="Breakpoint.Md">
+            
+            <MainNavMenu />
+
+        
+        </MudDrawer>
+
+        @* CONTENIDO PRINCIPAL CON RELLENO PARA TABS *@
+        <MudMainContent Class="native-content-area">
+            <MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
+                @Body
+            </MudContainer>
+        </MudMainContent>
+</MudLayout>

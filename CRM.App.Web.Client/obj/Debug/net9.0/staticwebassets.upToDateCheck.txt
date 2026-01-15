@@ -1,0 +1,8 @@
+wwwroot\imagenes\logo.png
+wwwroot\imagenes\logo_gandia.png
+wwwroot\index.html
+wwwroot\appsettings.Development.json
+wwwroot\appsettings.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web.Client\wwwroot\index.html
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web.Client\wwwroot\appsettings.Development.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web.Client\wwwroot\appsettings.json

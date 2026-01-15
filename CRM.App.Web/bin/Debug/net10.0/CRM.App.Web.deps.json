@@ -1,0 +1,487 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "CRM.App.Web/1.0.0": {
+        "dependencies": {
+          "CRM.App.Web.Client": "1.0.0",
+          "CodeBeam.MudBlazor.Extensions": "8.3.0",
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": "9.0.8",
+          "MudBlazor": "8.15.0",
+          "MudBlazor.ThemeManager": "3.0.0",
+          "MudBlazor.Translations": "2.7.0",
+          "CRM.Dtos": "1.0.0.0"
+        },
+        "runtime": {
+          "CRM.App.Web.dll": {}
+        }
+      },
+      "BCrypt.Net-Next/4.0.3": {
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
+          }
+        }
+      },
+      "Blazored.LocalStorage/4.5.0": {
+        "runtime": {
+          "lib/net8.0/Blazored.LocalStorage.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Blazored.Modal/7.3.1": {
+        "dependencies": {
+          "Microsoft.JSInterop.WebAssembly": "9.0.8"
+        },
+        "runtime": {
+          "lib/net8.0/Blazored.Modal.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CodeBeam.MudBlazor.Extensions/8.3.0": {
+        "dependencies": {
+          "MudBlazor": "8.15.0"
+        },
+        "runtime": {
+          "lib/net9.0/CodeBeam.MudBlazor.Extensions.dll": {
+            "assemblyVersion": "8.3.0.0",
+            "fileVersion": "8.3.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.QuickGrid/10.0.1": {
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.Components.QuickGrid.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.WebAssembly/9.0.8": {
+        "dependencies": {
+          "Microsoft.JSInterop.WebAssembly": "9.0.8"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
+            "assemblyVersion": "9.0.8.0",
+            "fileVersion": "9.0.825.36808"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/9.0.8": {
+        "runtime": {
+          "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
+            "assemblyVersion": "9.0.8.0",
+            "fileVersion": "9.0.825.36808"
+          }
+        }
+      },
+      "Microsoft.DotNet.HotReload.WebAssembly.Browser/10.0.102": {
+        "runtime": {
+          "lib/net10.0/Microsoft.DotNet.HotReload.WebAssembly.Browser.dll": {
+            "assemblyVersion": "10.0.102.0",
+            "fileVersion": "10.1.225.61305"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Abstractions/8.15.0": {
+        "runtime": {
+          "lib/net10.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "assemblyVersion": "8.15.0.0",
+            "fileVersion": "8.15.0.61118"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/8.15.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "8.15.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "8.15.0.0",
+            "fileVersion": "8.15.0.61118"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Logging/8.15.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "8.15.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "8.15.0.0",
+            "fileVersion": "8.15.0.61118"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/8.15.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "8.15.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "8.15.0.0",
+            "fileVersion": "8.15.0.61118"
+          }
+        }
+      },
+      "Microsoft.JSInterop.WebAssembly/9.0.8": {
+        "runtime": {
+          "lib/net9.0/Microsoft.JSInterop.WebAssembly.dll": {
+            "assemblyVersion": "9.0.8.0",
+            "fileVersion": "9.0.825.36808"
+          }
+        }
+      },
+      "MudBlazor/8.15.0": {
+        "runtime": {
+          "lib/net9.0/MudBlazor.dll": {
+            "assemblyVersion": "8.15.0.0",
+            "fileVersion": "8.15.0.0"
+          }
+        }
+      },
+      "MudBlazor.ThemeManager/3.0.0": {
+        "dependencies": {
+          "MudBlazor": "8.15.0"
+        },
+        "runtime": {
+          "lib/net9.0/MudBlazor.ThemeManager.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.1"
+          }
+        }
+      },
+      "MudBlazor.Translations/2.7.0": {
+        "dependencies": {
+          "MudBlazor": "8.15.0"
+        },
+        "runtime": {
+          "lib/net10.0/MudBlazor.Translations.dll": {
+            "assemblyVersion": "2.7.0.0",
+            "fileVersion": "2.7.0.219"
+          }
+        },
+        "resources": {
+          "lib/net10.0/af/MudBlazor.Translations.resources.dll": {
+            "locale": "af"
+          },
+          "lib/net10.0/ar/MudBlazor.Translations.resources.dll": {
+            "locale": "ar"
+          },
+          "lib/net10.0/ca/MudBlazor.Translations.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/net10.0/ckb/MudBlazor.Translations.resources.dll": {
+            "locale": "ku"
+          },
+          "lib/net10.0/cs/MudBlazor.Translations.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net10.0/da/MudBlazor.Translations.resources.dll": {
+            "locale": "da"
+          },
+          "lib/net10.0/de/MudBlazor.Translations.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net10.0/es/MudBlazor.Translations.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net10.0/fa/MudBlazor.Translations.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/net10.0/fi/MudBlazor.Translations.resources.dll": {
+            "locale": "fi"
+          },
+          "lib/net10.0/fr/MudBlazor.Translations.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net10.0/hr/MudBlazor.Translations.resources.dll": {
+            "locale": "hr"
+          },
+          "lib/net10.0/hu/MudBlazor.Translations.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/net10.0/it/MudBlazor.Translations.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net10.0/ja/MudBlazor.Translations.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net10.0/ko/MudBlazor.Translations.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net10.0/lb/MudBlazor.Translations.resources.dll": {
+            "locale": "lb"
+          },
+          "lib/net10.0/lv/MudBlazor.Translations.resources.dll": {
+            "locale": "lv"
+          },
+          "lib/net10.0/ms/MudBlazor.Translations.resources.dll": {
+            "locale": "ms"
+          },
+          "lib/net10.0/nb-NO/MudBlazor.Translations.resources.dll": {
+            "locale": "nb-NO"
+          },
+          "lib/net10.0/ne/MudBlazor.Translations.resources.dll": {
+            "locale": "ne"
+          },
+          "lib/net10.0/nl/MudBlazor.Translations.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/net10.0/nn-NO/MudBlazor.Translations.resources.dll": {
+            "locale": "nn-NO"
+          },
+          "lib/net10.0/pl/MudBlazor.Translations.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net10.0/pt-BR/MudBlazor.Translations.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net10.0/pt/MudBlazor.Translations.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net10.0/ro/MudBlazor.Translations.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/net10.0/ru/MudBlazor.Translations.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net10.0/sk/MudBlazor.Translations.resources.dll": {
+            "locale": "sk"
+          },
+          "lib/net10.0/sv/MudBlazor.Translations.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/net10.0/ta/MudBlazor.Translations.resources.dll": {
+            "locale": "ta"
+          },
+          "lib/net10.0/tr/MudBlazor.Translations.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net10.0/uk/MudBlazor.Translations.resources.dll": {
+            "locale": "uk"
+          },
+          "lib/net10.0/ur/MudBlazor.Translations.resources.dll": {
+            "locale": "ur"
+          },
+          "lib/net10.0/uz/MudBlazor.Translations.resources.dll": {
+            "locale": "uz"
+          },
+          "lib/net10.0/vi/MudBlazor.Translations.resources.dll": {
+            "locale": "vi"
+          },
+          "lib/net10.0/zh-Hans/MudBlazor.Translations.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net10.0/zh-Hant/MudBlazor.Translations.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/8.15.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "8.15.0",
+          "Microsoft.IdentityModel.Tokens": "8.15.0"
+        },
+        "runtime": {
+          "lib/net10.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "8.15.0.0",
+            "fileVersion": "8.15.0.61118"
+          }
+        }
+      },
+      "CRM.App.Shared/1.0.0": {
+        "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
+          "Blazored.LocalStorage": "4.5.0",
+          "Blazored.Modal": "7.3.1",
+          "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
+          "MudBlazor": "8.15.0",
+          "MudBlazor.ThemeManager": "3.0.0",
+          "System.IdentityModel.Tokens.Jwt": "8.15.0"
+        },
+        "runtime": {
+          "CRM.App.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CRM.App.Web.Client/1.0.0": {
+        "dependencies": {
+          "Blazored.LocalStorage": "4.5.0",
+          "CRM.App.Shared": "1.0.0",
+          "Microsoft.AspNetCore.Components.WebAssembly": "9.0.8",
+          "Microsoft.DotNet.HotReload.WebAssembly.Browser": "10.0.102",
+          "MudBlazor": "8.15.0",
+          "MudBlazor.ThemeManager": "3.0.0"
+        },
+        "runtime": {
+          "CRM.App.Web.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CRM.Dtos/1.0.0.0": {
+        "runtime": {
+          "CRM.Dtos.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CRM.App.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+    },
+    "Blazored.LocalStorage/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6nZuJwA7zNIKx83IsObiHXZb09ponJOpCClU3en+hI8ZFvrOKXeOw+H7TegQZQrvdR1n9fkrVkEBQZg8vx6ZTw==",
+      "path": "blazored.localstorage/4.5.0",
+      "hashPath": "blazored.localstorage.4.5.0.nupkg.sha512"
+    },
+    "Blazored.Modal/7.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CWUyENSAZmNr0efiS3V5oMBkhRLkqqo1qOaY5pIqymQIR0fgGY6CDB4+57HAJP0pdks95yALrBZ6twggMaIeCg==",
+      "path": "blazored.modal/7.3.1",
+      "hashPath": "blazored.modal.7.3.1.nupkg.sha512"
+    },
+    "CodeBeam.MudBlazor.Extensions/8.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kp42Wmz4UroTbrpb5Ak8U/VYbdxg+35W8gg4Q4SOQMV1GgSWRHfoDf0gXVEEW9Lsx3/wZgzxvGwcs3brhQbZQg==",
+      "path": "codebeam.mudblazor.extensions/8.3.0",
+      "hashPath": "codebeam.mudblazor.extensions.8.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.QuickGrid/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p7+IZRNQgJg72k5uEVdceDUNbtt3j49G7PTp9lkIv2ALY6/kdzYWgp5IKBo1Vfogto4I6b6Gcz4rq4teI/YePA==",
+      "path": "microsoft.aspnetcore.components.quickgrid/10.0.1",
+      "hashPath": "microsoft.aspnetcore.components.quickgrid.10.0.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.WebAssembly/9.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-48tIkTqwYq/DVCxuDIbgz58JN15qveZqsyy+lZG5Lk8/y40JMjTioyOq1bYIX6SNLRRrGfJxZ2loh2w7+x/+4w==",
+      "path": "microsoft.aspnetcore.components.webassembly/9.0.8",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.9.0.8.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/9.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HelrX+9Q55A0uGUFsW0t5RbZaOn8pCUGpGk115ByrJQS8TKkKsOzMwhZEcVnZbdMYAhuj0TzHYhzW11LblFi8A==",
+      "path": "microsoft.aspnetcore.components.webassembly.server/9.0.8",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.server.9.0.8.nupkg.sha512"
+    },
+    "Microsoft.DotNet.HotReload.WebAssembly.Browser/10.0.102": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y8Xq5gLe6l3bW82uGJODzom5Z7pn+Y71BHObnmWF0LqbKFqfOOVDg76a2vyJnRLHn0X1LmsXSec/QdCWFOPl4A==",
+      "path": "microsoft.dotnet.hotreload.webassembly.browser/10.0.102",
+      "hashPath": "microsoft.dotnet.hotreload.webassembly.browser.10.0.102.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Abstractions/8.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e/DApa1GfxUqHSBHcpiQg8yaghKAvFVBQFcWh25jNoRobDZbduTUACY8bZ54eeGWXvimGmEDdF0zkS5Dq16XPQ==",
+      "path": "microsoft.identitymodel.abstractions/8.15.0",
+      "hashPath": "microsoft.identitymodel.abstractions.8.15.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/8.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3513f5VzvOZy3ELd42wGnh1Q3e83tlGAuXFSNbENpgWYoAhLLzgFtd5PiaOPGAU0gqKhYGVzKavghLUGfX3HQg==",
+      "path": "microsoft.identitymodel.jsonwebtokens/8.15.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.8.15.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Logging/8.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1gJLjhy0LV2RQMJ9NGzi5Tnb2l+c37o8D8Lrk2mrvmb6OQHZ7XJstd/XxvncXgBpad4x9CGXdipbZzJJCXKyAg==",
+      "path": "microsoft.identitymodel.logging/8.15.0",
+      "hashPath": "microsoft.identitymodel.logging.8.15.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Tokens/8.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zUE9ysJXBtXlHHRtcRK3Sp8NzdCI1z/BRDTXJQ2TvBoI0ENRtnufYIep0O5TSCJRJGDwwuLTUx+l/bEYZUxpCA==",
+      "path": "microsoft.identitymodel.tokens/8.15.0",
+      "hashPath": "microsoft.identitymodel.tokens.8.15.0.nupkg.sha512"
+    },
+    "Microsoft.JSInterop.WebAssembly/9.0.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eevGq068Owgf1q6EswauGQ1JVu5FsM4K52l4H+Lx8/HaU2EUaAs6LzsawJkUOq6bBPxPTwaCsr/Sxv2iEMcm2Q==",
+      "path": "microsoft.jsinterop.webassembly/9.0.8",
+      "hashPath": "microsoft.jsinterop.webassembly.9.0.8.nupkg.sha512"
+    },
+    "MudBlazor/8.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iOJEnQ6tYGQPfPJaUazyC8H6pcczgaMX7vhUzrJPpB0WqEXNozwMfSzoOe2/JZmVWJcUfYZgKBeBU2Z27XY7Sw==",
+      "path": "mudblazor/8.15.0",
+      "hashPath": "mudblazor.8.15.0.nupkg.sha512"
+    },
+    "MudBlazor.ThemeManager/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bu/pvCXPd+cW9Wgkyqo3OZEQa3G30LaQlo8Ul2rqgv/4MY77cS9PnLRTs1lXzLDsN+bN/K69+UNi1BrhlUDK3w==",
+      "path": "mudblazor.thememanager/3.0.0",
+      "hashPath": "mudblazor.thememanager.3.0.0.nupkg.sha512"
+    },
+    "MudBlazor.Translations/2.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTNhnU/v3+MI7+eaxBetV0g5DNFKANx3gbFpmyyWPzK2aG6UWrTgcEWrHfXkOQ4k0mOMTNwu9CBIssJAOKbBeQ==",
+      "path": "mudblazor.translations/2.7.0",
+      "hashPath": "mudblazor.translations.2.7.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/8.15.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dpodi7ixz6hxK8YCBYAWzm0IA8JYXoKcz0hbCbNifo519//rjUI0fBD8rfNr+IGqq+2gm4oQoXwHk09LX5SqqQ==",
+      "path": "system.identitymodel.tokens.jwt/8.15.0",
+      "hashPath": "system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512"
+    },
+    "CRM.App.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRM.App.Web.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRM.Dtos/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

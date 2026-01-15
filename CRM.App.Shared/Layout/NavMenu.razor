@@ -1,0 +1,114 @@
+﻿@using CRM.Dtos.Enums
+
+<div class="nav-menu-links">
+
+    <MudNavLink Href="/perfil" Icon="@Icons.Material.Filled.Person">Mi Perfil</MudNavLink>
+    <MudDivider Class="my-2" />
+
+    @* 🚀 1. Opciones para ADMINISTRADOR (Mantenemos tu lógica original) *@
+    @if (TipoUsuario == TipoUsuarioDto.Administrador)
+    {
+        <MudNavLink Href="Barcos" Icon="@Icons.Material.Filled.DirectionsBoat">Centros de trabajo</MudNavLink>
+        <MudNavLink Href="personas" Icon="@Icons.Material.Filled.Cloud">Personas</MudNavLink>
+        <MudNavLink Href="tramites" Icon="@Icons.Material.Filled.DocumentScanner">Gestión de trámites</MudNavLink>
+        <MudNavLink Href="gestoria/usuarios" Icon="@Icons.Material.Filled.Archive">Gestión de Usuarios</MudNavLink>
+
+        @* Bloque expandible comentado se mantiene aquí, si se desea restaurar. *@
+        @* <MudNavGroup Title="Tramites" hidden="@ocultarItem" Icon="@Icons.Material.Filled.Business" Expanded="true">
+                <MudNavLink Href="tramites" Icon="@Icons.Material.Filled.Archive">Tramites</MudNavLink>
+                <MudNavLink Href="tipos-tramites" Icon="@Icons.Material.Filled.VolunteerActivism">Tipos de tramites</MudNavLink>
+                <MudNavLink Href="tipos-documentos" Icon="@Icons.Material.Filled.VolunteerActivism">Tipos de documentos</MudNavLink>
+                <MudNavLink Href="cofradias" Icon="@Icons.Material.Filled.VolunteerActivism">Tipos de tramites</MudNavLink>
+            </MudNavGroup> *@
+    }
+
+    @* 🚀 2. Opciones para EMPRESA (Mantenemos tu lógica original) *@
+    @if (TipoUsuario == TipoUsuarioDto.Empresa)
+    {
+        <MudNavLink Href="empresa/tramites" Icon="@Icons.Material.Filled.ListAlt">Mis trámites</MudNavLink>
+        <MudNavLink Href="MiEmpresa" Icon="@Icons.Material.Filled.DirectionsBoat">Mi Empresa</MudNavLink>
+    }
+
+</div>
+
+@* ⬇️ SEPARADOR Y PIE DE MENÚ ⬇️
+       El MudSpacer empuja el contenido siguiente (el pie) hacia la parte inferior del menú
+       (si el contenedor MudNavMenu tiene una altura definida, usualmente 100% del sidebar).
+    *@
+<MudSpacer />
+
+<MudDivider Class="mt-4 mb-2" />
+
+@* Estas opciones se muestran SIEMPRE, independientemente del TipoUsuario (si está logueado) *@
+@* Si solo quieres que se muestren para Administrador/Gestoria, deberías envolverlo en un @if(TipoUsuario != TipoUsuarioDto.Empresa) *@
+@if (TipoUsuario == TipoUsuarioDto.Administrador)
+{
+    <MudNavLink Href="cofradia" Icon="@Icons.Material.Filled.Domain">Datos de la Cofradía</MudNavLink>
+    <MudNavLink Href="configuracion" Icon="@Icons.Material.Filled.Settings">Configuración</MudNavLink>
+}
+@* <MudButton Variant="Variant.Text"
+           Color="Color.Inherit"
+           StartIcon="@Icons.Material.Filled.DarkMode"
+           Class="dark-mode-toggle"
+           href="configuracion">
+    Cambiar a @(IsDarkMode ? "Modo Claro" : "Modo Oscuro")
+</MudButton> *@
+
+
+@code {
+    [Parameter] public TipoUsuarioDto TipoUsuario { get; set; }
+    [Parameter] public EventCallback ToggleDarkMode { get; set; }
+    [Parameter] public bool IsDarkMode { get; set; }
+
+    private bool collapseNavMenu = true;
+    private bool ocultarItem = false;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private async Task OnToggleDarkModeClicked()
+    {
+        if (ToggleDarkMode.HasDelegate)
+        {
+            await ToggleDarkMode.InvokeAsync();
+        }
+    }
+
+}
+
+
+
+@* <div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">CRM.App</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="weather">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            </NavLink>
+        </div>
+    </nav>
+</div> *@
+

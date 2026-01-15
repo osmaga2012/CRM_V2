@@ -1,0 +1,14 @@
+# Etapa de compilación
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["CRM.Web/CRM.Web.csproj", "CRM.Web/"]
+RUN dotnet restore "CRM.Web/CRM.Web.csproj"
+COPY . .
+RUN dotnet publish "CRM.Web/CRM.Web.csproj" -c Release -o /app/publish
+
+# Etapa final: Servidor Nginx
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+COPY --from=build /app/publish/wwwroot .
+COPY CRM.Web/nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80

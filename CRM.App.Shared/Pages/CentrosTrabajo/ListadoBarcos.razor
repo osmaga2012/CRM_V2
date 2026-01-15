@@ -1,0 +1,107 @@
+﻿@page "/barcos"
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<MudThemeProvider />
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pb-8 pt-4">
+
+    <MudStack Direction="Row" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Class="mb-4">
+        <MudText Typo="Typo.h4">Centros de Trabajo - Barcos</MudText>
+
+        <MudStack Row Spacing="2">
+            <MudButton Variant="Variant.Outlined"
+                       Color="Color.Tertiary"
+                       StartIcon="@Icons.Material.Filled.Download"
+                       Style="border-radius: 10px; text-transform: none;">
+                Exportar Excel
+            </MudButton>
+        </MudStack>
+
+    </MudStack>
+
+    <MudPaper Elevation="4" Class="overflow-hidden border border-solid mud-border-lines-default">
+        <div class="grid-container">
+            <QuickGrid Items="@empresas.AsQueryable()"
+                       Pagination="@paginacion"
+                       Class="quickgrid-auto" Virtualize="false">
+                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.NombreB)" Title="Nombre" Sortable="true" Class="col-main" />
+
+                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn
+                    Property="x => x.Barco.CodigoBarco" Title="Cód. Barco" Sortable="true" />                   
+                
+                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn
+                    Property="x => x.Empresa" Sortable="true" />
+
+                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="x => x.NombreArmador" Sortable="true" />
+                
+                @* Columna de Acciones *@
+                <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Acciones" 
+                        Align="Microsoft.AspNetCore.Components.QuickGrid.Align.End" Class="col-actions">
+                    <div class="d-flex gap-2 justify-end">
+                        <MudTooltip Text="Ver Trámites">
+                            <MudIconButton Icon="@Icons.Material.Filled.Dock" 
+                                          Size="Size.Small" 
+                                          Color="Color.Info" 
+                                          Variant="Variant.Filled"
+                                          OnClick="@(() => VerTramites(context.CodigoEmpresa, context.Barco))" />
+                        </MudTooltip>
+                        
+                        <MudTooltip Text="Usuarios">
+                            <MudIconButton Icon="@Icons.Material.Filled.Person4"
+                                          Size="Size.Small"
+                                          Color="Color.Primary"
+                                          Variant="Variant.Outlined"
+                                          OnClick="@(() => VerUsuariosBarco(context))" />
+                        </MudTooltip>
+                    </div>
+                </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+
+            </QuickGrid>
+        </div>
+
+        @* Paginador Personalizado *@
+        <div class="custom-pagination">
+            <Paginator State="@paginacion" />
+        </div>
+    </MudPaper>
+
+@*     <MudDataGrid Items="@empresas"
+                         FixedHeader="true" FixedFooter="true" Height="600px"
+                         Breakpoint="Breakpoint.Sm"
+                         Hover="true" Dense="true" Bordered="false" Striped="true"
+                         FilterMode="@DataGridFilterMode.ColumnFilterRow" Filterable="true"
+                         QuickFilter="filtroEmpresa">
+            <ToolBarContent>
+                  <MudText Typo="Typo.h6">LISTADO DE CENTROS DE TRABAJO</MudText>
+                    <MudSpacer />
+                    <MudTextField @bind-Value="_filtroBarco"
+                                  Placeholder="Buscar por nombre, NIF..."
+                                  Adornment="Adornment.Start"
+                                  AdornmentIcon="@Icons.Material.Filled.Search"
+                                  IconSize="Size.Medium"
+                                  Class="mt-0 w-auto" /> 
+
+            </ToolBarContent>
+                <Columns>
+                    <PropertyColumn Property="x => x.Barco.CodigoBarco" Title="Barco" />
+                    <PropertyColumn Property="x => x.Barco!.NombreB" Title="Nombre" />
+                    <PropertyColumn Property="x => x.CodigoEmpresa" Title="Cód. Empresa" />
+                    <PropertyColumn Property="x => x.Empresa" Title="Nombre Empresa" />
+                    <PropertyColumn Property="x => x.NombreArmador" Title="Armador" />
+                    <TemplateColumn CellClass="d-flex justify-end">
+                        <CellTemplate>
+                            <MudIconButton Icon="@Icons.Material.Filled.Dock" 
+                                    Size="Size.Small" 
+                                    OnClick="@(() => VerTramites(context.Item.CodigoEmpresa, context.Item.Barco))" />
+
+                            <MudIconButton Icon="@Icons.Material.Filled.Person4"
+                                           Size="Size.Small"
+                                           OnClick="@(() => VerUsuariosBarco(context.Item))" />
+                        </CellTemplate>
+                    </TemplateColumn>
+
+                </Columns>
+    </MudDataGrid> *@
+
+</MudContainer>
+

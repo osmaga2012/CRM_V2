@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:CRM.App.Paginas" 
+       x:Class="CRM.App.AppShell"
+       Shell.FlyoutBehavior="Disabled">
+
+    <!--<Shell.TitleView>
+        <Grid ColumnDefinitions="*, Auto, Auto">
+            <Label Text="Mi CRM" VerticalOptions="Center" FontAttributes="Bold" />
+
+            <HorizontalStackLayout Grid.Column="1" Spacing="10" VerticalOptions="Center">
+                <Label x:Name="UserTypeLabel" Text="Admin" />
+                <ImageButton Source="profile_icon.png" Clicked="OnProfileClicked" />
+            </HorizontalStackLayout>
+        </Grid>
+    </Shell.TitleView>-->
+
+    <TabBar>
+        <Tab Title="Tramites">
+            <ShellContent Title="Trámites" 
+                          Icon="list_icon.png"
+                          ContentTemplate="{DataTemplate local:ListadoTramites}" 
+                          Route="TramitesRoute" />
+        </Tab>
+        <Tab Title="Mís recordatorios">
+            <ShellContent Title="Mís recordatorios" 
+                          Icon="list_icon.png"
+                          ContentTemplate="{DataTemplate local:ListaRecordatorios}" 
+                          Route="TramitesRoute" />
+        </Tab>
+    </TabBar>
+</Shell>

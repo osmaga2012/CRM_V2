@@ -1,0 +1,49 @@
+﻿@page "/"
+@page "/tramites"
+
+@inject IFormFactor PlatformService
+@inject IPlatformNavigationService NavigationService
+
+@using CRM.App.Shared.Componentes
+@using CRM.App.Shared.Interfaces
+@using CRM.App.Shared.Services
+@using CRM.Dtos
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+
+
+<QuickGrid Items="FiltroTramites">
+    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(p => p.Id)" Sortable="true" />
+</QuickGrid>
+
+@* <AuthorizeView>
+    <Authorized>
+        <MudText Typo="Typo.h4">Mis Trámites y Recordatorios </MudText>
+ 
+        <QuickGrid Items="FiltroTramites">
+             <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn 
+                Property="@(p => p.Id)" Sortable="true" /> 
+        </QuickGrid>  *@
+
+        @*@if (!PlatformService.IsNativeApp)
+        {
+            <MudText Typo="Typo.h4">Mis Trámites</MudText>
+            <CollectionView />  
+        }
+        else
+        {
+            <XAMLEscapeTrigger PageRoute="tramites" />
+        } *@
+        
+@*     </Authorized>
+    <Authorizing>
+        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+    </Authorizing>
+    <NotAuthorized>
+        @{
+            // Si llega aquí, es que realmente no tiene permiso
+            NavigationService.NavigateToAsync("/login");
+        }
+    </NotAuthorized>
+</AuthorizeView> *@

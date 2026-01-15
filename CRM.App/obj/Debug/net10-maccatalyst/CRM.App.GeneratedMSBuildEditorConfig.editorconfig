@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = CRM.App
+build_property.ProjectDir = C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

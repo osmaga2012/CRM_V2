@@ -1,0 +1,543 @@
+﻿@page "/barco/tramites"
+@page "/barco/empresa/{CodigoEmpresa}/tramites/{CodigoBarco}"
+@using CRM.Dtos
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using MudBlazor
+
+<style>
+  .fx-col { display:flex; flex-direction:column; }
+  .fx-1 { flex: 1 1 auto; min-height: 0; } /* min-height:0 permite que el hijo calcule alturas y haga overflow */
+  .vh-fill { min-height: calc(100vh - 32px); } /* ajusta 32px si cambias paddings/márgenes superiores */
+</style> 
+
+
+<MudBreakpointProvider OnBreakpointChanged="OnBreakpointChanged" />
+
+<MudContainer  MaxWidth="MaxWidth.False" Class="py-4">
+
+    <MudGrid GutterSize="12">
+
+        <MudItem xs="12" md="6">
+            <MudPaper Elevation="4" Class="rounded-0 overflow-hidden border border-solid mud-border-lines-default">
+                @* Encabezado del Formulario *@
+                <MudToolBar Dense Class="mud-theme-primary rounded-0 px-4">
+                    <MudIcon Icon="@Icons.Material.Filled.Edit" Class="mr-2" Size="Size.Small" />
+                    <MudText Typo="Typo.subtitle2" Style="font-weight: 700; text-transform: uppercase;">
+                        Gestión de Trámite
+                    </MudText>
+                </MudToolBar>
+
+                <MudForm Model="@tramite" @ref="form" @bind-IsValid="success" Class="pa-6">
+                    <MudStack Spacing="4">
+
+                        <MudTextField Label="Nombre del Certificado"
+                                      @bind-Value="tramite.Certificado"
+                                      For="@(() => tramite.Certificado)"
+                                      Variant="Variant.Outlined"
+                                      Margin="Margin.Dense"
+                                      Required="true"
+                                      Adornment="Adornment.Start"
+                                      AdornmentIcon="@Icons.Material.Filled.Badge"
+                                      Class="rounded-0" />
+
+                        <MudGrid Spacing="2">
+                            <MudItem xs="6">
+                                <MudDatePicker Label="Inicio"
+                                               @bind-Date="tramite.FechaInicioParser"
+                                               Variant="Variant.Outlined"
+                                               Margin="Margin.Dense"
+                                               DateFormat="dd/MM/yyyy"
+                                               Class="rounded-0" />
+                            </MudItem>
+                            <MudItem xs="6">
+                                <MudDatePicker Label="Caducidad"
+                                               @bind-Date="tramite.FechaFinParser"
+                                               Variant="Variant.Outlined"
+                                               Margin="Margin.Dense"
+                                               DateFormat="dd/MM/yyyy"
+                                               Class="rounded-0" />
+                            </MudItem>
+                        </MudGrid>
+
+                        <MudStack Row AlignItems="AlignItems.Center">
+                            <MudTextField Label="Días de aviso"
+                                          @bind-Value="tramite.DiasAvisoTramite"
+                                          InputType="InputType.Number"
+                                          Variant="Variant.Outlined"
+                                          Margin="Margin.Dense"
+                                          Adornment="Adornment.End"
+                                          AdornmentText="días"
+                                          Class="rounded-0" />
+                            <MudTooltip Text="Aviso X días antes de caducar.">
+                                <MudIcon Icon="@Icons.Material.Filled.HelpOutline" Color="Color.Info" Size="Size.Small" />
+                            </MudTooltip>
+                        </MudStack>
+
+                        <MudTextField Label="Observaciones"
+                                      @bind-Value="tramite.Observaciones"
+                                      Variant="Variant.Outlined"
+                                      Lines="3"
+                                      Class="rounded-0" />
+
+                        @* Emails Section *@
+                        <MudStack Spacing="1">
+                            <MudText Typo="Typo.caption" Class="font-bold">NOTIFICAR A:</MudText>
+                            <MudTextField @bind-Value="_emailInput"
+                                          Placeholder="email@ejemplo.com + Enter"
+                                          OnKeyDown="OnEmailKeyDown"
+                                          Variant="Variant.Outlined"
+                                          Margin="Margin.Dense"
+                                          Adornment="Adornment.Start"
+                                          AdornmentIcon="@Icons.Material.Filled.Email"
+                                          Class="rounded-0" />
+
+                            <div class="d-flex flex-wrap gap-1 mt-2">
+                                @foreach (var mail in EmailsAviso)
+                                {
+                                    <MudChip T="string" Text="@mail"
+                                             Color="Color.Primary"
+                                             Variant="Variant.Filled"
+                                             Size="Size.Small"
+                                             OnClose="@((c) => RemoveEmail(c.Text))"
+                                             Class="rounded-0" />
+                                }
+                            </div>
+                        </MudStack>
+
+                        @* Adjunto - Estilo Mejorado *@
+                        <div class="file-upload-zone">
+                            <MudText Typo="Typo.caption" Class="font-bold mb-1 d-block">DOCUMENTO ADJUNTO</MudText>
+                            <div class="d-flex align-center border border-dashed pa-2">
+                                <InputFile OnChange="OnFileChanged" id="fileInput" hidden />
+                                <MudIconButton HtmlTag="label" for="fileInput"
+                                               Icon="@Icons.Material.Filled.CloudUpload"
+                                               Color="Color.Primary" />
+                                <MudText Typo="Typo.caption" Class="ml-2 truncate">
+                                    @(_selectedFileName ?? existingFileName ?? "Sin archivo")
+                                </MudText>
+                                <MudSpacer />
+                                @if (!string.IsNullOrEmpty(_selectedFileName))
+                                {
+                                    <MudIconButton Icon="@Icons.Material.Filled.Close"
+                                                   Size="Size.Small"
+                                                   Color="Color.Error"
+                                                   OnClick="ClearSelectedFile" />
+                                }
+                            </div>
+                        </div>
+
+                        @* Panel de Información *@
+                        <MudExpansionPanels Elevation="0" Class="border border-solid mud-border-lines-default">
+                            <MudExpansionPanel Text="Detalles del Registro" Class="rounded-0">
+                                <MudStack Spacing="1">
+                                    <MudText Typo="Typo.caption">Aviso programado: <b>@tramite.FechaAviso.ToString("dd/MM/yyyy")</b></MudText>
+                                    <MudText Typo="Typo.caption">Último envío: <b>@(tramite.UltimoEnvio ?? "Nunca")</b></MudText>
+                                </MudStack>
+                            </MudExpansionPanel>
+                        </MudExpansionPanels>
+
+                        @* Acciones Formulario *@
+                        <MudStack Row Spacing="2" Class="mt-4">
+                            <MudButton Variant="Variant.Filled"
+                                       Color="Color.Primary"
+                                       FullWidth
+                                       Class="rounded-0 py-2"
+                                       StartIcon="@Icons.Material.Filled.Save"
+                                       OnClick="Submit">
+                                Guardar Trámite
+                            </MudButton>
+                            <MudButton Variant="Variant.Outlined"
+                                       Color="Color.Default"
+                                       Class="rounded-0 py-2">
+                                Cancelar
+                            </MudButton>
+                        </MudStack>
+
+                    </MudStack>
+                </MudForm>
+            </MudPaper>
+        </MudItem>
+
+        @* <MudItem xs="12" md="6" xl="4">
+            <MudPaper Elevation="1" Class="p-4 rounded-2xl">
+                <MudStack Spacing="3">
+                    <MudText Typo="Typo.h6">Nuevo/Editar trámite</MudText>
+                    <MudDivider />
+                    <MudForm Model="@tramite" @ref="form" @bind-IsValid="success" @bind-Errors="errors">
+                        <MudStack Spacing="2">
+                            <MudTextField Label="Certificado"
+                                          For="@(() => tramite.Certificado)" 
+                                          @bind-Value="tramite.Certificado"
+                                          InputType="InputType.Text"
+                                          Required="true"
+                                          RequiredError="El nombre del certificado es obligatorio."
+                                          Adornment="Adornment.Start"
+                                          AdornmentIcon="@Icons.Material.Filled.Badge"
+                                          Placeholder="p. ej., Certificado de navegabilidad" />
+ 
+                            <!-- Fechas: lado a lado en md+, apiladas en móvil -->
+                            <MudGrid GutterSize="3">
+                                <MudItem xs="12" sm="4">
+                                     <MudDatePicker Label="Fecha inicio del trámite"
+                                                   @bind-Date="tramite.FechaInicioParser"
+                                                   AdornmentIcon="@Icons.Material.Filled.Event"
+                                                   Adornment="Adornment.End"
+                                                   CloseToCursor="true"
+                                                   DateFormat="dd/MM/yyyy"
+                                                   Clearable="true" /> 
+                                </MudItem>
+                                <MudItem xs="12" sm="4">
+                                    <MudDatePicker Label="Fecha de caducidad"
+                                                   @bind-Date="tramite.FechaFinParser"
+                                                   AdornmentIcon="@Icons.Material.Filled.Event"
+                                                   Adornment="Adornment.End"
+                                                   CloseToCursor="true"
+                                                   DateFormat="dd/MM/yyyy"
+                                                   Clearable="true" />
+                                </MudItem>
+
+                                <MudItem xs="12" sm="3">
+                                    <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                        <MudTextField Label="Días de aviso"
+                                                      @bind-Value="tramite.DiasAvisoTramite"
+                                                      InputType="InputType.Number"
+                                                      Min="0" Step="1"
+                                                      Adornment="Adornment.End" AdornmentText="días" />
+
+                                        <MudTooltip Text="Recibirás un aviso X días antes de la fecha de caducidad." Placement="Placement.Bottom">
+                                            <MudIconButton Icon="@Icons.Material.Filled.Info"
+                                                           Color="Color.Info"
+                                                           Variant="Variant.Text"
+                                                           Size="Size.Small"
+                                                           AriaLabel="Información sobre los días de aviso" />
+                                        </MudTooltip>
+                                    </MudStack>
+                                </MudItem>
+
+                            </MudGrid>
+
+                            <MudTextField Label="Observaciones"
+                                          @bind-Value="tramite.Observaciones"
+                                          Lines="4"
+                                          Variant="Variant.Outlined"
+                                          Placeholder="Notas internas, requisitos, etc." />
+
+  
+@*                                 <MudStack Spacing="2">
+                                    <p>El trámite fue creado el día: <b>@tramite.FechaAviso</b></p>
+                                    <p>El trámite fue creado el día: <b>@tramite.FechaAviso</b></p>
+                                    <p>El trámite fue creado el día: <b>@tramite.FechaAviso</b></p>
+                                    <MudAlert Dense="true" Class="w-100">
+                                        El trámite fue creado el día: <b>@tramite.FechaAviso</b>
+                                    </MudAlert>
+                                    <MudAlert Dense="true" Class="w-100">
+                                        Se avisará a partir del: <b>@tramite.FechaAviso</b>
+                                    </MudAlert>
+
+                                    <MudAlert Dense>
+                                        El tramite fue creado por: <b>Yo</b>
+                                    </MudAlert>
+                                </MudStack> *@
+                                @* <MudStack Spacing="1">
+                                    <MudText Typo="Typo.subtitle2">Emails de aviso</MudText>
+
+                                    <MudTextField @bind-Value="_emailInput"
+                                                  Label="Añadir email y pulsa Enter"
+                                                  Placeholder="usuario@dominio.com"
+                                                  Immediate="true"
+                                                  OnKeyDown="OnEmailKeyDown"
+                                                  Adornment="Adornment.Start"
+                                                  AdornmentIcon="@Icons.Material.Filled.Email"
+                                                  Variant="Variant.Outlined" />
+
+                                    <MudChipSet T="string" MultiSelection="true" Class="mt-1">
+                                        @foreach (var mail in EmailsAviso)
+                                        {
+                                            <MudChip Text="@mail"
+                                                     Color="Color.Primary"
+                                                     Variant="Variant.Outlined"
+                                                     Closeable="true"
+                                                     OnClose="@((MudChip<string> c) => RemoveEmail(c.Text))" />
+                                        }
+                                    </MudChipSet>
+
+                                    @if (!string.IsNullOrEmpty(_emailError))
+                                    {
+                                        <MudText Typo="Typo.caption" Class="text-error">@_emailError</MudText>
+                                    }
+                                    <MudText Typo="Typo.caption" Class="opacity-70">
+                                        Puedes pegar varios separados por coma, punto y coma o espacios.
+                                    </MudText>
+                                </MudStack> 
+
+                         <!-- Subida de archivo -->
+                         <MudStack Spacing="1">
+                                <MudText Typo="Typo.subtitle2">Adjuntar archivo</MudText>
+                                <MudPaper Class="p-3 rounded-xl border-dashed" Style="border: 1px dashed var(--mud-palette-lines-default);">
+                                    <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.SpaceBetween">
+                                        <MudStack Row="true" AlignItems="AlignItems.Center" Spacing="2">
+                                            <MudIcon Icon="@Icons.Material.Filled.AttachFile" />
+                                            <MudText Typo="Typo.body2">@(_selectedFileName ?? existingFileName ?? "Ningún archivo seleccionado")</MudText>
+                                        </MudStack>
+                                        <MudStack Row="true" Spacing="1">
+                                            <InputFile OnChange="OnFileChanged" /> 
+                                            @if (!string.IsNullOrEmpty(_selectedFileName) || !string.IsNullOrEmpty(existingFileName))
+                                            {
+                                                <MudButton Variant="Variant.Text" Color="Color.Secondary" Size="Size.Small" OnClick="ClearSelectedFile">Limpiar</MudButton>
+                                            }
+                                        </MudStack>
+                                    </MudStack>
+                                </MudPaper>
+                            </MudStack>
+                            <MudExpansionPanel HideIcon>
+                                <TitleContent>
+                                    <div class="d-flex">
+                                        <MudText Class="mt-1">Más información</MudText>
+                                        <MudIcon Icon="@Icons.Material.Filled.Info" Color="Color.Default" Class="ml-auto"/>
+                                    </div>
+                                </TitleContent>
+                                <ChildContent>
+                                    <MudDivider Class="mb-2" />
+                                    <MudCardContent Class="pt-0">
+                                        <MudGrid GutterSize="2">
+                                            <!-- Creado el -->
+                                            <MudItem xs="12" sm="6">
+                                                <MudStack Spacing="1">
+                                                    <MudText Typo="Typo.caption" Class="opacity-70">Creado el</MudText>
+                                                    <MudText Typo="Typo.body2">
+@*                                                         @(
+                                                            tramite?.FechaCreacionParser is DateTime dt ? dt.ToString("dd/MM/yyyy HH:mm"):tramite?.FechaCreacion is DateOnly d ? d.ToString("dd/MM/yyyy")
+                                                            : "—"
+                                                        ) *@
+        @*       </MudText>
+                                                </MudStack>
+                                            </MudItem>
+                                            *@
+                                            
+                                            <!-- Creado por -->
+@*                                             <MudItem xs="12" sm="6">
+                                                <MudStack Spacing="1">
+                                                    <MudText Typo="Typo.caption" Class="opacity-70">Creado por</MudText>
+                                                    <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                        <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Small" Class="opacity-70" />
+                                                        <MudText Typo="Typo.body2"></MudText>
+                                                    </MudStack>
+                                                </MudStack>
+                                            </MudItem> *@
+
+                                            <!-- Aviso programado -->
+@*                                             <MudItem xs="12" sm="6">
+                                                <MudStack Spacing="1" row>
+                                                    <MudText Typo="Typo.caption" Class="opacity-70">Aviso programado</MudText>
+                                                    <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                        <MudChip T="string" Variant="Variant.Outlined" Color="Color.Info" Icon="@Icons.Material.Filled.NotificationsActive">
+                                                             @(
+                                                                tramite?.FechaAvisoParser is DateTime a ? a.ToString("dd/MM/yyyy HH:mm")
+                                                                : tramite?.FechaAviso is DateOnly ao ? ao.ToString("dd/MM/yyyy")
+                                                                : (tramite?.FechaAvisoParser?.ToString() ?? "—")
+                                                            )
+                                                        </MudChip>
+                                                        <MudText Typo="Typo.caption" Class="opacity-70">
+                                                            Se notificará a partir de esa fecha.
+                                                        </MudText>
+                                                    </MudStack>
+                                                </MudStack>
+                                            </MudItem> *@
+
+                                            <!-- Último envío por -->
+@*                                             <MudItem xs="12" sm="6">
+                                                <MudStack Spacing="1">
+                                                    <MudText Typo="Typo.caption" Class="opacity-70">Último envío</MudText>
+                                                    <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                        <MudChip T="string" Variant="Variant.Outlined" Color="Color.Info" Icon="@Icons.Material.Filled.NotificationsActive">
+                                                            @(tramite?.UltimoEnvio) 
+                                                        </MudChip>
+                                                    </MudStack>
+                                                </MudStack>
+                                            </MudItem>
+
+                                            <MudItem xs="12" sm="6">
+                                                <MudStack Spacing="1">
+                                                    <MudText Typo="Typo.caption" Class="opacity-70">Último envío</MudText>
+                                                    <MudStack Row AlignItems="AlignItems.Center" Spacing="1">
+                                                        <MudChip T="string" Variant="Variant.Outlined" Color="Color.Info" Icon="@Icons.Material.Filled.NotificationsActive">
+                                                            Enviado @(tramite?.NumeroEnvios ?? 0) veces.
+                                                        </MudChip>
+                                                    </MudStack>
+                                                </MudStack>
+                                            </MudItem>
+                                        </MudGrid>
+                                    </MudCardContent>
+                                </ChildContent>
+                            </MudExpansionPanel> 
+
+                            <MudValidationSummary />
+
+                            <MudStack Row="true" Spacing="1" Class="mt-2">
+                                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Submit" StartIcon="@Icons.Material.Filled.Save">Guardar</MudButton>
+                                <MudButton Variant="Variant.Outlined" Color="Color.Default" StartIcon="@Icons.Material.Filled.Close">Cancelar</MudButton>
+                            </MudStack>
+                        </MudStack>
+                    </MudForm>
+                </MudStack>
+            </MudPaper>
+        </MudItem> *@
+        <!-- Right column: Grid (full width on xs/sm; 7/12 on md+) -->
+        <MudItem xs="12" md="6" xl="8">
+            <MudPaper Elevation="1" Class="p-0 rounded-2xl overflow-hidden">
+                <MudToolBar>
+                    <MudText Typo="Typo.subtitle1">Certificados del buque</MudText>
+                    <MudSpacer />
+                     <MudTextField @bind-Value="_filtroTramites"
+                                   Placeholder="Buscar por nombre, NIF..."
+                                   Adornment="Adornment.Start"
+                                   AdornmentIcon="@Icons.Material.Filled.Search"
+                                   IconSize="Size.Medium"
+                                   Immediate="true"
+                                   Clearable="true"
+                                   Class="max-w-64" /> 
+                </MudToolBar>
+
+                @if (!IsMobile)
+                {
+                    <div class="grid-container">
+                            <QuickGrid Items="tramites.AsQueryable()" Class="quickgrid-auto">
+
+                                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn
+                                    Property="x=>x.Certificado" Title="Nombre Certificado" Sortable="true" />
+                                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn 
+                                    Property="x => x.FechaFin" Title="Fecha Cad." Sortable="true" />
+
+                                @* Observaciones (Columna Autoajustable) *@
+                                <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Observaciones" Class="col-main">
+                                    <CellTemplate>
+                                        @if (!string.IsNullOrWhiteSpace(context.Observaciones))
+                                        {
+                                            <MudTooltip Text="@context.Observaciones" Placement="Placement.Top">
+                                                <div class="text-truncate" style="max-width: 400px; cursor: help;">
+                                                    @context.Observaciones
+                                                </div>
+                                            </MudTooltip>
+                                        }
+                                    </CellTemplate>
+                                </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+
+                                @* Acciones (Fijadas a la derecha) *@
+                                <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Acciones" Align="Microsoft.AspNetCore.Components.QuickGrid.Align.End" Class="col-actions">
+                                    <div class="d-flex gap-1 justify-end">
+                                        @if (!string.IsNullOrWhiteSpace(context.RutaFichero))
+                                        {
+                                            <MudTooltip Text="@GetFileName(context.RutaFichero)">
+                                                <MudIconButton Icon="@Icons.Material.Filled.AttachFile"
+                                                               Size="Size.Small"
+                                                               Color="Color.Primary"
+                                                               Variant="Variant.Text"
+                                                               Class="rounded-0"
+                                                               OnClick="@(() => OpenAdjuntoAsync(context))" />
+                                            </MudTooltip>
+                                        }
+                    
+                                        <MudIconButton Icon="@Icons.Material.Filled.Edit" 
+                                                       Size="Size.Small" 
+                                                       Class="rounded-0"
+                                                       OnClick="@(() => EditarTramite(context.Id))" />
+
+                                        <MudIconButton Icon="@Icons.Material.Filled.Delete" 
+                                                       Size="Size.Small" 
+                                                       Color="Color.Error" 
+                                                       Class="rounded-0"
+                                                       OnClick="@(() => ConfirmarBorrado(context))" />
+                                    </div>
+                                </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+                            </QuickGrid>
+                    </div>
+
+@*                      <MudDataGrid T="BarcosTramitesDto"
+                                 Items="@(tramites ?? Enumerable.Empty<BarcosTramitesDto>())"
+                                 FixedHeader FixedFooter Height="600px"
+                                 Hover Dense Bordered="false" Striped>
+
+                        <Columns>
+                            <PropertyColumn Property="x => x.Certificado" Title="Nombre Certificado" />
+                            <PropertyColumn Property="x => x.FechaFin" Title="Fecha Caducidad" Format="dd/MM/yyyy" />
+                            <TemplateColumn Title="Observaciones" CellClass="w-100">
+                                <CellTemplate>
+                                    @if (!string.IsNullOrWhiteSpace(context.Item.Observaciones))
+                                    {
+                                        <MudTooltip Text="@context.Item.Observaciones">
+                                            <MudText Typo="Typo.caption" Class="text-truncate" Style="max-width: 220px;">
+                                                @context.Item.Observaciones
+                                            </MudText>
+                                        </MudTooltip>
+                                    }
+                                </CellTemplate>
+                            </TemplateColumn>
+                            <TemplateColumn T="BarcosTramitesDto" Title="Acciones" CellClass="text-right" HeaderClass="text-right">
+                                <CellTemplate>
+                                     <MudStack Row AlignItems="AlignItems.Center" Justify="Justify.FlexEnd" Spacing="1">
+                                        @if (!string.IsNullOrWhiteSpace(context.Item.RutaFichero))
+                                        {
+                                            <MudTooltip Text="@GetFileName(context.Item.RutaFichero)">
+                                                <MudIconButton Icon="@Icons.Material.Filled.AttachFile"
+                                                               Color="Color.Primary"
+                                                               OnClick="@(() => OpenAdjuntoAsync(context.Item))" />
+                                            </MudTooltip>
+                                        }
+                                        <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => EditarTramite(context.Item.Id))" />
+                                         <MudIconButton Icon="@Icons.Material.Filled.Delete" Size="Size.Small" Color="Color.Error" OnClick="@(() => ConfirmarBorrado(context.Item))" />
+                                     </MudStack> 
+                                </CellTemplate>
+                            </TemplateColumn>
+                        </Columns>
+                    </MudDataGrid>  *@
+                }
+                else
+                {
+                    @if(tramites?.Any() ?? false)
+                    {
+                        <!-- Vista móvil: tarjetas para mejor legibilidad/tap -->
+                     <MudList T="BarcosTramitesDto" Dense>
+                        @foreach (var t in tramites.Where(x => FiltroTramites(x)))
+                        {
+                            <MudListItem Class="py-2 px-3">
+                                <MudStack Spacing="1">
+                                    <MudText Typo="Typo.subtitle2">@t.Certificado</MudText>
+                                    <MudText Typo="Typo.caption">Caduca: @t.FechaFin.ToString("dd/MM/yyyy")</MudText>
+                                    @if (!string.IsNullOrWhiteSpace(t.Observaciones))
+                                    {
+                                        <MudText Typo="Typo.caption" Class="opacity-80">@t.Observaciones</MudText>
+                                    }
+                                    <MudStack Row Spacing="1" Justify="Justify.FlexEnd">
+                                        @if (!string.IsNullOrWhiteSpace(t.RutaFichero))
+                                        {
+                                            <MudButton Variant="Variant.Text" Size="Size.Small" StartIcon="@Icons.Material.Filled.AttachFile" OnClick="@(() => OpenAdjuntoAsync(t))">Adjunto</MudButton>
+                                        }
+                                        <MudButton Variant="Variant.Text" Size="Size.Small" StartIcon="@Icons.Material.Filled.Edit" OnClick="@(() => EditarTramite(t.Id))">Editar</MudButton>
+                                         <MudButton Variant="Variant.Text" Size="Size.Small" Color="Color.Error" StartIcon="@Icons.Material.Filled.Delete" OnClick="@(() => ConfirmarBorrado(t))">Borrar</MudButton>
+                                     </MudStack>
+                                </MudStack>
+                            </MudListItem>
+                            <MudDivider />
+                        }
+                    </MudList>
+                    }
+                } 
+                </MudPaper>
+
+        </MudItem>
+
+    </MudGrid>
+</MudContainer>
+<!-- Diálogo confirmación de borrado -->
+<MudDialog @bind-IsVisible="_confirmVisible">
+    <DialogContent>
+        <MudStack Spacing="2">
+            <MudText Typo="Typo.h6">Borrar trámite</MudText>
+            <MudText>¿Seguro que quieres borrar <b>@_toDelete?.Certificado</b>?</MudText>
+        </MudStack>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Variant="Variant.Text" OnClick="() => _confirmVisible = false">Cancelar</MudButton>
+        <MudButton Color="Color.Error" Variant="Variant.Filled" OnClick="BorrarConfirmado">Borrar</MudButton>
+    </DialogActions>
+</MudDialog>

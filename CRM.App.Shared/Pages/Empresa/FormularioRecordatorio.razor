@@ -1,0 +1,102 @@
+﻿@page "/mis-registros"
+
+
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="py-8">
+
+    <MudPaper Elevation="5" Class="pa-6 rounded-2xl">
+
+        <MudText Typo="Typo.h5" Class="font-weight-bold mb-4">
+            <MudIcon Icon="@(recordatorio.Id == Guid.Empty ? Icons.Material.Filled.AddAlert : Icons.Material.Filled.Edit)" Class="mr-3" />
+            @(recordatorio.Id == Guid.Empty ? "Crear Nuevo Recordatorio" : $"Editar Recordatorio: {recordatorio.Nombre}")
+        </MudText>
+
+        <EditForm Model="@recordatorio" OnValidSubmit="Guardar">
+            <DataAnnotationsValidator />
+
+            <MudGrid>
+                <MudItem xs="12">
+                    <MudTextField @bind-Value="recordatorio.Nombre"
+                                  Label="Nombre del Aviso"
+                                  Required="true"
+                                  RequiredError="El nombre es obligatorio"
+                                  AdornmentIcon="@Icons.Material.Filled.Label"
+                                  Adornment="Adornment.Start" />
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudDatePicker @bind-Date="FechaSeleccionada"
+                                   Label="Fecha de Finalización"
+                                   Required="true"
+                                   RequiredError="La fecha es obligatoria"
+                                   AdornmentIcon="@Icons.Material.Filled.Event"
+                                   Adornment="Adornment.Start"
+                                   AutoClose="true" />
+                </MudItem>
+
+                <MudItem xs="12" sm="6">
+                    <MudTextField @bind-Value="recordatorio.CodigoBarco"
+                                  Label="Código Barco"
+                                  Required="true"
+                                  RequiredError="El Código Barco es obligatorio"
+                                  AdornmentIcon="@Icons.Material.Filled.DirectionsBoat"
+                                  Adornment="Adornment.Start" />
+                </MudItem>
+
+                <MudItem xs="12">
+                    <MudTextField @bind-Value="recordatorio.Descripcion"
+                                  Label="Descripción"
+                                  Lines="3"
+                                  AdornmentIcon="@Icons.Material.Filled.Description"
+                                  Adornment="Adornment.Start" />
+                </MudItem>
+
+                <MudItem xs="12" Class="mt-4">
+                    <MudStack Spacing="2">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">📧 Emails de aviso para la finalización</MudText>
+
+                        <MudTextField @bind-Value="_emailInput"
+                                      Label="Añadir email y pulsa Enter"
+                                      Placeholder="usuario@dominio.com"
+                                      Immediate="true"
+                                      OnKeyDown="OnEmailKeyDown"
+                                      Adornment="Adornment.Start"
+                                      AdornmentIcon="@Icons.Material.Filled.Email"
+                                      Variant="Variant.Outlined" />
+
+                        @if (!string.IsNullOrEmpty(_emailError))
+                        {
+                            <MudText Typo="Typo.caption" Color="Color.Error">@_emailError</MudText>
+                        }
+
+                        @if (EmailsAviso.Any())
+                        {
+                            <MudChipSet T="string" Class="mt-1">
+                                @foreach (var mail in EmailsAviso)
+                                {
+                                    <MudChip Text="@mail"
+                                             Color="Color.Primary"
+                                             Variant="Variant.Outlined"
+                                             Closeable="true"
+                                             OnClose="@((MudChip<string> c) => RemoveEmail(c.Text))" />
+                                }
+                            </MudChipSet>
+                        }
+
+                        <MudText Typo="Typo.caption" Class="opacity-70">
+                            Puedes pegar varios correos separados por coma, punto y coma o espacios.
+                        </MudText>
+                    </MudStack>
+                </MudItem>
+
+                <MudItem xs="12" Class="d-flex justify-end mt-4">
+                    <MudButton Href="/ruta-listado-recordatorios" Variant="Variant.Text" Class="mr-2">Cancelar</MudButton>
+                    <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="Guardar">
+                        @(recordatorio.Id == Guid.Empty ? "Crear Recordatorio" : "Guardar Cambios")
+                    </MudButton>
+                </MudItem>
+
+            </MudGrid>
+        </EditForm>
+    </MudPaper>
+</MudContainer>

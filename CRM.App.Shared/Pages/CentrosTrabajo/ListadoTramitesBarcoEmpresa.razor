@@ -1,0 +1,158 @@
+﻿@page "/empresa/tramites"
+@page "/mis-tramites"
+
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+@* @if (PlatformService.IsNativeApp)
+{
+    <CRM.App.Shared.Componentes.XAMLEscapeTrigger PageRoute="tramites" />
+}
+else
+{ *@ 
+    <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="py-4 mh-100">
+
+    <MudGrid GutterSize="12" Class="h-100" >
+        <MudItem xs="12" md="12" xl="12" Class="h-100">
+            <MudPaper Elevation="1" Class="p-0 rounded-2xl overflow-hidden h-100 d-flex flex-column">
+                @* d-flex flex-column permite que el contenido interno se estire verticalmente *@
+
+                <MudText Typo="Typo.h5" Class="pa-4 pb-2 font-weight-bold">Mis Certificados y Trámites</MudText>
+                
+                <MudRadioGroup @bind-Value="VistaSeleccionada" Dense="true" Class="ml-auto">
+                        <MudRadio Value="@TipoVista.Tramites" Color="Color.Primary" Size="Size.Small">
+                            Mís Trámites
+                        </MudRadio>
+                        <MudRadio Value="@TipoVista.Registros" Color="Color.Primary" Size="Size.Small" Class="ml-4">
+                            Mis Registros y Certificados
+                        </MudRadio>
+                    </MudRadioGroup>
+                
+                <MudDivider Class="mb-4" />
+
+                @switch(VistaSeleccionada)
+                {
+                    case TipoVista.Tramites:
+                        @if (tramites?.Any() ?? false)
+                        {
+                            <!-- Contenedor del Mosaico: Se envuelve en un div con overflow-y: auto para que las tarjetas scrollen internamente si es necesario. -->
+                            <div class="px-4 pb-4 overflow-y-auto">
+                                <MudGrid>
+                                    @* Se quita la clase del MudGrid aquí, ya que el scroll se controla en el div superior *@
+                                    @foreach (var t in tramites.Where(x => FiltroTramites(x)))
+                                    {
+                                        <MudItem xs="12" sm="6" lg="4">
+                                            @* MudPaper: Sombra y estilo de tarjeta individual. Usamos h-100 para que todas las tarjetas tengan la misma altura en la misma fila. *@
+                                            <MudPaper Elevation="3" Class="pa-4 rounded-lg h-100 d-flex flex-column justify-space-between">
+                                                <MudStack Spacing="1">
+
+                                                    @* Título del Certificado *@
+                                                    <MudText Typo="Typo.subtitle1" Class="font-weight-bold">@t.Certificado</MudText>
+
+                                                    @* Fecha de Caducidad *@
+                                                    <MudText Typo="Typo.caption" Class="mud-text-secondary">
+                                                        <MudIcon Icon="@Icons.Material.Filled.CalendarToday" Size="Size.Small" Class="mr-1" />
+                                                        Caduca: @t.FechaFin.ToString("dd/MM/yyyy")
+                                                    </MudText>
+
+                                                    <MudDivider Class="my-2" />
+
+                                                    @* Observaciones (si existen) *@
+                                                    @if (!string.IsNullOrWhiteSpace(t.Observaciones))
+                                                    {
+                                                        <MudText Typo="Typo.caption" Class="opacity-80">
+                                                            Observaciones: @t.Observaciones
+                                                        </MudText>
+                                                    }
+                                                </MudStack>
+
+                                                @* Botón de Adjunto (Alineado a la derecha, siempre en la parte inferior de la card) *@
+                                                <MudStack Row Spacing="1" Justify="Justify.FlexEnd" Class="mt-3">
+                                                    @if (!string.IsNullOrWhiteSpace(t.RutaFichero))
+                                                    {
+                                                        <MudButton Variant="Variant.Text"
+                                                                    Size="Size.Small"
+                                                                    StartIcon="@Icons.Material.Filled.AttachFile"
+                                                                    OnClick="@(() => OpenAdjuntoAsync(t))">
+                                                            Ver Adjunto
+                                                        </MudButton>
+                                                    }
+                                                </MudStack>
+                                            </MudPaper>
+                                        </MudItem>
+                                    }
+                                </MudGrid>
+                            </div>
+                        }
+                        else
+                        {
+                        <MudAlert Severity="Severity.Info" Class="ma-4">No hay trámites o certificados pendientes en este momento.</MudAlert>
+                        }
+                        break;
+                    case TipoVista.Registros:
+                        // *** Contenido para Registros del Usuario (Misma estructura, diferente colección/modelo) ***
+                        @if (!ListaRegistros.Any())
+                        {
+                            <div class="px-4 pb-4 overflow-y-auto">
+                                <MudGrid>
+                                    @foreach (var r in ListaRegistros.Where(x => FiltroRegistros(x)))
+                                    {
+                                        <MudItem xs="12" sm="6" lg="4">
+                                            <MudPaper Elevation="3" Class="pa-4 rounded-lg h-100 d-flex flex-column justify-space-between">
+                                                <MudStack Spacing="1">
+                                                    <MudText Typo="Typo.subtitle1" Class="font-weight-bold">@r.Nombre</MudText>
+                                                    <MudText Typo="Typo.caption" Class="mud-text-secondary">
+                                                        <MudIcon Icon="@Icons.Material.Filled.Event" Size="Size.Small" Class="mr-1" />
+                                                        Creado: @r.FechaFinalizacion.ToString("dd/MM/yyyy")
+                                                    </MudText>
+                                                    <MudDivider Class="my-2" />
+                                                    @if (!string.IsNullOrWhiteSpace(r.Descripcion))
+                                                    {
+                                                        <MudText Typo="Typo.caption" Class="opacity-80">
+                                                            Detalles: @r.Descripcion
+                                                        </MudText>
+                                                    }
+                                                </MudStack>
+    @*                                                 <MudStack Row Spacing="1" Justify="Justify.FlexEnd" Class="mt-3">
+                                                    @if (!string.IsNullOrWhiteSpace(r.RutaFichero))
+                                                    {
+                                                        <MudButton Variant="Variant.Text" Size="Size.Small" StartIcon="@Icons.Material.Filled.AttachFile"
+                                                                    OnClick="@(() => OpenAdjuntoRegistroAsync(r))">
+                                                            Ver Adjunto
+                                                        </MudButton>
+                                                    }
+                                                </MudStack> *@
+                                            </MudPaper>
+                                        </MudItem>
+                                    }
+                                </MudGrid>
+                            </div>
+                        }
+                        else
+                        {
+                            <MudAlert Severity="Severity.Info" Class="ma-4">No has creado ningún registro aún.</MudAlert>
+                        }
+
+
+                        break;
+                }
+
+                @if (VistaSeleccionada == TipoVista.Registros)
+                {
+                    <MudFab Color="Color.Primary"
+                            StartIcon="@Icons.Material.Filled.Add"
+                            Size="Size.Large"
+                            Variant="Variant.Filled"
+                            OnClick="AgregarRegistro"
+                            Label="Agregar Nuevo Registro"
+                            Class="position-fixed bottom-4 right-4"
+                            Style="bottom: 80px; right: 32px; z-index: 1000;" />
+                }
+
+            </MudPaper>
+
+        </MudItem>
+    </MudGrid>
+
+</MudContainer>
+@* } *@

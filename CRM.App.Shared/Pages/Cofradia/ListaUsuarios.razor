@@ -1,0 +1,373 @@
+﻿@page "/gestoria/usuarios"
+@using CRM.Dtos
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<MudThemeProvider />
+<MudDialogProvider />
+
+<MudSnackbarProvider />
+
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge">
+
+@*     <div class="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row">
+        <MudText Typo="Typo.h4" GutterBottom="true" Class="mb-3 mb-md-0">Gestión de usuarios para la Cofradía</MudText>
+        <div class="d-flex flex-column flex-md-row gap-2 w-100 w-md-auto">
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       Class="flex-fill"
+                       StartIcon="@Icons.Material.Filled.Add"
+                       Href="usuario/nuevo">
+                Nuevo usuario
+            </MudButton>
+        </div>
+    </div> *@
+
+    @if (isLoading)
+    {
+        <MudProgressCircular Indeterminate="true" Class="d-block mx-auto mt-5" />
+        <MudText Align="MudBlazor.Align.Center" Class="mt-3">Cargando datos...</MudText>
+    }
+    else if (!Usuarios.Any())
+    {
+        <MudText Align="MudBlazor.Align.Center" Class="mt-5 text-muted">No se encontraron Usuarios.</MudText>
+    }
+    else
+    {
+        <MudGrid>
+            <MudItem xs="12">
+
+                <MudStack Row AlignItems="AlignItems.Center" Justify="Justify.SpaceBetween" Class="mb-5 px-2">
+                    <MudStack Spacing="0">
+                        <MudText Typo="Typo.h4" Style="font-weight: 800;">Gestión de Usuarios</MudText>
+                        <MudText Typo="Typo.body2" Color="Color.Secondary">Administra los accesos y roles de la plataforma</MudText>
+                    </MudStack>
+
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Primary"
+                               StartIcon="@Icons.Material.Filled.Add"
+                               Size="Size.Large"
+                               OnClick="NuevoUsuario"
+                               Style="border-radius: 12px; text-transform: none; font-weight: 700;" Class="justify-content-end">
+                        Nuevo Usuario
+                    </MudButton>
+                </MudStack>
+             </MudItem> 
+        </MudGrid>
+
+        <MudGrid>
+                <MudItem xs="12" md="6">
+
+                <div class="grid-container">
+                        <QuickGrid Items="@Usuarios.AsQueryable().Where(u => string.IsNullOrEmpty(_filtroNombreUsuario) || 
+                                                           u.NombreUsuario.Contains(_filtroNombreUsuario, StringComparison.OrdinalIgnoreCase))" Class="quickgrid quickgrid-auto">
+                            <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(p => p.NombreUsuario)" Title="Usuario" Sortable="true" class="Col-Main">
+                                        <ColumnOptions>
+                                            <div class="p-2">
+                                                <MudTextField @bind-Value="_filtroNombreUsuario" 
+                                                              Placeholder="Filtrar nombre..." 
+                                                              Adornment="Adornment.Start" 
+                                                              AdornmentIcon="@Icons.Material.Filled.Search" 
+                                                              Margin="Margin.Dense" />
+                                            </div>
+                                        </ColumnOptions>
+                        </Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn>
+
+                        <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(p => p.NIFAcceso)" Title="NIF/DNI" Sortable="true" class="Col-Main" />
+                        
+                        <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Email" Sortable="true" class="Col-Main">
+                            <div class="d-flex align-center">
+                                <MudIcon Icon="@Icons.Material.Filled.Email" Size="Size.Small" Class="mr-2" Color="Color.Default"/>
+                                <span>@context.EMail</span>
+                            </div>
+                        </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+
+                        <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Acciones" 
+                                                                                  Align="Microsoft.AspNetCore.Components.QuickGrid.Align.Center" class="Col-Main">
+                            <div class="d-flex gap-1">
+                                <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" Color="Color.Info" 
+                                               OnClick="@(() => CargarDatosUsuario(context.Id))" />
+                                <MudIconButton Icon="@Icons.Material.Filled.Delete" Size="Size.Small" Color="Color.Error" 
+                                               OnClick="@(() => ConfirmarEliminar(context))" />
+                            </div>
+                        </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+                    </QuickGrid>
+
+                    </div>
+
+                    <div class="custom-pagination">
+                        <Paginator State="@pagination" />
+                    </div>
+
+                </MudItem>
+                
+@*                 <MudItem xs="12" md="6">
+
+                    <MudPaper Class="p-0 rounded-2xl overflow-hidden">
+                        <!-- Top AppBar / Header -->
+                        <MudToolBar Dense Class="px-3 py-2">
+                            <MudStack Row AlignItems="AlignItems.Center" Spacing="1" Class="w-100">
+                                <MudAvatar Icon="@Icons.Material.Filled.Person" Color="Color.Primary" Variant="Variant.Filled" />
+                                <MudText Typo="Typo.h6">
+                                    @(IsEditMode ? "Editar usuario" : "Crear nuevo usuario")
+                                </MudText>
+                                <MudSpacer />
+                                <MudButton Variant="Variant.Outlined" Color="Color.Default" OnClick="OnCancel_Click" StartIcon="@Icons.Material.Filled.Close">
+                                    Cancelar
+                                </MudButton>
+                                <MudButton Color="Color.Primary" OnClick="Guardar" StartIcon="@Icons.Material.Filled.Save">
+                                    Guardar
+                                </MudButton>
+                            </MudStack>
+                        </MudToolBar>
+
+                        <MudDivider />
+
+                        <MudCardContent Class="p-4">
+                            <MudForm Model="@usuario" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                                <MudValidationSummary />
+
+                                <MudGrid GutterSize="16">
+                                    <!-- Columna izquierda -->
+                                    <MudItem xs="12" md="6">
+                                        <MudStack Spacing="2">
+                                            <MudTextField @bind-Value="usuario.NombreUsuario"
+                                                          For="@(() => usuario.NombreUsuario)"
+                                                          Label="Nombre de usuario"
+                                                          Adornment="Adornment.Start"
+                                                          AdornmentIcon="@Icons.Material.Filled.Badge"
+                                                          Placeholder="Nombre y apellidos" />
+
+                                            <MudTextField @bind-Value="usuario.NIFAcceso"
+                                                          For="@(()=>usuario.NIFAcceso)"
+                                                          Label="NIF / DNI"
+                                                          Adornment="Adornment.Start"
+                                                          AdornmentIcon="@Icons.Material.Filled.Badge"
+                                                          Placeholder="Ej. 12345678A" />
+
+                                            <MudTextField @bind-Value="usuario.EMail"
+                                                          For="@(() => usuario.EMail)"
+                                                          Label="Email"
+                                                          Adornment="Adornment.Start"
+                                                          AdornmentIcon="@Icons.Material.Filled.Email"
+                                                          Placeholder="usuario@empresa.com"
+                                                          Required="true"
+                                                          RequiredError="El email es obligatorio." />
+                            
+                                             <MudTextField Label="Contraseña (mínimo 6 caracteres)"
+                                                              @bind-Value="usuario.PasswordHash"
+                                                              For="@(() => usuario.PasswordHash)"
+                                                              InputType="InputType.Password"
+                                                              Adornment="Adornment.Start"
+                                                              AdornmentIcon="@Icons.Material.Filled.Lock"
+                                                              Required="true"
+                                                              RequiredError="La contraseña es obligatoria." 
+                                                              HelperText="Se puede cambiar más tarde desde el perfil."/>
+           
+                                        </MudStack>
+                                    </MudItem>
+
+                                    <!-- Columna derecha -->
+                                    <MudItem xs="12" md="6">
+                                        <MudStack Spacing="2">
+                                            <MudSwitch @bind-Value="usuario.Activo" 
+                                                        Color="Color.Primary"
+                                                       Label="Usuario activo" />
+
+                                            <MudSelect Label="Tipo de usuario"
+                                                       @bind-Value="usuario.TipoUsuario"
+                                                       For="@(() => usuario.TipoUsuario)"
+                                                       AdornmentIcon="@Icons.Material.Filled.Person"
+                                                       Required="true"
+                                                       RequiredError="Selecciona un tipo de usuario.">
+                                                @foreach (CRM.Dtos.Enums.TipoUsuarioDto tipo in Enum.GetValues(typeof(CRM.Dtos.Enums.TipoUsuarioDto)))
+                                                {
+                                                    <MudSelectItem Value="@tipo">@tipo.ToString()</MudSelectItem>
+                                                }
+                                            </MudSelect>
+                                            @if (usuario.TipoUsuario.ToString() == "Empresa")
+                                            {
+                                                @if (Empresas is null)
+                                                {
+                                                    <MudSkeleton Height="40px" />
+                                                }
+                                                else if (!Empresas.Any())
+                                                {
+                                                    <MudAlert Severity="Severity.Warning">No hay empresas disponibles. Crea una primero.</MudAlert>
+                                                }
+                                                else
+                                                {
+                                                    <MudAutocomplete T="EmpresasDto" Label="Asignar a empresa"
+                                                               @bind-Value="EmpresaSelecionada"
+                                                               Variant="Variant.Outlined"
+                                                               DropdownSettings="_dropdownSettings"
+                                                               SearchFunc="BuscarEmpresa"
+                                                               ToStringFunc="@((dto) => dto?.NombreB ?? string.Empty)">
+                                                        
+                                                    </MudAutocomplete>
+                                                }
+                                            }
+                                            @* <MudSelect Label="Rol en la empresa"
+                                                       @bind-Value="usuario.Rol"
+                                                       For="@(() => usuario.Rol)"
+                                                       AdornmentIcon="@Icons.Material.Filled.AssignmentInd"
+                                                       Clearable="true">
+                                                <MudSelectItem Value="@("")">— Sin rol —</MudSelectItem>
+                                                <MudSelectItem Value="@("Administrador")">Administrador</MudSelectItem>
+                                                <MudSelectItem Value="@("Empleado")">Empleado</MudSelectItem>
+                                                <MudSelectItem Value="@("Contable")">Contable</MudSelectItem>
+                                            </MudSelect> 
+
+                                            <!-- Info contextual -->
+                                            <MudAlert Dense Severity="Severity.Info" Variant="Variant.Outlined">
+                                                El usuario recibirá acceso según el <b>Tipo de usuario</b> y el <b>Rol</b> asignado.
+                                            </MudAlert>
+                                        </MudStack>
+                                    </MudItem>
+                                </MudGrid>
+                            </MudForm>
+                        </MudCardContent>*@
+
+                        <!-- Footer pegajoso (opcional) -->
+                        @*<MudPaper Class="px-4 py-2 d-flex align-center justify-end" Elevation="0" Style="position:sticky; bottom:0; border-top:1px solid var(--mud-palette-lines-default); background:var(--mud-palette-surface);">
+                            <MudButton Variant="Variant.Outlined" Color="Color.Default" OnClick="OnCancel_Click" StartIcon="@Icons.Material.Filled.Close">
+                                Cancelar
+                            </MudButton>
+                            <MudButton Class="ml-2" Color="Color.Primary" OnClick="Guardar" StartIcon="@Icons.Material.Filled.Save">
+                                Guardar
+                            </MudButton>
+                        </MudPaper>
+                    </MudPaper>
+
+                </MudItem> *@
+            <MudItem xs="12" md="6">
+                <MudPaper Elevation="4" Class="p-0 rounded-xl overflow-hidden border border-solid mud-border-lines-default">
+                    <MudToolBar Dense Class="px-4 py-3 mud-theme-primary">
+                        <MudStack Row AlignItems="AlignItems.Center" Spacing="2" Class="w-100">
+                            <MudAvatar Color="Color.Surface" Variant="Variant.Filled" Size="Size.Medium">
+                                <MudIcon Icon="@(IsEditMode? Icons.Material.Filled.Edit : Icons.Material.Filled.PersonAdd)" Color="Color.Primary" />
+                            </MudAvatar>
+                            <MudText Typo="Typo.h6" Style="font-weight: 700; color: white;">
+                                @(IsEditMode ? "Editar Usuario" : "Crear Nuevo Usuario")
+                            </MudText>
+                            <MudSpacer />
+                            <MudIconButton Icon="@Icons.Material.Filled.Close" Color="Color.Inherit" OnClick="OnCancel_Click" Edge="Edge.End" />
+                        </MudStack>
+                    </MudToolBar>
+
+                    <MudCardContent Class="pa-6">
+                        <MudForm Model="@usuario" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                            <MudGrid Spacing="4">
+
+                                <MudItem xs="12" md="6">
+                                    <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="mb-4 font-bold">INFORMACIÓN DE IDENTIDAD</MudText>
+                                    <MudStack Spacing="3">
+                                        <MudTextField @bind-Value="usuario.NombreUsuario"
+                                                      For="@(() => usuario.NombreUsuario)"
+                                                      Label="Nombre Completo"
+                                                      Variant="Variant.Outlined"
+                                                      Margin="Margin.Dense"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Badge" />
+
+                                        <MudTextField @bind-Value="usuario.NIFAcceso"
+                                                      For="@(() => usuario.NIFAcceso)"
+                                                      Label="NIF / DNI"
+                                                      Variant="Variant.Outlined"
+                                                      Margin="Margin.Dense"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Fingerprint" />
+
+                                        <MudTextField @bind-Value="usuario.EMail"
+                                                      For="@(() => usuario.EMail)"
+                                                      Label="Correo Electrónico"
+                                                      Variant="Variant.Outlined"
+                                                      Margin="Margin.Dense"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Email" />
+
+                                        <MudTextField @bind-Value="usuario.PasswordHash"
+                                                      For="@(() => usuario.PasswordHash)"
+                                                      Label="Contraseña"
+                                                      InputType="InputType.Password"
+                                                      Variant="Variant.Outlined"
+                                                      Margin="Margin.Dense"
+                                                      Adornment="Adornment.Start"
+                                                      AdornmentIcon="@Icons.Material.Filled.Lock"
+                                                      HelperText="Mínimo 6 caracteres" />
+                                    </MudStack>
+                                </MudItem>
+
+                                <MudItem xs="12" md="6">
+                                    <MudText Typo="Typo.subtitle2" Color="Color.Primary" Class="mb-4 font-bold">CONFIGURACIÓN DE ACCESO</MudText>
+                                    <MudStack Spacing="3">
+                                        <MudPaper Variant="Variant.Outlined" Class="px-4 py-2 d-flex align-center justify-space-between mud-background-gray">
+                                            <MudText Typo="Typo.body2">Estado de la cuenta</MudText>
+                                            <MudSwitch @bind-Value="usuario.Activo" Color="Color.Success"
+                                                       Label="@(usuario.Activo ? "Activo" : "Inactivo")" />
+                                        </MudPaper>
+
+                                        <MudSelect T="CRM.Dtos.Enums.TipoUsuarioDto"
+                                                   Label="Tipo de Perfil"
+                                                   @bind-Value="usuario.TipoUsuario"
+                                                   Variant="Variant.Outlined"
+                                                   Margin="Margin.Dense"
+                                                   AdornmentIcon="@Icons.Material.Filled.AdminPanelSettings">
+                                            @foreach (CRM.Dtos.Enums.TipoUsuarioDto tipo in Enum.GetValues(typeof(CRM.Dtos.Enums.TipoUsuarioDto)))
+                                            {
+                                                <MudSelectItem Value="@tipo">@tipo.ToString()</MudSelectItem>
+                                            }
+                                        </MudSelect>
+
+                                        @if (usuario.TipoUsuario.ToString() == "Empresa")
+                                        {
+                                            <div class="animate-fade-in">
+                                                @if (Empresas is null)
+                                                {
+                                                    <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-4" />
+                                                }
+                                                else
+                                                {
+                                                    <MudAutocomplete T="EmpresasDto"
+                                                                     Label="Empresa Vinculada"
+                                                                     @bind-Value="EmpresaSelecionada"
+                                                                     Variant="Variant.Outlined"
+                                                                     Margin="Margin.Dense"
+                                                                     SearchFunc="BuscarEmpresa"
+                                                                     ToStringFunc="@((dto) => dto?.NombreB ?? string.Empty)"
+                                                                     ResetValueOnEmptyText="true"
+                                                                     CoerceText="true" AdornmentIcon="@Icons.Material.Filled.Business" />
+                                                }
+                                            </div>
+                                        }
+
+                                        <MudAlert Severity="Severity.Info" Variant="Variant.Text" Class="mt-2" Icon="@Icons.Material.Filled.Info">
+                                            El usuario recibirá un email de confirmación tras el registro.
+                                        </MudAlert>
+                                    </MudStack>
+                                </MudItem>
+                            </MudGrid>
+                        </MudForm>
+                    </MudCardContent>
+
+                    <MudDivider />
+                    <MudCardActions Class="pa-4 mud-background-gray">
+                        <MudSpacer />
+                        <MudButton Variant="Variant.Text"
+                                   Color="Color.Default"
+                                   OnClick="OnCancel_Click"
+                                   Class="px-6 py-2">Cancelar</MudButton>
+                        <MudButton Variant="Variant.Filled"
+                                   Color="Color.Primary"
+                                   OnClick="Guardar"
+                                   StartIcon="@Icons.Material.Filled.Save"
+                                   Class="px-8 py-2 ml-4 rounded-lg shadow-lg">
+                            Confirmar y Guardar
+                        </MudButton>
+                    </MudCardActions>
+                </MudPaper>
+
+                </MudItem>
+        </MudGrid>
+    }
+</MudContainer>

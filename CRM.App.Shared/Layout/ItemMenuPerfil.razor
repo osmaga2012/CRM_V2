@@ -1,0 +1,60 @@
+﻿@using CRM.Dtos
+<MudMenu AnchorOrigin="Origin.BottomCenter" TransformOrigin="Origin.TopLeft">
+    <ActivatorContent>
+        <MudAvatar>
+            <MudImage Src="@fotoBase64" />
+        </MudAvatar>
+    </ActivatorContent>
+    <ChildContent>
+        <MudMenuItem Icon="@Icons.Material.Filled.Person" Label="Perfil" Href="perfil" />
+        @* <MudMenuItem Icon="@Icons.Material.Filled.Settings" Label="Configuracion" href="configuracion" /> *@
+        <MudMenuItem Icon="@Icons.Material.Filled.Logout" Label="Cerrar sesión" OnClick="Logout" />
+    </ChildContent>
+</MudMenu>
+
+@code {
+
+    [Parameter] public UsuarioDto Usuario { get; set; }
+
+    [Inject] private IAuthService _authService { get; set; }
+    private string fotoBase64;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        // Solo actualiza si Usuario no es null y si los bytes de la foto han cambiado
+        // o si fotoBase64 aún no se ha establecido.
+        if (Usuario != null && (Usuario.FotoPerfil != null || fotoBase64 == null))
+        {
+            UpdateProfilePictureDisplay(Usuario.FotoPerfil);
+        }
+        // Si Usuario se vuelve null (ej. al cerrar sesión), también podemos limpiar la foto
+        else if (Usuario == null && fotoBase64 != null)
+        {
+            fotoBase64 = null;
+            StateHasChanged();
+        }
+        await Task.CompletedTask; // Asegura que el método es asíncrono
+    }
+
+
+    private async Task Logout()
+    {
+        await _authService.LogoutAsync();
+        Usuario = null; // Limpiar el usuario en el layout        
+    }
+
+    private void UpdateProfilePictureDisplay(byte[] imageBytes)
+    {
+        if (imageBytes != null && imageBytes.Length > 0)
+        {
+            // Nota: Aquí se asume 'image/jpeg' o 'image/png'. Si la API guarda el tipo de imagen,
+            // deberías usar ese tipo dinámicamente aquí.
+            fotoBase64 = $"data:image/png;base64,{Convert.ToBase64String(imageBytes)}";
+        }
+        else
+        {
+            fotoBase64 = null;
+        }
+        StateHasChanged(); // Forzar la actualización de la UI del avatar
+    }
+}

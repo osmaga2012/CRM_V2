@@ -1,0 +1,16 @@
+﻿@using CRM.App.Shared.Interfaces
+@inject IPlatformNavigationService NavigationService
+
+@code {
+    [Parameter]
+    public string PageRoute { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Solo se ejecuta una vez en la primera carga
+            NavigationService.NavigateToNativePage(PageRoute);
+        }
+    }
+}

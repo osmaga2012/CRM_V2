@@ -1,0 +1,71 @@
+﻿<MudDialog>
+    <TitleContent>
+        <MudText Typo="Typo.h6">
+            <MudIcon Icon="@Icons.Material.Filled.PersonAdd" Class="mr-3" /> Crear Usuario para Barco: @empresa.NombreArmador
+        </MudText>
+    </TitleContent>
+    <DialogContent>
+        <MudGrid Spacing="3">
+            @* Columna Izquierda: Lista de Usuarios del Barco/Empresa *@
+            <MudItem xs="12" sm="5">
+                <MudPaper Class="pa-4 mud-height-full mud-elevation-1">
+                    <MudText Typo="Typo.subtitle1" Class="mb-3 mud-text-primary">
+                        <MudIcon Icon="@Icons.Material.Filled.Group" Size="Size.Small" Class="mr-2" />
+                        Usuarios de la Empresa (@empresa.NombreArmador)
+                    </MudText>
+                    @if (isLoadingUsers)
+                    {
+                        <MudProgressCircular Indeterminate="true" Class="mx-auto my-4" />
+                        <MudText Align="Align.Center">Cargando usuarios...</MudText>
+                    }
+                    else if (!usuariosEmpresa.Any())
+                    {
+                        <MudText Align="Align.Center" Color="Color.Secondary">No hay usuarios asociados a esta empresa.</MudText>
+                    }
+                    else
+                    {
+                        <MudList Dense="true" T="string">
+                            @foreach (var user in usuariosEmpresa)
+                            {
+                                <MudListItem>
+                                    <div class="d-flex flex-column">
+                                        <MudText Typo="Typo.body2">@user.NombreUsuario</MudText>
+                                        <MudText Typo="Typo.caption" Color="Color.Secondary">@user.EMail</MudText>
+                                    </div>
+                                    <MudDivider Class="my-2" />
+                                </MudListItem>
+                            }
+                        </MudList>
+                    }
+                </MudPaper>
+            </MudItem>
+            <MudItem xs="12" sm="5">
+                <MudPaper Class="pa-4 mud-height-full mud-elevation-1">
+                    <MudText Typo="Typo.subtitle1" Class="mb-3 mud-text-primary">
+                        <MudIcon Icon="@Icons.Material.Filled.Group" Size="Size.Small" Class="mr-2" />
+                        Creación de usuario para el barco o empresa:  @empresa.CodigoEmpresa
+                    </MudText>  
+
+                    <MudForm Model="@usuario" 
+                        @ref="form" 
+                        @bind-IsValid="@success" 
+                        @bind-Errors="@errors">
+                        <MudValidationSummary />
+
+                            <MudTextField Label="NIF" @bind-Value="usuario.NIFAcceso "/>
+
+                            <MudTextField Label="Contraseña" @bind-Value="usuario.PasswordHash" />
+
+                            <MudTextField Label="Nombre Usuario" @bind-Value="usuario.NombreUsuario" />
+
+                    </MudForm>
+                    <MudToolBar>
+                        <MudButton OnClick="Guardar">Crear usuario</MudButton>
+                    </MudToolBar>
+                </MudPaper>
+            </MudItem>
+
+
+    </MudGrid>
+    </DialogContent>
+</MudDialog>

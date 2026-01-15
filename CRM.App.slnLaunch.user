@@ -10,7 +10,7 @@
       {
         "Path": "CRM.App\\CRM.App.csproj",
         "Action": "Start",
-        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
+        "DebugTarget": "pixel_7_-_api_35 (Android 15.0 - API 35)"
       }
     ]
   }

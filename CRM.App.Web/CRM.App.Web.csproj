@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>9b960e98-011d-489e-8b63-bc8127612625</UserSecretsId>
+    <!-- <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRM.App.Web.Client\CRM.App.Web.Client.csproj" />
+    <PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="8.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="MudBlazor" Version="8.15.0" />
+    <PackageReference Include="MudBlazor.ThemeManager" Version="3.0.0" />
+    <PackageReference Include="MudBlazor.Translations" Version="2.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CRM.Dtos">
+      <HintPath>..\..\..\CRM\CRM.Dtos\bin\Debug\net9.0\CRM.Dtos.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

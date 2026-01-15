@@ -1,0 +1,166 @@
+﻿@page "/login"
+@layout LoginLayout
+@using CRM.App.Shared.Interfaces
+@using CRM.App.Shared.Layout
+@using CRM.App.Shared.Services
+@using CRM.Dtos.Request
+@using CRM.Web.Shared.Interfaces
+
+@attribute [Microsoft.AspNetCore.Authorization.AllowAnonymous]
+
+@inject IAuthService authService
+@inject IFormFactor formFactor
+@inject IPlatformNavigationService Navigation
+
+@if (!string.IsNullOrEmpty(Error))
+{
+    <div class="alert alert-danger">@Error</div>
+}
+
+@*<div class="text-center mb-4">
+    <h3 class="login-title">Iniciar Sesión</h3>
+</div>
+
+@if (!string.IsNullOrEmpty(Error))
+{
+    <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i> @Error
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}*@
+
+<MudPaper Elevation="2" Class="pa-6">
+    <MudGrid Justify="Justify.Center" Spacing="4">
+        <MudItem xs="12" sm="5" Class="d-flex justify-center align-center">
+            <MudImage Src="imagenes/logo.png" Alt="Logo" Style="max-width: 100%; height: auto;" />
+        </MudItem>
+
+        <MudItem xs="12" sm="7" Class="d-flex justify-center align-center">
+            <EditForm Model="loginModel" OnSubmit="HandleLogin" Style="width: 100%;">
+                <DataAnnotationsValidator />
+                <MudCard>
+                    <MudCardHeader Class="text-center">
+                        <MudText Typo="Typo.h5" Align="Align.Center" Color="Color.Primary">Iniciar Sesión</MudText>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudTextField T="string"
+                                      Label="Identificación"
+                                      @bind-Value="loginModel.Email"
+                                      Placeholder="123456A ó A123456"
+                                      For="() => loginModel.Email"
+                                      Adornment="Adornment.Start"
+                                      AdornmentIcon="@Icons.Material.Filled.Key"
+                                      Variant="Variant.Outlined"
+                                      Required="true" />
+
+                        <MudTextField T="string"
+                                      Label="Contraseña"
+                                      @bind-Value="loginModel.Password"
+                                      Placeholder="********"
+                                      For="() => loginModel.Password"
+                                      Adornment="Adornment.Start"
+                                      AdornmentIcon="@Icons.Material.Filled.Lock"
+                                      InputType="InputType.Password"
+                                      Class="mt-4"
+                                      Variant="Variant.Outlined"
+                                      Required="true" />
+                    </MudCardContent>
+                    <MudCardActions Class="d-flex justify-center pa-4">
+                        <MudButton ButtonType="ButtonType.Submit"
+                                   Variant="Variant.Filled"
+                                   Color="Color.Primary"
+                                   FullWidth="true"
+                                   StartIcon="@Icons.Material.Filled.Login">
+                            Entrar
+                        </MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </EditForm>
+        </MudItem>
+
+        @if (!string.IsNullOrEmpty(Error))
+        {
+            <MudItem xs="12" Class="text-center mt-4">
+                <MudText Typo="Typo.body2" Color="Color.Secondary">
+                    @Error
+                </MudText>
+            </MudItem>
+        }
+    </MudGrid>
+</MudPaper>
+@* 
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+            <InputText id="email" class="form-control" @bind-Value="loginModel.Email" Placeholder="ejemplo@correo.com" />
+        </div>
+        <ValidationMessage For="() => loginModel.Email" />
+    </div>
+
+    <div class="mb-4"> @* Más margen antes del botón *@
+    @*    <label for="password" class="form-label">Contraseña</label>
+        <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+            <InputText id="password" type="password" class="form-control" @bind-Value="loginModel.Password" Placeholder="********" />
+        </div>
+        <ValidationMessage For="() => loginModel.Password" />
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 py-2">
+        <i class="bi bi-box-arrow-in-right me-2"></i> Entrar
+    </button>
+
+    <div class="text-center mt-4"> @* Margen superior y centrado para el enlace *@
+    @*    <small class="text-muted">
+            ¿Eres una gestoría? <a href="#" @onclick="IrARegistro" class="text-decoration-none fw-bold">Regístrate aquí</a>
+        </small>
+    </div>
+
+</EditForm> *@
+
+@code {
+    private LoginRequest loginModel = new();
+    private string Error;
+
+    private async Task HandleLogin()
+    {
+        try
+        {
+            var result = await authService.LoginAsync(loginModel.Email, loginModel.Password);
+
+            if (result.IsSuccess)
+            {
+                // 1. Esto DEBE actualizar el estado del CustomAuthStateProvider internamente
+                // Si tu authService no lo hace, el Router de Blazor seguirá pensando que eres Anónimo
+
+                await Task.Delay(100); // Pequeño respiro para que el token se asiente en el almacenamiento
+
+                // 2. Navegamos
+                await Navigation.NavigateToAsync("/");
+            }
+            else
+            {
+                Error = result.Message ?? "Error al iniciar sesión.";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error durante el inicio de sesión: {ex.Message}");
+            Error = $"{ex.Message} - {ex.InnerException.Message}";
+            //throw;
+        }
+
+
+    }
+
+    private void IrARegistro()
+    {
+        //Navigation.NavigateTo("registro-gestoria");
+    }
+}
+
