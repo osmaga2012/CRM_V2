@@ -17,6 +17,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0",
@@ -240,6 +242,32 @@
           }
         }
       },
+      "Microsoft.Extensions.FileProviders.Abstractions/10.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "10.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.52411"
+          }
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/10.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.1",
+          "Microsoft.Extensions.Diagnostics.Abstractions": "10.0.1",
+          "Microsoft.Extensions.FileProviders.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "10.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.52411"
+          }
+        }
+      },
       "Microsoft.Extensions.Http/10.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "10.0.1",
@@ -346,6 +374,47 @@
           "lib/net10.0/Microsoft.Extensions.Validation.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.125.57005"
+          }
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.1",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.1",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "assemblyVersion": "4.13.2.25331",
+            "fileVersion": "4.13.2.25331"
+          }
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {
+            "assemblyVersion": "4.13.2.25331",
+            "fileVersion": "4.13.2.25331"
+          },
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {
+            "assemblyVersion": "4.13.2.25331",
+            "fileVersion": "4.13.2.25331"
+          },
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {
+            "assemblyVersion": "4.13.2.25331",
+            "fileVersion": "4.13.2.25331"
+          },
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {
+            "assemblyVersion": "4.13.2.25331",
+            "fileVersion": "4.13.2.25331"
+          },
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {
+            "assemblyVersion": "4.13.2.25331",
+            "fileVersion": "4.13.2.25331"
           }
         }
       },
@@ -596,6 +665,20 @@
       "path": "microsoft.extensions.diagnostics.abstractions/10.0.1",
       "hashPath": "microsoft.extensions.diagnostics.abstractions.10.0.1.nupkg.sha512"
     },
+    "Microsoft.Extensions.FileProviders.Abstractions/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/ppSdehKk3fuXjlqCDgSOtjRK/pSHU8eWgzSHfHdwVm5BP4Dgejehkw+PtxKG2j98qTDEHDst2Y99aNsmJldmw==",
+      "path": "microsoft.extensions.fileproviders.abstractions/10.0.0",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.10.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/10.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KrN6TGFwCwqOkLLk/idW/XtDQh+8In+CL9T4M1Dx+5ScsjTq4TlVbal8q532m82UYrMr6RiQJF2HvYCN0QwVsA==",
+      "path": "microsoft.extensions.hosting.abstractions/10.0.0",
+      "hashPath": "microsoft.extensions.hosting.abstractions.10.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Http/10.0.1": {
       "type": "package",
       "serviceable": true,
@@ -658,6 +741,20 @@
       "sha512": "sha512-5bcu9zWhgY8AZUN1ERNH0BQKFh10xlx4UrCh+0cDn7wB01QkrK4S6Jh45fCgEqmWJWVGqBS2g8MN0Lu/99Zgdg==",
       "path": "microsoft.extensions.validation/10.0.1",
       "hashPath": "microsoft.extensions.validation.10.0.1.nupkg.sha512"
+    },
+    "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OqJFJiIz32BRBcxVCLX51s6/SNXVe6X16kKBcwxb7ZzZ14w1pT2OcHtqPxfj7NYZzAyA9gpX5EhvAdGHURYD7g==",
+      "path": "microsoft.fluentui.aspnetcore.components/4.13.2",
+      "hashPath": "microsoft.fluentui.aspnetcore.components.4.13.2.nupkg.sha512"
+    },
+    "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1AJ7yh79ELaPzcAdAwb7W0qvpTyVzh3xYGjw8Ibx+azujmSiUk5G0E7i2F4CQybVsAVN1f6l/CKO08VWKNGi9w==",
+      "path": "microsoft.fluentui.aspnetcore.components.icons/4.13.2",
+      "hashPath": "microsoft.fluentui.aspnetcore.components.icons.4.13.2.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Abstractions/8.15.0": {
       "type": "package",

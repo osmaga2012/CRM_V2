@@ -10,51 +10,21 @@ namespace CRM.Web.Shared.Helpers
     public class AuthorizedHttpClientHandler : DelegatingHandler
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly NavigationManager _navigation;
 
-        // Inyectamos IServiceProvider en lugar de IAuthService
-        public AuthorizedHttpClientHandler(
-            IServiceProvider serviceProvider,
-            NavigationManager navigation)
+        // Inyectamos solo IServiceProvider para resolver servicios bajo demanda
+        public AuthorizedHttpClientHandler(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-            _navigation = navigation;
         }
-
-        //protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-        //{
-        //    var response = await base.SendAsync(request, cancellationToken);
-
-        //    if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-        //    {
-        //        // 1. Limpiamos la sesión (Borrar token de SecureStorage, etc.)
-        //        // Esto debería disparar el NotifyUserLogout de tu Provider
-        //        var authService = _serviceProvider.GetRequiredService<IAuthService>();
-        //        await authService.LogoutAsync();
-
-        //        // 2. Navegación Segura en MAUI Blazor
-        //        // Usamos BeginInvoke para no bloquear el hilo de la petición
-        //        // y asegurar que el WebViewNavigationManager ya esté inicializado.
-        //        //_navigation.NavigateTo("/login");
-        //    }
-
-        //    return response;
-        //}
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            // 💡 Obtenemos el servicio "bajo demanda" dentro del método.
-            // Esto evita que se intente crear el IAuthService antes de tiempo.
+            // Resolver servicios bajo demanda para evitar dependencias de tiempo de construcción
             var authService = _serviceProvider.GetRequiredService<IAuthService>();
-
             var storageService = _serviceProvider.GetRequiredService<ISecureStorageService>();
 
-            // 2. Obtenemos el token directamente del storage (Web o MAUI)
+            // Obtener token
             var accessToken = await storageService.GetTokenAsync();
-
-            //var accessToken =  // await authService.GetAccessTokenAsync();
-
-
             if (!string.IsNullOrWhiteSpace(accessToken))
             {
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
@@ -64,10 +34,46 @@ namespace CRM.Web.Shared.Helpers
 
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             {
-                await authService.LogoutAsync();
-                _navigation.NavigateTo("login");
-                // Ojo: Retornar la respuesta original suele ser mejor para que el llamador vea el 401
+                // Limpiar sesión y notificar logout
+                try
+                {
+                    await authService.LogoutAsync();
+                }
+                catch
+                {
+                    // No bloquear por errores en LogoutAsync
+                }
 
+                // Intentar navegar usando el servicio de plataforma (MAUI-safe) si existe
+                try
+                {
+                    var platformNav = _serviceProvider.GetService<IPlatformNavigationService>();
+                    if (platformNav != null)
+                    {
+                        await platformNav.NavigateToAsync("login");
+                        return response;
+                    }
+
+                    // Fallback: intentar NavigationManager si está disponible (capturando errores)
+                    var nav = _serviceProvider.GetService<NavigationManager>();
+                    if (nav != null)
+                    {
+                        try
+                        {
+                            nav.NavigateTo("login");
+                        }
+                        catch
+                        {
+                            // Ignorar si NavigationManager no está inicializado (p. ej. WebView no listo)
+                        }
+                    }
+                }
+                catch
+                {
+                    // Evitar propagar excepciones de navegación desde el handler
+                }
+
+                // Retornamos la respuesta para que el llamador vea el 401 si es necesario
                 return response;
             }
 

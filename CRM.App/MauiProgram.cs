@@ -11,6 +11,7 @@ using CRM.Web.Shared.Providers;
 using CRM.Web.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.Logging;
+using Microsoft.FluentUI.AspNetCore.Components;
 using MudBlazor.Services;
 namespace CRM.App
 {
@@ -27,6 +28,8 @@ namespace CRM.App
                 });
 
             builder.Services.AddMudServices();
+            builder.Services.AddSingleton<Microsoft.FluentUI.AspNetCore.Components.GlobalState>();
+            builder.Services.AddSingleton<LibraryConfiguration>(new LibraryConfiguration { });
             builder.Services.AddBlazoredLocalStorage();
             // **Asegúrate de que estos estén presentes para MAUI:**
             //builder.Services.AddAuthorizationCore();

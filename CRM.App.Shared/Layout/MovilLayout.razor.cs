@@ -1,7 +1,9 @@
 ﻿using CRM.App.Shared.Interfaces;
+using CRM.Dtos;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using CRM.Dtos;
+using Microsoft.FluentUI.AspNetCore.Components;
+using MudBlazor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +24,22 @@ namespace CRM.App.Shared.Layout
         private bool _drawerOpen = true;
         private UsuarioDto? _loggedInUser; // El perfil del usuario, puede ser null
         private bool _isLoading = true; // Indica si se está cargando el perfil del usuario
+        string stylevalue = $"background-color: var(--neutral-layer-3); overflow: auto; resize: horizontal;width: 440px; height: 68px; padding: 10px;";
 
-        // Método para alternar el estado del drawer (barra lateral)
+        private string CurrentUri => Nav.ToBaseRelativePath(Nav.Uri).TrimEnd('/');
+
+        private string ActiveClass(string path, bool prefix)
+        {
+            var p = path.TrimStart('/').TrimEnd('/');
+            if (string.IsNullOrEmpty(CurrentUri) && string.IsNullOrEmpty(p)) return "active";
+            if (prefix)
+            {
+                return !string.IsNullOrEmpty(p) && CurrentUri.StartsWith(p, StringComparison.OrdinalIgnoreCase) ? "active" : "";
+            }
+            return string.Equals(CurrentUri, p, StringComparison.OrdinalIgnoreCase) ? "active" : "";
+        }
+
+
         void DrawerToggle()
         {
             _drawerOpen = !_drawerOpen;

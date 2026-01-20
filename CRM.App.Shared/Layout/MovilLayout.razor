@@ -1,114 +1,55 @@
 ﻿@using CRM.Dtos.Enums
+@using Microsoft.FluentUI.AspNetCore.Components
 @inherits LayoutComponentBase
+@inject NavigationManager Nav
+<LayoutView>
+    <div class="layout-root">
+        <header class="app-header" role="banner">
+            <!-- contenido del header si hace falta -->
+        </header>
 
-<style>
-    /* 1. Ajuste para la barra superior */
-    .my-custom-appbar {
-        padding-top: env(safe-area-inset-top) !important;
-        /* Calculamos la altura total: altura base + área segura */
-        height: calc(var(--mud-appbar-height) + env(safe-area-inset-top)) !important;
-    }
+        <div class="app-body">
+            <nav class="sidebar" role="navigation" aria-label="Main navigation">
+                <a class="sidebar-item @ActiveClass("/", false)" href="/">
+                    <span class="icon">🏠</span>
+                    <span class="text">Inicio</span>
+                </a>
+                <a class="sidebar-item @ActiveClass("/tramites", true)" href="/tramites">
+                    <span class="icon">📄</span>
+                    <span class="text">Trámites</span>
+                </a>
+                <a class="sidebar-item @ActiveClass("/barcos", true)" href="/barcos">
+                    <span class="icon">⛴️</span>
+                    <span class="text">Barcos</span>
+                </a>
+                <a class="sidebar-item @ActiveClass("/config", true)" href="/config">
+                    <span class="icon">⚙️</span>
+                    <span class="text">Config</span>
+                </a>
+            </nav>
 
-    /* 2. Ajuste para el contenido principal */
-    .native-content-area {
-        /* Asegura que el contenido empiece después de la barra ensanchada */
-        margin-top: env(safe-area-inset-top);
-        /* Si usas navegación inferior en el futuro, añade esto: */
-        padding-bottom: env(safe-area-inset-bottom) !important;
-    }
-
-    /* 3. Corrección para el Drawer (Menú lateral) */
-    /* Evita que los ítems del menú se monten sobre el notch cuando el drawer está abierto */
-    .mud-drawer-content {
-        padding-top: env(safe-area-inset-top) !important;
-    }
-</style>
-
-
-
-<MudThemeProvider />
-<MudDialogProvider />
-<MudSnackbarProvider />
-<MudPopoverProvider />
-
-@* <MudLayout>
-    <MudAppBar Fixed="true" Color="Color.Primary" Elevation="1" Dense="true">
-        @if (_loggedInUser?.TipoUsuario == TipoUsuarioDto.Administrador)
-        {
-            <InfoDatosCofradia />
-        }
-        <MudSpacer />
-        <MudText Typo="Typo.subtitle2" Class="mr-2">@_loggedInUser?.Nombre</MudText>
-        <ItemMenuPerfil Usuario="_loggedInUser" />
-    </MudAppBar>
-    <MudMainContent>
-        @Body
-    </MudMainContent>
-    <MudAppBar Bottom="true" Fixed="true" Color="Color.Surface" Elevation="4" Dense="true" Class="pb-safe">
-        <div class="d-flex justify-space-around mud-width-full">
-@*             <MudNavLink 
-                Href="/" 
-                Match="NavLinkMatch.All" 
-                Icon="@Icons.Material.Filled.Home" 
-                IconColor="Color.Inherit" 
-                Class="mobile-tab">Inicio</MudNavLink> *@
-@*            <MudNavLink     
-                Href="/tramites" 
-                Icon="@Icons.Material.Filled.Assignment" 
-                IconColor="Color.Inherit"                 
-                Class="mobile-tab">Trámites</MudNavLink>
-            <MudNavLink 
-                Href="/notificaciones" 
-                Icon="@Icons.Material.Filled.Notifications" 
-                IconColor="Color.Inherit" 
-                Class="mobile-tab">Avisos</MudNavLink>
-            <MudNavLink 
-                Href="/" 
-                Icon="@Icons.Material.Filled.Settings" 
-                IconColor="Color.Inherit" Class="mobile-tab">Ajustes</MudNavLink>
+            <main class="content" role="main">
+                <div class="mobile-main">
+                    @Body
+                </div>
+            </main>
         </div>
-    </MudAppBar>
-</MudLayout> *@
 
-                <MudLayout>
+        <footer class="bottom-nav" role="navigation" aria-label="Bottom navigation">
+            <a class="nav-item @ActiveClass("/", false)" href="/" aria-label="Inicio">
+                <span class="nav-icon">🏠</span>
+            </a>
+            <a class="nav-item @ActiveClass("/tramites", true)" href="/tramites" aria-label="Trámites">
+                <span class="nav-icon">📄</span>
+            </a>
+            <a class="nav-item @ActiveClass("/barcos", true)" href="/barcos" aria-label="Barcos">
+                <span class="nav-icon">⛴️</span>
+            </a>
+            <a class="nav-item @ActiveClass("/config", true)" href="/config" aria-label="Configuración">
+                <span class="nav-icon">⚙️</span>
+            </a>
+        </footer>
+    </div>
+</LayoutView>
 
-        @* --- DISEÑO PARA WEB --- *@
-        @* HEADER NATIVO *@
-    <MudAppBar Elevation="1" Color="Color.Primary" Class="my-custom-appbar">
-            <MudIconButton 
-                Icon="@Icons.Material.Filled.Menu" 
-                Color="Color.Inherit" 
-                Edge="Edge.Start" 
-                OnClick="DrawerToggle" />
-            <MudSpacer />
-            <MudText Typo="Typo.h6">Mi Cofradía</MudText>
-            <MudSpacer />
-            <MudIconButton 
-                Icon="@Icons.Material.Filled.Notifications" 
-                Color="Color.Inherit" />
-            <MudIconButton
-                Icon="@Icons.Material.Filled.Logout" 
-                Color="Color.Inherit" 
-                OnClick="Logout" />
-        </MudAppBar>
-
-        @* MENU LATERAL (DRAWER) *@
-    <MudDrawer @bind-Open="@_drawerOpen"
-               Elevation="2"
-               ClipMode="DrawerClipMode.Never"
-               Variant="@DrawerVariant.Responsive"
-               Fixed="true"
-               Breakpoint="Breakpoint.Md">
-            
-            <MainNavMenu />
-
-        
-        </MudDrawer>
-
-        @* CONTENIDO PRINCIPAL CON RELLENO PARA TABS *@
-        <MudMainContent>
-            <MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
-                @Body
-            </MudContainer>
-        </MudMainContent>
-</MudLayout>
+@* Mantener los bloques comentados originales si se necesitan más implementaciones. *@

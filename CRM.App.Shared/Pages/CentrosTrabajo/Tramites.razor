@@ -11,39 +11,39 @@
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.QuickGrid
 
+<div class="tramites-toolbar">
+    <input @bind="SearchString" placeholder="Buscar trámites..." class="tramites-search" />
+</div>
 
-
-<QuickGrid Items="FiltroTramites">
-    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(p => p.Id)" Sortable="true" />
-</QuickGrid>
-
-@* <AuthorizeView>
-    <Authorized>
-        <MudText Typo="Typo.h4">Mis Trámites y Recordatorios </MudText>
- 
-        <QuickGrid Items="FiltroTramites">
-             <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn 
-                Property="@(p => p.Id)" Sortable="true" /> 
-        </QuickGrid>  *@
-
-        @*@if (!PlatformService.IsNativeApp)
+@if (PlatformService.IsNativeApp)
+{
+    <div class="tramites-cards">
+        @foreach (var t in (FiltroTramites ?? Enumerable.Empty<TramiteDto>()))
         {
-            <MudText Typo="Typo.h4">Mis Trámites</MudText>
-            <CollectionView />  
+            <article class="tramite-card" role="article" @key="t.Id">
+                <div class="tramite-card-body">
+                    <h3 class="tramite-title">@t.NombreTramite</h3>
+                    <p class="tramite-sub">Id: @t.Id</p>
+                    @* Si hay más propiedades en TramiteDto añádelas aquí *@
+                </div>
+                <div class="tramite-card-footer">
+                    <button class="tramite-btn">Ver</button>
+                </div>
+            </article>
         }
-        else
-        {
-            <XAMLEscapeTrigger PageRoute="tramites" />
-        } *@
-        
-@*     </Authorized>
-    <Authorizing>
-        <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
-    </Authorizing>
-    <NotAuthorized>
-        @{
-            // Si llega aquí, es que realmente no tiene permiso
-            NavigationService.NavigateToAsync("/login");
-        }
-    </NotAuthorized>
-</AuthorizeView> *@
+    </div>
+}
+else
+{
+    <QuickGrid Items="FiltroTramites">
+        <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(p => p.Id)" Title="Id" Sortable="true" />
+        <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(p => p.NombreTramite)" Title="Nombre" Sortable="true" />
+        <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Acciones">
+            <Template Context="item">
+                <button class="tramite-btn">Ver</button>
+            </Template>
+        </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+    </QuickGrid>
+}
+
+@* Mantener otros comentarios o bloques según sea necesario *@

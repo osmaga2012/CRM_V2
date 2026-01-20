@@ -10,6 +10,7 @@ using CRM.Web.Shared.Interfaces;
 using CRM.Web.Shared.Providers;
 using CRM.Web.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.FluentUI.AspNetCore.Components;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.Services.AddMudServices();
+builder.Services.AddFluentUIComponents();
 
 // Add device-specific services used by the CRM.App.Shared project
 builder.Services.AddSingleton<IFormFactor, CRM.App.Web.Services.FormFactor>();

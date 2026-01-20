@@ -1,12 +1,16 @@
 ﻿@page "/barcos"
+@using CRM.App.Shared.Interfaces
+@using CRM.App.Shared.Services
+@using CRM.Dtos
 @using Microsoft.AspNetCore.Components.QuickGrid
+@using System.Linq
 
 <MudThemeProvider />
 
 <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pb-8 pt-4">
 
     <MudStack Direction="Row" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Class="mb-4">
-        <MudText Typo="Typo.h4">Centros de Trabajo - Barcos</MudText>
+        <MudText Typo="Typo.h4">Centros de Trabajo - Barcos1</MudText>
 
         <MudStack Row Spacing="2">
             <MudButton Variant="Variant.Outlined"
@@ -19,89 +23,79 @@
 
     </MudStack>
 
+    <div class="tramites-toolbar mb-4">
+        <MudTextField @bind-Value="_filtroBarco"
+                      Placeholder="Buscar por nombre, armador, capitán..."
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium"
+                      Class="mt-0 w-full" />
+    </div>
+
     <MudPaper Elevation="4" Class="overflow-hidden border border-solid mud-border-lines-default">
-        <div class="grid-container">
-            <QuickGrid Items="@empresas.AsQueryable()"
-                       Pagination="@paginacion"
-                       Class="quickgrid-auto" Virtualize="false">
-                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.NombreB)" Title="Nombre" Sortable="true" Class="col-main" />
+        <div class="grid-container p-4">
+            @if (PlatformService.IsNativeApp)
+            {
+                <div class="barcos-cards">
+                    @foreach (var e in (FiltroEmpresas ?? Enumerable.Empty<EmpresasDto>()))
+                    {
+                        <article class="barco-card" @key="e.CodigoEmpresa">
+                            <div class="barco-card-body" @onclick="() => OpenTramites(e.CodigoEmpresa, e.Barco)" style="cursor:pointer">
+                                <h3 class="barco-title">@e.Barco?.NombreA</h3>
+                                <p class="barco-sub">Empresa: @e.Empresa</p>
+                                <p class="barco-sub">Cód. Barco: @e.CodigoBarco</p>
+                                <p class="barco-sub">Armador: @e.NombreArmador</p>
+                            </div>
+                            <div class="barco-card-footer">
+                                <MudButton Variant="Variant.Text" OnClick="@(async () => await OpenTramitesAsync(e.CodigoEmpresa, e.Barco))">Ver Trámites</MudButton>
+                                <MudButton Variant="Variant.Outlined" OnClick="@(async () => await VerUsuariosBarco(e))">Usuarios</MudButton>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+            else
+            {
+                <QuickGrid Items="FiltroEmpresas"
+                           Pagination="@paginacion"
+                           Class="quickgrid-auto" Virtualize="false">
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Barco!.CodigoBarco)" Title="Cód. Barco" Sortable="true" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Barco!.NombreB)" Title="Nombre Barco" Sortable="true" Class="col-main" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.CodigoEmpresa)" Title="Cód. Empresa" Sortable="true" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Empresa )" Title="Empresa" Sortable="true" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.NombreArmador)" Title="Armador" Sortable="true" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EmpresaMatriz)" Title="Matriz" Sortable="true" />
 
-                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn
-                    Property="x => x.Barco.CodigoBarco" Title="Cód. Barco" Sortable="true" />                   
-                
-                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn
-                    Property="x => x.Empresa" Sortable="true" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn 
+                        Title="Acciones" 
+                        Align="Microsoft.AspNetCore.Components.QuickGrid.Align.End">
+                            <MudIconButton Icon="@Icons.Material.Filled.Dock"
+                                            Size="Size.Small"
+                                            OnClick="@(() => OpenTramitesAsync(context.CodigoEmpresa, context.Barco))" />
 
-                <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="x => x.NombreArmador" Sortable="true" />
-                
-                @* Columna de Acciones *@
-                <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn Title="Acciones" 
-                        Align="Microsoft.AspNetCore.Components.QuickGrid.Align.End" Class="col-actions">
-                    <div class="d-flex gap-2 justify-end">
-                        <MudTooltip Text="Ver Trámites">
-                            <MudIconButton Icon="@Icons.Material.Filled.Dock" 
-                                          Size="Size.Small" 
-                                          Color="Color.Info" 
-                                          Variant="Variant.Filled"
-                                          OnClick="@(() => VerTramites(context.CodigoEmpresa, context.Barco))" />
-                        </MudTooltip>
-                        
-                        <MudTooltip Text="Usuarios">
+
                             <MudIconButton Icon="@Icons.Material.Filled.Person4"
-                                          Size="Size.Small"
-                                          Color="Color.Primary"
-                                          Variant="Variant.Outlined"
-                                          OnClick="@(() => VerUsuariosBarco(context))" />
-                        </MudTooltip>
-                    </div>
-                </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
-
-            </QuickGrid>
+                                            Size="Size.Small"
+                                            OnClick="@(() => VerUsuariosBarco(context))" />
+@*                         <Template Context="context">
+                            <!-- Prueba rápida: texto simple para verificar que el template se renderiza -->
+                            <div class="d-flex gap-2 justify-end" style="min-width:150px; align-items:center;">
+                                Acciones (prueba)
+                            </div>
+                        </Template> *@
+                    </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
+                </QuickGrid>
+            }
         </div>
 
         @* Paginador Personalizado *@
-        <div class="custom-pagination">
+        <div class="custom-pagination p-4">
             <Paginator State="@paginacion" />
         </div>
     </MudPaper>
-
-@*     <MudDataGrid Items="@empresas"
-                         FixedHeader="true" FixedFooter="true" Height="600px"
-                         Breakpoint="Breakpoint.Sm"
-                         Hover="true" Dense="true" Bordered="false" Striped="true"
-                         FilterMode="@DataGridFilterMode.ColumnFilterRow" Filterable="true"
-                         QuickFilter="filtroEmpresa">
-            <ToolBarContent>
-                  <MudText Typo="Typo.h6">LISTADO DE CENTROS DE TRABAJO</MudText>
-                    <MudSpacer />
-                    <MudTextField @bind-Value="_filtroBarco"
-                                  Placeholder="Buscar por nombre, NIF..."
-                                  Adornment="Adornment.Start"
-                                  AdornmentIcon="@Icons.Material.Filled.Search"
-                                  IconSize="Size.Medium"
-                                  Class="mt-0 w-auto" /> 
-
-            </ToolBarContent>
-                <Columns>
-                    <PropertyColumn Property="x => x.Barco.CodigoBarco" Title="Barco" />
-                    <PropertyColumn Property="x => x.Barco!.NombreB" Title="Nombre" />
-                    <PropertyColumn Property="x => x.CodigoEmpresa" Title="Cód. Empresa" />
-                    <PropertyColumn Property="x => x.Empresa" Title="Nombre Empresa" />
-                    <PropertyColumn Property="x => x.NombreArmador" Title="Armador" />
-                    <TemplateColumn CellClass="d-flex justify-end">
-                        <CellTemplate>
-                            <MudIconButton Icon="@Icons.Material.Filled.Dock" 
-                                    Size="Size.Small" 
-                                    OnClick="@(() => VerTramites(context.Item.CodigoEmpresa, context.Item.Barco))" />
-
-                            <MudIconButton Icon="@Icons.Material.Filled.Person4"
-                                           Size="Size.Small"
-                                           OnClick="@(() => VerUsuariosBarco(context.Item))" />
-                        </CellTemplate>
-                    </TemplateColumn>
-
-                </Columns>
-    </MudDataGrid> *@
-
 </MudContainer>
+
+@code {
+
+}
 

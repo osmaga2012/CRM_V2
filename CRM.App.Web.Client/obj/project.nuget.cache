@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0hJBEIyIK0E=",
+  "dgSpecHash": "Ntekd/xrO2g=",
   "success": true,
   "projectFilePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
   "expectedPackageFiles": [
@@ -29,9 +29,10 @@
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.1\\microsoft.extensions.dependencyinjection.abstractions.10.0.1.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.diagnostics\\10.0.1\\microsoft.extensions.diagnostics.10.0.1.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\10.0.1\\microsoft.extensions.diagnostics.abstractions.10.0.1.nupkg.sha512",
-    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.8\\microsoft.extensions.fileproviders.abstractions.9.0.8.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\10.0.0\\microsoft.extensions.fileproviders.abstractions.10.0.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\9.0.8\\microsoft.extensions.fileproviders.physical.9.0.8.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\9.0.8\\microsoft.extensions.filesystemglobbing.9.0.8.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\10.0.0\\microsoft.extensions.hosting.abstractions.10.0.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.http\\10.0.1\\microsoft.extensions.http.10.0.1.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.localization\\9.0.1\\microsoft.extensions.localization.9.0.1.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\9.0.1\\microsoft.extensions.localization.abstractions.9.0.1.nupkg.sha512",
@@ -41,6 +42,8 @@
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.1\\microsoft.extensions.options.configurationextensions.10.0.1.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.1\\microsoft.extensions.primitives.10.0.1.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.extensions.validation\\10.0.1\\microsoft.extensions.validation.10.0.1.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.fluentui.aspnetcore.components\\4.13.2\\microsoft.fluentui.aspnetcore.components.4.13.2.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\microsoft.fluentui.aspnetcore.components.icons\\4.13.2\\microsoft.fluentui.aspnetcore.components.icons.4.13.2.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.15.0\\microsoft.identitymodel.abstractions.8.15.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.15.0\\microsoft.identitymodel.jsonwebtokens.8.15.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.identitymodel.logging\\8.15.0\\microsoft.identitymodel.logging.8.15.0.nupkg.sha512",

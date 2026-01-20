@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.components.webview\\10.0.0\\staticwebassets\\blazor.modules.json",
-      "PackagePath": "staticwebassets\\_framework\\blazor.modules.json"
-    },
-    {
       "Id": "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.components.webview\\10.0.0\\staticwebassets\\blazor.webview.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webview.js"
     },

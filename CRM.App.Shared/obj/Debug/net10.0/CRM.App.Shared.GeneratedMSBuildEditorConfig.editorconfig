@@ -45,10 +45,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XExvZ2luTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Layout/MovilLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1vdmlsTGF5b3V0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/CentrosTrabajo/ListadoTramitesBarcoEmpresa.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2VudHJvc1RyYWJham9cTGlzdGFkb1RyYW1pdGVzQmFyY29FbXByZXNhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -57,8 +53,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2VudHJvc1RyYWJham9cVXN1YXJpb3NcQ3JlYXJVc3VhcmlvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Cofradia/Configuracion.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29mcmFkaWFcQ29uZmlndXJhY2lvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Dashboard/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXERhc2hib2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Dashboard/MovilDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXE1vdmlsRGFzaGJvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Empresa/FormularioRecordatorio.razor]
@@ -101,13 +109,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-evklgxer15
 
-[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Layout/MainLayout2.razor]
-build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-mxw6gzptdj
-
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Layout/Menus/MainNavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1lbnVzXE1haW5OYXZNZW51LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-4i7gejni1b
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Layout/MovilLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1vdmlsTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-8n3eedword
 
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=

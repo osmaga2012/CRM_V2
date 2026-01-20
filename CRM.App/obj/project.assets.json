@@ -767,6 +767,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -3166,6 +3211,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -3944,6 +3991,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -6343,6 +6435,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -7121,6 +7215,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -9520,6 +9659,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -10298,6 +10439,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -12697,6 +12883,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -13475,6 +13663,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -15874,6 +16107,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -16652,6 +16887,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -19051,6 +19331,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -19813,6 +20095,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -20208,6 +20535,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -20970,6 +21299,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -21365,6 +21739,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -22127,6 +22503,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -22522,6 +22943,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -23284,6 +23707,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -23679,6 +24147,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -24441,6 +24911,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -24836,6 +25351,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -25598,6 +26115,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -25993,6 +26555,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -26755,6 +27319,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -27150,6 +27759,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -27912,6 +28523,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -28307,6 +28963,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -29069,6 +29727,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -29464,6 +30167,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -30226,6 +30931,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -30621,6 +31371,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -31383,6 +32135,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -31778,6 +32575,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -32540,6 +33339,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.15.0": {
         "type": "package",
         "compile": {
@@ -32935,6 +33779,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -33697,6 +34543,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.Graphics.Win2D/1.3.2": {
         "type": "package",
         "dependencies": {
@@ -34343,6 +35234,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -35105,6 +35998,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.Graphics.Win2D/1.3.2": {
         "type": "package",
         "dependencies": {
@@ -35689,6 +36627,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -36451,6 +37391,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.Graphics.Win2D/1.3.2": {
         "type": "package",
         "dependencies": {
@@ -37035,6 +38020,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -37797,6 +38784,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.Graphics.Win2D/1.3.2": {
         "type": "package",
         "dependencies": {
@@ -38381,6 +39413,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -39143,6 +40177,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.Graphics.Win2D/1.3.2": {
         "type": "package",
         "dependencies": {
@@ -39727,6 +40806,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -40489,6 +41570,51 @@
           }
         }
       },
+      "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "10.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Hosting.Abstractions": "10.0.0",
+          "Microsoft.Extensions.Http": "10.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props": {}
+        }
+      },
+      "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.FluentUI.AspNetCore.Components": "4.12.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll": {},
+          "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll": {}
+        }
+      },
       "Microsoft.Graphics.Win2D/1.3.2": {
         "type": "package",
         "dependencies": {
@@ -41083,6 +42209,8 @@
           "Microsoft.AspNetCore.Components.Web": "10.0.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "10.0.1",
           "Microsoft.Extensions.Http": "10.0.1",
+          "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
+          "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.15.0"
@@ -42179,6 +43307,87 @@
         "lib/net10.0/Microsoft.Extensions.Validation.xml",
         "microsoft.extensions.validation.10.0.1.nupkg.sha512",
         "microsoft.extensions.validation.nuspec"
+      ]
+    },
+    "Microsoft.FluentUI.AspNetCore.Components/4.13.2": {
+      "sha512": "OqJFJiIz32BRBcxVCLX51s6/SNXVe6X16kKBcwxb7ZzZ14w1pT2OcHtqPxfj7NYZzAyA9gpX5EhvAdGHURYD7g==",
+      "type": "package",
+      "path": "microsoft.fluentui.aspnetcore.components/4.13.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/Microsoft.FluentUI.AspNetCore.Components.props",
+        "buildMultiTargeting/Microsoft.FluentUI.AspNetCore.Components.props",
+        "buildTransitive/Microsoft.FluentUI.AspNetCore.Components.props",
+        "icon.png",
+        "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.dll",
+        "lib/net10.0/Microsoft.FluentUI.AspNetCore.Components.xml",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.dll",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.xml",
+        "lib/net9.0/Microsoft.FluentUI.AspNetCore.Components.dll",
+        "lib/net9.0/Microsoft.FluentUI.AspNetCore.Components.xml",
+        "microsoft.fluentui.aspnetcore.components.4.13.2.nupkg.sha512",
+        "microsoft.fluentui.aspnetcore.components.nuspec",
+        "staticwebassets/Components/Accordion/FluentAccordionItem.razor.js",
+        "staticwebassets/Components/Anchor/FluentAnchor.razor.js",
+        "staticwebassets/Components/AnchoredRegion/FluentAnchoredRegion.razor.js",
+        "staticwebassets/Components/Button/FluentButton.razor.js",
+        "staticwebassets/Components/Checkbox/FluentCheckbox.razor.js",
+        "staticwebassets/Components/DataGrid/FluentDataGrid.razor.js",
+        "staticwebassets/Components/DateTime/FluentTimePicker.razor.js",
+        "staticwebassets/Components/DesignSystemProvider/FluentDesignTheme.razor.js",
+        "staticwebassets/Components/Dialog/FluentDialogProvider.razor.js",
+        "staticwebassets/Components/Divider/FluentDivider.razor.js",
+        "staticwebassets/Components/Grid/FluentGrid.razor.js",
+        "staticwebassets/Components/HorizontalScroll/FluentHorizontalScroll.razor.js",
+        "staticwebassets/Components/InputFile/FluentInputFile.razor.js",
+        "staticwebassets/Components/KeyCode/FluentKeyCode.razor.js",
+        "staticwebassets/Components/Label/FluentInputLabel.razor.js",
+        "staticwebassets/Components/List/FluentAutocomplete.razor.js",
+        "staticwebassets/Components/List/FluentCombobox.razor.js",
+        "staticwebassets/Components/List/ListComponentBase.razor.js",
+        "staticwebassets/Components/Menu/FluentMenu.razor.js",
+        "staticwebassets/Components/NavMenu/FluentNavMenu.razor.js",
+        "staticwebassets/Components/Overflow/FluentOverflow.razor.js",
+        "staticwebassets/Components/Overlay/FluentOverlay.razor.js",
+        "staticwebassets/Components/PullToRefresh/FluentPullToRefresh.razor.js",
+        "staticwebassets/Components/Search/FluentSearch.razor.js",
+        "staticwebassets/Components/Slider/FluentSlider.razor.js",
+        "staticwebassets/Components/Slider/FluentSliderLabel.razor.js",
+        "staticwebassets/Components/SortableList/FluentSortableList.razor.js",
+        "staticwebassets/Components/Splitter/FluentMultiSplitter.razor.js",
+        "staticwebassets/Components/Tabs/FluentTab.razor.js",
+        "staticwebassets/Components/TextField/FluentTextField.razor.js",
+        "staticwebassets/Components/Toolbar/FluentToolbar.razor.js",
+        "staticwebassets/Components/Tooltip/FluentTooltip.razor.js",
+        "staticwebassets/Microsoft.FluentUI.AspNetCore.Components.ewdlgswx1m.bundle.scp.css",
+        "staticwebassets/Microsoft.FluentUI.AspNetCore.Components.lib.module.js",
+        "staticwebassets/Microsoft.FluentUI.AspNetCore.Components.lib.module.js.LEGAL.txt",
+        "staticwebassets/Microsoft.FluentUI.AspNetCore.Components.lib.module.js.map",
+        "staticwebassets/css/reboot.css",
+        "staticwebassets/js/initializersLoader.webview.js",
+        "staticwebassets/js/loading-theme.js"
+      ]
+    },
+    "Microsoft.FluentUI.AspNetCore.Components.Icons/4.13.2": {
+      "sha512": "1AJ7yh79ELaPzcAdAwb7W0qvpTyVzh3xYGjw8Ibx+azujmSiUk5G0E7i2F4CQybVsAVN1f6l/CKO08VWKNGi9w==",
+      "type": "package",
+      "path": "microsoft.fluentui.aspnetcore.components.icons/4.13.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll",
+        "lib/net8.0/Microsoft.FluentUI.AspNetCore.Components.Icons.dll",
+        "microsoft.fluentui.aspnetcore.components.icons.4.13.2.nupkg.sha512",
+        "microsoft.fluentui.aspnetcore.components.icons.nuspec"
       ]
     },
     "Microsoft.Graphics.Win2D/1.3.2": {

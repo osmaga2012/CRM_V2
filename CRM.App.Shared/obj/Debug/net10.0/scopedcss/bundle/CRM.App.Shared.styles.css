@@ -1,106 +1,8 @@
 @import '_content/Blazored.Modal/Blazored.Modal.bundle.scp.css';
 @import '_content/Microsoft.AspNetCore.Components.QuickGrid/Microsoft.AspNetCore.Components.QuickGrid.boiwgh0w5b.bundle.scp.css';
+@import '_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.ewdlgswx1m.bundle.scp.css';
 
 /* _content/CRM.App.Shared/Layout/MainLayout.razor.rz.scp.css */
-/*.page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
-}
-
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
-.top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
-
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
-
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row {
-        justify-content: space-between;
-    }
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
-    }
-}
-
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
-
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
-
-    .top-row, article {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
-}
-
-#blazor-error-ui {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
-*/
-/* _content/CRM.App.Shared/Layout/MainLayout2.razor.rz.scp.css */
 /*.page {
     position: relative;
     display: flex;
@@ -305,6 +207,89 @@ main {
         overflow-y: auto;
     }
 }*/
+/* _content/CRM.App.Shared/Layout/MovilLayout.razor.rz.scp.css */
+/* Layout adaptativo: sidebar en escritorio, bottom nav en m�vil */
+
+/* Reset b�sico para este scope */
+.layout-root[b-8n3eedword] { display:flex; flex-direction:column; min-height:100vh; }
+
+/* HEADER */
+.app-header[b-8n3eedword] { height: 56px; }
+
+/* BODY: sidebar + content */
+.app-body[b-8n3eedword] { display:flex; flex:1 1 auto; min-height:0; }
+
+/* Sidebar (oculto en m�vil) */
+.sidebar[b-8n3eedword] {
+    display:none;
+    width:240px;
+    background:var(--neutral-layer-2, #f5f5f5);
+    border-right:1px solid rgba(0,0,0,0.05);
+    padding-top:env(safe-area-inset-top);
+    box-sizing:border-box;
+    flex-direction:column;
+}
+.sidebar-item[b-8n3eedword] {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 16px;
+    color:var(--neutral-foreground-rest, #333);
+    text-decoration:none;
+}
+.sidebar-item .icon[b-8n3eedword] { font-size:20px; width:24px; text-align:center; }
+.sidebar-item .text[b-8n3eedword] { font-size:15px; white-space:nowrap; }
+
+/* Content area: reserva espacio inferior para la bottom nav en m�vil */
+.content[b-8n3eedword] { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; box-sizing:border-box; padding:16px; }
+.mobile-main[b-8n3eedword] { flex:1 1 auto; min-height:0; }
+
+/* Bottom navigation (visible en m�vil) */
+.bottom-nav[b-8n3eedword] {
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:68px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:var(--neutral-layer-3, #ffffff);
+    border-top:1px solid rgba(0,0,0,0.06);
+    padding:env(safe-area-inset-bottom) 0;
+    z-index:1000;
+}
+.nav-item[b-8n3eedword] { display:flex; align-items:center; justify-content:center; width:64px; height:100%; color:var(--neutral-foreground-rest, #333); text-decoration:none; }
+.nav-icon[b-8n3eedword] { font-size:22px; display:block; }
+
+/* Estado activo */
+.sidebar-item.active[b-8n3eedword],
+.nav-item.active[b-8n3eedword] {
+    color: var(--accent, #0078d4);
+    background: rgba(0,0,0,0.02);
+}
+.sidebar-item.active .text[b-8n3eedword] { font-weight:600 }
+
+/* Ocultar texto en mobile (sidebar hidden) */
+@media (max-width: 767.98px) {
+    .sidebar[b-8n3eedword] { display:none; }
+    .bottom-nav[b-8n3eedword] { display:flex; }
+    /* evitar que el contenido quede bajo la barra */
+    .content[b-8n3eedword] { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+}
+
+/* Mostrar sidebar en pantallas >= 768px y ocultar bottom nav */
+@media (min-width: 768px) {
+    .sidebar[b-8n3eedword] { display:flex; flex-direction:column; }
+    .bottom-nav[b-8n3eedword] { display:none; }
+    .content[b-8n3eedword] { padding-bottom: 24px; padding-left: 24px; }
+}
+
+/* Ajustes para que los enlaces no colapsen y no aparezca "m�s" */
+.sidebar-item[b-8n3eedword], .nav-item[b-8n3eedword] { min-width:0; box-sizing:border-box; overflow:visible; white-space:nowrap; }
+
+/* Small accessibility focus */
+.sidebar-item:focus[b-8n3eedword], .nav-item:focus[b-8n3eedword] { outline: 2px solid rgba(0,120,212,0.18); outline-offset:2px; }
 /* _content/CRM.App.Shared/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-ohy7y9jvt4] {
     appearance: none;

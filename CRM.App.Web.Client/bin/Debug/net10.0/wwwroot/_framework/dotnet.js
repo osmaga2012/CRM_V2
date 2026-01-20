@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "CRM.App.Web.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-rlALLFRT8BkCehL++U7n+mSpcR86LfLA6uQZn25gjx0=",
+    "hash": "sha256-RCJQOa97ue3YmDopaV6ulDfe5bJSJoQwmxp33XCpvsQ=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.87vtjjdetb.js"
@@ -215,6 +215,12 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "cache": "force-cache"
       },
       {
+        "virtualPath": "Microsoft.Extensions.Hosting.Abstractions.wasm",
+        "name": "Microsoft.Extensions.Hosting.Abstractions.5v78u2d057.wasm",
+        "integrity": "sha256-0c9gyK1sKEo1s+qWFk3flxs41nPzNu5D5Dw3027SMco=",
+        "cache": "force-cache"
+      },
+      {
         "virtualPath": "Microsoft.Extensions.Http.wasm",
         "name": "Microsoft.Extensions.Http.bonmm5uuoo.wasm",
         "integrity": "sha256-pXQ/rJSLlPCwDbhq2eu+SROYh69+g60MQxA6ZZ4Wjug=",
@@ -266,6 +272,42 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "virtualPath": "Microsoft.Extensions.Validation.wasm",
         "name": "Microsoft.Extensions.Validation.iiwnap85de.wasm",
         "integrity": "sha256-WhIgBR+n1ltOl6nlBBa3PFel1YN/UVGqCmCUfj2ihKs=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.FluentUI.AspNetCore.Components.wasm",
+        "name": "Microsoft.FluentUI.AspNetCore.Components.poarwhv08k.wasm",
+        "integrity": "sha256-2WK3bzbt730bOsDu5cZGHfOQ5zrMYZ5fgNOqes+pSj8=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.FluentUI.AspNetCore.Components.Icons.Color.wasm",
+        "name": "Microsoft.FluentUI.AspNetCore.Components.Icons.Color.s6om1sjgua.wasm",
+        "integrity": "sha256-9OTLSQQUrOM59QUAC4UDONeQzi81DIpNuZcNbpT6blg=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.wasm",
+        "name": "Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.wqflkrmz4a.wasm",
+        "integrity": "sha256-CL2mMCMFdAXV+QqBpgoyW49SYKTGLgfWAOMlhSQeF7Q=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.FluentUI.AspNetCore.Components.Icons.Light.wasm",
+        "name": "Microsoft.FluentUI.AspNetCore.Components.Icons.Light.5aqoxmsv8w.wasm",
+        "integrity": "sha256-DfTQh8cndzUDwwefyfAZ+oL54VYpCLMsQy9rhiPt0AE=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.wasm",
+        "name": "Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.ddfxcdhi39.wasm",
+        "integrity": "sha256-78MyecMh3qrahonklOeA4miQvwKnLF6ExdfW6bkOeXs=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "Microsoft.FluentUI.AspNetCore.Components.Icons.wasm",
+        "name": "Microsoft.FluentUI.AspNetCore.Components.Icons.8xxwr6lze1.wasm",
+        "integrity": "sha256-RKmzEW0ho3jvbBoiNkBJuHjby0bgKXF+rlIW30ex+ts=",
         "cache": "force-cache"
       },
       {
@@ -1344,8 +1386,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Shared.wasm",
-        "name": "CRM.App.Shared.4wuext6t38.wasm",
-        "integrity": "sha256-5Ij3rPiRVGdUHCdnMKIM/osTUp3OhZLoxSA5+pbT088=",
+        "name": "CRM.App.Shared.n1pmvxbu4m.wasm",
+        "integrity": "sha256-S/uWUYPwcUctHnB8vTJpB4x9SeoWqNgS+Q6yRhSTKkI=",
         "cache": "force-cache"
       },
       {
@@ -1356,16 +1398,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Web.Client.wasm",
-        "name": "CRM.App.Web.Client.g9hpu4jmz6.wasm",
-        "integrity": "sha256-XL5/ybBMk4eeYfakVUIQ1aSpSHdDtR91b+UPwhYToOI=",
+        "name": "CRM.App.Web.Client.eyn93r7y85.wasm",
+        "integrity": "sha256-hgBt3NugoDVL6wo6x+Af9afPoO4bTg5omqKejsOVY0I=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "CRM.App.Shared.pdb",
-        "name": "CRM.App.Shared.8rcy4lrk2v.pdb",
-        "integrity": "sha256-7OKftVKcU+X8I5x5YfUA7xFPibzVl2lcu6MIBjmQbg8=",
+        "name": "CRM.App.Shared.tp4a6y89m4.pdb",
+        "integrity": "sha256-n3tmJgLiRhTVnMYmwvEeC4NwrDHIWLnYvGG1d7xzN1Q=",
         "cache": "force-cache"
       },
       {
@@ -1376,17 +1418,23 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Web.Client.pdb",
-        "name": "CRM.App.Web.Client.cswiqw98yc.pdb",
-        "integrity": "sha256-fOC3xK/bHKIYizmOhvQJPfmgHST3KZPc9oOiZVSuguE=",
+        "name": "CRM.App.Web.Client.clezs5p8lr.pdb",
+        "integrity": "sha256-oJTX4yHKVdQFtysC0xgK8N09S/SxKrDTbsAuJq6+/+k=",
         "cache": "force-cache"
       }
     ],
     "libraryInitializers": [
       {
+        "name": "_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js"
+      },
+      {
         "name": "_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.99zm1jdh75.lib.module.js"
       }
     ],
     "modulesAfterConfigLoaded": [
+      {
+        "name": "../_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js"
+      },
       {
         "name": "../_content/Microsoft.DotNet.HotReload.WebAssembly.Browser/Microsoft.DotNet.HotReload.WebAssembly.Browser.99zm1jdh75.lib.module.js"
       }
