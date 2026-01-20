@@ -12,12 +12,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ems4snnqzo</Fingerprint>
-      <Integrity>5rFFe1PW22gf7WKj9yUE+ARH8KfCN6+dDJCx+wsYAFU=</Integrity>
+      <Fingerprint>h1olt0attq</Fingerprint>
+      <Integrity>C3ZwsZoTH3fy4LfG19QnV1RZ89KcmL05IrfcFxVrIUM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>1763</FileLength>
-      <LastWriteTime>Wed, 14 Jan 2026 22:14:34 GMT</LastWriteTime>
+      <FileLength>3280</FileLength>
+      <LastWriteTime>Sat, 17 Jan 2026 08:25:23 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRM.App.styles.css'))">
@@ -32,12 +32,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>h23a3wytvu</Fingerprint>
-      <Integrity>9w7jYNzMkdPYd3SPt53/uPTgWGJ8N7d/1IgFDBh3ZqM=</Integrity>
+      <Fingerprint>ak1n9rk919</Fingerprint>
+      <Integrity>qtw4pv6ZWt4pSnQr994khHuHe+c0OAfV0M20aJNfYIQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>276</FileLength>
-      <LastWriteTime>Wed, 14 Jan 2026 20:52:51 GMT</LastWriteTime>
+      <FileLength>405</FileLength>
+      <LastWriteTime>Sat, 17 Jan 2026 19:29:33 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRM.App.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\logo.png'))">
@@ -99,26 +99,6 @@
       <FileLength>1187</FileLength>
       <LastWriteTime>Mon, 05 Jan 2026 11:34:24 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\_framework\blazor.modules.json'))">
-      <SourceType>Package</SourceType>
-      <SourceId>CRM.App</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>/</BasePath>
-      <RelativePath>_framework/blazor.modules.json</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>79h83ocrro</Fingerprint>
-      <Integrity>pTONlVsJBG7AsW86liW3lVx2Oq4H3HIuR05geHRfky8=</Integrity>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>4</FileLength>
-      <LastWriteTime>Thu, 23 Oct 2025 22:45:30 GMT</LastWriteTime>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\_framework\blazor.modules.json'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\_framework\blazor.webview.js'))">
       <SourceType>Package</SourceType>

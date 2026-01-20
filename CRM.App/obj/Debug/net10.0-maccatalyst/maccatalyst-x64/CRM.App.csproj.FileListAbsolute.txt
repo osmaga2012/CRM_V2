@@ -43,6 +43,12 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Primitives.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Validation.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.FluentUI.AspNetCore.Components.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.FluentUI.AspNetCore.Components.Icons.Color.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.FluentUI.AspNetCore.Components.Icons.Filled.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.FluentUI.AspNetCore.Components.Icons.Light.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.FluentUI.AspNetCore.Components.Icons.Regular.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.FluentUI.AspNetCore.Components.Icons.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.IdentityModel.Logging.dll
@@ -311,6 +317,7 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\rjimswa.dswa.cache.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\rjsmrazor.dswa.cache.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\rjsmcshtml.dswa.cache.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\jsmodules\jsmodules.build.manifest.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\scopedcss\bundle\CRM.App.styles.css
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets.build.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets.build.json.cache
@@ -324,6 +331,7 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets\msbuild.buildTransitive.CRM.App.props
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets.pack.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets.upToDateCheck.txt
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\jsmodules\jsmodules.publish.manifest.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets.publish.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\staticwebassets.publish.endpoints.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\swae.publish.ex.cache

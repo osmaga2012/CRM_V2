@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CRM.App"
              xmlns:shared="clr-namespace:CRM.App.Shared;assembly=CRM.App.Shared"
-             x:Class="CRM.App.MainPage"
+             x:Class="CRM.App.MainPage" SafeAreaEdges="All"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
