@@ -100,23 +100,23 @@
           "buildMultiTargeting/Microsoft.AspNetCore.Components.QuickGrid.props": {}
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly/9.0.8": {
+      "Microsoft.AspNetCore.Components.WebAssembly/10.0.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.JSInterop.WebAssembly": "9.0.8"
+          "Microsoft.JSInterop.WebAssembly": "10.0.2"
         },
         "compile": {
-          "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
+          "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
+          "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
             "related": ".xml"
           }
         },
         "build": {
-          "build/net9.0/_._": {}
+          "build/net10.0/_._": {}
         }
       },
       "Microsoft.AspNetCore.Components.WebAssembly.Server/9.0.8": {
@@ -253,15 +253,15 @@
           }
         }
       },
-      "Microsoft.JSInterop.WebAssembly/9.0.8": {
+      "Microsoft.JSInterop.WebAssembly/10.0.2": {
         "type": "package",
         "compile": {
-          "lib/net9.0/Microsoft.JSInterop.WebAssembly.dll": {
+          "lib/net10.0/Microsoft.JSInterop.WebAssembly.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net9.0/Microsoft.JSInterop.WebAssembly.dll": {
+          "lib/net10.0/Microsoft.JSInterop.WebAssembly.dll": {
             "related": ".xml"
           }
         }
@@ -467,6 +467,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
           "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
           "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
@@ -487,7 +488,8 @@
         "dependencies": {
           "Blazored.LocalStorage": "4.5.0",
           "CRM.App.Shared": "1.0.0",
-          "Microsoft.AspNetCore.Components.WebAssembly": "9.0.8",
+          "CRM.Dtos": "1.0.0",
+          "Microsoft.AspNetCore.Components.WebAssembly": "10.0.2",
           "Microsoft.DotNet.HotReload.WebAssembly.Browser": "10.0.102",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0"
@@ -497,6 +499,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Web.Client.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     }
@@ -669,20 +694,21 @@
         "staticwebassets/QuickGrid.razor.js"
       ]
     },
-    "Microsoft.AspNetCore.Components.WebAssembly/9.0.8": {
-      "sha512": "48tIkTqwYq/DVCxuDIbgz58JN15qveZqsyy+lZG5Lk8/y40JMjTioyOq1bYIX6SNLRRrGfJxZ2loh2w7+x/+4w==",
+    "Microsoft.AspNetCore.Components.WebAssembly/10.0.2": {
+      "sha512": "xJ0Qi75jnR75IhZhEwIdH04WH03wbJEAbilFND4SKYH0xgG/4oNAarb4Duvb0/5ko6/qcn4rCmzRuNJ1hF4dRw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.webassembly/9.0.8",
+      "path": "microsoft.aspnetcore.components.webassembly/10.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.txt",
-        "build/net9.0/Microsoft.AspNetCore.Components.WebAssembly.props",
-        "build/net9.0/blazor.webassembly.js",
-        "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.dll",
-        "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.xml",
-        "microsoft.aspnetcore.components.webassembly.9.0.8.nupkg.sha512",
+        "build/net10.0/Microsoft.AspNetCore.Components.WebAssembly.props",
+        "build/net10.0/blazor.webassembly.js",
+        "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.dll",
+        "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.xml",
+        "microsoft.aspnetcore.components.webassembly.10.0.2.nupkg.sha512",
         "microsoft.aspnetcore.components.webassembly.nuspec"
       ]
     },
@@ -918,18 +944,18 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.JSInterop.WebAssembly/9.0.8": {
-      "sha512": "eevGq068Owgf1q6EswauGQ1JVu5FsM4K52l4H+Lx8/HaU2EUaAs6LzsawJkUOq6bBPxPTwaCsr/Sxv2iEMcm2Q==",
+    "Microsoft.JSInterop.WebAssembly/10.0.2": {
+      "sha512": "XeNFL2ozbjbPe32be7OVC3peMbS+vM1hu6Cp0RZfF1HepDRTmohQ+p3LF7BVhEKETxCh1/dd5sUwYuB7I/iApw==",
       "type": "package",
-      "path": "microsoft.jsinterop.webassembly/9.0.8",
+      "path": "microsoft.jsinterop.webassembly/10.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "THIRD-PARTY-NOTICES.txt",
-        "lib/net9.0/Microsoft.JSInterop.WebAssembly.dll",
-        "lib/net9.0/Microsoft.JSInterop.WebAssembly.xml",
-        "microsoft.jsinterop.webassembly.9.0.8.nupkg.sha512",
+        "lib/net10.0/Microsoft.JSInterop.WebAssembly.dll",
+        "lib/net10.0/Microsoft.JSInterop.WebAssembly.xml",
+        "microsoft.jsinterop.webassembly.10.0.2.nupkg.sha512",
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
@@ -1232,11 +1258,22 @@
       "type": "project",
       "path": "../CRM.App.Web.Client/CRM.App.Web.Client.csproj",
       "msbuildProject": "../CRM.App.Web.Client/CRM.App.Web.Client.csproj"
+    },
+    "CRM.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj",
+      "msbuildProject": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj"
+    },
+    "CRM.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj",
+      "msbuildProject": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "CRM.App.Web.Client >= 1.0.0",
+      "CRM.Dtos >= 1.0.0",
       "CodeBeam.MudBlazor.Extensions >= 8.3.0",
       "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 9.0.8",
@@ -1279,6 +1316,9 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
+            "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
+              "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
+            },
             "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj": {
               "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj"
             }

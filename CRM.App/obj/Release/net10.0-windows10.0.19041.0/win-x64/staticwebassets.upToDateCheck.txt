@@ -1,0 +1,5 @@
+wwwroot\app.css
+wwwroot\imagenes\logo.png
+wwwroot\imagenes\logo_gandia.png
+wwwroot\index.html
+C:\Users\oscar\.nuget\packages\microsoft.aspnetcore.components.webview\10.0.0\build\..\staticwebassets\blazor.webview.js

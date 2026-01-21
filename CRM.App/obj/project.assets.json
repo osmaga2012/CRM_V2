@@ -3205,6 +3205,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -3222,6 +3223,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -6429,6 +6453,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -6446,6 +6471,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -9653,6 +9701,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -9670,6 +9719,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -12877,6 +12949,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -12894,6 +12967,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -16101,6 +16197,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -16118,6 +16215,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -19325,6 +19445,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -19342,6 +19463,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -20529,6 +20673,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -20546,6 +20691,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -21733,6 +21901,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -21750,6 +21919,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -22937,6 +23129,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -22954,6 +23147,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -24141,6 +24357,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -24158,6 +24375,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -25345,6 +25585,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -25362,6 +25603,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -26549,6 +26813,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -26566,6 +26831,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -27753,6 +28041,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -27770,6 +28059,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -28957,6 +29269,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -28974,6 +29287,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -30161,6 +30497,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -30178,6 +30515,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -31365,6 +31725,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -31382,6 +31743,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -32569,6 +32953,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -32586,6 +32971,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -33773,6 +34181,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -33790,6 +34199,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -35228,6 +35660,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -35245,6 +35678,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -36621,6 +37077,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -36638,6 +37095,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -38014,6 +38494,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -38031,6 +38512,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -39407,6 +39911,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -39424,6 +39929,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -40800,6 +41328,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -40817,6 +41346,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     },
@@ -42203,6 +42755,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -42220,6 +42773,29 @@
         },
         "runtime": {
           "bin/placeholder/CRM.App.Shared.dll": {}
+        }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
         }
       }
     }
@@ -47641,6 +48217,16 @@
       "type": "project",
       "path": "../CRM.App.Shared/CRM.App.Shared.csproj",
       "msbuildProject": "../CRM.App.Shared/CRM.App.Shared.csproj"
+    },
+    "CRM.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj",
+      "msbuildProject": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj"
+    },
+    "CRM.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj",
+      "msbuildProject": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj"
     }
   },
   "projectFileDependencyGroups": {

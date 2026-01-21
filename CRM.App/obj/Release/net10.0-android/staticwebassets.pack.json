@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.components.webview\\10.0.0\\staticwebassets\\blazor.webview.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webview.js"
+    },
+    {
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\obj\\Release\\net10.0-android\\scopedcss\\bundle\\CRM.App.styles.css",
+      "PackagePath": "staticwebassets\\CRM.App.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\imagenes\\logo.png",
+      "PackagePath": "staticwebassets\\imagenes\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\imagenes\\logo_gandia.png",
+      "PackagePath": "staticwebassets\\imagenes\\logo_gandia.png"
+    },
+    {
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net10.0-android\\staticwebassets\\msbuild.CRM.App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net10.0-android\\staticwebassets\\msbuild.CRM.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net10.0-android\\staticwebassets\\msbuild.build.CRM.App.props",
+      "PackagePath": "build\\CRM.App.props"
+    },
+    {
+      "Id": "obj\\Release\\net10.0-android\\staticwebassets\\msbuild.buildMultiTargeting.CRM.App.props",
+      "PackagePath": "buildMultiTargeting\\CRM.App.props"
+    },
+    {
+      "Id": "obj\\Release\\net10.0-android\\staticwebassets\\msbuild.buildTransitive.CRM.App.props",
+      "PackagePath": "buildTransitive\\CRM.App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

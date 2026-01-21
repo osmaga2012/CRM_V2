@@ -22,10 +22,14 @@
     <Folder Include="Interfaces\" />
   </ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="C:\Users\oscar\source\repos\CRM\CRM.Dtos\CRM.Dtos.csproj" />
+	</ItemGroup>
+
+	<!-- <ItemGroup>
     <Reference Include="CRM.Dtos">
       <HintPath>..\..\..\CRM\CRM.Dtos\bin\Debug\net9.0\CRM.Dtos.dll</HintPath>
     </Reference>
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>

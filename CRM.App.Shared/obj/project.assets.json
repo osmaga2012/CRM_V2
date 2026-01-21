@@ -753,6 +753,29 @@
             "related": ".xml"
           }
         }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        }
       }
     }
   },
@@ -1853,6 +1876,16 @@
         "system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
+    },
+    "CRM.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj",
+      "msbuildProject": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj"
+    },
+    "CRM.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj",
+      "msbuildProject": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1860,6 +1893,7 @@
       "BCrypt.Net-Next >= 4.0.3",
       "Blazored.LocalStorage >= 4.5.0",
       "Blazored.Modal >= 7.3.1",
+      "CRM.Dtos >= 1.0.0",
       "Microsoft.AspNetCore.Components.Authorization >= 10.0.1",
       "Microsoft.AspNetCore.Components.Forms >= 10.0.1",
       "Microsoft.AspNetCore.Components.QuickGrid >= 10.0.1",
@@ -1905,7 +1939,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
+              "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

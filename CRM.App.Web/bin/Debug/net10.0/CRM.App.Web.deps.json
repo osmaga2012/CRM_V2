@@ -9,12 +9,12 @@
       "CRM.App.Web/1.0.0": {
         "dependencies": {
           "CRM.App.Web.Client": "1.0.0",
+          "CRM.Dtos": "1.0.0",
           "CodeBeam.MudBlazor.Extensions": "8.3.0",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "9.0.8",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
-          "MudBlazor.Translations": "2.7.0",
-          "CRM.Dtos": "1.0.0.0"
+          "MudBlazor.Translations": "2.7.0"
         },
         "runtime": {
           "CRM.App.Web.dll": {}
@@ -38,7 +38,7 @@
       },
       "Blazored.Modal/7.3.1": {
         "dependencies": {
-          "Microsoft.JSInterop.WebAssembly": "9.0.8"
+          "Microsoft.JSInterop.WebAssembly": "10.0.2"
         },
         "runtime": {
           "lib/net8.0/Blazored.Modal.dll": {
@@ -66,14 +66,14 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly/9.0.8": {
+      "Microsoft.AspNetCore.Components.WebAssembly/10.0.2": {
         "dependencies": {
-          "Microsoft.JSInterop.WebAssembly": "9.0.8"
+          "Microsoft.JSInterop.WebAssembly": "10.0.2"
         },
         "runtime": {
-          "lib/net9.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
-            "assemblyVersion": "9.0.8.0",
-            "fileVersion": "9.0.825.36808"
+          "lib/net10.0/Microsoft.AspNetCore.Components.WebAssembly.dll": {
+            "assemblyVersion": "10.0.2.0",
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -169,11 +169,11 @@
           }
         }
       },
-      "Microsoft.JSInterop.WebAssembly/9.0.8": {
+      "Microsoft.JSInterop.WebAssembly/10.0.2": {
         "runtime": {
-          "lib/net9.0/Microsoft.JSInterop.WebAssembly.dll": {
-            "assemblyVersion": "9.0.8.0",
-            "fileVersion": "9.0.825.36808"
+          "lib/net10.0/Microsoft.JSInterop.WebAssembly.dll": {
+            "assemblyVersion": "10.0.2.0",
+            "fileVersion": "10.0.225.61305"
           }
         }
       },
@@ -340,6 +340,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
           "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
           "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
@@ -358,7 +359,8 @@
         "dependencies": {
           "Blazored.LocalStorage": "4.5.0",
           "CRM.App.Shared": "1.0.0",
-          "Microsoft.AspNetCore.Components.WebAssembly": "9.0.8",
+          "CRM.Dtos": "1.0.0",
+          "Microsoft.AspNetCore.Components.WebAssembly": "10.0.2",
           "Microsoft.DotNet.HotReload.WebAssembly.Browser": "10.0.102",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0"
@@ -370,7 +372,18 @@
           }
         }
       },
-      "CRM.Dtos/1.0.0.0": {
+      "CRM.Dominio/1.0.0": {
+        "runtime": {
+          "CRM.Dominio.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
         "runtime": {
           "CRM.Dtos.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -421,12 +434,12 @@
       "path": "microsoft.aspnetcore.components.quickgrid/10.0.1",
       "hashPath": "microsoft.aspnetcore.components.quickgrid.10.0.1.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.WebAssembly/9.0.8": {
+    "Microsoft.AspNetCore.Components.WebAssembly/10.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-48tIkTqwYq/DVCxuDIbgz58JN15qveZqsyy+lZG5Lk8/y40JMjTioyOq1bYIX6SNLRRrGfJxZ2loh2w7+x/+4w==",
-      "path": "microsoft.aspnetcore.components.webassembly/9.0.8",
-      "hashPath": "microsoft.aspnetcore.components.webassembly.9.0.8.nupkg.sha512"
+      "sha512": "sha512-xJ0Qi75jnR75IhZhEwIdH04WH03wbJEAbilFND4SKYH0xgG/4oNAarb4Duvb0/5ko6/qcn4rCmzRuNJ1hF4dRw==",
+      "path": "microsoft.aspnetcore.components.webassembly/10.0.2",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.10.0.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.WebAssembly.Server/9.0.8": {
       "type": "package",
@@ -484,12 +497,12 @@
       "path": "microsoft.identitymodel.tokens/8.15.0",
       "hashPath": "microsoft.identitymodel.tokens.8.15.0.nupkg.sha512"
     },
-    "Microsoft.JSInterop.WebAssembly/9.0.8": {
+    "Microsoft.JSInterop.WebAssembly/10.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eevGq068Owgf1q6EswauGQ1JVu5FsM4K52l4H+Lx8/HaU2EUaAs6LzsawJkUOq6bBPxPTwaCsr/Sxv2iEMcm2Q==",
-      "path": "microsoft.jsinterop.webassembly/9.0.8",
-      "hashPath": "microsoft.jsinterop.webassembly.9.0.8.nupkg.sha512"
+      "sha512": "sha512-XeNFL2ozbjbPe32be7OVC3peMbS+vM1hu6Cp0RZfF1HepDRTmohQ+p3LF7BVhEKETxCh1/dd5sUwYuB7I/iApw==",
+      "path": "microsoft.jsinterop.webassembly/10.0.2",
+      "hashPath": "microsoft.jsinterop.webassembly.10.0.2.nupkg.sha512"
     },
     "MudBlazor/8.15.0": {
       "type": "package",
@@ -529,8 +542,13 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CRM.Dtos/1.0.0.0": {
-      "type": "reference",
+    "CRM.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRM.Dtos/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     }
