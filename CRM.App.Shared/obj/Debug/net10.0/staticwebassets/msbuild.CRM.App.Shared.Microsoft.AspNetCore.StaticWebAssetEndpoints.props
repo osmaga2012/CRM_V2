@@ -40,13 +40,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRM.App.Shared.3bgjehj650.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3bgjehj650"},{"Name":"integrity","Value":"sha256-scQ9IzI9bYC9T8njv1zFmsiMEd1jcXayvDUfB9XuTEY="},{"Name":"label","Value":"_content/CRM.App.Shared/CRM.App.Shared.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40147"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022scQ9IzI9bYC9T8njv1zFmsiMEd1jcXayvDUfB9XuTEY=\u0022"},{"Name":"Last-Modified","Value":"Sat, 17 Jan 2026 16:56:28 GMT"},{"Name":"Vary","Value":"Accept-Encoding"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40147"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022scQ9IzI9bYC9T8njv1zFmsiMEd1jcXayvDUfB9XuTEY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 Jan 2026 16:35:52 GMT"},{"Name":"Vary","Value":"Accept-Encoding"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CRM.App.Shared/CRM.App.Shared.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRM.App.Shared.3bgjehj650.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-scQ9IzI9bYC9T8njv1zFmsiMEd1jcXayvDUfB9XuTEY="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40147"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022scQ9IzI9bYC9T8njv1zFmsiMEd1jcXayvDUfB9XuTEY=\u0022"},{"Name":"Last-Modified","Value":"Sat, 17 Jan 2026 16:56:28 GMT"},{"Name":"Vary","Value":"Accept-Encoding"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40147"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022scQ9IzI9bYC9T8njv1zFmsiMEd1jcXayvDUfB9XuTEY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 20 Jan 2026 16:35:52 GMT"},{"Name":"Vary","Value":"Accept-Encoding"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CRM.App.Shared/favicon.ifv42okdf2.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>

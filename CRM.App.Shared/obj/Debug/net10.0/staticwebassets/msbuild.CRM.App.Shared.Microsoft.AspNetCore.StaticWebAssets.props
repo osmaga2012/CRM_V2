@@ -77,7 +77,7 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>40147</FileLength>
-      <LastWriteTime>Sat, 17 Jan 2026 16:56:28 GMT</LastWriteTime>
+      <LastWriteTime>Tue, 20 Jan 2026 16:35:52 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRM.App.Shared.3bgjehj650.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))">

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.2" />
     <PackageReference Include="MudBlazor" Version="8.15.0" />
     <PackageReference Include="MudBlazor.ThemeManager" Version="3.0.0" />
   </ItemGroup>
@@ -19,14 +19,14 @@
     <ProjectReference Include="..\CRM.App.Shared\CRM.App.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="publicación\" />
-  </ItemGroup>
-
-  <ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="C:\Users\oscar\source\repos\CRM\CRM.Dtos\CRM.Dtos.csproj" />
+	</ItemGroup>
+	
+  <!-- <ItemGroup>
     <Reference Include="CRM.Dtos">
       <HintPath>..\..\..\CRM\CRM.Dtos\bin\Debug\net9.0\CRM.Dtos.dll</HintPath>
     </Reference>
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>

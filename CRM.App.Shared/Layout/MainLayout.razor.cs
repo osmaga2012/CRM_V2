@@ -95,7 +95,7 @@ namespace CRM.App.Shared.Layout
                     // Si el usuario no está autenticado según AuthStateProvider, redirige.
                     // Esto es un fallback, App.razor ya debería haberlo manejado, pero es buena práctica.
                     //Snackbar.Add("No autenticado. Por favor, inicie sesión.", Severity.Info);
-                    await _navigationManager.NavigateToAsync("/login");
+                    await _navigationManager.NavigateToAsync("login");
                     //_navigationManager.NavigateTo("login");
                     //_navigationManager.NavigateToAsync("/");
                 }

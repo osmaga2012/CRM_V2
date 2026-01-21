@@ -50,3 +50,5 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Debug\net10.0\ref\
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Debug\net10.0\scopedcss\Layout\MovilLayout.razor.rz.scp.css
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Debug\net10.0\compressed\rkzg6hr7td-{0}-3q1m33io4l-3q1m33io4l.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Debug\net10.0\compressed\6g7xse5sf0-{0}-3bgjehj650-3bgjehj650.gz
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\bin\Debug\net10.0\CRM.Dominio.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\bin\Debug\net10.0\CRM.Dominio.pdb

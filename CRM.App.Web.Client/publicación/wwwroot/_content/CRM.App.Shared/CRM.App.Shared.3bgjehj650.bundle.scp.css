@@ -1,0 +1,1426 @@
+/* _content/CRM.App.Shared/Layout/MainLayout.razor.rz.scp.css */
+/*.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.sidebar {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row ::deep a, .top-row ::deep .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row ::deep a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row {
+        justify-content: space-between;
+    }
+
+    .top-row ::deep a, .top-row ::deep .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth ::deep a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row, article {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+*/
+/* _content/CRM.App.Shared/Layout/Menus/MainNavMenu.razor.rz.scp.css */
+/*.navbar-toggler {
+    appearance: none;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 2.5rem;
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler:checked {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-row {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.bi {
+    display: inline-block;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
+}
+
+.bi-house-door-fill-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+}
+
+.bi-plus-square-fill-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z'/%3E%3C/svg%3E");
+}
+
+.bi-list-nested-nav-menu {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
+}
+
+.nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item ::deep .nav-link {
+        color: #d7d7d7;
+        background: none;
+        border: none;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+        width: 100%;
+    }
+
+.nav-item ::deep a.active {
+    background-color: rgba(255,255,255,0.37);
+    color: white;
+}
+
+.nav-item ::deep .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-scrollable {
+    display: none;
+}
+
+.navbar-toggler:checked ~ .nav-scrollable {
+    display: block;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .nav-scrollable {*/
+        /* Never collapse the sidebar for wide screens */
+        /*display: block;*/
+
+        /* Allow sidebar to scroll for tall menus */
+        /*height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}*/
+/* _content/CRM.App.Shared/Layout/MovilLayout.razor.rz.scp.css */
+/* Layout adaptativo: sidebar en escritorio, bottom nav en m�vil */
+
+/* Reset b�sico para este scope */
+.layout-root[b-8n3eedword] { display:flex; flex-direction:column; min-height:100vh; }
+
+/* HEADER */
+.app-header[b-8n3eedword] { height: 56px; }
+
+/* BODY: sidebar + content */
+.app-body[b-8n3eedword] { display:flex; flex:1 1 auto; min-height:0; }
+
+/* Sidebar (oculto en m�vil) */
+.sidebar[b-8n3eedword] {
+    display:none;
+    width:240px;
+    background:var(--neutral-layer-2, #f5f5f5);
+    border-right:1px solid rgba(0,0,0,0.05);
+    padding-top:env(safe-area-inset-top);
+    box-sizing:border-box;
+    flex-direction:column;
+}
+.sidebar-item[b-8n3eedword] {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 16px;
+    color:var(--neutral-foreground-rest, #333);
+    text-decoration:none;
+}
+.sidebar-item .icon[b-8n3eedword] { font-size:20px; width:24px; text-align:center; }
+.sidebar-item .text[b-8n3eedword] { font-size:15px; white-space:nowrap; }
+
+/* Content area: reserva espacio inferior para la bottom nav en m�vil */
+.content[b-8n3eedword] { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; box-sizing:border-box; padding:16px; }
+.mobile-main[b-8n3eedword] { flex:1 1 auto; min-height:0; }
+
+/* Bottom navigation (visible en m�vil) */
+.bottom-nav[b-8n3eedword] {
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:68px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:var(--neutral-layer-3, #ffffff);
+    border-top:1px solid rgba(0,0,0,0.06);
+    padding:env(safe-area-inset-bottom) 0;
+    z-index:1000;
+}
+.nav-item[b-8n3eedword] { display:flex; align-items:center; justify-content:center; width:64px; height:100%; color:var(--neutral-foreground-rest, #333); text-decoration:none; }
+.nav-icon[b-8n3eedword] { font-size:22px; display:block; }
+
+/* Estado activo */
+.sidebar-item.active[b-8n3eedword],
+.nav-item.active[b-8n3eedword] {
+    color: var(--accent, #0078d4);
+    background: rgba(0,0,0,0.02);
+}
+.sidebar-item.active .text[b-8n3eedword] { font-weight:600 }
+
+/* Ocultar texto en mobile (sidebar hidden) */
+@media (max-width: 767.98px) {
+    .sidebar[b-8n3eedword] { display:none; }
+    .bottom-nav[b-8n3eedword] { display:flex; }
+    /* evitar que el contenido quede bajo la barra */
+    .content[b-8n3eedword] { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+}
+
+/* Mostrar sidebar en pantallas >= 768px y ocultar bottom nav */
+@media (min-width: 768px) {
+    .sidebar[b-8n3eedword] { display:flex; flex-direction:column; }
+    .bottom-nav[b-8n3eedword] { display:none; }
+    .content[b-8n3eedword] { padding-bottom: 24px; padding-left: 24px; }
+}
+
+/* Ajustes para que los enlaces no colapsen y no aparezca "m�s" */
+.sidebar-item[b-8n3eedword], .nav-item[b-8n3eedword] { min-width:0; box-sizing:border-box; overflow:visible; white-space:nowrap; }
+
+/* Small accessibility focus */
+.sidebar-item:focus[b-8n3eedword], .nav-item:focus[b-8n3eedword] { outline: 2px solid rgba(0,120,212,0.18); outline-offset:2px; }
+/* _content/CRM.App.Shared/Layout/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-ohy7y9jvt4] {
+    appearance: none;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 2.5rem;
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler:checked[b-ohy7y9jvt4] {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-row[b-ohy7y9jvt4] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-ohy7y9jvt4] {
+    font-size: 1.1rem;
+}
+
+.bi[b-ohy7y9jvt4] {
+    display: inline-block;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
+}
+
+.bi-house-door-fill-nav-menu[b-ohy7y9jvt4] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+}
+
+.bi-plus-square-fill-nav-menu[b-ohy7y9jvt4] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z'/%3E%3C/svg%3E");
+}
+
+.bi-list-nested-nav-menu[b-ohy7y9jvt4] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
+}
+
+.nav-item[b-ohy7y9jvt4] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-ohy7y9jvt4] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-ohy7y9jvt4] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-ohy7y9jvt4]  .nav-link {
+        color: #d7d7d7;
+        background: none;
+        border: none;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+        width: 100%;
+    }
+
+.nav-item[b-ohy7y9jvt4]  a.active {
+    background-color: rgba(255,255,255,0.37);
+    color: white;
+}
+
+.nav-item[b-ohy7y9jvt4]  .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-scrollable[b-ohy7y9jvt4] {
+    display: none;
+}
+
+.navbar-toggler:checked ~ .nav-scrollable[b-ohy7y9jvt4] {
+    display: block;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-ohy7y9jvt4] {
+        display: none;
+    }
+
+    .nav-scrollable[b-ohy7y9jvt4] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+
+        /* Allow sidebar to scroll for tall menus */
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}
+/* _content/CRM.App.Shared/Pages/CentrosTrabajo/ListadoBarcos.razor.rz.scp.css */
+/* Contenedor con altura fija y scroll */
+.grid-container[b-aejflwr4aw] {
+    height: 600px; /* Igualamos la altura de tu MudTable anterior */
+    overflow: auto;
+    /*border-radius: 12px;
+    border: 1px solid #e0e0e0;*/
+    /*box-shadow: 0 4px 12px rgba(0,0,0,0.05);*/
+    background: white;
+}
+
+/* Estilo de la tabla */
+[b-aejflwr4aw] .quickgrid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    /* Header Pegajoso (Sticky) */
+    [b-aejflwr4aw] .quickgrid thead {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: var(--mud-palette-primary);
+        color: white;
+    }
+
+    [b-aejflwr4aw] .quickgrid th {
+        padding: 12px 16px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    /* Filas y Celdas */
+    [b-aejflwr4aw] .quickgrid td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--mud-palette-divider);
+        font-size: 0.9rem;
+    }
+
+    /* Efecto hover en filas */
+    [b-aejflwr4aw] .quickgrid tr:hover td {
+        background-color: var(--mud-palette-background-grey);
+    }
+
+/* --- SCROLLBAR PERSONALIZADO --- */
+.grid-container[b-aejflwr4aw]::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.grid-container[b-aejflwr4aw]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.grid-container[b-aejflwr4aw]::-webkit-scrollbar-thumb {
+    background: var(--mud-palette-primary-lighten);
+    border-radius: 10px;
+}
+
+    .grid-container[b-aejflwr4aw]::-webkit-scrollbar-thumb:hover {
+        background: var(--mud-palette-primary);
+    }
+
+/* Estilo para el buscador dentro de la columna */
+.search-box input[b-aejflwr4aw] {
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+/* Contenedor del paginador */
+.custom-pagination[b-aejflwr4aw] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+}
+
+/* Personalizar los botones internos del Paginator de QuickGrid */
+[b-aejflwr4aw] .nav-tabs {
+    display: none; /* Oculta pestañas si QuickGrid intentara mostrarlas */
+}
+
+[b-aejflwr4aw] .paginator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+    [b-aejflwr4aw] .paginator button {
+        background-color: var(--mud-palette-surface);
+        color: var(--mud-palette-primary);
+        border: 1px solid var(--mud-palette-primary-lighten);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        [b-aejflwr4aw] .paginator button:hover:not([disabled]) {
+            background-color: var(--mud-palette-primary);
+            color: white;
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        [b-aejflwr4aw] .paginator button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+    /* Estilo para el texto "Página X de Y" */
+    [b-aejflwr4aw] .paginator .current-page-info {
+        margin: 0 15px;
+        font-size: 0.85rem;
+        color: var(--mud-palette-text-secondary);
+        font-weight: 500;
+    }
+
+/* Cuadro de búsqueda dentro del menú de columna */
+.search-box[b-aejflwr4aw] {
+    padding: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+    .search-box input[b-aejflwr4aw] {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #eef2ff;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+        .search-box input:focus[b-aejflwr4aw] {
+            border-color: var(--mud-palette-primary);
+        }
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+[b-aejflwr4aw] .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+[b-aejflwr4aw] .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+[b-aejflwr4aw] .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge[b-aejflwr4aw] {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active[b-aejflwr4aw] {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive[b-aejflwr4aw] {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box[b-aejflwr4aw] {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input[b-aejflwr4aw] {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus[b-aejflwr4aw] {
+            border-color: var(--mud-palette-primary);
+        }
+
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+[b-aejflwr4aw] .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+[b-aejflwr4aw] .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+[b-aejflwr4aw] .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge[b-aejflwr4aw] {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active[b-aejflwr4aw] {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive[b-aejflwr4aw] {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box[b-aejflwr4aw] {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input[b-aejflwr4aw] {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus[b-aejflwr4aw] {
+            border-color: var(--mud-palette-primary);
+        }
+/* Animación suave para cuando aparece el selector de empresa */
+.animate-fade-in[b-aejflwr4aw] {
+    animation: fadeIn-b-aejflwr4aw 0.4s ease-out;
+}
+
+@keyframes fadeIn-b-aejflwr4aw {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejora el contraste de las etiquetas de sección */
+.font-bold[b-aejflwr4aw] {
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+
+/* Fondo gris sutil para áreas de control */
+[b-aejflwr4aw] .mud-background-gray {
+    background-color: var(--mud-palette-background-grey) !important;
+}
+
+/* Efecto de elevación al botón de guardar */
+[b-aejflwr4aw] .shadow-lg {
+    box-shadow: 0 4px 12px rgba(var(--mud-palette-primary-rgb), 0.3) !important;
+}
+/* _content/CRM.App.Shared/Pages/CentrosTrabajo/ListaTramitesBarco.razor.rz.scp.css */
+/* Permite que la barra de la DataGrid haga wrap */
+/*::deep(.mud-datagrid-toolbar),
+.dg-toolbar {
+    display: flex;
+    flex-wrap: wrap;*/ /* clave */
+    /*align-items: center;
+    gap: .5rem;
+    width: 100%;
+    height: 100%;
+}*/
+
+/* Título: que pueda romper y ocupe línea completa en móvil */
+/*.dg-title {
+    white-space: normal;*/ /* rompe líneas */
+    /*word-break: break-word;
+    line-height: 1.2;
+    flex: 1 1 100%;*/ /* una fila entera en móvil */
+    /*font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+}*/
+
+/* Buscador: flexible y sin causar overflow */
+/*.dg-search {
+    flex: 1 1 260px;*/ /* crece/encoge */
+    /*min-width: 0;*/ /* evita desbordes */
+/*}*/
+
+/* El spacer estorba en móvil */
+/*.dg-spacer {
+    display: none;
+}*/
+
+/* Desde md en adelante: título a la izquierda, buscador a la derecha */
+/*@media (min-width: 960px) {
+    .dg-title {
+        flex: 0 1 auto;
+        margin-right: auto;*/ /* empuja el buscador a la derecha */
+    /*}
+
+    .dg-search {
+        flex: 0 1 360px;
+    }
+
+    .dg-spacer {
+        display: block;
+    }
+}*/
+
+/* Contenedor con altura fija y scroll */
+.grid-container[b-3n55aeevaa] {
+    height: 600px; /* Igualamos la altura de tu MudTable anterior */
+    overflow: auto;
+    /*border-radius: 12px;
+    border: 1px solid #e0e0e0;*/
+    /*box-shadow: 0 4px 12px rgba(0,0,0,0.05);*/
+    background: white;
+}
+
+/* Estilo de la tabla */
+[b-3n55aeevaa] .quickgrid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    /* Header Pegajoso (Sticky) */
+    [b-3n55aeevaa] .quickgrid thead {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: var(--mud-palette-primary);
+        color: white;
+    }
+
+    [b-3n55aeevaa] .quickgrid th {
+        padding: 12px 16px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    /* Filas y Celdas */
+    [b-3n55aeevaa] .quickgrid td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--mud-palette-divider);
+        font-size: 0.9rem;
+    }
+
+    /* Efecto hover en filas */
+    [b-3n55aeevaa] .quickgrid tr:hover td {
+        background-color: var(--mud-palette-background-grey);
+    }
+
+/* --- SCROLLBAR PERSONALIZADO --- */
+.grid-container[b-3n55aeevaa]::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.grid-container[b-3n55aeevaa]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.grid-container[b-3n55aeevaa]::-webkit-scrollbar-thumb {
+    background: var(--mud-palette-primary-lighten);
+    border-radius: 10px;
+}
+
+    .grid-container[b-3n55aeevaa]::-webkit-scrollbar-thumb:hover {
+        background: var(--mud-palette-primary);
+    }
+
+/* Estilo para el buscador dentro de la columna */
+.search-box input[b-3n55aeevaa] {
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+/* Contenedor del paginador */
+.custom-pagination[b-3n55aeevaa] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+}
+
+/* Personalizar los botones internos del Paginator de QuickGrid */
+[b-3n55aeevaa] .nav-tabs {
+    display: none; /* Oculta pestañas si QuickGrid intentara mostrarlas */
+}
+
+[b-3n55aeevaa] .paginator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+    [b-3n55aeevaa] .paginator button {
+        background-color: var(--mud-palette-surface);
+        color: var(--mud-palette-primary);
+        border: 1px solid var(--mud-palette-primary-lighten);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        [b-3n55aeevaa] .paginator button:hover:not([disabled]) {
+            background-color: var(--mud-palette-primary);
+            color: white;
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        [b-3n55aeevaa] .paginator button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+    /* Estilo para el texto "Página X de Y" */
+    [b-3n55aeevaa] .paginator .current-page-info {
+        margin: 0 15px;
+        font-size: 0.85rem;
+        color: var(--mud-palette-text-secondary);
+        font-weight: 500;
+    }
+
+/* Cuadro de búsqueda dentro del menú de columna */
+.search-box[b-3n55aeevaa] {
+    padding: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+    .search-box input[b-3n55aeevaa] {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #eef2ff;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+        .search-box input:focus[b-3n55aeevaa] {
+            border-color: var(--mud-palette-primary);
+        }
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+[b-3n55aeevaa] .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+[b-3n55aeevaa] .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+[b-3n55aeevaa] .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge[b-3n55aeevaa] {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active[b-3n55aeevaa] {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive[b-3n55aeevaa] {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box[b-3n55aeevaa] {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input[b-3n55aeevaa] {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus[b-3n55aeevaa] {
+            border-color: var(--mud-palette-primary);
+        }
+
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+[b-3n55aeevaa] .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+[b-3n55aeevaa] .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+[b-3n55aeevaa] .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge[b-3n55aeevaa] {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active[b-3n55aeevaa] {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive[b-3n55aeevaa] {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box[b-3n55aeevaa] {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input[b-3n55aeevaa] {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus[b-3n55aeevaa] {
+            border-color: var(--mud-palette-primary);
+        }
+/* Animación suave para cuando aparece el selector de empresa */
+.animate-fade-in[b-3n55aeevaa] {
+    animation: fadeIn-b-3n55aeevaa 0.4s ease-out;
+}
+
+@keyframes fadeIn-b-3n55aeevaa {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejora el contraste de las etiquetas de sección */
+.font-bold[b-3n55aeevaa] {
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+
+/* Fondo gris sutil para áreas de control */
+[b-3n55aeevaa] .mud-background-gray {
+    background-color: var(--mud-palette-background-grey) !important;
+}
+
+/* Efecto de elevación al botón de guardar */
+[b-3n55aeevaa] .shadow-lg {
+    box-shadow: 0 4px 12px rgba(var(--mud-palette-primary-rgb), 0.3) !important;
+}
+/* _content/CRM.App.Shared/Pages/CentrosTrabajo/Tramites.razor.rz.scp.css */
+/* Contenedor para dar scroll y bordes */
+.grid-container[b-8zl71xu4hh] {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin: 20px 0;
+}
+
+/* Estilo base del QuickGrid */
+[b-8zl71xu4hh] .quickgrid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* Encabezados modernos */
+    [b-8zl71xu4hh] .quickgrid thead tr {
+        background-color: #6366f1; /* Color Indigo moderno */
+        color: white;
+        text-align: left;
+    }
+
+    [b-8zl71xu4hh] .quickgrid th {
+        padding: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        border: none;
+    }
+
+    /* Celdas del cuerpo */
+    [b-8zl71xu4hh] .quickgrid td {
+        padding: 14px 16px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #374151;
+        transition: all 0.2s ease;
+    }
+
+    /* Filas alternas (Zebra) */
+    [b-8zl71xu4hh] .quickgrid tr:nth-child(even) {
+        background-color: #f9fafb;
+    }
+
+    /* Efecto Hover Espectacular */
+    [b-8zl71xu4hh] .quickgrid tr:hover td {
+        background-color: #eef2ff; /* Azul muy pálido */
+        color: #4f46e5;
+        transform: scale(1.002);
+        cursor: pointer;
+    }
+
+/* Estilo para las columnas ordenables */
+[b-8zl71xu4hh] .col-sort-asc::after,
+[b-8zl71xu4hh] .col-sort-desc::after {
+    margin-left: 8px;
+    opacity: 0.8;
+}
+
+/* Botones de paginación (si usas Paginator) */
+[b-8zl71xu4hh] .page-buttons {
+    display: flex;
+    gap: 8px;
+    padding: 15px;
+    justify-content: center;
+    background: #f9fafb;
+}
+/* _content/CRM.App.Shared/Pages/Cofradia/ListaUsuarios.razor.rz.scp.css */
+/* Contenedor con altura fija y scroll */
+.grid-container[b-cx97s9xufg] {
+    height: 600px; /* Igualamos la altura de tu MudTable anterior */
+    overflow: auto;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background: white;
+}
+
+/* Estilo de la tabla */
+[b-cx97s9xufg] .quickgrid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    /* Header Pegajoso (Sticky) */
+    [b-cx97s9xufg] .quickgrid thead {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background-color: var(--mud-palette-primary);
+        color: white;
+    }
+
+    [b-cx97s9xufg] .quickgrid th {
+        padding: 12px 16px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    /* Filas y Celdas */
+    [b-cx97s9xufg] .quickgrid td {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--mud-palette-divider);
+        font-size: 0.9rem;
+    }
+
+    /* Efecto hover en filas */
+    [b-cx97s9xufg] .quickgrid tr:hover td {
+        background-color: var(--mud-palette-background-grey);
+    }
+
+/* --- SCROLLBAR PERSONALIZADO --- */
+.grid-container[b-cx97s9xufg]::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.grid-container[b-cx97s9xufg]::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.grid-container[b-cx97s9xufg]::-webkit-scrollbar-thumb {
+    background: var(--mud-palette-primary-lighten);
+    border-radius: 10px;
+}
+
+    .grid-container[b-cx97s9xufg]::-webkit-scrollbar-thumb:hover {
+        background: var(--mud-palette-primary);
+    }
+
+/* Estilo para el buscador dentro de la columna */
+.search-box input[b-cx97s9xufg] {
+    border: 1px solid var(--mud-palette-lines-default);
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+}
+
+/* Contenedor del paginador */
+.custom-pagination[b-cx97s9xufg] {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 0 0 12px 12px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+}
+
+/* Personalizar los botones internos del Paginator de QuickGrid */
+[b-cx97s9xufg] .nav-tabs {
+    display: none; /* Oculta pestañas si QuickGrid intentara mostrarlas */
+}
+
+[b-cx97s9xufg] .paginator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+    [b-cx97s9xufg] .paginator button {
+        background-color: var(--mud-palette-surface);
+        color: var(--mud-palette-primary);
+        border: 1px solid var(--mud-palette-primary-lighten);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+        [b-cx97s9xufg] .paginator button:hover:not([disabled]) {
+            background-color: var(--mud-palette-primary);
+            color: white;
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+        }
+
+        [b-cx97s9xufg] .paginator button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+            filter: grayscale(1);
+        }
+
+    /* Estilo para el texto "Página X de Y" */
+    [b-cx97s9xufg] .paginator .current-page-info {
+        margin: 0 15px;
+        font-size: 0.85rem;
+        color: var(--mud-palette-text-secondary);
+        font-weight: 500;
+    }
+
+/* Cuadro de búsqueda dentro del menú de columna */
+.search-box[b-cx97s9xufg] {
+    padding: 12px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+    .search-box input[b-cx97s9xufg] {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid #eef2ff;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+        .search-box input:focus[b-cx97s9xufg] {
+            border-color: var(--mud-palette-primary);
+        }
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+[b-cx97s9xufg] .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+[b-cx97s9xufg] .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+[b-cx97s9xufg] .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge[b-cx97s9xufg] {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active[b-cx97s9xufg] {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive[b-cx97s9xufg] {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box[b-cx97s9xufg] {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input[b-cx97s9xufg] {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus[b-cx97s9xufg] {
+            border-color: var(--mud-palette-primary);
+        }
+
+/* --- ESTRATEGIA DE AUTOAJUSTE --- */
+[b-cx97s9xufg] .quickgrid-auto {
+    table-layout: auto; /* Permite que el navegador calcule anchos */
+    width: 100%;
+}
+
+/* Forzar que la columna de nombre sea la que crezca */
+[b-cx97s9xufg] .col-main {
+    width: 100%;
+    min-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Forzar que las acciones no se estiren */
+[b-cx97s9xufg] .col-actions {
+    white-space: nowrap;
+    width: 1px; /* Hack clásico para que ocupe el mínimo posible */
+    padding-left: 20px !important;
+}
+
+/* --- BADGES DE ESTADO --- */
+.status-badge[b-cx97s9xufg] {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+}
+
+    .status-badge.active[b-cx97s9xufg] {
+        background-color: #dcfce7; /* Verde suave */
+        color: #166534; /* Verde oscuro texto */
+        border: 1px solid #bbf7d0;
+    }
+
+    .status-badge.inactive[b-cx97s9xufg] {
+        background-color: #f3f4f6; /* Gris suave */
+        color: #4b5563; /* Gris oscuro texto */
+        border: 1px solid #e5e7eb;
+    }
+
+/* --- MEJORA DEL SEARCH BOX --- */
+.search-box[b-cx97s9xufg] {
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--mud-elevation-8);
+}
+
+    .search-box input[b-cx97s9xufg] {
+        border: 2px solid var(--mud-palette-lines-default);
+        border-radius: 6px;
+        padding: 6px 10px;
+        outline: none;
+    }
+
+        .search-box input:focus[b-cx97s9xufg] {
+            border-color: var(--mud-palette-primary);
+        }
+/* Animación suave para cuando aparece el selector de empresa */
+.animate-fade-in[b-cx97s9xufg] {
+    animation: fadeIn-b-cx97s9xufg 0.4s ease-out;
+}
+
+@keyframes fadeIn-b-cx97s9xufg {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejora el contraste de las etiquetas de sección */
+.font-bold[b-cx97s9xufg] {
+    font-weight: 800 !important;
+    letter-spacing: 0.5px;
+}
+
+/* Fondo gris sutil para áreas de control */
+[b-cx97s9xufg] .mud-background-gray {
+    background-color: var(--mud-palette-background-grey) !important;
+}
+
+/* Efecto de elevación al botón de guardar */
+[b-cx97s9xufg] .shadow-lg {
+    box-shadow: 0 4px 12px rgba(var(--mud-palette-primary-rgb), 0.3) !important;
+}
