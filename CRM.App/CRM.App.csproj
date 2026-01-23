@@ -53,7 +53,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Remove="appsettings.Development.json" />
+	  <Content Remove="appsettings.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Remove="Platforms\Android\Resources\xml\network_security_config.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="appsettings.Development.json" />
+	  <EmbeddedResource Include="appsettings.json" />
 	</ItemGroup>
 
 	<ItemGroup>

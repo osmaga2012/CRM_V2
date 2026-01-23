@@ -29,6 +29,15 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
         private string _emailError = string.Empty;
         private List<string> EmailsAviso = new();
 
+        private bool IsMobile = true;
+        private void OnBreakpointChanged(Breakpoint breakpoint)
+        {
+            IsMobile = breakpoint < Breakpoint.Md;
+            StateHasChanged();
+        }
+
+
+
         // Estado de paginación (15 elementos para barcos suele ser ideal)
         PaginationState paginacion = new PaginationState { ItemsPerPage = 15 };
 

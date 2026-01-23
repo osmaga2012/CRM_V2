@@ -1,0 +1,140 @@
+@page "/tramite/"
+@page "/tramite/{IdTramite:guid}"
+@using CRM.Dtos
+
+
+@* <MudDialog>
+    <TitleContent>
+        Dialog Title
+    </TitleContent>
+    <DialogContent>
+         <MudPaper Class="pa">
+            <MudForm Model="@tramite" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudValidationSummary />
+
+                <MudTextField @bind-Value="@tramite.NombreTramite"
+                    Label="Nombre del tramite"/>
+                
+                <MudDatePicker @bind-Date="@tramite.FechaInicio"
+                    Label="Fecha de incio del Trámite" />
+
+                <MudDatePicker @bind-Date="@tramite.FechaFin" 
+                    Label="Fecha final del Tramite." />
+
+                <MudItem xs="12" sm="6" md="4">
+                    <MudCheckBox @bind-Value="@tramite.VisibleEmpresas" Label="Para empresas" />
+                    <MudCheckBox @bind-Value="@tramite.VisiblePersonas" Label="Para Personas" />
+                </MudItem> 
+            </MudForm>
+        </MudPaper>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">OK</MudButton>
+    </DialogActions>
+</MudDialog> *@
+
+
+@* <MudDialog>
+    <DialogContent>
+
+        <MudPaper Class="pa">
+            <MudForm Model="@tramite" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                <MudValidationSummary />
+
+                <MudTextField Value="tramite.NombreTramite" Label="Nombre del tramite"/>
+                <MudDatePicker Date="tramite.FechaInicio" Label="Fecha de inicio" />
+                <MudDatePicker Date="tramite.FechaFin" Label="Fecha de finalización" />
+
+                <MudItem xs="12" sm="6" md="4">
+                    <MudCheckBox Value="@tramite.VisibleEmpresas" Label="Para empresas" />
+                    <MudCheckBox Value="@tramite.VisiblePersonas" Label="Para Personas" />
+                </MudItem> 
+            </MudForm>
+        </MudPaper>
+
+
+
+    </DialogContent>
+</MudDialog> *@
+
+
+    <MudCard Elevation="4">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5" Class="mb-0">Tramite</MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                <MudIconButton Icon="@Icons.Material.Filled.Save" Color="Color.Success" OnClick="GuardarCambios" />
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+                <MudForm Model="@tramite" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+                    <MudValidationSummary />
+
+                    <MudTextField @bind-Value="@tramite.NombreTramite"
+                        Label="Nombre del tramite"/>
+                
+                    <MudDatePicker @bind-Date="@tramite.FechaInicio"
+                        Label="Fecha de incio del Trámite" />
+
+                    <MudDatePicker @bind-Date="@tramite.FechaFin" 
+                        Label="Fecha final del Tramite." />
+
+                    <MudStack Spacing="2" Class="mt-4">
+                        <MudText Typo="Typo.subtitle2">Destinatarios</MudText>
+                        <MudRadioGroup T="string"
+                                        @bind-Value="AsignacionDestinoProxy"
+                                        Immediate="true"
+                                        Orientation="Orientation.Horizontal">
+                                    <MudRadio T="string" Value="@DestinoTodos" Label="Todos" />
+                                    <MudRadio T="string" Value="@DestinoEmpresas" Label="Empresas" />
+                                    <MudRadio T="string" Value="@DestinoPersonasEmpresa" Label="Personas de una empresa" />
+                                    <MudRadio T="string" Value="@DestinoPersonasSueltas" Label="Personas sueltas" />
+                        </MudRadioGroup>
+
+                        @if (DebeMostrarSelectorEmpresas)
+                        {
+                            <MudSelect T="string"
+                                       Label="Empresas destinatarias"
+                                       MultiSelection="true"
+                                       Dense="true"
+                                       SelectedValues="@EmpresasSeleccionadas"
+                                       SelectedValuesChanged="OnEmpresasSeleccionadasChanged">
+                                @foreach (var empresa in EmpresasDisponibles)
+                                {
+                                    <MudSelectItem Value="@empresa.CodigoEmpresa">@($"{empresa.CodigoEmpresa} - {empresa.Empresa}")</MudSelectItem>
+                                }
+                                <MudChipSet T="string">
+                                    @foreach (var cod in EmpresasSeleccionadas)
+                                    {
+                                        <MudChip T="string">@GetEtiquetaEmpresa(cod)</MudChip>
+                                    }
+                                </MudChipSet>
+                            </MudSelect>
+                        }
+
+                        @if (DebeMostrarSelectorPersonas)
+                        {
+                            <MudAutocomplete T="PersonasDto"
+                                             Dense="true"
+                                             Label="Personas destinatarias"
+                                             Variant="Variant.Outlined"
+                                             MultiSelection="true"
+                                             SearchFunc="BuscarPersonas"
+                                             ToStringFunc="GetDescripcionPersona"
+                                             SelectedValues="@PersonasSeleccionadas"
+                                             SelectedValuesChanged="OnPersonasSeleccionadasChanged"
+                                             Disabled="@DebeDeshabilitarSelectorPersonas">
+                                <ItemTemplate Context="persona">
+                                    <MudText>@GetDescripcionPersona(persona)</MudText>
+                                </ItemTemplate>
+                                <ItemSelectedTemplate Context="persona">
+                                    <MudText>@GetDescripcionPersona(persona)</MudText>
+                                </ItemSelectedTemplate>
+                            </MudAutocomplete>
+                        }
+                    </MudStack>
+                </MudForm>
+        </MudCardContent>
+    </MudCard>

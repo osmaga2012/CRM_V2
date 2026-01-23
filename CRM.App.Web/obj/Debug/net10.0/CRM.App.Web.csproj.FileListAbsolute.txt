@@ -156,7 +156,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\compres
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\compressed\pqub0n3e9d-{0}-ewdlgswx1m-ewdlgswx1m.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\compressed\1x45lb54o8-{0}-boiwgh0w5b-boiwgh0w5b.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\compressed\of8ka2v689-{0}-xineniuf5l-xineniuf5l.gz
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\compressed\jp6ptu9agd-{0}-ak1n9rk919-ak1n9rk919.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\staticwebassets.development.json
@@ -171,3 +170,4 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\CRM.App
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\ref\CRM.App.Web.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\bin\Debug\net10.0\CRM.Dominio.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\bin\Debug\net10.0\CRM.Dominio.pdb
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web\obj\Debug\net10.0\compressed\jp6ptu9agd-{0}-ugqw525pag-ugqw525pag.gz

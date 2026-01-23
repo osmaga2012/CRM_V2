@@ -6,6 +6,8 @@
 
 @inject IFormFactor FormFactorService
 
+<MudBreakpointProvider OnBreakpointChanged="OnBreakpointChanged" />
+
 @* <Router AppAssembly="typeof(Layout.MainLayout).Assembly">
     <Found Context="routeData">
         <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
@@ -17,8 +19,12 @@
     <Router AppAssembly="typeof(MainLayout).Assembly">
         <Found Context="routeData">
             @{
+
+
+
                 // LOG DE DIAGNÓSTICO
-                var layoutType = FormFactorService.IsNativeApp ? typeof(MovilLayout) : typeof(MainLayout);
+                var layoutType = (FormFactorService.IsNativeApp || IsMobile) ? typeof(MovilLayout) : typeof(MainLayout);
+
                 Debug.WriteLine($"[ROUTING] IsNativeApp: {FormFactorService.IsNativeApp}");
                 Debug.WriteLine($"[ROUTING] Aplicando Layout: {layoutType.Name}");
                 Debug.WriteLine($"[ROUTING] Ruta actual: {routeData.PageType.Name}");
@@ -57,6 +63,13 @@
 
 @code{
 
-  
+    private bool IsMobile = true;
+
+    private void OnBreakpointChanged(Breakpoint breakpoint)
+    {
+        IsMobile = breakpoint < Breakpoint.Md;
+        StateHasChanged();
+    }
+
 
 }
