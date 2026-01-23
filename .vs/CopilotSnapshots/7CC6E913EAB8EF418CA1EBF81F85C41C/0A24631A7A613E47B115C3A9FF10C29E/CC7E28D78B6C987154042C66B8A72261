@@ -1,0 +1,268 @@
+﻿@page "/dashboard"
+@using System.Linq
+@using System.Globalization
+@using MudBlazor
+@using CRM.App.Shared.Interfaces
+@using CRM.Dtos
+@inject IApiClient<BarcosTramitesDto> BarcosTramitesClient
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pb-8 pt-4">
+    <MudStack Direction="Row" Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Class="mb-4">
+        <MudText Typo="Typo.h4">Panel de Control</MudText>
+        <MudStack Row Spacing="2">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="Reload">Actualizar</MudButton>
+        </MudStack>
+    </MudStack>
+
+    <MudGrid Spacing="3">
+        <MudItem xs="12" md="8">
+            <MudPaper Class="p-4">
+                <MudText Typo="Typo.h6" Class="mb-2">Trámites por mes (últimos 6 meses)</MudText>
+                @if (isLoading)
+                {
+                    <MudProgressLinear Indeterminate="true" Color="Color.Primary" Class="mb-2" />
+                }
+                <MudChart ChartType="ChartType.Line"
+                          ChartSeries="@MesesLabels1"
+                          XAxisLabels="@MesesLabels" />
+
+            </MudPaper>
+        </MudItem>
+
+        @* Últimos tramites*@
+        <MudItem xs="12" md="4">
+            <MudPaper Class="p-4">
+                <MudText Typo="Typo.h6">Últimos trámites tramitados</MudText>
+                @if (UltimosTramites.Any())
+                {
+                    <MudList T="BarcosTramitesDto" Dense="true">
+                        @foreach (var t in UltimosBarcosTramites)
+                        {
+                            <MudListItem>
+                                <div class="d-flex justify-space-between w-100">
+                                    <div>
+                                        <div><b>@(t.Certificado)</b></div>
+                                        @*                                         <div class="mud-typography-caption">@((t.Empresa ?? t.Barco?.NombreA ?? t.Entidad) ?? "")</div>
+ *@                                    </div>
+                                    @*                                     <div class="text-right">
+                                        <div>@( (t.FechaTramitado ?? t.FechaFin ?? t.FechaInicio)?.ToString("dd/MM/yyyy HH:mm") ?? "-" )</div>
+                                        <div class="mud-typography-caption">@t.Estado</div>
+                                    </div> *@
+                                </div>
+                            </MudListItem>
+                        }
+                    </MudList>
+                }
+                else if (!isLoading)
+                {
+                    <MudText>No hay trámites recientes.</MudText>
+                }
+            </MudPaper>
+        </MudItem>
+
+        @* Sección de Estados y Tipos oculta temporalmente. Para volver a mostrar, cambiar MostrarEstadosYTipos a true *@
+        @if (MostrarEstadosYTipos)
+        {
+            <MudItem xs="12" md="4">
+                <MudPaper Class="p-4 mb-3">
+                    <MudText Typo="Typo.h6">Estados de trámites</MudText>
+                    <MudChart ChartType="ChartType.Pie" Labels="@EstadoLabels" Data="@EstadoData" />
+                </MudPaper>
+
+                <MudPaper Class="p-4">
+                    <MudText Typo="Typo.h6">Tipos de documento (Top 5)</MudText>
+                    <MudChart ChartType="ChartType.Donut" Labels="@TipoLabels" Data="@TipoData" />
+                </MudPaper>
+            </MudItem>
+        }
+
+@*         <MudItem xs="12" md="6">
+            <MudPaper Class="p-4">
+                <MudText Typo="Typo.h6">Próximos a vencer (30 días)</MudText>
+                @if (BarcosTramitesProximosVencer.Any())
+                {
+                    <MudList T="BarcosTramitesDto" Dense="true">
+                        @foreach (var t in BarcosTramitesProximosVencer)
+                        {
+                            <MudListItem>
+                                <div class="d-flex justify-space-between w-100">
+                                    <div>
+                                        <div><b>@(t.Certificado)</b></div>
+                                        @* <div class="mud-typography-caption">@((t.Empresa ?? t.Barco?.NombreA ?? t.Entidad) ?? "")</div> 
+                                    </div>
+                                      <div class="text-right">
+                                        <div>@(t.FechaFin?.ToString("dd/MM/yyyy") ?? "-")</div>
+                                        <div class="mud-typography-caption">@((t.DiasParaVencer >= 0) ? $"{t.DiasParaVencer} días" : "vencido")</div>
+                                    </div> 
+                                </div>
+                            </MudListItem>
+                        }
+                    </MudList>
+                }
+                else if (!isLoading)
+                {
+                    <MudText>No hay trámites próximos a vencer.</MudText>
+                }
+            </MudPaper>
+        </MudItem> *@
+
+        <MudItem xs="12" md="12">
+            <MudPaper Class="p-4">
+                <MudText Typo="Typo.h6">Calendario</MudText>
+
+                @if (isLoading)
+                {
+                    <MudProgressLinear Indeterminate="true" Color="Color.Primary" Class="mb-2" />
+                }
+                else
+                {
+                    var now = CalendarReference;
+                    var firstOfMonth = new DateTime(now.Year, now.Month, 1);
+                    var daysInMonth = DateTime.DaysInMonth(now.Year, now.Month);
+                    var startOffset = (int)firstOfMonth.DayOfWeek; // Domingo = 0
+                    var totalCells = startOffset + daysInMonth;
+                    // ajustar para completar filas de 7
+                    if (totalCells % 7 != 0) totalCells += 7 - (totalCells % 7);
+                    var dowNames = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
+
+                    <div class="d-flex justify-space-between align-center mb-2">
+                        <div>
+                            <MudIconButton Icon="@Icons.Material.Filled.KeyboardDoubleArrowLeft" OnClick="PrevYear" Edge="Edge.Start" />
+                            <MudIconButton Icon="@Icons.Material.Filled.ArrowBack" OnClick="PrevMonth" />
+                        </div>
+                        <div><b>@now.ToString("MMMM yyyy", CultureInfo.CurrentCulture)</b></div>
+                        <div>
+                            <MudIconButton Icon="@Icons.Material.Filled.ArrowForward" OnClick="NextMonth" />
+                            <MudIconButton Icon="@Icons.Material.Filled.KeyboardDoubleArrowRight" OnClick="NextYear" Edge="Edge.End" />
+                        </div>
+                    </div>
+
+                    <!-- encabezados de días -->
+                    <div class="mb-2 d-grid" style="grid-template-columns: repeat(7,1fr); gap:6px;">
+                        @foreach (var dname in dowNames)
+                        {
+                            <div class="mud-typography-caption text-center">@dname</div>
+                        }
+                    </div>
+
+                    <!-- celdas del mes -->
+                    <div class="d-grid" style="grid-template-columns: repeat(7,1fr); gap:8px;">
+                        @for (int i = 0; i < totalCells; i++)
+                        {
+                            var cellIndex = i - startOffset + 1;
+                            if (cellIndex < 1 || cellIndex > daysInMonth)
+                            {
+                                <div class="pa-2" style="min-height:64px;border-radius:6px;background:#f5f5f5;"></div>
+                            }
+                            else
+                            {
+                                var date = firstOfMonth.AddDays(cellIndex - 1).Date;
+                                AgendaPorFecha.TryGetValue(date, out var itemsForDay);
+                                var count = itemsForDay?.Count ?? 0;
+
+                                <div class="pa-2" style="min-height:64px;border-radius:6px;border:1px solid rgba(0,0,0,0.06);">
+                                    <div class="d-flex justify-space-between">
+                                        <div><b>@cellIndex</b></div>
+                                        @if (count > 0)
+                                        {
+                                            <MudChip T="int" Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small">@count</MudChip>
+                                        }
+                                    </div>
+
+                                    @if (count > 0)
+                                    {
+                                        <div class="mt-1" style="font-size:0.85rem;">
+                                            @foreach (var it in itemsForDay.Take(3))
+                                            {
+                                                <div class="text-truncate">@it.Certificado</div>
+                                            }
+                                            @if (count > 3)
+                                            {
+                                                <div class="mud-typography-caption">y @((count - 3)) más...</div>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            </MudPaper>
+        </MudItem>
+
+        @* Segunda fila: Próximos a vencer (izquierda) y Calendario/Agenda (derecha) *@
+        <MudItem xs="12" md="6">
+            <MudPaper Class="p-4">
+                <MudText Typo="Typo.h6">Próximos a vencer (30 días)</MudText>
+                @if (BarcosTramitesProximosVencer.Any())
+                {
+                    <MudList T="BarcosTramitesDto" Dense="true">
+                        @foreach (var t in BarcosTramitesProximosVencer.OrderByDescending(x=>x.FechaFin))
+                        {
+                            <MudListItem>
+                                <div class="d-flex justify-space-between w-100">
+                                    <div>
+                                        <div><b>@(t.Certificado)</b></div>
+                                        @* <div class="mud-typography-caption">@((t.Empresa ?? t.Barco?.NombreA ?? t.Entidad) ?? "")</div> *@
+                                    </div>
+                                    <div class="text-right">
+                                        <div>@(t.FechaFinParser?.ToString("dd/MM/yyyy") ?? "-")</div>
+                                        <div class="mud-typography-caption">
+                                            @{
+                                                var dias = t.FechaFinParser.HasValue ? (int)Math.Ceiling((t.FechaFinParser.Value - DateTime.UtcNow).TotalDays) : int.MaxValue;
+                                            }
+                                            @(dias >= 0 ? $"{dias} días" : "vencido")
+                                        </div>
+                                    </div>
+                                </div>
+                            </MudListItem>
+                        }
+                    </MudList>
+                }
+                else if (!isLoading)
+                {
+                    <MudText>No hay trámites próximos a vencer.</MudText>
+                }
+            </MudPaper>
+        </MudItem>
+
+        <MudItem xs="12" md="6">
+            <MudPaper Class="p-4">
+                <MudText Typo="Typo.h6">Próximos Vencimientos</MudText>
+                @if (AgendaPorFecha != null && AgendaPorFecha.Any())
+                {
+                    @foreach (var g in AgendaPorFecha.OrderBy(k => k.Key))
+                    {
+                        <div class="mb-2">
+                            <div class="d-flex justify-space-between">
+                                <div><b>@g.Key.ToString("dd MMM yyyy")</b></div>
+                                <div class="mud-typography-caption">@g.Value.Count() item(s)</div>
+                            </div>
+
+                            <MudList T="BarcosTramitesDto" Dense="true">
+                                @foreach (var item in g.Value)
+                                {
+                                    <MudListItem>
+                                        <div class="d-flex justify-space-between w-100">
+                                            <div>@item.Certificado</div>
+                                            <div class="mud-typography-caption">
+                                                @{ var dias = item.FechaFinParser.HasValue ? (int)Math.Ceiling((item.FechaFinParser.Value - DateTime.UtcNow).TotalDays) : int.MaxValue; }
+                                                @((dias >= 0) ? $"{dias} días" : "vencido")
+                                            </div>
+                                        </div>
+                                    </MudListItem>
+                                }
+                            </MudList>
+                        </div>
+                    }
+                }
+                else if (!isLoading)
+                {
+                    <MudText>No hay entradas en el calendario.</MudText>
+                }
+            </MudPaper>
+        </MudItem>
+        
+
+    </MudGrid>
+</MudContainer>

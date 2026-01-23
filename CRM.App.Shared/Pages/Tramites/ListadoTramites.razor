@@ -1,0 +1,58 @@
+﻿@page "/tramites"
+@using CRM.Dtos
+@using MudBlazor
+@using System.Collections.Generic
+@using System.Threading.Tasks
+@using System.Linq
+@using System.ComponentModel.DataAnnotations 
+@using System.ComponentModel.DataAnnotations.Schema 
+
+
+<MudText Typo="Typo.h4" GutterBottom="true">Gestión de Trámites</MudText>
+<MudButton Variant="Variant.Filled" 
+     Color="Color.Primary"
+     StartIcon="@Icons.Material.Filled.Add"
+     OnClick="AgregarTramite">
+     @* Href="/tramites/nuevo"> *@
+    Crear Nuevo Trámite
+</MudButton>
+
+<MudPaper Elevation="2" Class="pa-4 mt-4">
+    <MudDataGrid Items="@Tramites" T="TramiteDto"
+                 MultiSelection="false"
+                 RowClick="@((e) => EditTramite(e.Item.Id))"
+                 Filterable="true"
+                 SortMode="SortMode.Single"
+                 Hideable="true"
+                 Striped="true"
+                 Dense="true"
+                 Bordered="true"
+                 Class="mud-elevation-2">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Listado de Trámites</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="SearchString" Placeholder="Buscar Trámites" Adornment="Adornment.Start"
+                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <Columns>
+            
+            <PropertyColumn Property="x => x.Codigo" Title="Código"/>
+            <PropertyColumn Property="x => x.NombreTramite" Title="Descripción" />
+            @* <PropertyColumn Property="x => x.TipoTramite" Title="Tipo Trámite" /> *@
+            <PropertyColumn Property="x => x.FechaInicio" Title="Fecha Inicio" />
+            <PropertyColumn Property="x => x.FechaFin" Title="Fecha Fin" />
+            @* <PropertyColumn Property="x => x.Estado" title="Estado" /> 
+            <PropertyColumn Property="x => x.Observaciones" Title="Obs." />*@
+            <TemplateColumn CellClass="d-flex justify-end">
+                <CellTemplate>
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => EditTramite(context.Item.Id))" />
+                    <MudIconButton Icon="@Icons.Material.Filled.Delete" Size="Size.Small" Color="Color.Error" OnClick="@(() => DeleteTramite(@context.Item.Id, context.Item.NombreTramite))" />
+
+                </CellTemplate>
+            </TemplateColumn>
+        </Columns>
+        <PagerContent>
+            <MudDataGridPager T="TramiteDto" />
+        </PagerContent>
+    </MudDataGrid>
+</MudPaper>

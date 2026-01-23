@@ -10,9 +10,11 @@ using CRM.Web.Shared.Interfaces;
 using CRM.Web.Shared.Providers;
 using CRM.Web.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.FluentUI.AspNetCore.Components;
 using MudBlazor.Services;
+using System.Reflection;
 namespace CRM.App
 {
     public static class MauiProgram
@@ -41,14 +43,36 @@ namespace CRM.App
             // 1. CONFIGURAR LA URL SEGÚN LA PLATAFORMA
 
             string baseUrl = "https://10.0.2.2:7254/"; //string.Empty;
-            if (DeviceInfo.DeviceType == DeviceType.Virtual)
+            //if (DeviceInfo.DeviceType == DeviceType.Virtual)
+            //{
+            //    baseUrl = "http://10.0.2.2:5245/";
+            //}
+            //else
+            //{
+            //    baseUrl = baseUrl = "http://192.168.1.14:5245/";
+            //}
+
+            // 1. Determinar qué archivo cargar según el modo de compilación
+            string configFileName = "appsettings.json";
+
+#if DEBUG
+            configFileName = "appsettings.Development.json";
+#endif
+
+            // 2. Cargar el archivo desde los recursos incrustados
+            var assembly = Assembly.GetExecutingAssembly();
+            // Ojo: El nombre debe ser "NombreProyecto.NombreArchivo.json"
+            using var stream = assembly.GetManifestResourceStream($"CRM.App.{configFileName}");
+
+            if (stream != null)
             {
-                baseUrl = "http://10.0.2.2:5245/";
+                var config = new ConfigurationBuilder()
+                    .AddJsonStream(stream)
+                    .Build();
+                builder.Configuration.AddConfiguration(config);
             }
-            else
-            {
-                baseUrl = baseUrl = "http://192.168.1.14:5245/";
-            }
+
+
 
             // 2. REGISTRAR HTTPCLIENT (Esto soluciona el error de IHttpClientFactory)
             builder.Services.AddHttpClient("NoAuthClient", client =>

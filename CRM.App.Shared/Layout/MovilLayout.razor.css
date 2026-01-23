@@ -1,16 +1,21 @@
 /* Layout adaptativo: sidebar en escritorio, bottom nav en móvil */
 
 /* Reset básico para este scope */
-.layout-root { display:flex; flex-direction:column; min-height:100vh; }
+/*.layout-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}*/
 
 /* HEADER */
-.app-header { height: 56px; }
+/*.app-header { height: 56px; }*/
 
 /* BODY: sidebar + content */
-.app-body { display:flex; flex:1 1 auto; min-height:0; }
+/*.app-body { display:flex; flex:1 1 auto; min-height:0; }*/
 
 /* Sidebar (oculto en móvil) */
-.sidebar {
+/*.sidebar {
     display:none;
     width:240px;
     background:var(--neutral-layer-2, #f5f5f5);
@@ -28,14 +33,25 @@
     text-decoration:none;
 }
 .sidebar-item .icon { font-size:20px; width:24px; text-align:center; }
-.sidebar-item .text { font-size:15px; white-space:nowrap; }
+.sidebar-item .text { font-size:15px; white-space:nowrap; }*/
 
 /* Content area: reserva espacio inferior para la bottom nav en móvil */
-.content { flex:1 1 auto; min-height:0; display:flex; flex-direction:column; box-sizing:border-box; padding:16px; }
-.mobile-main { flex:1 1 auto; min-height:0; }
+/*.content {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 16px;*/
+
+    /* ESTO ACTIVA EL SCROLL */
+    /*overflow-y: auto;
+    -webkit-overflow-scrolling: touch;*/ /* Suavidad en iOS */
+/*}
+.mobile-main { flex:1 1 auto; min-height:0; }*/
 
 /* Bottom navigation (visible en móvil) */
-.bottom-nav {
+/*.bottom-nav {
     position:fixed;
     left:0;
     right:0;
@@ -50,33 +66,33 @@
     z-index:1000;
 }
 .nav-item { display:flex; align-items:center; justify-content:center; width:64px; height:100%; color:var(--neutral-foreground-rest, #333); text-decoration:none; }
-.nav-icon { font-size:22px; display:block; }
+.nav-icon { font-size:22px; display:block; }*/
 
 /* Estado activo */
-.sidebar-item.active,
+/*.sidebar-item.active,
 .nav-item.active {
     color: var(--accent, #0078d4);
     background: rgba(0,0,0,0.02);
 }
-.sidebar-item.active .text { font-weight:600 }
+.sidebar-item.active .text { font-weight:600 }*/
 
 /* Ocultar texto en mobile (sidebar hidden) */
-@media (max-width: 767.98px) {
+/*@media (max-width: 767.98px) {
     .sidebar { display:none; }
-    .bottom-nav { display:flex; }
+    .bottom-nav { display:flex; }*/
     /* evitar que el contenido quede bajo la barra */
-    .content { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
-}
+    /*.content { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
+}*/
 
 /* Mostrar sidebar en pantallas >= 768px y ocultar bottom nav */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .sidebar { display:flex; flex-direction:column; }
     .bottom-nav { display:none; }
     .content { padding-bottom: 24px; padding-left: 24px; }
-}
+}*/
 
 /* Ajustes para que los enlaces no colapsen y no aparezca "más" */
-.sidebar-item, .nav-item { min-width:0; box-sizing:border-box; overflow:visible; white-space:nowrap; }
+/*.sidebar-item, .nav-item { min-width:0; box-sizing:border-box; overflow:visible; white-space:nowrap; }*/
 
 /* Small accessibility focus */
-.sidebar-item:focus, .nav-item:focus { outline: 2px solid rgba(0,120,212,0.18); outline-offset:2px; }
+/*.sidebar-item:focus, .nav-item:focus { outline: 2px solid rgba(0,120,212,0.18); outline-offset:2px; }*/

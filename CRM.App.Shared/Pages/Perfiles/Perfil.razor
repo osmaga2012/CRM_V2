@@ -1,0 +1,84 @@
+﻿@page "/perfil"
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-5">
+    <MudCard Elevation="4">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h5" Class="mb-0">Mi Perfil</MudText>
+            </CardHeaderContent>
+            <CardHeaderActions>
+                @if (!ModoEdicion)
+                {
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="CambiarModoEdicion" />
+                }
+                else
+                {
+                    <MudIconButton Icon="@Icons.Material.Filled.Cancel" Color="Color.Secondary" OnClick="CambiarModoEdicion" />
+                    <MudIconButton Icon="@Icons.Material.Filled.Save" Color="Color.Success" OnClick="GuardarCambios" />
+                }
+            </CardHeaderActions>
+        </MudCardHeader>
+        <MudCardContent>
+            @if (EstaCargando)
+            {
+                <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+                <MudText Class="ml-2">Cargando perfil...</MudText>
+            }
+            else if (usuario == null)
+            {
+                <MudText Color="Color.Error">No se pudo cargar el perfil del usuario.</MudText>
+            }
+            else
+            {
+                <MudGrid Spacing="4">
+                    <MudItem xs="12" sm="4" Class="d-flex flex-column align-items-center justify-content-start">
+                        <MudAvatar Size="Size.Large" Class="mud-elevation-2 mb-4">
+                            @if (!string.IsNullOrEmpty(fotoBase64))
+                            {
+                                <MudImage Src="@fotoBase64" Alt="Foto de Perfil" 
+                                    Style="width:100%; height:100%; object-fit:cover; border-radius:50%;" />
+                            }
+                            else
+                            {
+                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="Size.Large" />
+                            }
+                        </MudAvatar>
+                        @if (ModoEdicion)
+                        {
+
+                            <MudFileUpload T="IBrowserFile" FilesChanged="UploadFiles" Accept="image/*">
+                                <ActivatorContent>
+                                    <MudButton Variant="Variant.Filled"
+                                               Color="Color.Primary"
+                                               StartIcon="@Icons.Material.Filled.CloudUpload">
+                                        Subir foto
+                                    </MudButton>
+                                </ActivatorContent>
+                            </MudFileUpload>
+                            @if (!string.IsNullOrEmpty(errorSubidaFichero))
+                            {
+                                <MudText Color="Color.Error" Typo="Typo.caption">@errorSubidaFichero</MudText>
+                            }
+                        }
+                    </MudItem>
+                    <MudItem xs="12" sm="8">
+                        <MudTextField T="string" Label="Email" @bind-Value="usuario.EMail"
+                                      ReadOnly="!ModoEdicion" Variant="Variant.Text" />
+
+                        <MudTextField T="string" Label="Nombre" @bind-Value="usuario.NombreUsuario"
+                                      ReadOnly="!ModoEdicion" Variant="Variant.Text" Class="mt-3" />
+                    </MudItem>
+                </MudGrid>   
+
+@*                 <MudTextField T="string" Label="Apellidos" @bind-Value="usuario.Apellidos" ReadOnly="!_isEditing" Variant="Variant.Text" Class="mt-3" />
+                <MudTextField T="string" Label="Teléfono" @bind-Value="usuario.Telefono" ReadOnly="!_isEditing" Variant="Variant.Text" Class="mt-3" />
+ *@
+                @* Aquí puedes añadir más campos según tu UsuarioDto *@
+
+                @if (!string.IsNullOrEmpty(Errores))
+                {
+                    <MudAlert Severity="Severity.Error" Class="mt-4">@Errores</MudAlert>
+                }
+            }
+        </MudCardContent>
+    </MudCard>
+</MudContainer>

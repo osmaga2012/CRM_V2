@@ -1,0 +1,38 @@
+﻿@page "/alta-persona"
+@using CRM.App.Shared.Dtos
+
+<h3>Alta de Persona</h3>
+
+<EditForm Model="usuario" OnValidSubmit="Guardar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText @bind-Value="usuario.NombreUsuario" class="form-control" placeholder="Nombre usuaio" />
+    <InputText @bind-Value="usuario.EMail" class="form-control" placeholder="EMail" />
+  
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</EditForm>
+
+@code {
+    private Usuario2Dto usuario = new();
+    
+
+    [Inject] private HttpClient Http { get; set; }
+    [Inject] private NavigationManager Navigation { get; set; }
+
+    private async Task Guardar()
+    {
+        var response = await Http.PostAsJsonAsync("api/Personas/crear", usuario);
+        if (response.IsSuccessStatusCode)
+        {
+            Navigation.NavigateTo("");
+        }
+    }
+
+    public class AltaPersonaDto
+    {
+        public string? NombreCompleto { get; set; }
+        public string? DNI { get; set; }
+        public string? Telefono { get; set; }
+    }
+}

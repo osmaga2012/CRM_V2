@@ -1,4 +1,5 @@
 ﻿using CRM.App.Shared.Interfaces;
+using CRM.Dominio.Entidades;
 using CRM.Dtos;
 using CRM.Web.Shared.Interfaces;
 using Microsoft.AspNetCore.Components;
@@ -121,7 +122,11 @@ namespace CRM.App.Shared.Layout
             //_loggedInUser = null; // Limpiar el usuario en el layout
             //Snackbar.Add("Has cerrado sesión exitosamente.", Severity.Info);
             await _authService.LogoutAsync();
+            await _navigationManager.NavigateToAsync("login");
+            StateHasChanged();
         }
+
+
 
         private async Task Configuracion()
         {

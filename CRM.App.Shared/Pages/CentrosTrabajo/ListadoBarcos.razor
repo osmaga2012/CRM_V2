@@ -6,6 +6,7 @@
 @using System.Linq
 
 <MudThemeProvider />
+<MudBreakpointProvider OnBreakpointChanged="OnBreakpointChanged" />
 
 <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="pb-8 pt-4">
 
@@ -34,7 +35,7 @@
 
     <MudPaper Elevation="4" Class="overflow-hidden border border-solid mud-border-lines-default">
         <div class="grid-container p-4">
-            @if (PlatformService.IsNativeApp)
+            @if (PlatformService.IsNativeApp || IsMobile)
             {
                 <div class="barcos-cards">
                     @foreach (var e in (FiltroEmpresas ?? Enumerable.Empty<EmpresasDto>()))

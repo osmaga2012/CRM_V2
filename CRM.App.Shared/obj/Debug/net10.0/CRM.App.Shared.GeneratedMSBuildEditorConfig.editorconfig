@@ -85,12 +85,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cUmVnaXN0cm8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Perfiles/CrearPerfilUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZmlsZXNcQ3JlYXJQZXJmaWxVc3VhcmlvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Perfiles/CrearUsuarios.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZmlsZXNcQ3JlYXJVc3Vhcmlvcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Perfiles/Perfil.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZmlsZXNcUGVyZmlsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Redirect/RedirectToCrearPerfil.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RcUmVkaXJlY3RUb0NyZWFyUGVyZmlsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Redirect/RedirectToLogin.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RcUmVkaXJlY3RUb0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Tramites/ListadoTramites.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbWl0ZXNcTGlzdGFkb1RyYW1pdGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Tramites/MntTramite.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbWl0ZXNcTW50VHJhbWl0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Shared/Pages/Weather.razor]

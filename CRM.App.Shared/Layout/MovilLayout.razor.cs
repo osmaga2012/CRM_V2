@@ -1,5 +1,6 @@
 ﻿using CRM.App.Shared.Interfaces;
 using CRM.Dtos;
+using CRM.Web.Shared.Interfaces;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.FluentUI.AspNetCore.Components;
@@ -18,6 +19,7 @@ namespace CRM.App.Shared.Layout
         [CascadingParameter] private Task<AuthenticationState> authenticationStateTask { get; set; } // Acceso al estado de autenticación
         //[Inject] private IPlatformNavigationService _navigationManager { get; set; } // Para redirecciones
         [Inject] private IPlatformNavigationService _navigationManager { get; set; } // Para redirecciones
+        [Inject] private IAuthService _authService { get; set; }
 
         [Inject] private ICurrentUserService currentUserService { get; set; }
 
@@ -101,7 +103,7 @@ namespace CRM.App.Shared.Layout
                     // Si el usuario no está autenticado según AuthStateProvider, redirige.
                     // Esto es un fallback, App.razor ya debería haberlo manejado, pero es buena práctica.
                     //Snackbar.Add("No autenticado. Por favor, inicie sesión.", Severity.Info);
-                    _navigationManager.NavigateToAsync("/login");
+                    _navigationManager.NavigateToAsync("login");
                     //_navigationManager.NavigateTo("login");
                     //_navigationManager.NavigateToAsync("/");
                 }
@@ -123,7 +125,8 @@ namespace CRM.App.Shared.Layout
         //[Inject] private IAuthService _authService { get; set; }
         private async Task Logout()
         {
-            //await _authService.LogoutAsync();
+            await _authService.LogoutAsync();
+            await _navigationManager.NavigateToAsync("login");
             //_loggedInUser = null; // Limpiar el usuario en el layout
             //Snackbar.Add("Has cerrado sesión exitosamente.", Severity.Info);
         }

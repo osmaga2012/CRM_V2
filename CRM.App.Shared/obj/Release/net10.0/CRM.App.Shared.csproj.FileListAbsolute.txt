@@ -33,8 +33,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\co
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\7kcky4pxq7-{0}-6gzpyzhau4-6gzpyzhau4.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\xqsbjf6vp1-{0}-8inm30yfxf-8inm30yfxf.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\xxmvzgczgp-{0}-uhfllo7vmv-uhfllo7vmv.gz
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\rkzg6hr7td-{0}-3q1m33io4l-3q1m33io4l.gz
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\6g7xse5sf0-{0}-3bgjehj650-3bgjehj650.gz
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\staticwebassets.build.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\staticwebassets.build.json.cache
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\staticwebassets.development.json
@@ -52,3 +50,5 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\CR
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\refint\CRM.App.Shared.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\CRM.App.Shared.pdb
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\ref\CRM.App.Shared.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\rkzg6hr7td-{0}-700zk55olt-700zk55olt.gz
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Shared\obj\Release\net10.0\compressed\6g7xse5sf0-{0}-wt6kyadh1m-wt6kyadh1m.gz

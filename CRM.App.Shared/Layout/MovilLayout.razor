@@ -2,14 +2,30 @@
 @using Microsoft.FluentUI.AspNetCore.Components
 @inherits LayoutComponentBase
 @inject NavigationManager Nav
-<LayoutView>
-    <div class="layout-root">
-        <header class="app-header" role="banner">
-            <!-- contenido del header si hace falta -->
-        </header>
 
-        <div class="app-body">
-            <nav class="sidebar" role="navigation" aria-label="Main navigation">
+<MudThemeProvider />
+<MudDialogProvider />
+<MudPopoverProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1" Color="MudBlazor.Color.Primary" Dense="true">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu"
+                        Color="MudBlazor.Color.Inherit"
+                        Edge="Edge.Start"
+                        OnClick="DrawerToggle" />
+        <MudSpacer />
+        <MudText Typo="Typo.h6"></MudText>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Material.Filled.Notifications"
+                        Color="MudBlazor.Color.Inherit" />
+        <MudIconButton Icon="@Icons.Material.Filled.Logout"
+                        Color="MudBlazor.Color.Inherit"
+                        OnClick="Logout" />
+    </MudAppBar>
+
+
+@*            <nav class="sidebar" role="navigation" aria-label="Main navigation">
                 <a class="sidebar-item @ActiveClass("/", false)" href="/">
                     <span class="icon">🏠</span>
                     <span class="text">Inicio</span>
@@ -22,34 +38,50 @@
                     <span class="icon">⛴️</span>
                     <span class="text">Barcos</span>
                 </a>
-                <a class="sidebar-item @ActiveClass("/config", true)" href="/config">
+@*                 <a class="sidebar-item @ActiveClass("/config", true)" href="/config">
                     <span class="icon">⚙️</span>
                     <span class="text">Config</span>
-                </a>
-            </nav>
+                </a> 
+            </nav> *@
+                    @* MENU LATERAL (DRAWER) *@
+          <MudDrawer @bind-Open="@_drawerOpen"
+               Elevation="2"
+               ClipMode="DrawerClipMode.Never"
+               Variant="@DrawerVariant.Responsive"
+               Fixed="true"
+               Breakpoint="Breakpoint.Md">    
 
-            <main class="content" role="main">
-                <div class="mobile-main">
-                    @Body
-                </div>
-            </main>
-        </div>
+            <MudNavLink Href="perfil"
+                        Icon="@Icons.Material.Filled.DirectionsBoat">Mi Perfil</MudNavLink>
+  
+            <MudNavLink Href="/logout"
+                        Icon="@Icons.Material.Filled.ExitToApp">Salir</MudNavLink>
 
-        <footer class="bottom-nav" role="navigation" aria-label="Bottom navigation">
-            <a class="nav-item @ActiveClass("/", false)" href="/" aria-label="Inicio">
-                <span class="nav-icon">🏠</span>
-            </a>
-            <a class="nav-item @ActiveClass("/tramites", true)" href="/tramites" aria-label="Trámites">
-                <span class="nav-icon">📄</span>
-            </a>
-            <a class="nav-item @ActiveClass("/barcos", true)" href="/barcos" aria-label="Barcos">
-                <span class="nav-icon">⛴️</span>
-            </a>
-            <a class="nav-item @ActiveClass("/config", true)" href="/config" aria-label="Configuración">
-                <span class="nav-icon">⚙️</span>
-            </a>
-        </footer>
-    </div>
-</LayoutView>
+        
+        </MudDrawer>
 
-@* Mantener los bloques comentados originales si se necesitan más implementaciones. *@
+    
+        <MudMainContent Class="native-content-area">
+            <MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
+                @Body
+            </MudContainer>
+        </MudMainContent>
+        <MudAppBar 
+            Bottom="true" 
+            Fixed="true" 
+            Elevation="1" 
+            Color="MudBlazor.Color.Primary" 
+            ToolBarClass="d-flex justify-center flex-grow-1 gap-4"> 
+
+            <MudIconButton Href="" Icon="@Icons.Material.Filled.Home" Color="MudBlazor.Color.Inherit"/>
+
+            <MudIconButton Href="tramites" Icon="@Icons.Material.Filled.DocumentScanner" 
+                Color="MudBlazor.Color.Inherit" />
+
+            <MudIconButton Href="barcos" Icon="@Icons.Material.Filled.Business" 
+                Color="MudBlazor.Color.Inherit"/>
+
+        </MudAppBar>
+
+
+</MudLayout>
