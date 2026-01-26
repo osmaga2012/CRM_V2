@@ -15,7 +15,6 @@
           "Microsoft.Maui.Controls": "10.0.1",
           "MudBlazor": "8.15.0",
           "MudBlazor.ThemeManager": "3.0.0",
-          "CRM.Dtos": "1.0.0.0",
           "Microsoft.Maui.Controls.HotReload.Forms": "18.0.0.0",
           "Microsoft.VisualStudio.DesignTools.MobileTapContracts": "18.0.0.0",
           "Microsoft.VisualStudio.DesignTools.TapContract": "18.0.0.0",
@@ -989,6 +988,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
+          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.Authorization": "10.0.1",
           "Microsoft.AspNetCore.Components.Forms": "10.0.1",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
@@ -1008,7 +1008,18 @@
           }
         }
       },
-      "CRM.Dtos/1.0.0.0": {
+      "CRM.Dominio/1.0.0": {
+        "runtime": {
+          "CRM.Dominio.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
         "runtime": {
           "CRM.Dtos.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -1501,8 +1512,13 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CRM.Dtos/1.0.0.0": {
-      "type": "reference",
+    "CRM.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRM.Dtos/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     },

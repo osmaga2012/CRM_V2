@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web\\CRM.App.Web.csproj": {}
+    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\CRM.App.Web.csproj": {}
   },
   "projects": {
     "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dominio\\CRM.Dominio.csproj": {
@@ -146,14 +146,14 @@
         }
       }
     },
-    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj": {
+    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj",
         "projectName": "CRM.App.Shared",
-        "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj",
+        "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj",
         "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\obj\\",
+        "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -548,14 +548,14 @@
         }
       }
     },
-    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj": {
+    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
+        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
         "projectName": "CRM.App.Web.Client",
-        "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
+        "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
         "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\obj\\",
+        "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -580,8 +580,8 @@
               "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
                 "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
               },
-              "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj": {
-                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj"
+              "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj": {
+                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj"
               }
             }
           }
@@ -941,14 +941,14 @@
         }
       }
     },
-    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web\\CRM.App.Web.csproj": {
+    "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\CRM.App.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web\\CRM.App.Web.csproj",
+        "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\CRM.App.Web.csproj",
         "projectName": "CRM.App.Web",
-        "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web\\CRM.App.Web.csproj",
+        "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\CRM.App.Web.csproj",
         "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web\\obj\\",
+        "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -973,8 +973,8 @@
               "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
                 "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
               },
-              "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj": {
-                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj"
+              "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj": {
+                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj"
               }
             }
           }

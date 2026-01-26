@@ -1,5 +1,5 @@
-@page "/tramite/"
-@page "/tramite/{IdTramite:guid}"
+@page "/tramite1/"
+@page "/tramite1/{IdTramite:guid}"
 @using CRM.Dtos
 
 
@@ -62,7 +62,7 @@
     <MudCard Elevation="4">
         <MudCardHeader>
             <CardHeaderContent>
-                <MudText Typo="Typo.h5" Class="mb-0">Tramite</MudText>
+                <MudText Typo="Typo.h5" Class="mb-0">Tramite1</MudText>
             </CardHeaderContent>
             <CardHeaderActions>
                 <MudIconButton Icon="@Icons.Material.Filled.Save" Color="Color.Success" OnClick="GuardarCambios" />
@@ -70,7 +70,7 @@
         </MudCardHeader>
         <MudCardContent>
                 <MudForm Model="@tramite" @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
-                    <MudValidationSummary />
+                    @* <MudValidationSummary /> *@
 
                     <MudTextField @bind-Value="@tramite.NombreTramite"
                         Label="Nombre del tramite"/>

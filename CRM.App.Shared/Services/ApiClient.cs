@@ -86,9 +86,11 @@ namespace CRM.App.Sharted.Services
 
                 var response = await _httpClient.PostAsJsonAsync(endpoint, dto);
                 response.EnsureSuccessStatusCode(); // Lanza excepción si el código de estado HTTP no es de éxito
-                return await response.Content.ReadFromJsonAsync<ResponseDto>();
+                var ret =  await response.Content.ReadFromJsonAsync<ResponseDto>();
 
-            }
+                return ret;
+
+                }
             catch (Exception ex)
             {
 

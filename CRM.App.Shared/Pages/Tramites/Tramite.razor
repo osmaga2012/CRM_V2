@@ -1,0 +1,99 @@
+﻿@page "/tramite/"
+@page "/tramite/{Id:guid}"
+
+@using CRM.Dtos
+@inject HttpClient Http
+@inject NavigationManager Nav
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudPaper Class="pa-6">
+        <MudText Typo="Typo.h5" Class="mb-4">@(_isEdit ? "Editar Trámite" : "Crear Trámite Masivo")</MudText>
+
+        <MudForm @ref="_form" @bind-IsValid="@_success">
+            <MudGrid>
+                @* --- DATOS BÁSICOS DEL TRÁMITE --- *@
+                <MudItem xs="12" sm="8">
+                    <MudTextField T="string" Label="Título del Trámite"
+                                  @bind-Value="_masivoDto.Tramite.NombreTramite"
+                                  Required="true" RequiredError="El título es obligatorio" />
+                </MudItem>
+
+                <MudItem xs="12" sm="4">
+                    <MudDatePicker Label="Fecha de Inicio"
+                                   @bind-Date="_masivoDto.Tramite.FechaInicio" />
+                </MudItem>
+                
+                <MudItem xs="12" sm="4">
+                    <MudDatePicker Label="Fecha de Expiración" 
+                                    @bind-Date="_masivoDto.Tramite.FechaFin" />
+                </MudItem>
+@*                 <MudItem xs="12">
+                    <MudTextField T="string" Label="Descripción Detallada"
+                                  @bind-Value="_masivoDto.Tramite."
+                                  Lines="3" Variant="Variant.Outlined" />
+                </MudItem> *@
+
+                @if (!_isEdit)
+                {
+                    @* --- LÓGICA DE ASIGNACIÓN MASIVA (Solo en creación) --- *@
+                    <MudItem xs="12" Class="mt-6">
+                        <MudAlert Severity="Severity.Info" Variant="Variant.Filled" ContentAlignment="HorizontalAlignment.Center">
+                            Configuración de asignación para la Cofradía
+                        </MudAlert>
+                    </MudItem>
+
+                    <MudItem xs="12" sm="6">
+                        <MudSwitch @bind-Value="_masivoDto.TodosLosBarcos"
+                                   Label="Asignar a TODAS las empresas y barcos"
+                                   Color="Color.Primary" />
+                    </MudItem>
+
+                    @if (!_masivoDto.TodosLosBarcos)
+                    {
+                        <MudItem xs="12">
+                            <MudSelect T="string" Label="Seleccionar Empresas Destino"
+                                       MultiSelection="true"
+                                       @bind-SelectedValues="_empresasSeleccionadas"
+                                       HelperText="El trámite se creará para todos los barcos de las empresas elegidas">
+                                @foreach (var emp in _listaEmpresas)
+                                {
+                                    <MudSelectItem Value="@emp.CodigoEmpresa">@emp.Barco?.NombreB (@emp.CodigoEmpresa)</MudSelectItem>
+                                }
+                            </MudSelect>
+                        </MudItem>
+
+                        <MudItem>
+                            <MudAutocomplete T="EmpresasDto"
+                                             Label="Buscar Empresas"
+                                             SearchFunc="@SearchEmpresas"
+                                             ToStringFunc="@(e => e == null ? null : $"({e.Barco.CodigoBarco}) - {e.Barco.NombreB} ({e.CodigoEmpresa})")"
+                                             MultiSelection="true"
+                                             @bind-SelectedValues="_empresasObjetos"
+                                             ResetValueOnEmptyText="true"
+                                             CoerceText="true"
+                                             AdornmentIcon="@Icons.Material.Filled.Search" />
+
+                        </MudItem>
+                    }
+                }
+                else
+                {
+                    <MudItem xs="12">
+                        <MudAlert Severity="Severity.Warning">
+                            Estás editando la definición base del trámite. Los cambios no se replicarán a trámites ya asignados.
+                        </MudAlert>
+                    </MudItem>
+                }
+
+                <MudItem xs="12" Class="d-flex justify-end py-4">
+                    <MudButton Variant="Variant.Outlined" OnClick="Volver" Class="mr-2">Cancelar</MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary"
+                               Disabled="@(!_success)" OnClick="Guardar">
+                        @(_isEdit ? "Actualizar" : "Crear y Asignar")
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+        </MudForm>
+    </MudPaper>
+</MudContainer>

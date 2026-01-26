@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eUsxTxL57SY=",
+  "dgSpecHash": "bE/HL2Rs/pk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\CRM.App.csproj",
+  "projectFilePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App\\CRM.App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oscar\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",

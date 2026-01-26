@@ -32,12 +32,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName>ScopedCss</AssetTraitName>
       <AssetTraitValue>ApplicationBundle</AssetTraitValue>
-      <Fingerprint>ugqw525pag</Fingerprint>
-      <Integrity>/koGgDc5dh4xmCSZKzxA+d+4H0qYv2RnE77CDSliYBA=</Integrity>
+      <Fingerprint>ru0xn7p9wp</Fingerprint>
+      <Integrity>k0WMiUnKMJtnAccjdlvxz/hjNHqqQ3+YwFZqCs7k/4Q=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <FileLength>405</FileLength>
-      <LastWriteTime>Wed, 21 Jan 2026 11:14:30 GMT</LastWriteTime>
+      <LastWriteTime>Sun, 25 Jan 2026 19:35:15 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CRM.App.styles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imagenes\logo.png'))">

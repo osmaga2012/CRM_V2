@@ -12,43 +12,33 @@ namespace CRM.App.Shared.Layout.Menus
 {
     public partial class MainNavMenu : ComponentBase
     {
-        [Parameter] public TipoUsuarioDto TipoUsuario { get; set; }
-        [Parameter] public EventCallback ToggleDarkMode { get; set; }
-        [Parameter] public bool IsDarkMode { get; set; }
+        [Inject] private ICurrentUserService currentUserService { get; set; }
+        [CascadingParameter] private Task<AuthenticationState> authenticationStateTask { get; set; }
 
-        [Inject] private ICurrentUserService currentUserService { get; set; } // Servicio para obtener el usuario actual
+        private UsuarioDto? _loggedInUser;
 
-        [CascadingParameter] private Task<AuthenticationState> authenticationStateTask { get; set; } // Acceso al estado de autenticación
-
+        // Propiedades computadas para limpiar el HTML
+        private bool EsAdmin => _loggedInUser?.TipoUsuario == TipoUsuarioDto.Administrador;
+        private bool EsEmpresa => _loggedInUser?.TipoUsuario == TipoUsuarioDto.Empresa;
+        private bool EsGestion => EsAdmin || EsEmpresa;
 
         private bool collapseNavMenu = true;
         private bool ocultarItem = false;
-        private UsuarioDto? _loggedInUser; // El perfil del usuario, puede ser null
 
         private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
         protected override async Task OnInitializedAsync()
         {
-            // Primero, verifica si el usuario está realmente autenticado según AuthStateProvider
             var authState = await authenticationStateTask;
             var user = authState.User;
 
-            await Task.Delay(500); // Pequeña espera para asegurar que todo esté listo
-            _loggedInUser = await currentUserService.GetCurrentUserAsync(user);
-
-            StateHasChanged();
-        }
-
-        private void ToggleNavMenu()
-        {
-            collapseNavMenu = !collapseNavMenu;
-        }
-
-        private async Task OnToggleDarkModeClicked()
-        {
-            if (ToggleDarkMode.HasDelegate)
+            if (user.Identity?.IsAuthenticated == true)
             {
-                await ToggleDarkMode.InvokeAsync();
+                // El await ya gestiona la espera necesaria sin bloquear el hilo
+                _loggedInUser = await currentUserService.GetCurrentUserAsync(user);
+
+                // Notificamos a Blazor que los datos han llegado y debe repintar
+                StateHasChanged();
             }
         }
 
