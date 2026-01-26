@@ -5,23 +5,23 @@
       "PackagePath": "staticwebassets\\_framework\\blazor.webview.js"
     },
     {
-      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\obj\\Debug\\net10.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\CRM.App.styles.css",
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App\\obj\\Debug\\net10.0-maccatalyst\\maccatalyst-x64\\scopedcss\\bundle\\CRM.App.styles.css",
       "PackagePath": "staticwebassets\\CRM.App.styles.css"
     },
     {
-      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\app.css",
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\imagenes\\logo.png",
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App\\wwwroot\\imagenes\\logo.png",
       "PackagePath": "staticwebassets\\imagenes\\logo.png"
     },
     {
-      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\imagenes\\logo_gandia.png",
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App\\wwwroot\\imagenes\\logo_gandia.png",
       "PackagePath": "staticwebassets\\imagenes\\logo_gandia.png"
     },
     {
-      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App\\wwwroot\\index.html",
+      "Id": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {

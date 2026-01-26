@@ -1879,13 +1879,13 @@
     },
     "CRM.Dominio/1.0.0": {
       "type": "project",
-      "path": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj",
-      "msbuildProject": "../../../CRM/CRM.Dominio/CRM.Dominio.csproj"
+      "path": "../../../../CRM/CRM.Dominio/CRM.Dominio.csproj",
+      "msbuildProject": "../../../../CRM/CRM.Dominio/CRM.Dominio.csproj"
     },
     "CRM.Dtos/1.0.0": {
       "type": "project",
-      "path": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj",
-      "msbuildProject": "../../../CRM/CRM.Dtos/CRM.Dtos.csproj"
+      "path": "../../../../CRM/CRM.Dtos/CRM.Dtos.csproj",
+      "msbuildProject": "../../../../CRM/CRM.Dtos/CRM.Dtos.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1914,11 +1914,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj",
       "projectName": "CRM.App.Shared",
-      "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\CRM.App.Shared.csproj",
+      "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj",
       "packagesPath": "C:\\Users\\oscar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM.App.Shared\\obj\\",
+      "outputPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

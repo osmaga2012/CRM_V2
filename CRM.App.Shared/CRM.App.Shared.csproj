@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CRM\CRM.Dtos\CRM.Dtos.csproj" />
+    <ProjectReference Include="..\..\..\..\CRM\CRM.Dtos\CRM.Dtos.csproj" />
   </ItemGroup>
 
 </Project>

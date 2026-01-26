@@ -41,9 +41,15 @@
                Variant="@DrawerVariant.Responsive"
                Fixed="true"
                Breakpoint="Breakpoint.Md">
-            
-            <MainNavMenu />
 
+                <AuthorizeView>
+                    <Authorized>
+                        <MainNavMenu />
+                    </Authorized>
+                    <NotAuthorized>
+                        <MudText Class="pa-4">Inicie sesión</MudText>
+                    </NotAuthorized>
+                </AuthorizeView>
         
         </MudDrawer>
 

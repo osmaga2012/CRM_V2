@@ -22,10 +22,22 @@ namespace CRM.App.Shared.Services
         {
             try
             {
-                if (_cachedUser != null)
+                // Extraer ID del token actual
+                var userIdClaim = userPrincipal.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                Guid currentUserId;
+                Guid.TryParse(userIdClaim, out currentUserId);
+
+
+                // LOGICA DE SEGURIDAD: 
+                // Si hay un cache pero el ID no coincide con el del token actual, ¡LIMPIAMOS!
+                if (_cachedUser != null && _cachedUser.Id != currentUserId)
                 {
-                    return _cachedUser;
+                    _cachedUser = null;
                 }
+
+                if (_cachedUser != null) return _cachedUser;
+
+
 
                 if (userPrincipal?.Identity == null || !userPrincipal.Identity.IsAuthenticated)
                 {
@@ -34,8 +46,8 @@ namespace CRM.App.Shared.Services
                 }
 
                 // Obtener el UserId del JWT (necesario para el fallback y para pasar a GetUsuarioByIdAsync en el backend si se necesitara)
-                var userIdClaim = userPrincipal.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-                Guid currentUserId;
+                //var userIdClaim = userPrincipal.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                //Guid currentUserId;
                 if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out currentUserId))
                 {
                     Console.WriteLine("Warning: User ID claim not found or not a valid GUID.");

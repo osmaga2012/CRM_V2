@@ -45,6 +45,8 @@ namespace CRM.App.Shared.Pages.Tramites
         }
 
         private TramiteDto tramite = new();
+        private TramiteMasivoDto tramiteMasivo = new();
+
         private MudForm form = default!;
         private bool success;
         private string[] errors = { };
@@ -67,6 +69,7 @@ namespace CRM.App.Shared.Pages.Tramites
 
         protected override async Task OnInitializedAsync()
         {
+            
             tramite.AsignacionDestino = string.IsNullOrWhiteSpace(tramite.AsignacionDestino)
                 ? DestinoTodos
                 : tramite.AsignacionDestino;
@@ -296,11 +299,14 @@ namespace CRM.App.Shared.Pages.Tramites
 
                 if (IdTramite != null)
                 {
-                    respuesta = await servicioTramite.UpdateAsync("api/tramites", tramite, IdTramite);
+                    respuesta = await servicioTramite.UpdateAsync("api/tramites/", tramite, IdTramite);
                 }
                 else
                 {
-                    respuesta = await servicioTramite.CreateAsync("api/tramites", tramite);
+
+
+
+                    respuesta = await servicioTramite.CreateAsync("api/tramites/masivo", tramite);
                 }
 
                 if (respuesta.Success)

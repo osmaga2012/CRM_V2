@@ -16,6 +16,8 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
         [Inject] private ISnackbar Snackbar { get; set; }
         [Inject] private IApiClient<TramiteDto> tramiteService { get; set; }
 
+        [Parameter] public Guid? Id { get; set; }
+
         private IQueryable<TramiteDto>? lstTramites;
         private string SearchString = string.Empty;
 
@@ -34,6 +36,7 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
 
         private async Task CargarTramites()
         {
+
             lstTramites = (await tramiteService.GetAllAsync("/api/Tramites")).AsQueryable();
             Snackbar.Add("Trámites cargados con éxito.", Severity.Success);
         }
