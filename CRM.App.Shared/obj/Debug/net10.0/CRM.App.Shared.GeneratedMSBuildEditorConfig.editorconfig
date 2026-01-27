@@ -105,6 +105,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVkaXJlY3RcUmVkaXJlY3RUb0xvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Shared/Pages/Tramites/DialogoSeleccionEmpresas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbWl0ZXNcRGlhbG9nb1NlbGVjY2lvbkVtcHJlc2FzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Shared/Pages/Tramites/ListadoTramites.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbWl0ZXNcTGlzdGFkb1RyYW1pdGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

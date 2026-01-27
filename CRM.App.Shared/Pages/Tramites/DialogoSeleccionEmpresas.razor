@@ -1,0 +1,56 @@
+﻿@using CRM.Dtos
+@using MudBlazor
+
+@inject IApiClient<EmpresasDto> servicioEmpresas
+
+<MudDialog>
+    <TitleContent>Seleccionar Empresas y Barcos</TitleContent>
+    <DialogContent>
+        <MudTextField @bind-Value="_searchString" Placeholder="Buscar por nombre, barco o código..."
+                      Adornment="Adornment.Start" IconSize="Size.Medium" Class="mb-4" />
+
+        <div style="max-height: 400px; overflow-y: auto;">
+            <MudList T="EmpresasDto" SelectedValues="_tempSeleccion" SelectedValuesChanged="OnSelectionChanged" SelectionMode="SelectionMode.MultiSelection">
+                @foreach (var emp in _listaFiltrada)
+                {
+                    <MudListItem Value="@emp">
+                        <div class="d-flex justify-space-between">
+                            <MudText>@emp.Barco?.NombreB</MudText>
+                            <MudText Typo="Typo.caption" Class="mud-text-secondary">@emp.CodigoEmpresa</MudText>
+                        </div>
+                    </MudListItem>
+                }
+            </MudList>
+        </div>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancelar">Cancelar</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Aceptar">Aceptar (@_tempSeleccion.Count())</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] IMudDialogInstance MudDialog { get; set; }
+    [Parameter] public List<EmpresasDto> EmpresasYaSeleccionadas { get; set; } = new();
+
+    private string _searchString = "";
+    private List<EmpresasDto> _totalEmpresas = new();
+    private IEnumerable<EmpresasDto> _tempSeleccion = new HashSet<EmpresasDto>();
+
+    // Filtro en tiempo real
+    private IEnumerable<EmpresasDto> _listaFiltrada => _totalEmpresas
+        .Where(x => string.IsNullOrWhiteSpace(_searchString) ||
+               x.NombreArmador.Contains(_searchString, StringComparison.OrdinalIgnoreCase) ||
+               (x.Barco?.NombreB?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) ?? false));
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Cargar empresas desde el servicio aquí
+        _totalEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa")).ToList();
+        _tempSeleccion = new HashSet<EmpresasDto>(EmpresasYaSeleccionadas);
+    }
+
+    private void OnSelectionChanged(IEnumerable<EmpresasDto> values) => _tempSeleccion = values;
+    private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccion));
+    private void Cancelar() => MudDialog.Cancel();
+}

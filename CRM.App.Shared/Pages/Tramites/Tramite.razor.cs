@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components;
 using MudBlazor;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
 
@@ -13,7 +14,7 @@ namespace CRM.App.Shared.Pages.Tramites
     public partial class Tramite: ComponentBase
     {
         [Parameter] public Guid? Id { get; set; }
-
+        [Inject] private IDialogService MyDialogService { get; set; } // Nombre de la instancia
         [Inject] private IApiClient<TramiteMasivoDto> servicioTramite { get; set; }
         [Inject] private IApiClient<EmpresasDto> servicioEmpresas { get; set; }
         [Inject] private IApiClient<PersonasDto> servicioPersonas { get; set; }
@@ -26,28 +27,44 @@ namespace CRM.App.Shared.Pages.Tramites
 
         private TramiteMasivoDto _masivoDto = new() { Tramite = new TramiteDto() };
         private List<EmpresasDto> _listaEmpresas = new();
-        private IEnumerable<string> _empresasSeleccionadas = new HashSet<string>();
+        private IEnumerable<EmpresasDto> _empresasSeleccionadas = new HashSet<EmpresasDto>();
 
-        private IEnumerable<EmpresasDto> _empresasObjetos = new HashSet<EmpresasDto>();
+        private IEqualityComparer<EmpresasDto> _comparer = new GenericComparer();
+
+        // Clase auxiliar para que MudBlazor sepa comparar tus DTOs por código
+        internal class GenericComparer : IEqualityComparer<EmpresasDto>
+        {
+            public bool Equals(EmpresasDto x, EmpresasDto y) => x?.CodigoEmpresa == y?.CodigoEmpresa;
+            public int GetHashCode(EmpresasDto obj) => obj.CodigoEmpresa?.GetHashCode() ?? 0;
+        }
 
         // Función de búsqueda para el Autocomplete
         private async Task<IEnumerable<EmpresasDto>> SearchEmpresas(string value, CancellationToken token)
         {
-            // Si la lista está vacía, intentamos cargarla de nuevo (por si falló el OnInitialized)
             if (_listaEmpresas == null || !_listaEmpresas.Any())
             {
                 string[] includesEmpresas = new string[] { "Barco" };
-                _listaEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa",null ,includesEmpresas)).ToList();
+                var result = await servicioEmpresas.GetAllAsync("api/Empresa", null, includesEmpresas);
+                _listaEmpresas = result.ToList();
             }
 
-            if (string.IsNullOrEmpty(value))
-                return _listaEmpresas.AsEnumerable();
+            // 1. Obtenemos los códigos que ya están seleccionados
+            var codigosSeleccionados = _empresasSeleccionadas.Select(s => s.CodigoEmpresa).ToList();
 
-            return _listaEmpresas.Where(x =>
-                x.Barco.NombreB.Contains(value, StringComparison.InvariantCultureIgnoreCase) ||
-                x.Barco.CodigoBarco.Contains(value, StringComparison.InvariantCultureIgnoreCase) ||
-                x.NombreArmador.Contains(value, StringComparison.InvariantCultureIgnoreCase) ||
-                x.CodigoEmpresa.Contains(value, StringComparison.InvariantCultureIgnoreCase)).AsEnumerable();
+            // 2. Filtramos la lista base: que NO estén en los seleccionados
+            var query = _listaEmpresas.Where(x => !codigosSeleccionados.Contains(x.CodigoEmpresa));
+
+            // 3. Aplicamos la búsqueda por texto si hay valor
+            if (!string.IsNullOrEmpty(value))
+            {
+                query = query.Where(x =>
+                    (x.Barco?.NombreB?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    (x.Barco?.CodigoBarco?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    (x.NombreArmador?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    (x.CodigoEmpresa?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false));
+            }
+
+            return query.ToList();
         }
 
         protected override async Task OnInitializedAsync()
@@ -85,7 +102,7 @@ namespace CRM.App.Shared.Pages.Tramites
         {
             await _form.Validate();
             if (!_form.IsValid) return;
-            _masivoDto.EmpresasSeleccionadas = _empresasObjetos.Select(x => x.CodigoEmpresa).ToList();
+            _masivoDto.EmpresasSeleccionadas = _empresasSeleccionadas.Select(x => x.CodigoEmpresa).ToList();
             if (_isEdit)
             {
                 await servicioTramite.UpdateAsync($"api/Tramites/{Id}", _masivoDto);
@@ -106,5 +123,30 @@ namespace CRM.App.Shared.Pages.Tramites
         }
 
         private void Volver() => Nav.NavigateTo("/tramites");
+
+        private async Task AbrirSelectorEmpresas()
+        {
+            var parameters = new DialogParameters<DialogoSeleccionEmpresas>
+            {
+                { x => x.EmpresasYaSeleccionadas, _empresasSeleccionadas.ToList() }
+            };
+
+            var options = new DialogOptions { MaxWidth = MaxWidth.Medium, FullWidth = true, CloseButton = true };
+            var dialog = await IDialogService.ShowAsync<DialogoSeleccionEmpresas>("Seleccionar Empresas", parameters, options);
+            //var dialog = DialogService.ShowAsync<("Editar Tramite", parameters, options);
+
+            var result = await dialog.Result;
+
+            if (!result.Canceled && result.Data is IEnumerable<EmpresasDto> seleccion)
+            {
+                _empresasSeleccionadas = new HashSet<EmpresasDto>(seleccion);
+                StateHasChanged();
+            }
+        }
+
+        private void QuitarEmpresa(EmpresasDto emp)
+        {
+            _empresasSeleccionadas.Remove(emp);
+        }
     }
 }
