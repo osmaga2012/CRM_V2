@@ -2,6 +2,7 @@
 @using MudBlazor
 
 @inject IApiClient<EmpresasDto> servicioEmpresas
+@inject IApiClient<BarcosDto> servicioBarcos
 
 <MudDialog>
     <TitleContent>Seleccionar Empresas y Barcos</TitleContent>
@@ -10,13 +11,17 @@
                       Adornment="Adornment.Start" IconSize="Size.Medium" Class="mb-4" />
 
         <div style="max-height: 400px; overflow-y: auto;">
-            <MudList T="EmpresasDto" SelectedValues="_tempSeleccion" SelectedValuesChanged="OnSelectionChanged" SelectionMode="SelectionMode.MultiSelection">
-                @foreach (var emp in _listaFiltrada)
+            <MudList T="EmpresasDto" 
+                SelectedValues="_tempSeleccion" 
+                SelectedValuesChanged="OnSelectionChanged" 
+                SelectionMode="SelectionMode.MultiSelection">
+                @foreach (var barco in _listaFiltrada)
                 {
-                    <MudListItem Value="@emp">
+                    <MudListItem Value="@barco">
                         <div class="d-flex justify-space-between">
-                            <MudText>@emp.Barco?.NombreB</MudText>
-                            <MudText Typo="Typo.caption" Class="mud-text-secondary">@emp.CodigoEmpresa</MudText>
+                            <MudText>@barco.CodigoBarco - @barco.NombreB</MudText>
+                            <MudText Typo="Typo.caption" 
+                                     Class="mud-text-secondary">@barco.CodigoEmpresa</MudText>
                         </div>
                     </MudListItem>
                 }
@@ -32,25 +37,43 @@
 @code {
     [CascadingParameter] IMudDialogInstance MudDialog { get; set; }
     [Parameter] public List<EmpresasDto> EmpresasYaSeleccionadas { get; set; } = new();
+    [Parameter] public List<BarcosDto> BarcosYaSeleccionados { get; set; } = new();
 
     private string _searchString = "";
     private List<EmpresasDto> _totalEmpresas = new();
-    private IEnumerable<EmpresasDto> _tempSeleccion = new HashSet<EmpresasDto>();
-
+    private List<BarcosDto> _totalBarcos = new();
+    //private IEnumerable<EmpresasDto> _tempSeleccion = new HashSet<EmpresasDto>();
+    private IReadOnlyCollection<EmpresasDto> _tempSeleccion = new List<EmpresasDto>();
+    private IReadOnlyCollection<BarcosDto> _tempSeleccionBarcos = new List<BarcosDto>();
     // Filtro en tiempo real
     private IEnumerable<EmpresasDto> _listaFiltrada => _totalEmpresas
         .Where(x => string.IsNullOrWhiteSpace(_searchString) ||
                x.NombreArmador.Contains(_searchString, StringComparison.OrdinalIgnoreCase) ||
                (x.Barco?.NombreB?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) ?? false));
 
+    private IEnumerable<BarcosDto> _listaFiltradaBarcos => _totalBarcos
+        .Where(x => string.IsNullOrWhiteSpace(_searchString) ||
+                x.NombreB?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true); //||
+    // x.CodigoEmpresa.Contains(_searchString, StringComparison.OrdinalIgnoreCase));
+
+
+
     protected override async Task OnInitializedAsync()
     {
         // Cargar empresas desde el servicio aquí
-        _totalEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa")).ToList();
+        string[] includesEmpresas = new string[] { "Barco" };
+        _totalEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa",null,includesEmpresas)).ToList();
+        _totalBarcos = (await servicioBarcos.GetAllAsync("api/Barcos")).ToList();
+
         _tempSeleccion = new HashSet<EmpresasDto>(EmpresasYaSeleccionadas);
+        _tempSeleccionBarcos = new HashSet<BarcosDto>(BarcosYaSeleccionados);
+
     }
 
-    private void OnSelectionChanged(IEnumerable<EmpresasDto> values) => _tempSeleccion = values;
-    private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccion));
+    //private void OnSelectionChanged(IEnumerable<EmpresasDto> values) => _tempSeleccion = values;
+    private void OnSelectionChanged(IReadOnlyCollection<EmpresasDto> values) => _tempSeleccion = values;
+    //private void OnSelectionChanged(IReadOnlyCollection<BarcosDto> values) => _tempSeleccionBarcos = values;
+
+    private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccionBarcos));
     private void Cancelar() => MudDialog.Cancel();
 }

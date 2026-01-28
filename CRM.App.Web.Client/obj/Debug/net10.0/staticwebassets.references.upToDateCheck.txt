@@ -225,3 +225,17 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Shared\obj\Debug\net10.0\staticwebassets.build.json

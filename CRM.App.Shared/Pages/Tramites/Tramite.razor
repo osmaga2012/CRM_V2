@@ -64,16 +64,31 @@
                         </MudItem> *@
                         <MudItem xs="12">
                             <div class="d-flex align-center gap-4 mb-2">
-                                <MudText Typo="Typo.h6">Empresas seleccionadas (@_empresasSeleccionadas.Count())</MudText>
+                                <MudText Typo="Typo.h6">Barcos seleccionados (@_empresasSeleccionadas.Count())</MudText>
                                 <MudButton Variant="Variant.Filled"
                                            Color="Color.Secondary"
                                            StartIcon="@Icons.Material.Filled.AddBusiness"
                                            OnClick="AbrirSelectorEmpresas">
-                                    Seleccionar Empresas
+                                    Seleccionar barcos
                                 </MudButton>
                             </div>
 
                             <MudPaper Variant="Variant.Outlined" Class="pa-4 d-flex flex-wrap gap-2" Style="min-height: 60px;">
+                                @if (!_empresasSeleccionadas.Any())
+                                {
+                                    <MudText Typo="Typo.body2" Class="mud-text-secondary">No hay barcos seleccionados</MudText>
+                                }
+                                @foreach (var barco in _empresasSeleccionadas)
+                                {
+                                    <MudChip T="BarcosDto"
+                                             OnClose="@(() => QuitarEmpresa(barco))"
+                                             Color="Color.Primary">
+                                        @barco.NombreB (@barco.CodigoBarco)
+                                    </MudChip>
+                                }
+                            </MudPaper>
+
+@*                             <MudPaper Variant="Variant.Outlined" Class="pa-4 d-flex flex-wrap gap-2" Style="min-height: 60px;">
                                 @if (!_empresasSeleccionadas.Any())
                                 {
                                     <MudText Typo="Typo.body2" Class="mud-text-secondary">No hay empresas seleccionadas</MudText>
@@ -86,40 +101,9 @@
                                         @emp.Barco?.NombreB (@emp.CodigoEmpresa)
                                     </MudChip>
                                 }
-                            </MudPaper>
+                            </MudPaper> *@
                         </MudItem>
-                        <MudItem xs="12">
-                            <MudAutocomplete T="EmpresasDto"
-                                             Label="Seleccionar Empresas Destino"
-                                             SearchFunc="@SearchEmpresas"
-                                             @bind-SelectedValues="_empresasSeleccionadas"
-                                             ToStringFunc="@(x=>x.Barco?.NombreB)"
-                                             MultiSelection="true"
-                                             SelectValueOnTab="true"
-                                             ResetValueOnEmptyText="false"
-                                             CoerceText="false"
-                                             CoerceValue="false"
-                                             AdornmentIcon="@Icons.Material.Filled.Search"
-                                             Variant="Variant.Outlined"
-                                             ChipCloseable="true"
-                                             Placeholder="Escriba para buscar..." 
-                                             Comparer="_comparer"/>
-                            <MudText Typo="Typo.caption">Seleccionados: @_empresasSeleccionadas?.Count()</MudText>
-                            <div class="d-flex gap-2">
-                                @foreach (var emp in _empresasSeleccionadas)
-                                {
-                                    <MudChip T="string">@emp.NombreArmador</MudChip>
-                                }
-                            </div>
-
-                            <MudChipSet T="EmpresasDto">
-                                @foreach (var val in _empresasSeleccionadas)
-                                {
-                                    <MudChip Size=Size.Small @key="val.CodigoBarco" Text="@val.NombreB" />
-                                }
-                            </MudChipSet>
-
-                        </MudItem>
+                        
                     }
                 }
                 else
