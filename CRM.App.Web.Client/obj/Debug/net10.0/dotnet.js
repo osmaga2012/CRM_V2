@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "CRM.App.Web.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-q8LfiuQIYxFimXYwbRUw5f5srgR801qbcZY0sa9PzeI=",
+    "hash": "sha256-TSLDIvEWckldpQK2a7+5bNpXwElFiNglZgSzZIVSCdo=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.87vtjjdetb.js"
@@ -1386,52 +1386,52 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Shared.wasm",
-        "name": "CRM.App.Shared.dythux8fxi.wasm",
-        "integrity": "sha256-GwxcAEUrT7TCFuPM3dZ/xAJtL1sbsAV809rPxbtTrpc=",
+        "name": "CRM.App.Shared.92v8gbi58m.wasm",
+        "integrity": "sha256-vzQ0ozxC6JeB2idBDsLse13hvqrWIq3KP4/VhhaHYR8=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.Dominio.wasm",
-        "name": "CRM.Dominio.xllfl4alr2.wasm",
-        "integrity": "sha256-JcCkH/8dA1gy5JKZsA85M+AXkLdlgTFugR36mL4XICU=",
+        "name": "CRM.Dominio.gdu2h5607f.wasm",
+        "integrity": "sha256-vLT3sUXP5mP65jvZrAq6aQO/ZxjB1DYzbxVA9PKUBrk=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.Dtos.wasm",
-        "name": "CRM.Dtos.khbax6970z.wasm",
-        "integrity": "sha256-WL6zaJEYcMCQhbV8UJJAUWUbYuUxn+yV0d2HMcUnJSw=",
+        "name": "CRM.Dtos.wnh11nk3nk.wasm",
+        "integrity": "sha256-VJOx89MSPZPJn4oi8F8dk44Mpgm0EWuto14WPffQJwM=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.App.Web.Client.wasm",
-        "name": "CRM.App.Web.Client.mn0a5e9ge8.wasm",
-        "integrity": "sha256-0s6lINYN+BtNBm0QHYw0i+Z6zlHn40XsIwPlnWDhH1o=",
+        "name": "CRM.App.Web.Client.edn0mxfho3.wasm",
+        "integrity": "sha256-UqDb0fNKD0I+BJpEXpSc9nP3E4+/p6Y1WNF0ZwwgeI8=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "CRM.App.Shared.pdb",
-        "name": "CRM.App.Shared.ozeeao0x7a.pdb",
-        "integrity": "sha256-nNJwrJT0K+et0gYjyFli4Fhe+cV5SxsIhKt/14s2N7w=",
+        "name": "CRM.App.Shared.irmm20adqh.pdb",
+        "integrity": "sha256-vj5R8NpgrmEGIqKNF653Go3X7+Opw1xkHjzoqIScg4o=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.Dtos.pdb",
-        "name": "CRM.Dtos.5012m0fgsy.pdb",
-        "integrity": "sha256-a8hA5A8zIVqomLU8SBvktWAbOIjdn9JlEP6H4C3kAv0=",
+        "name": "CRM.Dtos.37fnrjjl1m.pdb",
+        "integrity": "sha256-r0Px1KQdt8dWad6K9RQf5u1G7tp+NTPtLRgHVK9YenY=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.Dominio.pdb",
-        "name": "CRM.Dominio.rek1dy6q40.pdb",
-        "integrity": "sha256-bQ1nWAso6Lq5cy9Pnv6H2f+DcVZCk2iq49NGsYQOmE4=",
+        "name": "CRM.Dominio.4rr4o4ze76.pdb",
+        "integrity": "sha256-gL2axptNv4ZENb7ake2FDpehDqlQcuvDhq/DxXPxVDc=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.App.Web.Client.pdb",
-        "name": "CRM.App.Web.Client.uasruibt1r.pdb",
-        "integrity": "sha256-Bh7E4IQ0dMgxyhxaqW6+6SwSq8nYrGOgSIowFrIcHdE=",
+        "name": "CRM.App.Web.Client.vdsdkyw54e.pdb",
+        "integrity": "sha256-DZPmQ+lmQLnJnzu4KpHAm1BwafdGaeL7E5zfjidD3TU=",
         "cache": "force-cache"
       }
     ],

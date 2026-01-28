@@ -27,8 +27,12 @@ namespace CRM.App.Shared.Pages.Tramites
 
         private TramiteMasivoDto _masivoDto = new() { Tramite = new TramiteDto() };
         private List<EmpresasDto> _listaEmpresas = new();
-        private IEnumerable<EmpresasDto> _empresasSeleccionadas = new HashSet<EmpresasDto>();
+        private List<BarcosDto> _listaBarcos = new();
 
+        private HashSet<EmpresasDto> _empresasSeleccionadas = new HashSet<EmpresasDto>();
+        private HashSet<BarcosDto> _barcosSeleccionados = new();
+
+        private IReadOnlyCollection<EmpresasDto> _tempSeleccion = new List<EmpresasDto>();
         private IEqualityComparer<EmpresasDto> _comparer = new GenericComparer();
 
         // Clase auxiliar para que MudBlazor sepa comparar tus DTOs por código
@@ -73,7 +77,7 @@ namespace CRM.App.Shared.Pages.Tramites
             {
                 string[] includesEmpresas = new string[] { "Barco" };
                 _listaEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa", null, includesEmpresas)).ToList();
-
+                _listaBarcos = (await servicioBarcos.GetAllAsync("api/Barcos")).ToList();
             }
             catch (Exception ex)
             {
@@ -103,6 +107,8 @@ namespace CRM.App.Shared.Pages.Tramites
             await _form.Validate();
             if (!_form.IsValid) return;
             _masivoDto.EmpresasSeleccionadas = _empresasSeleccionadas.Select(x => x.CodigoEmpresa).ToList();
+            //_masivoDto.EmpresasSeleccionadas = _barcosSeleccionados.Select(x => x.CodigoBarco).ToList(); ;
+            
             if (_isEdit)
             {
                 await servicioTramite.UpdateAsync($"api/Tramites/{Id}", _masivoDto);
@@ -132,10 +138,16 @@ namespace CRM.App.Shared.Pages.Tramites
             };
 
             var options = new DialogOptions { MaxWidth = MaxWidth.Medium, FullWidth = true, CloseButton = true };
-            var dialog = await IDialogService.ShowAsync<DialogoSeleccionEmpresas>("Seleccionar Empresas", parameters, options);
+            var dialog = await MyDialogService.ShowAsync<DialogoSeleccionEmpresas>("Seleccionar Empresas", parameters, options);
             //var dialog = DialogService.ShowAsync<("Editar Tramite", parameters, options);
 
             var result = await dialog.Result;
+
+            //if (!result.Canceled && result.Data is IEnumerable<BarcosDto> seleccion)
+            //{
+            //    _barcosSeleccionados = new HashSet<BarcosDto>(seleccion);
+            //    StateHasChanged();
+            //}
 
             if (!result.Canceled && result.Data is IEnumerable<EmpresasDto> seleccion)
             {
@@ -144,6 +156,11 @@ namespace CRM.App.Shared.Pages.Tramites
             }
         }
 
+
+        private void QuitarBarco(BarcosDto barco)
+        {
+            _barcosSeleccionados.Remove(barco);
+        }
         private void QuitarEmpresa(EmpresasDto emp)
         {
             _empresasSeleccionadas.Remove(emp);
