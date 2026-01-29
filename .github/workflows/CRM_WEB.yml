@@ -38,24 +38,24 @@ jobs:
 
       - name: Publish App
         # Esto compila el proyecto y genera los archivos finales en la carpeta 'release'
-        run: dotnet publish CRM.App.Web.Client/CRM.App.Web.Client.csproj -c Release -o release /p:StaticWebAssetsEnabled=true
+        run: dotnet publish CRM.App.Web.Client/CRM.App.Web.Client.csproj -c Debug -o debug /p:StaticWebAssetsEnabled=true
         #run: dotnet publish CRM.App.Web/CRM.App.Web.csproj -c Release -o release
 
       - name: Fix for GitHub Pages
         run: |
           # 1. Creamos el nojekyll
-          touch release/wwwroot/.nojekyll
+          touch debug/wwwroot/.nojekyll
           
           # 2. Forzamos el cambio del base href sin importar qué hubiera antes
           # Buscamos la línea que contiene 'base href' y la reemplazamos entera
-          sed -i '/base href=/c\    <base href="/CRM_V2/" />' release/wwwroot/index.html
+          sed -i '/base href=/c\    <base href="/CRM_V2/" />' debug/wwwroot/index.html
           
           # 3. Copiamos a 404
-          cp release/wwwroot/index.html release/wwwroot/404.html
+          cp debug/wwwroot/index.html debug/wwwroot/404.html
           
       - name: List files (Diagnostic)
         run: |
-          echo "Contenido de release/wwwroot:"
+          echo "Contenido de debug/wwwroot:"
           ls -R release/wwwroot
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # IMPORTANTE: Solo subimos la carpeta wwwroot resultante de la publicación
-          path: 'release/wwwroot'
+          path: 'debug/wwwroot'
 
       - name: Deploy to GitHub Pages
         id: deployment
