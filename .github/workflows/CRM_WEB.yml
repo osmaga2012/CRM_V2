@@ -1,0 +1,54 @@
+name: Deploy Blazor WASM to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x' # Cambia a 7.0 o 9.0 si usas otra versión
+
+      - name: Publish App
+        # Esto compila el proyecto y genera los archivos finales en la carpeta 'release'
+        run: dotnet publish CRM.App.Client/CRM.App.Client.csproj -c Release -o release
+
+      - name: Fix for GitHub Pages
+        run: |
+          # 1. Crea el archivo .nojekyll para que GitHub no ignore la carpeta _framework
+          touch release/wwwroot/.nojekyll
+          # 2. Crea una copia de index.html como 404.html para que el refresco de página funcione
+          cp release/wwwroot/index.html release/wwwroot/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # IMPORTANTE: Solo subimos la carpeta wwwroot resultante de la publicación
+          path: 'release/wwwroot'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
