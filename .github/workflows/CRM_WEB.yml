@@ -43,13 +43,16 @@ jobs:
 
       - name: Fix for GitHub Pages
         run: |
-          # 1. Crea el archivo .nojekyll para que GitHub no ignore la carpeta _framework
+          # 1. Creamos el nojekyll
           touch release/wwwroot/.nojekyll
-          # 2. Crea una copia de index.html como 404.html para que el refresco de página funcione
+          
+          # 2. Forzamos el cambio del base href sin importar qué hubiera antes
+          # Buscamos la línea que contiene 'base href' y la reemplazamos entera
+          sed -i '/base href=/c\    <base href="/CRM_V2/" />' release/wwwroot/index.html
+          
+          # 3. Copiamos a 404
           cp release/wwwroot/index.html release/wwwroot/404.html
-          # 3. FUERZA el base href a /new/ en el archivo final
-          # Esto edita el index.html ya generado en la carpeta de salida
-          sed -i 's|<base href=.*>|<base href="/CRM_V2/" />|g' release/wwwroot/index.html
+          
       - name: List files (Diagnostic)
         run: |
           echo "Contenido de release/wwwroot:"
