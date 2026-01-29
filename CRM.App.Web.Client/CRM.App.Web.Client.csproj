@@ -19,9 +19,9 @@
     <ProjectReference Include="..\CRM.App.Shared\CRM.App.Shared.csproj" />
   </ItemGroup>
 
-	<ItemGroup>
+  <!-- <ItemGroup>
 		<ProjectReference Include="C:\Users\oscar\source\repos\CRM\CRM.Dtos\CRM.Dtos.csproj" />
-	</ItemGroup>
+	</ItemGroup>-->
 	
   <!-- <ItemGroup>
     <Reference Include="CRM.Dtos">
