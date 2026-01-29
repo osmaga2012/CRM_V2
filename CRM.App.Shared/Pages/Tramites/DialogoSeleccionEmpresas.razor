@@ -24,6 +24,40 @@
                                      Class="mud-text-secondary">@barco.CodigoEmpresa</MudText>
                         </div>
                     </MudListItem>
+                    @* Debajo del contenedor de MudChips *@
+                    <MudExpansionPanels Class="mt-4" MultiExpansion="true">
+                        <MudExpansionPanel Text="Revisar y Editar Emails de Envío" Icon="@Icons.Material.Filled.EditNotifications">
+                            <MudTable Items="@_tempSeleccion" Dense="true" Hover="true" Breakpoint="Breakpoint.Sm" Elevation="0">
+                                <HeaderContent>
+                                    <MudTh>Barco / Empresa</MudTh>
+                                    <MudTh>Email Principal</MudTh>
+                                    <MudTh>Email Secundario</MudTh>
+                                    <MudTh>Estado</MudTh>
+                                </HeaderContent>
+                                <RowTemplate>
+                                    <MudTd DataLabel="Barco">@context.NombreB</MudTd>
+                                    <MudTd DataLabel="Email 1">
+                                        <MudTextField @bind-Value="context.EMail1" Margin="Margin.Dense" Variant="Variant.Outlined" Placeholder="Vacío" />
+                                    </MudTd>
+                                    <MudTd DataLabel="Email 2">
+                                        <MudTextField @bind-Value="context.EMail2" Margin="Margin.Dense" Variant="Variant.Outlined" Placeholder="Vacío" />
+                                    </MudTd>
+                                    <MudTd>
+                                        @if (string.IsNullOrEmpty(context.EMail1) && string.IsNullOrEmpty(context.EMail2))
+                                        {
+                                            <MudTooltip Text="Este barco no recibirá avisos por email">
+                                                <MudIcon Icon="@Icons.Material.Filled.Warning" Color="Color.Warning" />
+                                            </MudTooltip>
+                                        }
+                                        else
+                                        {
+                                            <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" />
+                                        }
+                                    </MudTd>
+                                </RowTemplate>
+                            </MudTable>
+                        </MudExpansionPanel>
+                    </MudExpansionPanels>
                 }
             </MudList>
         </div>
@@ -74,6 +108,7 @@
     private void OnSelectionChanged(IReadOnlyCollection<EmpresasDto> values) => _tempSeleccion = values;
     //private void OnSelectionChanged(IReadOnlyCollection<BarcosDto> values) => _tempSeleccionBarcos = values;
 
-    private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccionBarcos));
+    //private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccionBarcos));
+    private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccion));
     private void Cancelar() => MudDialog.Cancel();
 }
