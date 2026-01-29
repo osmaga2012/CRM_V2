@@ -30,7 +30,7 @@ jobs:
           repository: osmaga2012/CRM # El nombre real de tu repo de DTOs
           path: CRM.Dtos # Esto crea la carpeta que espera el .csproj
           # Si el repo de DTOs es PRIVADO, añade la línea de abajo:
-          # token: ${{ secrets.MI_TOKEN_PERSONAL }}
+          token: ${{ secrets.API_TOKEN_GITHUB }}
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
