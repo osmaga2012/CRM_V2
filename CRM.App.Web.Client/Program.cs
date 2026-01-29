@@ -16,10 +16,10 @@ using MudBlazor.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-//#if !DEBUG
-//    builder.RootComponents.Add<Routes>("#app");
-//    builder.RootComponents.Add<HeadOutlet>("head::after");
-//#endif
+#if !DEBUG
+    builder.RootComponents.Add<Routes>("#app");
+    builder.RootComponents.Add<HeadOutlet>("head::after");
+#endif
 
 builder.Services.AddMudServices();
 
