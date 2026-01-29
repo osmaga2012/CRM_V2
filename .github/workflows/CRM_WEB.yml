@@ -46,7 +46,9 @@ jobs:
           touch release/wwwroot/.nojekyll
           # 2. Crea una copia de index.html como 404.html para que el refresco de página funcione
           cp release/wwwroot/index.html release/wwwroot/404.html
-
+          # 3. FUERZA el base href a /new/ en el archivo final
+          # Esto edita el index.html ya generado en la carpeta de salida
+          sed -i 's/<base href="\/" \/>/<base href="\/new\/" \/>/g' release/wwwroot/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
