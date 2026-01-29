@@ -49,7 +49,7 @@ jobs:
           cp debug/wwwroot/index.html debug/wwwroot/404.html
           # 3. FUERZA el base href a /new/ en el archivo final
           # Esto edita el index.html ya generado en la carpeta de salida
-          sed -i 's/<base href="\/" \/>/<base href="\/new\/" \/>/g' release/wwwroot/index.html
+          sed -i 's/<base href="\/" \/>/<base href="\/new\/" \/>/g' debug/wwwroot/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # IMPORTANTE: Solo subimos la carpeta wwwroot resultante de la publicación
-          path: 'release/wwwroot'
+          path: 'debug/wwwroot'
 
       - name: Deploy to GitHub Pages
         id: deployment
