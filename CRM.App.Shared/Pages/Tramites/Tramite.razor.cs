@@ -74,10 +74,20 @@ namespace CRM.App.Shared.Pages.Tramites
         protected override async Task OnInitializedAsync()
         {
             try
-            {
+            {                    
                 string[] includesEmpresas = new string[] { "Barco" };
+                if (Id.HasValue || Id != Guid.Empty)
+                {
+
+                }
+                else
+                {
+
                 _listaEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa", null, includesEmpresas)).ToList();
                 _listaBarcos = (await servicioBarcos.GetAllAsync("api/Barcos")).ToList();
+
+                }
+
             }
             catch (Exception ex)
             {
