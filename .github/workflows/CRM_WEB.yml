@@ -39,7 +39,7 @@ jobs:
       - name: Publish App
         # Esto compila el proyecto y genera los archivos finales en la carpeta 'release'
         # run: dotnet publish CRM.App.Web.Client/CRM.App.Web.Client.csproj -c Release -o release
-        run: dotenet publish CRM.App.Web/CRM.App.Web.csproj -c Release -o release
+        run: dotnet publish CRM.App.Web/CRM.App.Web.csproj -c Release -o release
 
       - name: Fix for GitHub Pages
         run: |
