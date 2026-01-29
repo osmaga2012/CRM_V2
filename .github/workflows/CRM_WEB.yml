@@ -50,6 +50,10 @@ jobs:
           # 3. FUERZA el base href a /new/ en el archivo final
           # Esto edita el index.html ya generado en la carpeta de salida
           sed -i 's/<base href="\/" \/>/<base href="\/new\/" \/>/g' release/wwwroot/index.html
+      - name: List files (Diagnostic)
+        run: |
+          echo "Contenido de release/wwwroot:"
+          ls -R release/wwwroot
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
