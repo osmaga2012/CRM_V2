@@ -436,16 +436,19 @@
                                                                OnClick="@(() => OpenAdjuntoAsync(context))" />
                                             </MudTooltip>
                                         }
-                    
+                                    @if (context.IdTramite.HasValue)
+                                    {
                                         <MudIconButton Icon="@Icons.Material.Filled.Edit" 
                                                        Size="Size.Small" 
                                                        Class="rounded-0"
-                                                       OnClick="@(() => EditarTramite(context.Id))" />
+                                                       OnClick="@(() => EditarTramite(context.Id))" />                                        
+                                    }
 
                                         <MudIconButton Icon="@Icons.Material.Filled.Delete" 
                                                        Size="Size.Small" 
                                                        Color="Color.Error" 
                                                        Class="rounded-0"
+                                                       Disabled="@context.IdTramite.HasValue"
                                                        OnClick="@(() => ConfirmarBorrado(context))" />
                                     </div>
                                 </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>

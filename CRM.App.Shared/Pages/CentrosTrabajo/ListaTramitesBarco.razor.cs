@@ -242,7 +242,7 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
         {
             try
             {
-                await servicioTramites.DeleteAsync("api/BarcosTramites", Id); ;
+                await servicioTramites.DeleteAsync("api/Tramites/masivo", Id); ;
                 Snackbar.Add("Tramite eliminado correctamente.", Severity.Success);
                 await CargarTramites(); // Recargar la lista después de la eliminación
                 StateHasChanged();

@@ -35,9 +35,10 @@
                                           Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Label" />
                         </MudItem>
                         <MudItem xs="12">
-                            <MudTextField T="string" Label="Observaciones / Comentarios" Variant="Variant.Outlined"
+                            <MudTextField T="string" Label="Observaciones / Comentarios" 
+                                          Variant="Variant.Outlined"
                                           @bind-Value="_masivoDto.Tramite.Observaciones"
-                                          Lines="4" Placeholder="Notas adicionales sobre este trámite..." />
+                                          Lines="5" Placeholder="Notas adicionales sobre este trámite..." />
                         </MudItem>
                     </MudGrid>
                 </MudItem>
@@ -62,7 +63,7 @@
                 </MudItem>
 
                 @* --- SECCIÓN ASIGNACIÓN (Sólo Creación) --- *@
-                @if (!_isEdit)
+                @if (true)
                 {
                     <MudItem xs="12">
                         <MudDivider Class="my-4" />
@@ -111,7 +112,7 @@
                                                  OnClose="@(() => QuitarEmpresa(barco))"
                                                  Color="Color.Primary" 
                                                  Icon="@Icons.Material.Filled.Anchor">
-                                            <b>@barco.NombreB</b> <span class="ml-2" style="opacity: 0.7; font-size: 0.8rem;">(@barco.CodigoBarco)</span>
+                                            <b>@barco!.NombreB</b> <span class="ml-2" style="opacity: 0.7; font-size: 0.8rem;">(@barco.CodigoBarco)</span>
                                         </MudChip>
                                     }
                                 </div>

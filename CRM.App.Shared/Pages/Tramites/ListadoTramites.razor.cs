@@ -17,6 +17,7 @@ namespace CRM.App.Shared.Pages.Tramites
         [Inject] private IDialogService DialogService { get; set; }
 
         private List<TramiteDto> Tramites = new List<TramiteDto>();
+        private HashSet<TramiteDto> _selectedItems = new();
         private string SearchString = string.Empty;
 
         protected override async Task OnInitializedAsync()
@@ -142,7 +143,8 @@ namespace CRM.App.Shared.Pages.Tramites
         {
             try
             {
-                var respuesta = await tramiteService.DeleteAsync("api/Tramites", id); 
+                var tramite = await tramiteService.GetByIdAsync("api/Tramites",id);
+                var respuesta = await tramiteService.DeleteAsync("api/Tramites/masivo", tramite); 
 
                 if (respuesta.Success)
                 {
@@ -180,6 +182,29 @@ namespace CRM.App.Shared.Pages.Tramites
             return false;
         };
 
+        private async Task BorrarSeleccionados()
+        {
+            var confirm = await DialogService.ShowMessageBox(
+                "Confirmar borrado masivo",
+                $"¿Estás seguro de que deseas eliminar {_selectedItems.Count} trámites?",
+                yesText: "Eliminar todo", cancelText: "Cancelar");
 
+            if (confirm == true)
+            {
+                var idsParaBorrar = _selectedItems.Select(x => x.Id).ToList();
+
+                var tramitesABorrar = _selectedItems.Select(x=>x);
+
+                // Aquí llamarías a un nuevo método en tu controlador: DeleteMasivo
+                var respuesta = await tramiteService.DeleteAsync("api/Tramites/masivo", idsParaBorrar);
+
+                if (respuesta.Success)
+                {
+                    Snackbar.Add("Trámites eliminados correctamente", Severity.Success);
+                    _selectedItems.Clear();
+                    await CargarTramites();
+                }
+            }
+        }
     }
 }
