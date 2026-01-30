@@ -7,6 +7,12 @@
 @using CRM.Dtos.Request
 @using CRM.Web.Shared.Interfaces
 
+@attribute [Microsoft.AspNetCore.Authorization.AllowAnonymous]
+
+@inject IAuthService authService
+@inject IFormFactor formFactor
+@inject IPlatformNavigationService Navigation
+
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
