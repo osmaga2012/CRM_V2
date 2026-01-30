@@ -89,13 +89,14 @@
                                 </p>
                         </div>
         
-   <!--                     <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-2">
                                 <label class="text-[#0d141b] dark:text-slate-200 text-sm font-semibold leading-normal flex justify-between">
                                     Contraseña
-                                    <span class="text-[9px] font-mono text-purple-500">@bind-Value="Model.Password"</span>
                                 </label>
                                 <div class="flex w-full items-stretch rounded-lg group">
-                                        <input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/40 border border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-slate-800 h-12 placeholder:text-slate-400 px-4 rounded-r-none border-r-0 text-base font-normal transition-all" placeholder="••••••••" type="password"/>
+                                        <input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/40 border border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-slate-800 h-12 placeholder:text-slate-400 px-4 rounded-r-none border-r-0 text-base font-normal transition-all" 
+                                                placeholder="••••••••" type="password" 
+                                                @bind-Value="Model.Password"/>
                                         <div class="text-[#4c739a] flex border border-[#cfdbe7] dark:border-slate-700 bg-white dark:bg-slate-800 items-center justify-center pr-4 rounded-r-lg border-l-0">
                                                 <span class="material-symbols-outlined cursor-pointer select-none">visibility</span>
                                         </div>
@@ -110,7 +111,7 @@
                                 <a class="text-primary text-sm font-semibold hover:underline decoration-2 underline-offset-4" href="#">¿Olvidó su contraseña?</a>
                         </div>
         
-                        <div class="relative pt-4">
+<!--                        <div class="relative pt-4">
                                 <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-4 rounded-xl shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-80">
                                         <span class="material-symbols-outlined animate-spin text-[24px]">progress_activity</span>
                                         <span class="tracking-wide">Iniciando Sesión...</span>
