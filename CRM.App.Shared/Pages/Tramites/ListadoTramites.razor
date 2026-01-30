@@ -7,53 +7,61 @@
 @using System.ComponentModel.DataAnnotations 
 @using System.ComponentModel.DataAnnotations.Schema 
 
+@* ... Cabecera igual ... *@
 
-<MudText Typo="Typo.h4" GutterBottom="true">Gestión de Trámites</MudText>
-<MudButton Variant="Variant.Filled" 
-     Color="Color.Primary"
-     StartIcon="@Icons.Material.Filled.Add"
-     OnClick="AgregarTramite">
-     @* Href="/tramites/nuevo"> *@
-    Crear Nuevo Trámite
-</MudButton>
+<div class="d-flex gap-4 mt-4">
+    <MudButton Variant="Variant.Filled"
+               Color="Color.Primary"
+               StartIcon="@Icons.Material.Filled.Add"
+               OnClick="AgregarTramite">
+        Crear Nuevo Trámite
+    </MudButton>
+
+    @if (_selectedItems != null && _selectedItems.Any())
+    {
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Error"
+                   StartIcon="@Icons.Material.Filled.DeleteSweep"
+                   OnClick="BorrarSeleccionados">
+            Borrar Seleccionados (@_selectedItems.Count)
+        </MudButton>
+    }
+</div>
 
 <MudPaper Elevation="2" Class="pa-4 mt-4">
     <MudDataGrid Items="@Tramites" T="TramiteDto"
-                 MultiSelection="false"
-                 RowClick="@((e) => EditTramite(e.Item.Id))"
-                 Filterable="true"
-                 SortMode="SortMode.Single"
-                 Hideable="true"
-                 Striped="true"
-                 Dense="true"
-                 Bordered="true"
-                 Class="mud-elevation-2">
+                 MultiSelection="true" @bind-SelectedItems="_selectedItems"
+                 Filterable="true" QuickFilter="@QuickFilter"
+                 Hideable="true" Striped="true" Dense="true" Bordered="true">
         <ToolBarContent>
             <MudText Typo="Typo.h6">Listado de Trámites</MudText>
             <MudSpacer />
-            <MudTextField @bind-Value="SearchString" Placeholder="Buscar Trámites" Adornment="Adornment.Start"
-                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+            <MudTextField @bind-Value="SearchString" Placeholder="Buscar por código o nombre..."
+                          Adornment="Adornment.Start" Immediate="true"
+                          AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0" />
         </ToolBarContent>
         <Columns>
-            
-            <PropertyColumn Property="x => x.Codigo" Title="Código"/>
+            @* Columna de Selección Masiva *@
+            <SelectColumn T="TramiteDto" />
+
+            <PropertyColumn Property="x => x.Codigo" Title="Código" Sortable="true" />
             <PropertyColumn Property="x => x.NombreTramite" Title="Descripción" />
-            @* <PropertyColumn Property="x => x.TipoTramite" Title="Tipo Trámite" /> *@
-            <PropertyColumn Property="x => x.FechaInicio" Title="Fecha Inicio" />
-            <PropertyColumn Property="x => x.FechaFin" Title="Fecha Fin" />
-            @* <PropertyColumn Property="x => x.Estado" title="Estado" /> 
-            <PropertyColumn Property="x => x.Observaciones" Title="Obs." />*@
+            <PropertyColumn Property="x => x.FechaInicio" Title="Fecha Inicio" Format="dd/MM/yyyy" />
+            <PropertyColumn Property="x => x.FechaFin" Title="Fecha Fin" Format="dd/MM/yyyy" />
+
             <TemplateColumn CellClass="d-flex justify-end">
                 <CellTemplate>
-                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => EditTramite(context.Item.Id))" />
-                    <MudIconButton Icon="@Icons.Material.Filled.Delete" Size="Size.Small" Color="Color.Error" OnClick="@(() => DeleteTramite(@context.Item.Id, context.Item.NombreTramite))" />
-
+                    <MudTooltip Text="Editar">
+                        <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => EditTramite(context.Item.Id))" />
+                    </MudTooltip>
+                    <MudTooltip Text="Eliminar">
+                        <MudIconButton Icon="@Icons.Material.Filled.Delete" Size="Size.Small" Color="Color.Error" OnClick="@(() => DeleteTramite(context.Item.Id, context.Item.NombreTramite))" />
+                    </MudTooltip>
                 </CellTemplate>
             </TemplateColumn>
         </Columns>
         <PagerContent>
-            <MudDataGridPager T="TramiteDto" />
+            <MudDataGridPager T="TramiteDto" RowsPerPageString="Filas por página:" />
         </PagerContent>
     </MudDataGrid>
 </MudPaper>
-

@@ -1,4 +1,5 @@
 ﻿
+using CRM.Dominio.Entidades;
 using CRM.Dtos;
 using CRM.Web.Shared.Interfaces;
 using Microsoft.AspNetCore.Components;
@@ -15,7 +16,8 @@ namespace CRM.App.Shared.Pages.Tramites
     {
         [Parameter] public Guid? Id { get; set; }
         [Inject] private IDialogService MyDialogService { get; set; } // Nombre de la instancia
-        [Inject] private IApiClient<TramiteMasivoDto> servicioTramite { get; set; }
+        [Inject] private IApiClient<TramiteMasivoDto> servicioTramiteMasivo { get; set; }
+        [Inject] private IApiClient<TramiteDto> servicioTramite { get; set; }
         [Inject] private IApiClient<EmpresasDto> servicioEmpresas { get; set; }
         [Inject] private IApiClient<PersonasDto> servicioPersonas { get; set; }
         [Inject] private IApiClient<BarcosDto> servicioBarcos { get; set; }
@@ -26,11 +28,13 @@ namespace CRM.App.Shared.Pages.Tramites
         private MudForm _form;
 
         private TramiteMasivoDto _masivoDto = new() { Tramite = new TramiteDto() };
+        private TramiteDto TramiteSeleccionado = new();
         private List<EmpresasDto> _listaEmpresas = new();
         private List<BarcosDto> _listaBarcos = new();
 
         private HashSet<EmpresasDto> _empresasSeleccionadas = new HashSet<EmpresasDto>();
         private HashSet<BarcosDto> _barcosSeleccionados = new();
+        private HashSet<BarcosTramitesDto> _barcosTramitesSeleccionados = new();    
 
         private IReadOnlyCollection<EmpresasDto> _tempSeleccion = new List<EmpresasDto>();
         private IEqualityComparer<EmpresasDto> _comparer = new GenericComparer();
@@ -76,16 +80,50 @@ namespace CRM.App.Shared.Pages.Tramites
             try
             {                    
                 string[] includesEmpresas = new string[] { "Barco" };
-                if (Id.HasValue || Id != Guid.Empty)
+                if (_isEdit)
                 {
+                    // Solo cargamos el trámite específico
+                    TramiteSeleccionado = await servicioTramite.GetByIdAsync("api/Tramites", Id!.Value);
+                    if (TramiteSeleccionado != null)
+                    {
+                        _masivoDto.Tramite = TramiteSeleccionado;                       
 
+                        // 3. Cargar empresas ya asignadas a este trámite
+                        // Necesitas un endpoint en tu API que devuelva los barcos de un trámite
+
+                        Dictionary<string, string> queryParams = new Dictionary<string, string>
+                        {
+                            { "IdTramite", Id.ToString()! }
+                        };
+                        var asignadas = await servicioBarcosTramites.GetAllAsync($"/api/BarcosTramites",queryParams);
+                        _barcosTramitesSeleccionados = new HashSet<BarcosTramitesDto>(asignadas);
+
+
+                        // Cargar las empresas correspondientes a los barcos asignados
+
+                        _empresasSeleccionadas = new HashSet<EmpresasDto>();
+                        _empresasSeleccionadas.Clear();
+                        foreach (var codigoBarco in  _barcosTramitesSeleccionados.Select(bt => bt.CodigoBarco))
+                        {
+                            queryParams = new Dictionary<string, string>
+                            {
+                                { "CodigoBarco", codigoBarco }
+                            };
+                            var empresa = await servicioEmpresas.GetAllAsync("api/Empresa", queryParams, includesEmpresas);
+
+                            _empresasSeleccionadas.Add(empresa!.FirstOrDefault()!);
+
+                        } 
+                        
+                        _masivoDto.EmpresasSeleccionadas = _empresasSeleccionadas.Select(x => x.CodigoEmpresa).ToList();
+                        _masivoDto.TodosLosBarcos = (_masivoDto.EmpresasSeleccionadas.Count == 0);
+
+                    }
                 }
                 else
                 {
-
-                _listaEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa", null, includesEmpresas)).ToList();
-                _listaBarcos = (await servicioBarcos.GetAllAsync("api/Barcos")).ToList();
-
+                    _listaEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa", null, includesEmpresas)).ToList();
+                    _listaBarcos = (await servicioBarcos.GetAllAsync("api/Barcos")).ToList();
                 }
 
             }
@@ -95,22 +133,7 @@ namespace CRM.App.Shared.Pages.Tramites
                 throw;
             }
 
-        }
-        
-
-        protected async Task OnInitializedAsync1()
-        {
-            if (_isEdit)
-            {
-                // Cargar trámite existente para editar
-                _masivoDto.Tramite = await Http.GetFromJsonAsync<TramiteDto>($"api/Tramites/{Id}");
-            }
-            else
-            {
-                // Cargar lista de empresas para la asignación masiva
-                _listaEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresas")).ToList();
-            }
-        }
+        }       
 
         private async Task Guardar()
         {
@@ -121,13 +144,13 @@ namespace CRM.App.Shared.Pages.Tramites
             
             if (_isEdit)
             {
-                await servicioTramite.UpdateAsync($"api/Tramites/{Id}", _masivoDto);
+                await servicioTramiteMasivo.UpdateAsync($"api/Tramites/update", _masivoDto);
                 Snackbar.Add("Trámite actualizado", Severity.Success);
             }
             else
             {
                 //_masivoDto.EmpresasSeleccionadas = _empresasSeleccionadas.ToList();
-                var response = await servicioTramite.CreateAsync("api/Tramites/masivo", _masivoDto);
+                var response = await servicioTramiteMasivo.CreateAsync("api/Tramites/masivo", _masivoDto);
 
                 if (response.Success)
                     Snackbar.Add("Trámite masivo creado correctamente", Severity.Success);
