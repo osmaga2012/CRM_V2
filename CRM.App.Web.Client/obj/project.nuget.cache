@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "oUEtIMDXmkQ=",
-  "success": true,
+  "dgSpecHash": "7RdD7Pik2PY=",
+  "success": false,
   "projectFilePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oscar\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
@@ -56,5 +56,18 @@
     "C:\\Users\\oscar\\.nuget\\packages\\mudblazor.thememanager\\3.0.0\\mudblazor.thememanager.3.0.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.15.0\\system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "No se encuentra el proyecto \"C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
+      "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
+      "filePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
+      "libraryId": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj",
+      "targetGraphs": [
+        "net10.0",
+        "net10.0/browser-wasm"
+      ]
+    }
+  ]
 }

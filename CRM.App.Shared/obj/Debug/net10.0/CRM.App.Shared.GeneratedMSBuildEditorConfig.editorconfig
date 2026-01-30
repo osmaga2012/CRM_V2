@@ -81,6 +81,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Shared/Pages/Login/Login2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Shared/Pages/Login/Registro.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cUmVnaXN0cm8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

@@ -467,7 +467,7 @@
           "BCrypt.Net-Next": "4.0.3",
           "Blazored.LocalStorage": "4.5.0",
           "Blazored.Modal": "7.3.1",
-          "CRM.Dtos": "1.0.0",
+          "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj": "1.0.0",
           "Microsoft.AspNetCore.Components.QuickGrid": "10.0.1",
           "Microsoft.FluentUI.AspNetCore.Components": "4.13.2",
           "Microsoft.FluentUI.AspNetCore.Components.Icons": "4.13.2",
@@ -488,7 +488,6 @@
         "dependencies": {
           "Blazored.LocalStorage": "4.5.0",
           "CRM.App.Shared": "1.0.0",
-          "CRM.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "10.0.2",
           "Microsoft.DotNet.HotReload.WebAssembly.Browser": "10.0.102",
           "MudBlazor": "8.15.0",
@@ -1808,5 +1807,16 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "No se encuentra el proyecto \"C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
+      "libraryId": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

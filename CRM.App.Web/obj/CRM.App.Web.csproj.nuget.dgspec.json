@@ -175,8 +175,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
-                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
+              "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj": {
+                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj"
               }
             }
           }
@@ -577,9 +577,6 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
-                "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
-              },
               "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj": {
                 "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj"
               }
