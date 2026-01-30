@@ -44,6 +44,8 @@
     }
   </style>
 
+
+
 <main class="relative z-20 w-full max-w-[420px] px-6 flex flex-col items-center">
 <div class="mb-8 flex flex-col items-center">
 <div class="bg-primary p-3 rounded-xl shadow-lg mb-4">
@@ -56,7 +58,7 @@
 </div>
 <div class="w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20">
 <div class="bg-purple-500/10 border-b border-purple-500/20 px-4 py-1.5 flex justify-between items-center">
-<span class="text-[10px] font-mono text-purple-600 dark:text-purple-400 font-bold">&lt;EditForm Model="@loginUser" OnValidSubmit="HandleLogin"&gt;</span>
+<EditForm Model="@loginUser" OnValidSubmit="HandleLogin">
 <span class="material-symbols-outlined text-purple-400 text-xs">bolt</span>
 </div>
 <div class="p-6 sm:p-8">
@@ -127,7 +129,6 @@
 <div class="flex justify-center gap-4 opacity-80">
 <a class="hover:text-white underline underline-offset-4" href="#">Términos de Uso</a>
 <span class="text-white/20">|</span>
-<span class="font-mono text-[10px] text-purple-300">@code { ... }</span>
 </div>
 <p class="mt-2 opacity-40 font-mono tracking-tighter">v2.5.0-wasm-build.104</p>
 </div>
