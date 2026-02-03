@@ -15,6 +15,8 @@
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Blazored.LocalStorage" Version="4.5.0" />
     <PackageReference Include="Blazored.Modal" Version="7.3.1" />
+    <PackageReference Include="ExcelDataReader" Version="3.8.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.8.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Authorization" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Forms" Version="10.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="10.0.1" />
@@ -29,8 +31,14 @@
 	<PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.13.2" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup Condition="">
     <ProjectReference Include="../CRM_REPO/CRM.Dtos/CRM.Dtos.csproj" />
-  </ItemGroup>
+  </ItemGroup>-->
 
+	<ItemGroup>
+		<ProjectReference Include="../CRM_REPO/CRM.Dtos/CRM.Dtos.csproj" Condition="'$(GITHUB_ACTIONS)' == 'true'" />
+
+		<ProjectReference Include="C:\Users\oscar\source\repos\CRM\CRM.Dtos\CRM.Dtos.csproj" Condition="'$(GITHUB_ACTIONS)' != 'true'" />
+	</ItemGroup>
+	
 </Project>

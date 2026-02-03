@@ -13,18 +13,19 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
+using System.Text;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-//#if !DEBUG
+#if !DEBUG
     builder.RootComponents.Add<Routes>("#app");
     builder.RootComponents.Add<HeadOutlet>("head::after");
-//#endif
+#endif
 
 builder.Services.AddMudServices();
-
 // Add device-specific services used by the CRM.App.Shared project
 builder.Services.AddSingleton<IFormFactor, FormFactor>();
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
 //builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddAuthorizationCore();

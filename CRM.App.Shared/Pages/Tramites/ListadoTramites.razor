@@ -17,7 +17,7 @@
         Crear Nuevo Trámite
     </MudButton>
 
-    @if (_selectedItems != null && _selectedItems.Any())
+@*     @if (_selectedItems != null && _selectedItems.Any())
     {
         <MudButton Variant="Variant.Filled"
                    Color="Color.Error"
@@ -25,7 +25,7 @@
                    OnClick="BorrarSeleccionados">
             Borrar Seleccionados (@_selectedItems.Count)
         </MudButton>
-    }
+    } *@
 </div>
 
 <MudPaper Elevation="2" Class="pa-4 mt-4">
@@ -42,9 +42,9 @@
         </ToolBarContent>
         <Columns>
             @* Columna de Selección Masiva *@
-            <SelectColumn T="TramiteDto" />
+            @* <SelectColumn T="TramiteDto" /> 
 
-            <PropertyColumn Property="x => x.Codigo" Title="Código" Sortable="true" />
+            <PropertyColumn Property="x => x.Codigo" Title="Código" Sortable="true" />*@
             <PropertyColumn Property="x => x.NombreTramite" Title="Descripción" />
             <PropertyColumn Property="x => x.FechaInicio" Title="Fecha Inicio" Format="dd/MM/yyyy" />
             <PropertyColumn Property="x => x.FechaFin" Title="Fecha Fin" Format="dd/MM/yyyy" />
@@ -52,11 +52,13 @@
             <TemplateColumn CellClass="d-flex justify-end">
                 <CellTemplate>
                     <MudTooltip Text="Editar">
-                        <MudIconButton Icon="@Icons.Material.Filled.Edit" Size="Size.Small" OnClick="@(() => EditTramite(context.Item.Id))" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Edit" 
+                                Size="Size.Small" 
+                                OnClick="@(() => EditTramite(context.Item.Id))" />
                     </MudTooltip>
-                    <MudTooltip Text="Eliminar">
+@*                     <MudTooltip Text="Eliminar">
                         <MudIconButton Icon="@Icons.Material.Filled.Delete" Size="Size.Small" Color="Color.Error" OnClick="@(() => DeleteTramite(context.Item.Id, context.Item.NombreTramite))" />
-                    </MudTooltip>
+                    </MudTooltip> *@
                 </CellTemplate>
             </TemplateColumn>
         </Columns>

@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "CRM.App.Web.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-te5AdeqbaLIj1J10D07SpzB3M2qJKCyONVRMwR9n1E0=",
+    "hash": "sha256-noQFv6yjypYIY0sUcXKqz9d4Ppd3jqqlsLiTxs+2Jls=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.87vtjjdetb.js"
@@ -74,6 +74,18 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "virtualPath": "Blazored.Modal.wasm",
         "name": "Blazored.Modal.h7t7ava08f.wasm",
         "integrity": "sha256-Y6pVrSnmzq2FCEnAkNngv+mtNlIljEmH3BEmGpr5jEQ=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "ExcelDataReader.wasm",
+        "name": "ExcelDataReader.z30rusxxp0.wasm",
+        "integrity": "sha256-sahRQmOAEc6/e+0eOpsKux7TlR3TTORdUCKG9kJNvEE=",
+        "cache": "force-cache"
+      },
+      {
+        "virtualPath": "ExcelDataReader.DataSet.wasm",
+        "name": "ExcelDataReader.DataSet.qxrai7h0vv.wasm",
+        "integrity": "sha256-7onK2tZpKF9b5/e6c+3oTfn6hVvfp6OGGptvmLtkFg0=",
         "cache": "force-cache"
       },
       {
@@ -1386,8 +1398,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Shared.wasm",
-        "name": "CRM.App.Shared.v4yiqmevzk.wasm",
-        "integrity": "sha256-sXDOiCGpLhuWzMNoAB8PeJvdhdf8FRBkqh/G/AE2vwY=",
+        "name": "CRM.App.Shared.65ftjic352.wasm",
+        "integrity": "sha256-6uwXHSD8vUBsZjcJEfKPVlgEdd4WHUHg5xtsmPK5RkA=",
         "cache": "force-cache"
       },
       {
@@ -1398,28 +1410,22 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.Dtos.wasm",
-        "name": "CRM.Dtos.biidrj5h52.wasm",
-        "integrity": "sha256-81WSM+qxu9Jz2r1RS4+Mkm8Pi/loMyB8I6sMCWuLgYw=",
+        "name": "CRM.Dtos.xzwp0lup8h.wasm",
+        "integrity": "sha256-s/jpvhTNC7ngXk5UucRC4TmxUtS0ub62R+xK8Irzmuc=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "CRM.App.Web.Client.wasm",
-        "name": "CRM.App.Web.Client.yby3kae7or.wasm",
-        "integrity": "sha256-cpPH6FA6ldOIvIHio2KZFMOuWLWaflrsR2HOUSWci+4=",
+        "name": "CRM.App.Web.Client.h7fpqztiny.wasm",
+        "integrity": "sha256-PS+VD0AkyZIkdXOkJf4cPH27/DA/x1jcBESkL7d3KV8=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "CRM.App.Shared.pdb",
-        "name": "CRM.App.Shared.3jy5vnl6e9.pdb",
-        "integrity": "sha256-8bbogbMF1Jug5Mxj4SgBPHB6JgYqnDD/adutqcwN3X8=",
-        "cache": "force-cache"
-      },
-      {
-        "virtualPath": "CRM.Dtos.pdb",
-        "name": "CRM.Dtos.vy8c5zz7e7.pdb",
-        "integrity": "sha256-ZzkKUK4hMWhUyqYDn3Blxq5PF7nmsd95LKumUcvj0qo=",
+        "name": "CRM.App.Shared.dociyh1w0e.pdb",
+        "integrity": "sha256-U5nnprBfx+ir+iqKdVm0fWxEBdba0KShgxeQZgxZAuU=",
         "cache": "force-cache"
       },
       {
@@ -1429,9 +1435,15 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "cache": "force-cache"
       },
       {
+        "virtualPath": "CRM.Dtos.pdb",
+        "name": "CRM.Dtos.zoy6uvxvi0.pdb",
+        "integrity": "sha256-I39cVeeG5DgZK68JZDWU8asq9w3EpCe8ZRgybxg4wAQ=",
+        "cache": "force-cache"
+      },
+      {
         "virtualPath": "CRM.App.Web.Client.pdb",
-        "name": "CRM.App.Web.Client.cjfkxcqltd.pdb",
-        "integrity": "sha256-qNxf8loLQRpSLCG3Vo2tu4fPlyT3Xh4vCwB/I5fXjiM=",
+        "name": "CRM.App.Web.Client.b9h83r69jz.pdb",
+        "integrity": "sha256-oSeU/+qfAlu5q3SYRhPoe6w1vAgfDVuMBSRb5ObhB78=",
         "cache": "force-cache"
       }
     ],

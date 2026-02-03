@@ -48,6 +48,35 @@
           "buildMultiTargeting/Blazored.Modal.props": {}
         }
       },
+      "ExcelDataReader/3.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/ExcelDataReader.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ExcelDataReader.DataSet/3.8.0": {
+        "type": "package",
+        "dependencies": {
+          "ExcelDataReader": "3.8.0"
+        },
+        "compile": {
+          "lib/net8.0/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/ExcelDataReader.DataSet.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authorization/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -753,6 +782,29 @@
             "related": ".xml"
           }
         }
+      },
+      "CRM.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dominio.dll": {}
+        }
+      },
+      "CRM.Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "CRM.Dominio": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRM.Dtos.dll": {}
+        }
       }
     }
   },
@@ -822,6 +874,56 @@
         "lib/net8.0/Blazored.Modal.dll",
         "staticwebassets/Blazored.Modal.bundle.scp.css",
         "staticwebassets/BlazoredModal.razor.js"
+      ]
+    },
+    "ExcelDataReader/3.8.0": {
+      "sha512": "kbUsldc5Fn9IKgzL2nr4VvN/mKqPqn8zGXUZpA7uL6svCA4psF+qMK519EhMvderpU4pAJoqk9DWpiSIkiZtXA==",
+      "type": "package",
+      "path": "exceldatareader/3.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ExcelDataReader.png",
+        "README.md",
+        "exceldatareader.3.8.0.nupkg.sha512",
+        "exceldatareader.nuspec",
+        "lib/net462/ExcelDataReader.dll",
+        "lib/net462/ExcelDataReader.pdb",
+        "lib/net462/ExcelDataReader.xml",
+        "lib/net8.0/ExcelDataReader.dll",
+        "lib/net8.0/ExcelDataReader.pdb",
+        "lib/net8.0/ExcelDataReader.xml",
+        "lib/netstandard2.0/ExcelDataReader.dll",
+        "lib/netstandard2.0/ExcelDataReader.pdb",
+        "lib/netstandard2.0/ExcelDataReader.xml",
+        "lib/netstandard2.1/ExcelDataReader.dll",
+        "lib/netstandard2.1/ExcelDataReader.pdb",
+        "lib/netstandard2.1/ExcelDataReader.xml"
+      ]
+    },
+    "ExcelDataReader.DataSet/3.8.0": {
+      "sha512": "+eQg5oinHir7ayE/rF4dedvy8J6FBDG8RDyKFQsS/VZG9ygrnNgW6U8JSlrfGfe3DxYgbVoVwYV9Hbk63JQJFQ==",
+      "type": "package",
+      "path": "exceldatareader.dataset/3.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ExcelDataReader.png",
+        "README.md",
+        "exceldatareader.dataset.3.8.0.nupkg.sha512",
+        "exceldatareader.dataset.nuspec",
+        "lib/net462/ExcelDataReader.DataSet.dll",
+        "lib/net462/ExcelDataReader.DataSet.pdb",
+        "lib/net462/ExcelDataReader.DataSet.xml",
+        "lib/net8.0/ExcelDataReader.DataSet.dll",
+        "lib/net8.0/ExcelDataReader.DataSet.pdb",
+        "lib/net8.0/ExcelDataReader.DataSet.xml",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.dll",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.pdb",
+        "lib/netstandard2.0/ExcelDataReader.DataSet.xml",
+        "lib/netstandard2.1/ExcelDataReader.DataSet.dll",
+        "lib/netstandard2.1/ExcelDataReader.DataSet.pdb",
+        "lib/netstandard2.1/ExcelDataReader.DataSet.xml"
       ]
     },
     "Microsoft.AspNetCore.Authorization/10.0.1": {
@@ -1853,6 +1955,16 @@
         "system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512",
         "system.identitymodel.tokens.jwt.nuspec"
       ]
+    },
+    "CRM.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../../../../CRM/CRM.Dominio/CRM.Dominio.csproj",
+      "msbuildProject": "../../../../CRM/CRM.Dominio/CRM.Dominio.csproj"
+    },
+    "CRM.Dtos/1.0.0": {
+      "type": "project",
+      "path": "../../../../CRM/CRM.Dtos/CRM.Dtos.csproj",
+      "msbuildProject": "../../../../CRM/CRM.Dtos/CRM.Dtos.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1860,7 +1972,9 @@
       "BCrypt.Net-Next >= 4.0.3",
       "Blazored.LocalStorage >= 4.5.0",
       "Blazored.Modal >= 7.3.1",
-      "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj",
+      "CRM.Dtos >= 1.0.0",
+      "ExcelDataReader >= 3.8.0",
+      "ExcelDataReader.DataSet >= 3.8.0",
       "Microsoft.AspNetCore.Components.Authorization >= 10.0.1",
       "Microsoft.AspNetCore.Components.Forms >= 10.0.1",
       "Microsoft.AspNetCore.Components.QuickGrid >= 10.0.1",
@@ -1907,8 +2021,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj": {
-              "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj"
+            "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj": {
+              "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\CRM.Dtos.csproj"
             }
           }
         }
@@ -1940,6 +2054,14 @@
           "Blazored.Modal": {
             "target": "Package",
             "version": "[7.3.1, )"
+          },
+          "ExcelDataReader": {
+            "target": "Package",
+            "version": "[3.8.0, )"
+          },
+          "ExcelDataReader.DataSet": {
+            "target": "Package",
+            "version": "[3.8.0, )"
           },
           "Microsoft.AspNetCore.Components.Authorization": {
             "target": "Package",
@@ -2279,16 +2401,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "No se encuentra el proyecto \"C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
-      "libraryId": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }

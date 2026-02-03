@@ -19,9 +19,6 @@
     <Router AppAssembly="typeof(MainLayout).Assembly">
         <Found Context="routeData">
             @{
-
-
-
                 // LOG DE DIAGNÓSTICO
                 var layoutType = (FormFactorService.IsNativeApp || IsMobile) ? typeof(MovilLayout) : typeof(MainLayout);
 

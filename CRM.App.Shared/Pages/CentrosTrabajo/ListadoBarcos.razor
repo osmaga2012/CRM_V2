@@ -1,5 +1,6 @@
 ﻿@page "/barcos"
 @using CRM.App.Shared.Interfaces
+@using CRM.App.Shared.Pages.ImportData
 @using CRM.App.Shared.Services
 @using CRM.Dtos
 @using Microsoft.AspNetCore.Components.QuickGrid
@@ -14,11 +15,17 @@
         <MudText Typo="Typo.h4">Centros de Trabajo - Barcos</MudText>
 
         <MudStack Row Spacing="2">
-            <MudButton Variant="Variant.Outlined"
+@*             <MudButton Variant="Variant.Outlined"
                        Color="Color.Tertiary"
                        StartIcon="@Icons.Material.Filled.Download"
                        Style="border-radius: 10px; text-transform: none;">
                 Exportar Excel
+            </MudButton> *@
+
+            <MudButton OnClick='() => NavigationManager.NavigateTo("/empresas/importar")'
+                        Color="Color.Primary">
+                         <span class="material-symbols-outlined">upload_file</span>
+                Actualización por Excel
             </MudButton>
         </MudStack>
 
@@ -40,14 +47,16 @@
                 <div class="barcos-cards">
                     @foreach (var e in (FiltroEmpresas ?? Enumerable.Empty<EmpresasDto>()))
                     {
-                        <article class="barco-card" @key="e.CodigoEmpresa">
-                            <div class="barco-card-body" @onclick="() => OpenTramites(e.CodigoEmpresa, e.Barco)" style="cursor:pointer">
+                        <article class="barco-card m-2 rounded-2 shadow" @key="e.CodigoEmpresa">
+                            <div class="barco-card-body p-2" @onclick="() => OpenTramites(e.CodigoEmpresa, e!.Barco!)" style="cursor:pointer">
                                 <h3 class="barco-title">@e.Barco?.NombreA</h3>
                                 <p class="barco-sub">Empresa: @e.Empresa</p>
                                 <p class="barco-sub">Cód. Barco: @e.CodigoBarco</p>
                                 <p class="barco-sub">Armador: @e.NombreArmador</p>
+                                <p class="barco-sub">Email1: @e.EMail1</p>
+                                <p class="barco-sub">EMail2: @e.EMail2</p> 
                             </div>
-                            <div class="barco-card-footer">
+                            <div class="barco-card-footer p-2">
                                 <MudButton Variant="Variant.Text" OnClick="@(async () => await OpenTramitesAsync(e.CodigoEmpresa, e.Barco))">Ver Trámites</MudButton>
                                 <MudButton Variant="Variant.Outlined" OnClick="@(async () => await VerUsuariosBarco(e))">Usuarios</MudButton>
                             </div>
@@ -66,7 +75,8 @@
                     <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Empresa )" Title="Empresa" Sortable="true" />
                     <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.NombreArmador)" Title="Armador" Sortable="true" />
                     <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EmpresaMatriz)" Title="Matriz" Sortable="true" />
-
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EMail1)" Title="EMail1" Sortable="true" />
+                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EMail2)" Title="Email2" Sortable="true" />
                     <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn 
                         Title="Acciones" 
                         Align="Microsoft.AspNetCore.Components.QuickGrid.Align.End">

@@ -1,0 +1,67 @@
+﻿@page "/test2" 
+@inject NavigationManager NavManager 
+@inject IJSRuntime JS 
+
+<PageTitle>Empresas - Sistema Marítimo</PageTitle> 
+<div class="container-fluid"> @* Encabezado con estado de detección *@ 
+    <div class="d-flex justify-content-between align-items-center mb-4"> 
+        <h2>Empresas</h2> 
+        <span class="badge bg-info">Modo: @(isMobile ? "Móvil" : "Escritorio")</span> 
+    </div> @* Buscador y Filtros *@ 
+
+    <div class="row mb-3"> 
+        <div class="col"> 
+            <InputText @bind-Value="searchQuery"
+            @bind-Value:event="oninput" 
+            class="form-control" placeholder="Buscar por nombre o RIF..." />
+        </div> 
+    </div> 
+    @if (isMobile) 
+    { 
+        @* Vista Móvil: Lista de tarjetas *@ 
+
+        @foreach (var empresa in empresas) 
+        { 
+            <div class="card mb-2"> 
+                <div class="card-body">
+                    <h5>@empresa.NombreArmador</h5> 
+                    <p>RIF: @empresa.NIFE</p> 
+                    <span class="badge @GetBadgeClass(empresa.TipoExplotacion)">@empresa.Barco.NombreB</span> 
+                </div> 
+            </div> 
+        } 
+    } 
+    else
+    { 
+        @* Vista Escritorio: Tabla detallada *@ 
+        <table class="table"> 
+            <thead> 
+                <tr> 
+                    <th>Entidad y RIF</th> 
+                    <th>Estado</th> 
+                    <th>Flota</th> 
+                    <th>Acción</th> 
+                </tr> </thead> 
+                <tbody> 
+                    @foreach (var empresa in empresas) 
+                    {
+                        <tr> 
+                            <td>@empresa.NombreArmador (@empresa.NIFE)</td> 
+                            <td>@empresa.TipoExplotacion</td> 
+                            <td>1 Buques</td> 
+                            <td>
+                                <button class="btn btn-sm btn-primary">Gestionar</button>
+                            </td> 
+                        </tr>
+                    } 
+                </tbody> 
+        </table>
+    }
+</div> 
+
+
+@code 
+{ 
+    private string searchQuery = ""; 
+    private bool isMobile; 
+}

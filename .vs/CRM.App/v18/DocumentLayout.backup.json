@@ -110,7 +110,8 @@
               "RelativeToolTip": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor.cs",
               "ViewState": "AgIAAFwBAAAAAAAAAADgv8oBAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T21:11:27.629Z"
+              "WhenOpened": "2026-01-29T21:11:27.629Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -144,7 +145,7 @@
               "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\Tramites\\Tramite.razor.cs",
               "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Tramites\\Tramite.razor.cs",
               "RelativeToolTip": "CRM.App.Shared\\Pages\\Tramites\\Tramite.razor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T18:03:09.56Z",
               "EditorCaption": ""
@@ -159,7 +160,8 @@
               "RelativeToolTip": "CRM.App.Shared\\Pages\\Tramites\\ListadoTramites.razor.cs",
               "ViewState": "AgIAAIkAAAAAAAAAAAAhwJIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T17:58:17.34Z"
+              "WhenOpened": "2026-01-29T17:58:17.34Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

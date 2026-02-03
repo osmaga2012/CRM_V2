@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "7RdD7Pik2PY=",
-  "success": false,
+  "dgSpecHash": "9Z9hKjPrzZ4=",
+  "success": true,
   "projectFilePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oscar\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\blazored.modal\\7.3.1\\blazored.modal.7.3.1.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\exceldatareader\\3.8.0\\exceldatareader.3.8.0.nupkg.sha512",
+    "C:\\Users\\oscar\\.nuget\\packages\\exceldatareader.dataset\\3.8.0\\exceldatareader.dataset.3.8.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.2\\microsoft.aspnetcore.app.internal.assets.10.0.2.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.2\\microsoft.aspnetcore.authorization.10.0.2.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\microsoft.aspnetcore.components\\10.0.2\\microsoft.aspnetcore.components.10.0.2.nupkg.sha512",
@@ -56,18 +58,5 @@
     "C:\\Users\\oscar\\.nuget\\packages\\mudblazor.thememanager\\3.0.0\\mudblazor.thememanager.3.0.0.nupkg.sha512",
     "C:\\Users\\oscar\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.15.0\\system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "No se encuentra el proyecto \"C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj\". Compruebe que la referencia al proyecto sea válida y que exista el archivo de proyecto.",
-      "projectPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
-      "filePath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\CRM.App.Web.Client.csproj",
-      "libraryId": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM_REPO\\CRM.Dtos\\CRM.Dtos.csproj",
-      "targetGraphs": [
-        "net10.0",
-        "net10.0/browser-wasm"
-      ]
-    }
-  ]
+  "logs": []
 }
