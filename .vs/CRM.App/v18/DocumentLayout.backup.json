@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|solutionrelative:crm.app.web.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -63,23 +58,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1496678418:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\Program.cs",
-              "RelativeDocumentMoniker": "CRM.App.Web.Client\\Program.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\Program.cs",
-              "RelativeToolTip": "CRM.App.Web.Client\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAYwDQAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T21:47:18.792Z",
-              "EditorCaption": ""
             }
           ]
         }
