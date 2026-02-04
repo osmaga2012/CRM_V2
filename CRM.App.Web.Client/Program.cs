@@ -47,12 +47,17 @@ builder.Services.AddScoped(typeof(IApiClient<>), typeof(ApiClient<>));
 
 // 1. Obtenemos la URL desde donde se carga la web
 var currentBaseAddress = builder.HostEnvironment.BaseAddress;
-string baseUrl = builder.Configuration["ApiSettings:BaseUrl"] ?? "https://crm-api-myhv.onrender.com/";
+string baseUrl = builder.Configuration["ApiSettings:BaseUrl"] ?? 
+    "https://crm-api-myhv.onrender.com/";
 
 // Solo si es el emulador, cambiamos la IP
 if (currentBaseAddress.Contains("10.0.2.2"))
 {
     baseUrl = "https://10.0.2.2:7254/";
+}
+else if (currentBaseAddress.Contains("localhost"))
+{
+    baseUrl = "https://localhost:7254/";
 }
 
 
