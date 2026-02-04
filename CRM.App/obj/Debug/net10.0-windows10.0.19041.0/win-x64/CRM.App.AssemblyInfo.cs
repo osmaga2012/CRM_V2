@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CRM.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ffee939fc3666747528e059ce3aa80c23615218e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f2cad72a1661aa9c414c29d67fe84b12a8fac922")]
 [assembly: System.Reflection.AssemblyProductAttribute("CRM.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CRM.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
