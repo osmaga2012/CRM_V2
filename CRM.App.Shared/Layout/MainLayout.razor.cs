@@ -1,5 +1,4 @@
 ﻿using CRM.App.Shared.Interfaces;
-using CRM.Dominio.Entidades;
 using CRM.Dtos;
 using CRM.Web.Shared.Interfaces;
 using Microsoft.AspNetCore.Components;

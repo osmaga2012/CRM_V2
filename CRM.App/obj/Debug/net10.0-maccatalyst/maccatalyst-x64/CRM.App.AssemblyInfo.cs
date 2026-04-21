@@ -14,11 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CRM.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f2cad72a1661aa9c414c29d67fe84b12a8fac922")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0f4f767f0379aebd7476e36103ed1c50b86155f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("CRM.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CRM.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst26.1")]
+[assembly: System.Runtime.Versioning.TargetPlatformAttribute("MacCatalyst26.2")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("MacCatalyst15.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.

@@ -1,7 +1,6 @@
 ﻿using CRM.App.Shared.Interfaces;
 using CRM.App.Shared.Pages.CentrosTrabajo.Usuarios;
 using CRM.App.Shared.Services;
-using CRM.Dominio.Entidades;
 using CRM.Dtos;
 using CRM.Web.Shared.Interfaces;
 using Microsoft.AspNetCore.Components;

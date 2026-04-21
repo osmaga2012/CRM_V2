@@ -22,9 +22,11 @@
                 {
                     <MudProgressLinear Indeterminate="true" Color="Color.Primary" Class="mb-2" />
                 }
+
                 <MudChart ChartType="ChartType.Line"
                           ChartSeries="@MesesLabels1"
-                          XAxisLabels="@MesesLabels" />
+                          XAxisLabels="@MesesLabels"
+                          TItem="double" />
 
             </MudPaper>
         </MudItem>
@@ -66,12 +68,15 @@
             <MudItem xs="12" md="4">
                 <MudPaper Class="p-4 mb-3">
                     <MudText Typo="Typo.h6">Estados de trámites</MudText>
-                    <MudChart ChartType="ChartType.Pie" Labels="@EstadoLabels" Data="@EstadoData" />
+                    <MudChart ChartType="ChartType.Pie" 
+                              ChartLabels="@EstadoLabels" 
+                              ChartSeries="@EstadoData.AsChartDataSet()" />
                 </MudPaper>
 
                 <MudPaper Class="p-4">
                     <MudText Typo="Typo.h6">Tipos de documento (Top 5)</MudText>
-                    <MudChart ChartType="ChartType.Donut" Labels="@TipoLabels" Data="@TipoData" />
+                    <MudChart ChartType="ChartType.Donut" 
+                              ChartLabels="@TipoLabels" ChartSeries="@TipoData.AsChartDataSet()" TItem="double" />
                 </MudPaper>
             </MudItem>
         }

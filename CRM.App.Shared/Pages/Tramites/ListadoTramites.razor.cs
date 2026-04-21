@@ -120,7 +120,7 @@ namespace CRM.App.Shared.Pages.Tramites
         {
             // En lugar de DialogParameters, pasamos directamente el título, el mensaje
             // y el texto de los botones al ShowMessageBox.
-            bool? dialogResult = await DialogService.ShowMessageBox(
+            bool? dialogResult = await DialogService.ShowMessageBoxAsync(
                 "Confirmar eliminación", // Título del cuadro de mensaje
                 $"¿Estás seguro de que quieres eliminar el trámite {nombreTramite}? Esta acción no se puede deshacer.", // Contenido del mensaje
                 yesText: "Eliminar", // Texto del botón de confirmación (afirmativo)
@@ -184,7 +184,7 @@ namespace CRM.App.Shared.Pages.Tramites
 
         private async Task BorrarSeleccionados()
         {
-            var confirm = await DialogService.ShowMessageBox(
+            var confirm = await DialogService.ShowMessageBoxAsync(
                 "Confirmar borrado masivo",
                 $"¿Estás seguro de que deseas eliminar {_selectedItems.Count} trámites?",
                 yesText: "Eliminar todo", cancelText: "Cancelar");

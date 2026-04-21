@@ -1,4 +1,5 @@
-﻿@using CRM.App.Shared.Services
+﻿@using CRM.App.Shared.Componentes
+@using CRM.App.Shared.Services
 @using CRM.App.Shared.Layout.Menus
 @using CRM.Dtos.Enums
 @using Microsoft.AspNetCore.Components.Authorization
@@ -35,22 +36,31 @@
         </MudAppBar>
 
         @* MENU LATERAL (DRAWER) *@
-    <MudDrawer @bind-Open="@_drawerOpen"
+        <MudDrawer @bind-Open="@_drawerOpen"
                Elevation="2"
                ClipMode="DrawerClipMode.Never"
                Variant="@DrawerVariant.Responsive"
                Fixed="true"
                Breakpoint="Breakpoint.Md">
-
+               <div class="flex-grow-1">
                 <AuthorizeView>
                     <Authorized>
                         <MainNavMenu />
+
                     </Authorized>
                     <NotAuthorized>
                         <MudText Class="pa-4">Inicie sesión</MudText>
                     </NotAuthorized>
                 </AuthorizeView>
-        
+                </div>
+                <div class="pa-4">
+                    <MudText Typo="Typo.caption"
+                             Style="opacity: 0.5; font-family: monospace; display: block;"
+                             Align="Align.Center">
+                        v @AppConstants.GetVersion()
+                    </MudText>
+                </div>
+
         </MudDrawer>
 
         @* CONTENIDO PRINCIPAL CON RELLENO PARA TABS *@
@@ -59,4 +69,6 @@
                 @Body
             </MudContainer>
         </MudMainContent>
+
+
 </MudLayout>

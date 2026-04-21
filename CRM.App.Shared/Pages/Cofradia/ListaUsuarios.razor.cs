@@ -37,9 +37,6 @@ namespace CRM.App.Shared.Pages.Cofradia
         private bool _fixed = false;
         private string passCache;
 
-        private OverflowBehavior _overflowBehavior = OverflowBehavior.FlipOnOpen;
-        private DropdownSettings _dropdownSettings => new DropdownSettings() { Fixed = _fixed, OverflowBehavior = _overflowBehavior, };
-
         private EmpresasDto _selectedEmpresaCache;
         // Cuando cambia la selección, actualizamos la propiedad string del usuario.
         // Estado de paginación: 10 elementos por página
@@ -48,39 +45,50 @@ namespace CRM.App.Shared.Pages.Cofradia
 
         // Filtro para el nombre de usuario
         private string _filtroNombreUsuario = string.Empty;
-        private EmpresasDto EmpresaSelecionada
-        {
-            get
-            {
-                // 1. Si ya tenemos un valor en caché, lo devolvemos (mejor para la reactividad)
-                if (_selectedEmpresaCache != null)
-                {
-                    return _selectedEmpresaCache;
-                }
 
-                // 2. Si la caché está vacía, inicializamos desde el ID (modo Edición)
-                if (!String.IsNullOrEmpty(usuario.CodigoEmpresa))
-                {
-                    // Buscamos y cacheamos el DTO
-                    _selectedEmpresaCache = Empresas.FirstOrDefault(e => e.CodigoEmpresa == usuario.CodigoEmpresa);
-                    return _selectedEmpresaCache;
-                }
-                return null;
-            }
+        private EmpresasDto? _empresaSeleccionada;
+        private EmpresasDto? EmpresaSelecionada
+        {
+            get => _empresaSeleccionada;
             set
             {
-                // Lógica de escritura/actualización:
-
-                // 1. Actualizar la variable de caché
-                _selectedEmpresaCache = value;
-
-                // 2. Actualizar la propiedad real del modelo (el Guid?)
+                _empresaSeleccionada = value;
                 usuario.CodigoEmpresa = value?.CodigoEmpresa;
-
-                // Nota: No necesitas llamar a StateHasChanged() manualmente aquí, 
-                // ya que el @bind-Value del MudAutocomplete ya maneja el rendering.
             }
         }
+        //private EmpresasDto EmpresaSelecionada
+        //{
+        //    get
+        //    {
+        //        // 1. Si ya tenemos un valor en caché, lo devolvemos (mejor para la reactividad)
+        //        if (_selectedEmpresaCache != null)
+        //        {
+        //            return _selectedEmpresaCache;
+        //        }
+
+        //        // 2. Si la caché está vacía, inicializamos desde el ID (modo Edición)
+        //        if (!String.IsNullOrEmpty(usuario.CodigoEmpresa))
+        //        {
+        //            // Buscamos y cacheamos el DTO
+        //            _selectedEmpresaCache = Empresas.FirstOrDefault(e => e.CodigoEmpresa == usuario.CodigoEmpresa);
+        //            return _selectedEmpresaCache;
+        //        }
+        //        return null;
+        //    }
+        //    set
+        //    {
+        //        // Lógica de escritura/actualización:
+
+        //        // 1. Actualizar la variable de caché
+        //        _selectedEmpresaCache = value;
+
+        //        // 2. Actualizar la propiedad real del modelo (el Guid?)
+        //        usuario.CodigoEmpresa = value?.CodigoEmpresa;
+
+        //        // Nota: No necesitas llamar a StateHasChanged() manualmente aquí, 
+        //        // ya que el @bind-Value del MudAutocomplete ya maneja el rendering.
+        //    }
+        //}
 
         protected override async Task OnInitializedAsync()
         {
@@ -114,7 +122,7 @@ namespace CRM.App.Shared.Pages.Cofradia
         public async Task ConfirmarEliminar(UsuarioDto usuario)
         {
             // Opciones para el diálogo de confirmación
-            bool? result = await DialogService.ShowMessageBox(
+            bool? result = await DialogService.ShowMessageBoxAsync(
                 "Confirmación de Eliminación", // Título del diálogo
                 $"¿Estás seguro de que quieres eliminar la empresa '{usuario.NombreUsuario}'?", // Contenido del mensaje
                 yesText: "Sí, eliminar",
@@ -132,7 +140,7 @@ namespace CRM.App.Shared.Pages.Cofradia
                 SnackbarService.Add("Eliminación cancelada.", Severity.Info);
             }
         }
-        private void NuevoUsuario()
+        private async Task NuevoUsuario()
         {
             // 1. Instanciamos un nuevo objeto limpio
             usuario = new UsuarioDto
@@ -148,7 +156,7 @@ namespace CRM.App.Shared.Pages.Cofradia
             IsEditMode = false;
 
             // 4. Limpiamos visualmente los errores del MudForm
-            form?.ResetValidation();
+            await form?.ResetValidationAsync();
 
             // Opcional: Si el formulario está en un diálogo o sección oculta, 
             // aquí podrías activar el flag para mostrarlo.
@@ -172,7 +180,7 @@ namespace CRM.App.Shared.Pages.Cofradia
                 var pass = BCrypt.Net.BCrypt.HashPassword(usuario.PasswordHash); //PasswordHelper.HashPassword(usuario.PasswordHash);
                 usuario.PasswordHash = pass; // No actualizar la contraseña si no se ha cambiado
                 // Lógica para crear un nuevo usuario
-                await usuarioService.CreateAsync("api/Usuarios", usuario);
+                await usuarioService.CreateAsync("api/Usuarios/RegistrarUsuario", usuario);
             }
 
             StateHasChanged();
@@ -186,12 +194,25 @@ namespace CRM.App.Shared.Pages.Cofradia
 
         private async void CargarDatosUsuario(Guid id)
         {
-            usuario = await usuarioService.GetByIdAsync("api/Usuarios", id);
+            //usuario = await usuarioService.GetByIdAsync("api/Usuarios", id);
+            //IsEditMode = true;
+
+            //passCache = usuario.PasswordHash;
+
+            //StateHasChanged();
+
             IsEditMode = true;
+            usuario = Usuarios.FirstOrDefault(u => u.Id == id) ?? new UsuarioDto();
 
-            passCache = usuario.PasswordHash;
-
-            StateHasChanged();
+            // Sincronizamos la selección del combo
+            if (!string.IsNullOrEmpty(usuario.CodigoEmpresa))
+            {
+                _empresaSeleccionada = Empresas.FirstOrDefault(e => e.CodigoEmpresa == usuario.CodigoEmpresa);
+            }
+            else
+            {
+                _empresaSeleccionada = null;
+            }
 
         }
 

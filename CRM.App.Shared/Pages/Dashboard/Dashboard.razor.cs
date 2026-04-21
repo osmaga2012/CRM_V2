@@ -28,15 +28,16 @@ namespace CRM.App.Shared.Pages.Dashboard
         // Charts
         private string[] MesesLabels { get; set; } = Array.Empty<string>();
         // Inicializar la colección para evitar null en el render del MudChart
-        private List<ChartSeries> MesesLabels1 { get; set; } = new List<ChartSeries>();
+        private List<ChartSeries<double>> MesesLabels1 { get; set; } = new();
         private double[][] MesesData { get; set; } = Array.Empty<double[]>();
 
         private string[] EstadoLabels { get; set; } = Array.Empty<string>();
-        private double[][] EstadoData { get; set; } = Array.Empty<double[]>();
+        private double[][] EstadoData1 { get; set; } = Array.Empty<double[]>();
+        private double[] EstadoData { get; set; } = Array.Empty<double>();
 
         private string[] TipoLabels { get; set; } = Array.Empty<string>();
-        private double[][] TipoData { get; set; } = Array.Empty<double[]>();
-
+        private double[][] TipoData1 { get; set; } = Array.Empty<double[]>();
+        private double[] TipoData { get; set; } = Array.Empty<double>();
         private bool MostrarEstadosYTipos { get; set; } = false;
         private DateTime CalendarReference { get; set; } = DateTime.Now;
         private Dictionary<DateTime, List<BarcosTramitesDto>> AgendaPorFecha { get; set; } = new();
@@ -79,9 +80,9 @@ namespace CRM.App.Shared.Pages.Dashboard
                 MesesLabels1 = new();
                 MesesData = Array.Empty<double[]>();
                 EstadoLabels = Array.Empty<string>();
-                EstadoData = Array.Empty<double[]>();
+                EstadoData = Array.Empty<double>();
                 TipoLabels = Array.Empty<string>();
-                TipoData = Array.Empty<double[]>();
+                TipoData = Array.Empty<double>();
                 BarcosTramitesProximosVencer.Clear();
                 UltimosTramites.Clear();
             }
@@ -114,9 +115,9 @@ namespace CRM.App.Shared.Pages.Dashboard
             MesesData = new[] { mesesCounts };
 
             // rellenar ChartSeries para MudChart
-            MesesLabels1 = new List<ChartSeries>
+            MesesLabels1 = new List<ChartSeries<double>>
             {
-                new ChartSeries { Name = "Trámites", Data = mesesCounts }
+                new ChartSeries<double> { Name = "Trámites", Data = mesesCounts }
             };
 
             //// Estados

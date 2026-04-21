@@ -1,10 +1,12 @@
 ﻿@page "/login"
 @layout LoginLayout
+@using CRM.App.Shared.Componentes
 @using CRM.App.Shared.Interfaces
 @using CRM.App.Shared.Layout
 @using CRM.App.Shared.Services
 @using CRM.Dtos.Request
 @using CRM.Web.Shared.Interfaces
+@using System.Reflection
 
 @attribute [Microsoft.AspNetCore.Authorization.AllowAnonymous]
 
@@ -86,6 +88,14 @@
                 </MudText>
             </MudItem>
         }
+
+        @* Versión de la Web *@
+        @* Versión de la Web *@
+        <MudItem xs="12" Class="d-flex justify-end mt-2">
+            <MudText Typo="Typo.caption" Style="opacity: 0.6; font-family: monospace;">
+                v @AppConstants.GetVersion()
+            </MudText>
+        </MudItem>
     </MudGrid>
 </MudPaper>
 @* 
@@ -126,6 +136,15 @@
 @code {
     private LoginRequest loginModel = new();
     private string Error;
+
+    private string AppVersion;
+
+    protected override void OnInitialized()
+    {
+        // Al usar (3) te aseguras de recibir "1.0.1"
+        // Si no pusieras el (3), te devolvería "1.0.1.0"
+        AppVersion = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3);
+    }
 
     private async Task HandleLogin()
     {

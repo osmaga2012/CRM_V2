@@ -20,17 +20,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = CRM.App.Web.Client
 build_property.RootNamespace = CRM.App.Web.Client
-build_property.ProjectDir = C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web.Client\
+build_property.ProjectDir = C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM.App.Web.Client
+build_property.MSBuildProjectDirectory = C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM.App.Web.Client/_Imports.razor]
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Web.Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

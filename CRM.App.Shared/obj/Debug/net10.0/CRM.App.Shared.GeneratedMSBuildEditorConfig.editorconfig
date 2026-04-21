@@ -65,6 +65,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29mcmFkaWFcQ29uZmlndXJhY2lvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Shared/Pages/Cofradia/DetalleCofradia.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29mcmFkaWFcRGV0YWxsZUNvZnJhZGlhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/oscar/source/repos/CRM_V3/CRM.App/CRM_V2/CRM.App.Shared/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

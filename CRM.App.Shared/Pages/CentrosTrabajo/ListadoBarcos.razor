@@ -1,6 +1,5 @@
 ﻿@page "/barcos"
 @using CRM.App.Shared.Interfaces
-@using CRM.App.Shared.Pages.ImportData
 @using CRM.App.Shared.Services
 @using CRM.Dtos
 @using Microsoft.AspNetCore.Components.QuickGrid
@@ -15,20 +14,12 @@
         <MudText Typo="Typo.h4">Centros de Trabajo - Barcos</MudText>
 
         <MudStack Row Spacing="2">
-@*             <MudButton Variant="Variant.Outlined"
-                       Color="Color.Tertiary"
-                       StartIcon="@Icons.Material.Filled.Download"
-                       Style="border-radius: 10px; text-transform: none;">
-                Exportar Excel
-            </MudButton> *@
-
             <MudButton OnClick='() => NavigationManager.NavigateTo("/empresas/importar")'
                         Color="Color.Primary">
-                         <span class="material-symbols-outlined">upload_file</span>
-                Actualización por Excel2
+                <span class="material-symbols-outlined">upload_file</span>
+                Actualización por Excel
             </MudButton>
         </MudStack>
-
     </MudStack>
 
     <div class="tramites-toolbar mb-4">
@@ -42,7 +33,11 @@
 
     <MudPaper Elevation="4" Class="overflow-hidden border border-solid mud-border-lines-default">
         <div class="grid-container p-4">
-            @if (PlatformService.IsNativeApp || IsMobile)
+            @if (IsLoading)
+            {
+                <MudProgressCircular Indeterminate="true" Class="m-auto" />
+            }
+            else if (PlatformService.IsNativeApp || IsMobile)
             {
                 <div class="barcos-cards">
                     @foreach (var e in (FiltroEmpresas ?? Enumerable.Empty<EmpresasDto>()))
@@ -66,47 +61,60 @@
             }
             else
             {
-                <QuickGrid Items="FiltroEmpresas"
-                           Pagination="@paginacion"
-                           Class="quickgrid-auto" Virtualize="false">
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Barco!.CodigoBarco)" Title="Cód. Barco" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Barco!.NombreB)" Title="Nombre Barco" Sortable="true" Class="col-main" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.CodigoEmpresa)" Title="Cód. Empresa" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.Empresa )" Title="Empresa" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.NombreArmador)" Title="Armador" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EmpresaMatriz)" Title="Matriz" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EMail1)" Title="EMail1" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.PropertyColumn Property="@(prop => prop.EMail2)" Title="Email2" Sortable="true" />
-                    <Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn 
-                        Title="Acciones" 
-                        Align="Microsoft.AspNetCore.Components.QuickGrid.Align.End">
-                            <MudIconButton Icon="@Icons.Material.Filled.Dock"
-                                            Size="Size.Small"
-                                            OnClick="@(() => OpenTramitesAsync(context.CodigoEmpresa, context.Barco))" />
-
-
-                            <MudIconButton Icon="@Icons.Material.Filled.Person4"
-                                            Size="Size.Small"
-                                            OnClick="@(() => VerUsuariosBarco(context))" />
-@*                         <Template Context="context">
-                            <!-- Prueba rápida: texto simple para verificar que el template se renderiza -->
-                            <div class="d-flex gap-2 justify-end" style="min-width:150px; align-items:center;">
-                                Acciones (prueba)
-                            </div>
-                        </Template> *@
-                    </Microsoft.AspNetCore.Components.QuickGrid.TemplateColumn>
-                </QuickGrid>
+                <MudTable Items="FiltroEmpresas" RowsPerPage="10" Dense="true" Hover="true" Bordered="true" Class="mud-elevation-4">
+                    <HeaderContent>
+                        <MudTh>Cód. Barco</MudTh>
+                        <MudTh>Nombre Barco</MudTh>
+                        <MudTh>Cód. Empresa</MudTh>
+                        <MudTh>Empresa</MudTh>
+                        <MudTh>Armador</MudTh>
+                        <MudTh>Matriz</MudTh>
+                        <MudTh>Email1</MudTh>
+                        <MudTh>Email2</MudTh>
+                        <MudTh>Acciones</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="Cód. Barco">@context.Barco?.CodigoBarco</MudTd>
+                        <MudTd DataLabel="Nombre Barco">@context.Barco?.NombreB</MudTd>
+                        <MudTd DataLabel="Cód. Empresa">@context.CodigoEmpresa</MudTd>
+                        <MudTd DataLabel="Empresa">@context.Empresa</MudTd>
+                        <MudTd DataLabel="Armador">@context.NombreArmador</MudTd>
+                        <MudTd DataLabel="Matriz">@context.EmpresaMatriz</MudTd>
+                        <MudTd DataLabel="Email1">@context.EMail1</MudTd>
+                        <MudTd DataLabel="Email2">@context.EMail2</MudTd>
+                        <MudTd DataLabel="Acciones">
+                            <MudIconButton Icon="@Icons.Material.Filled.Dock" Size="Size.Small" OnClick="@(() => OpenTramitesAsync(context.CodigoEmpresa, context.Barco))" />
+                            <MudIconButton Icon="@Icons.Material.Filled.Person4" Size="Size.Small" OnClick="@(() => VerUsuariosBarco(context))" />
+                        </MudTd>
+                    </RowTemplate>
+                    <PagerContent>
+                        <MudTablePager PageSizeOptions="new int[] { 5, 10, 20 }" />
+                    </PagerContent>
+                </MudTable>
             }
-        </div>
-
-        @* Paginador Personalizado *@
-        <div class="custom-pagination p-4">
-            <Paginator State="@paginacion" />
         </div>
     </MudPaper>
 </MudContainer>
 
 @code {
+    private bool IsLoading { get; set; } = true;
 
+    
+    
+
+    // protected override async Task OnInitializedAsync()
+    // {
+    //     try
+    //     {
+    //         IsLoading = true;
+    //         // Simular carga de datos
+    //         await Task.Delay(1000);
+    //         // Cargar datos aquí
+    //     }
+    //     finally
+    //     {
+    //         IsLoading = false;
+    //     }
+    // }
 }
 

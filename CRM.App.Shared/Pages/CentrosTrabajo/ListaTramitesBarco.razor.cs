@@ -122,29 +122,74 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
 
         private async Task CargarTramites()
         {
+            try
+            {
+                //Cargamos los datos del barco de la empresa seleccionada.
+                barco = (await servicioBarcos.GetByIdAsync("api/Barcos/codigo", CodigoBarco));
 
-            //Cargamos los datos del barco de la empresa seleccionada.
-            barco = (await servicioBarcos.GetByIdAsync("api/Barcos/codigo", CodigoBarco));
+                //cargamos la configuracion
+                var configuraciones = await servicioConfiguracion.GetAllAsync("api/Configuracion")
+                    ?? Enumerable.Empty<ConfiguracionDto>();
+                configuracion = configuraciones.FirstOrDefault() ?? new ConfiguracionDto();
 
-            //cargamos la configuracion
-            var configuraciones = await servicioConfiguracion.GetAllAsync("api/Configuracion")
-                ?? Enumerable.Empty<ConfiguracionDto>();
-            configuracion = configuraciones.FirstOrDefault() ?? new ConfiguracionDto();
+                var filtro = new Dictionary<string, string>();
+                filtro.Add("CodigoBarco", CodigoBarco);
+                filtro.Add("CodigoEmpresa", CodigoEmpresa);
 
-            var filtro = new Dictionary<string, string>();
-            filtro.Add("CodigoBarco", CodigoBarco);
-            filtro.Add("CodigoEmpresa", CodigoEmpresa);
+                //string[] include = new string[] { "ConfiguracionAviso" };
 
-            tramites = (await servicioTramites.GetAllAsync("api/BarcosTramites",filtro)).ToList();
+                tramites = (await servicioTramites.GetAllAsync("api/BarcosTramites",filtro)).ToList();
 
-            tramite = new();
-            tramite.DiasAvisoTramite = configuracion == null? 0: configuracion.DiasAntelacionAviso;
+                tramite = new();
+                tramite.DiasAvisoTramite = configuracion == null? 0: configuracion.DiasAntelacionAviso;
 
-            ModoAlta = true;
-            selectedFile = null;
-            selectedFileName = null;
-            existingFileName = null;
+                //if (tramite.ConfiguracionAviso == null)
+                //{
+                //    tramite.ConfiguracionAviso = new NotificacionAvisoDto();
+                //    tramite.ConfiguracionAviso.TipoFrecuencia = new();
+                //}
+
+                ModoAlta = true;
+                selectedFile = null;
+                selectedFileName = null;
+                existingFileName = null;
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.ToString());
+                throw;
+            }
+ 
         }
+
+        //private void OnFrecuenciaChanged(BarcosTramitesDto tramite, TipoFrecuenciaDto? nuevoValor)
+        //{
+        //    if (tramite.ConfiguracionAviso == null)
+        //    {
+        //        tramite.ConfiguracionAviso = new NotificacionAvisoDto();
+        //    }
+
+        //    // Si el Id sigue siendo Empty, asígnale uno para que el backend lo reconozca
+        //    if (tramite.ConfiguracionAviso.Id == Guid.Empty)
+        //    {
+        //        tramite.ConfiguracionAviso.Id = Guid.NewGuid();
+        //    }
+
+
+        //    var notificacion = new NotificacionAvisoDto
+        //    {
+        //        Id = Guid.NewGuid(),
+        //        DiasAntesVencimiento = tramite.DiasAvisoTramite,
+        //        TipoFrecuencia = nuevoValor,
+        //        CadaXHoras = tramite.ConfiguracionAviso.CadaXHoras,
+        //        Activo = true,
+        //        HistoricoEnvios = ""
+        //    };
+
+        //    tramite.ConfiguracionAviso = notificacion;
+        //    tramite.IdNotificacionAviso = notificacion.Id;
+
+        //}
 
         protected bool FiltroTramites(BarcosTramitesDto tramite)
         {
@@ -183,6 +228,7 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
                 tramite = new BarcosTramitesDto
                 {
                     Id = selectedTramite.Id,
+                    IdTramite = selectedTramite.IdTramite,
                     CodigoBarco = selectedTramite.CodigoBarco,
                     CensoBarco = selectedTramite.CensoBarco,
                     Certificado = selectedTramite.Certificado,
@@ -199,13 +245,15 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
                     DiasAvisoTramite = selectedTramite.DiasAvisoTramite,
                     Observaciones = selectedTramite.Observaciones,
                     RutaFichero = selectedTramite.RutaFichero,
-                    ListaEmailsEnvioAviso = EmailsAviso.ToString()
+                    ListaEmailsEnvioAviso = EmailsAviso.ToString(),
+                    TipoFrecuencia = selectedTramite.TipoFrecuencia,
+                    CadaXHoras = selectedTramite.CadaXHoras
 
                     //ParseEmails(tramite?.ListaEmailsEnvioAviso).ToList();
                 };
 
                 ModoAlta = false; // Estamos en modo edición
-                form?.ResetValidation(); // Limpia cualquier mensaje de validación anterior
+                form?.ResetValidationAsync(); // Limpia cualquier mensaje de validación anterior
                 existingFileName = GetFileName(tramite.RutaFichero);
                 selectedFile = null;
                 selectedFileName = null;
@@ -218,7 +266,7 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
 
             // En lugar de DialogParameters, pasamos directamente el título, el mensaje
             // y el texto de los botones al ShowMessageBox.
-            bool? dialogResult = await DialogService.ShowMessageBox(
+            bool? dialogResult = await DialogService.ShowMessageBoxAsync(
                 "Confirmar eliminación", // Título del cuadro de mensaje
                 $"¿Estás seguro de que quieres eliminar el certificado {tramite.Certificado}? Esta acción no se puede deshacer.", // Contenido del mensaje
                 yesText: "Eliminar", // Texto del botón de confirmación (afirmativo)
@@ -242,7 +290,8 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
         {
             try
             {
-                await servicioTramites.DeleteAsync("api/Tramites/masivo", Id); ;
+
+                await servicioTramites.DeleteAsync("api/BarcosTramites", Id); 
                 Snackbar.Add("Tramite eliminado correctamente.", Severity.Success);
                 await CargarTramites(); // Recargar la lista después de la eliminación
                 StateHasChanged();
@@ -445,7 +494,7 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
                 BackdropClick = false,
             };
 
-            bool? result = await DialogService.ShowMessageBox(
+            bool? result = await DialogService.ShowMessageBoxAsync(
                 title: "Confirmar eliminación",
                 message: contenido.ToString(),                 // <-- MarkupString
                 yesText: "Eliminar",

@@ -1,0 +1,63 @@
+@page "/cofradia"
+@using CRM.Dtos
+@inject HttpClient Http
+@inject ISnackbar Snackbar
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="py-4">
+    <MudPaper Elevation="4" Class="pa-6 rounded">
+        <MudStack Spacing="4">
+            <MudText Typo="Typo.h5" Class="font-weight-bold">Detalle de la Cofradía</MudText>
+            <MudDivider />
+
+            @if (cofradia == null)
+            {
+                <MudSkeleton Height="200px" Width="100%" />
+            }
+            else
+            {
+                <MudGrid Spacing="2">
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">Nombre</MudText>
+                        <MudText Typo="Typo.body1">@cofradia.Nombre</MudText>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">Razón Social</MudText>
+                        <MudText Typo="Typo.body1">@cofradia.RazonSocial</MudText>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">NIF</MudText>
+                        <MudText Typo="Typo.body1">@cofradia.NIF</MudText>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">Teléfono</MudText>
+                        <MudText Typo="Typo.body1">@cofradia.Telefono</MudText>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">Email</MudText>
+                        <MudText Typo="Typo.body1">@cofradia.Email</MudText>
+                    </MudItem>
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">IBAN</MudText>
+                        <MudText Typo="Typo.body1">@cofradia.IBAN</MudText>
+                    </MudItem>
+                    <MudItem xs="12">
+                        <MudText Typo="Typo.subtitle2" Class="font-weight-bold">Dirección</MudText>
+                        <MudText Typo="Typo.body1">
+                            @cofradia.Calle @cofradia.Numero, @cofradia.CP<br />
+                            @cofradia.Provincia, @cofradia.Pais
+                        </MudText>
+                    </MudItem>
+                </MudGrid>
+            }
+
+            <MudDivider Class="my-4" />
+            <MudButton Variant="Variant.Outlined" Color="Color.Primary" OnClick="Volver">
+                Volver
+            </MudButton>
+        </MudStack>
+    </MudPaper>
+</MudContainer>
+
+@code {
+    
+}

@@ -697,7 +697,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-wind
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Components\TextField\FluentTextField.razor.js
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Components\Toolbar\FluentToolbar.razor.js
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Components\Tooltip\FluentTooltip.razor.js
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Microsoft.FluentUI.AspNetCore.Components.ewdlgswx1m.bundle.scp.css
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Microsoft.FluentUI.AspNetCore.Components.lib.module.js
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Microsoft.FluentUI.AspNetCore.Components.lib.module.js.LEGAL.txt
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Microsoft.FluentUI.AspNetCore.Components.lib.module.js.map
@@ -1058,7 +1057,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-wind
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.runtimeconfig.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.pdb
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\resources.pri
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Web.WebView2.Core.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\BCrypt.Net-Next.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Blazored.LocalStorage.dll
@@ -1188,7 +1186,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-wind
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.SDK.NET.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\WinRT.Runtime.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.Shared.dll
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.Dominio.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.Dtos.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
@@ -1197,7 +1194,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-wind
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Web.WebView2.Core.Projection.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.Shared.pdb
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.Dtos.pdb
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.Dominio.pdb
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.UI.pri
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.UI.Xaml.Controls.pri
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\EmbeddedAttribute.cs
@@ -1330,3 +1326,23 @@ C:\Users\oscar\source\repos\CRM_V2_1\CRM.App\obj\Debug\net10.0-windows10.0.19041
 C:\Users\oscar\source\repos\CRM_V2_1\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.dll
 C:\Users\oscar\source\repos\CRM_V2_1\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\refint\CRM.App.dll
 C:\Users\oscar\source\repos\CRM_V2_1\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.pdb
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\Microsoft.FluentUI.AspNetCore.Components\Microsoft.FluentUI.AspNetCore.Components.84wtju4z0n.bundle.scp.css
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\wwwroot\_content\MudBlazor\MudBlazor.min.js.map
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\CRM.App.pri
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\ExcelDataReader.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\ExcelDataReader.DataSet.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.AI.Foundation.Projection.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.Foundation.Projection.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.Storage.Pickers.Projection.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.ML.OnnxRuntime.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Windows.AI.MachineLearning.Projection.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-windows10.0.19041.0\win-x64\System.Numerics.Tensors.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.AspNetCore.Components.WebView.Maui.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Controls.Xaml.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Essentials.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Graphics.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.UI.pri.xml
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-windows10.0.19041.0\win-x64\Microsoft.UI.Xaml.Controls.pri.xml

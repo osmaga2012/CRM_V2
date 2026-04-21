@@ -11,6 +11,7 @@ using CRM.Web.Shared.Providers;
 using CRM.Web.Shared.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using System.Text;
@@ -57,6 +58,7 @@ if (currentBaseAddress.Contains("10.0.2.2"))
 }
 else if (currentBaseAddress.Contains("localhost"))
 {
+    baseUrl = "https://localhost:7237/";
     baseUrl = "https://localhost:7254/";
 }
 

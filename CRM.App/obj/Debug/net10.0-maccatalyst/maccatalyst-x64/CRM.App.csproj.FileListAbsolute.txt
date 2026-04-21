@@ -685,7 +685,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-macc
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.a
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\libxamarin-dotnet.dylib
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.App.Shared.dll
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.Dominio.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.Dtos.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
@@ -693,7 +692,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-macc
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.App.Shared.pdb
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.Dtos.pdb
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.Dominio.pdb
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\EmbeddedAttribute.cs
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ValidatableTypeAttribute.cs
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.App.csproj.AssemblyReference.cache
@@ -769,3 +767,6 @@ C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-macc
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.App.pdb
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\CRM.App.genruntimeconfig.cache
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\obj\Debug\net10.0-maccatalyst\maccatalyst-x64\ref\CRM.App.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\ExcelDataReader.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\ExcelDataReader.DataSet.dll
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App\bin\Debug\net10.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.resources.zip

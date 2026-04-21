@@ -161,7 +161,7 @@ namespace CRM.App.Shared.Pages.Empresa
                 FullWidth = true
             };
 
-            var result = await DialogService.ShowMessageBox(
+            var result = await DialogService.ShowMessageBoxAsync(
                 "Guardar en Calendario", // Título del Diálogo
                 "¿Deseas agregar este recordatorio/aviso a tu calendario personal para no olvidarlo?", // Contenido del mensaje
                 yesText: "Sí, Agregar al Calendario", // Texto para el botón OK

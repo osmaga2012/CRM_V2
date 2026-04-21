@@ -95,23 +95,22 @@
 
                         @if (DebeMostrarSelectorEmpresas)
                         {
-                            <MudSelect T="string"
-                                       Label="Empresas destinatarias"
-                                       MultiSelection="true"
-                                       Dense="true"
-                                       SelectedValues="@EmpresasSeleccionadas"
-                                       SelectedValuesChanged="OnEmpresasSeleccionadasChanged">
-                                @foreach (var empresa in EmpresasDisponibles)
-                                {
-                                    <MudSelectItem Value="@empresa.CodigoEmpresa">@($"{empresa.CodigoEmpresa} - {empresa.Empresa}")</MudSelectItem>
-                                }
-                                <MudChipSet T="string">
-                                    @foreach (var cod in EmpresasSeleccionadas)
-                                    {
-                                        <MudChip T="string">@GetEtiquetaEmpresa(cod)</MudChip>
-                                    }
-                                </MudChipSet>
-                            </MudSelect>
+                            <MudAutocomplete T="EmpresasDto"
+                                             Dense="true"
+                                             Label="Empresas destinatarias"
+                                             Variant="Variant.Outlined"
+                                             MultiSelection="true"
+                                             SearchFunc="BuscarEmpresas"
+                                             ToStringFunc="GetDescripcionEmpresa"
+                                             SelectedValues="@EmpresasSeleccionadasObjetos"
+                                             SelectedValuesChanged="OnEmpresasSeleccionadasObjetosChanged">
+                                <ItemTemplate Context="empresa">
+                                    <MudText>@GetDescripcionEmpresa(empresa)</MudText>
+                                </ItemTemplate>
+                                <ItemSelectedTemplate Context="empresa">
+                                    <MudText>@GetDescripcionEmpresa(empresa)</MudText>
+                                </ItemSelectedTemplate>
+                            </MudAutocomplete>
                         }
 
                         @if (DebeMostrarSelectorPersonas)

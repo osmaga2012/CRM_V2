@@ -10,23 +10,23 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CRM.App.Web.Client\CRM.App.Web.Client.csproj" />
-    <PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="8.3.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.8" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
-    <PackageReference Include="MudBlazor" Version="8.15.0" />
-    <PackageReference Include="MudBlazor.ThemeManager" Version="3.0.0" />
-    <PackageReference Include="MudBlazor.Translations" Version="2.7.0" />
+    <PackageReference Include="CodeBeam.MudBlazor.Extensions" Version="9.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="10.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+    <PackageReference Include="MudBlazor" Version="9.1.0" />
+    <PackageReference Include="MudBlazor.ThemeManager" Version="4.0.0" />
+    <PackageReference Include="MudBlazor.Translations" Version="3.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Interfaces\" />
   </ItemGroup>
 
-	<ItemGroup>
+	<!--<ItemGroup>
 		<ProjectReference Include="C:\Users\oscar\source\repos\CRM\CRM.Dtos\CRM.Dtos.csproj" />
 	</ItemGroup>
 
-	<!-- <ItemGroup>
+	 <ItemGroup>
     <Reference Include="CRM.Dtos">
       <HintPath>..\..\..\CRM\CRM.Dtos\bin\Debug\net9.0\CRM.Dtos.dll</HintPath>
     </Reference>

@@ -30,17 +30,19 @@ namespace CRM.App.Shared.Pages.Tramites
             {
                 if (value == tramite.AsignacionDestino) return;
 
-                // <-- pon aquí tu breakpoint
                 tramite.AsignacionDestino = value;
 
                 if (!DebeMostrarSelectorEmpresas)
+                {
                     EmpresasSeleccionadas.Clear();
+                    EmpresasSeleccionadasObjetos = new HashSet<EmpresasDto>();
+                }
 
                 if (!DebeMostrarSelectorPersonas)
                     PersonasSeleccionadas = new HashSet<PersonasDto>();
 
                 ActualizarPersonasDisponibles();
-                StateHasChanged(); // asegura render inmediato
+                StateHasChanged();
             }
         }
 
@@ -61,6 +63,7 @@ namespace CRM.App.Shared.Pages.Tramites
         private List<PersonasDto> TodasLasPersonas { get; set; } = new();
         private List<PersonasDto> PersonasDisponibles { get; set; } = new();
         private HashSet<string> EmpresasSeleccionadas { get; set; } = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private HashSet<EmpresasDto> EmpresasSeleccionadasObjetos { get; set; } = new();
         private HashSet<PersonasDto> PersonasSeleccionadas { get; set; } = new();
 
         private bool DebeMostrarSelectorEmpresas => EsDestinoEmpresas() || EsDestinoPersonasEmpresa();
@@ -114,6 +117,11 @@ namespace CRM.App.Shared.Pages.Tramites
             EmpresasSeleccionadas = tramite.EmpresasAsignadas?.Any() == true
                 ? new HashSet<string>(tramite.EmpresasAsignadas, StringComparer.OrdinalIgnoreCase)
                 : new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            // Sincronizar objetos de empresas
+            EmpresasSeleccionadasObjetos = EmpresasDisponibles
+                .Where(e => !string.IsNullOrWhiteSpace(e.CodigoEmpresa) && EmpresasSeleccionadas.Contains(e.CodigoEmpresa))
+                .ToHashSet();
 
             var personasAsignadas = tramite.PersonasAsignadas?.Where(codigo => !string.IsNullOrWhiteSpace(codigo)).ToHashSet(StringComparer.OrdinalIgnoreCase)
                 ?? new HashSet<string>();
@@ -192,6 +200,7 @@ namespace CRM.App.Shared.Pages.Tramites
             if (!DebeMostrarSelectorEmpresas)
             {
                 EmpresasSeleccionadas.Clear();
+                EmpresasSeleccionadasObjetos = new HashSet<EmpresasDto>();
             }
 
             if (!DebeMostrarSelectorPersonas)
@@ -203,11 +212,23 @@ namespace CRM.App.Shared.Pages.Tramites
             return Task.CompletedTask;
         }
 
-        //private Task OnEmpresasSeleccionadasChanged(IEnumerable<string> valores)
         private Task OnEmpresasSeleccionadasChanged(IEnumerable<string> valores)
         {
             EmpresasSeleccionadas = valores?.ToHashSet(StringComparer.OrdinalIgnoreCase)
                 ?? new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            ActualizarPersonasDisponibles();
+            return Task.CompletedTask;
+        }
+
+        private Task OnEmpresasSeleccionadasObjetosChanged(IEnumerable<EmpresasDto> valores)
+        {
+            EmpresasSeleccionadasObjetos = valores?.ToHashSet() ?? new HashSet<EmpresasDto>();
+            
+            EmpresasSeleccionadas = EmpresasSeleccionadasObjetos
+                .Where(e => !string.IsNullOrWhiteSpace(e.CodigoEmpresa))
+                .Select(e => e.CodigoEmpresa!)
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            
             ActualizarPersonasDisponibles();
             return Task.CompletedTask;
         }
@@ -218,6 +239,26 @@ namespace CRM.App.Shared.Pages.Tramites
                 ?? new HashSet<PersonasDto>();
             SincronizarModeloConSelecciones();
             return Task.CompletedTask;
+        }
+
+        private Task<IEnumerable<EmpresasDto>> BuscarEmpresas(string value, CancellationToken cancellationToken)
+        {
+            if (cancellationToken.IsCancellationRequested)
+            {
+                return Task.FromCanceled<IEnumerable<EmpresasDto>>(cancellationToken);
+            }
+
+            IEnumerable<EmpresasDto> empresas = EmpresasDisponibles;
+
+            if (!string.IsNullOrWhiteSpace(value))
+            {
+                empresas = empresas.Where(e =>
+                    (!string.IsNullOrWhiteSpace(e.Empresa) && e.Empresa.Contains(value, StringComparison.OrdinalIgnoreCase)) ||
+                    (!string.IsNullOrWhiteSpace(e.CodigoEmpresa) && e.CodigoEmpresa.Contains(value, StringComparison.OrdinalIgnoreCase)) ||
+                    (!string.IsNullOrWhiteSpace(e.NIFE) && e.NIFE.Contains(value, StringComparison.OrdinalIgnoreCase)));
+            }
+
+            return Task.FromResult(empresas.Take(50));
         }
 
         private Task<IEnumerable<PersonasDto>> BuscarPersonas(string value, CancellationToken cancellationToken)
@@ -240,6 +281,26 @@ namespace CRM.App.Shared.Pages.Tramites
             }
 
             return Task.FromResult(personas.Take(50));
+        }
+
+        private string GetDescripcionEmpresa(EmpresasDto empresa)
+        {
+            if (empresa == null)
+            {
+                return string.Empty;
+            }
+
+            var codigo = string.IsNullOrWhiteSpace(empresa.CodigoEmpresa) ? string.Empty : empresa.CodigoEmpresa;
+            var nombre = string.IsNullOrWhiteSpace(empresa.Empresa) ? string.Empty : empresa.Empresa;
+
+            if (string.IsNullOrWhiteSpace(codigo))
+            {
+                return nombre;
+            }
+
+            return string.IsNullOrWhiteSpace(nombre)
+                ? codigo
+                : $"{codigo} - {nombre}";
         }
 
         private string GetDescripcionPersona(PersonasDto persona)
@@ -380,7 +441,7 @@ namespace CRM.App.Shared.Pages.Tramites
 
                 foreach (var barco in empresas)
                 {
-                    if (barco == null || string.IsNullOrWhiteSpace(barco.Barco.CodigoBarco))
+                    if (barco == null || string.IsNullOrWhiteSpace(barco.Barco.CodigoBarco.ToString()))
                     {
                         continue;
                     }
@@ -390,7 +451,7 @@ namespace CRM.App.Shared.Pages.Tramites
                     {
                         var filtroAsignaciones = new Dictionary<string, string>
                         {
-                            { nameof(BarcosTramitesDto.CodigoBarco), barco.Barco.CodigoBarco },
+                            { nameof(BarcosTramitesDto.CodigoBarco), barco.Barco.CodigoBarco.ToString() },
                             { nameof(BarcosTramitesDto.CodigoEmpresa), codigoEmpresa },
                             { nameof(BarcosTramitesDto.Certificado), nombreTramite }
                         };

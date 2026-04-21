@@ -71,6 +71,9 @@ namespace CRM.App.Shared.Pages.CentrosTrabajo
             string[] includesEmpresas = new string[] { "Barco" };
             var result = await servicioEmpresas.GetAllAsync("api/Empresa", null, includesEmpresas);
             empresas = result?.ToList() ?? new List<EmpresasDto>();
+
+            IsLoading = false;  
+            StateHasChanged();
         }
 
         // quick filter - filter globally across multiple columns with the same input

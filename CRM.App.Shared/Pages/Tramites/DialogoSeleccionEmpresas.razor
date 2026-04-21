@@ -5,45 +5,185 @@
 @inject IApiClient<BarcosDto> servicioBarcos
 
 <MudDialog>
-    <TitleContent>Seleccionar Empresas y Barcos</TitleContent>
+    <TitleContent>
+        <MudText Typo="Typo.h6">Seleccionar Empresas y Barcos</MudText>
+    </TitleContent>
     <DialogContent>
-        <MudTextField @bind-Value="_searchString" Placeholder="Buscar por nombre, barco o código..."
-                      Adornment="Adornment.Start" IconSize="Size.Medium" Class="mb-4" />
+        <MudStack Spacing="3">
+            <!-- Autocomplete para búsqueda con Enter para agregar -->
+            <MudAutocomplete
+                 T="EmpresasDto"
+                 Label="Buscar Empresas/Barcos"
+                 Value ="_empresaSeleccionada"
+                 SearchFunc="BuscarEmpresas"
+                 ToStringFunc="GetDescripcionBarco"
+                 Variant="Variant.Outlined"
+                 Adornment="Adornment.End"
+                 AdornmentIcon="@Icons.Material.Outlined.Search"
+                 Clearable="true"
+                 MaxItems="100"
+                 Dense="false"
+                 ResetValueOnEmptyText="false"            
+                 CoerceText="false"            
+                 CoerceValue="false"
+                 ShowProgressIndicator="true"
+                 ValueChanged="OnEmpresaSeleccionada" 
+                 Strict="false">
+               <ItemTemplate context="empresa">
+                    <MudStack row
+                              Spacing="2"
+                              AlignItems="AlignItems.Start" class="py-1">
+                        <MudIcon Icon="@Icons.Material.Filled.Business" Size="Size.Small" Color="Color.Primary" />
+                        <MudText Typo="Typo.body2"><b>@empresa.Empresa</b></MudText>
+                    </MudStack>
+                   <MudStack row 
+                       Spacing="2" 
+                       AlignItems="AlignItems.Start" class="py-1">
+                        <MudIcon Icon="@Icons.Material.Filled.Business" Size="Size.Small" Color="Color.Primary" />
+                        
+                        <MudText Typo="Typo.caption" Class="mud-text-secondary">
+                            @empresa.CodigoBarco • @(GetDescripcionBarco(empresa.Barco!))
+                        </MudText>
+                   </MudStack>
 
-        <div style="max-height: 400px; overflow-y: auto;">
-            <MudList T="EmpresasDto" 
-                SelectedValues="_tempSeleccion" 
-                SelectedValuesChanged="OnSelectionChanged" 
-                SelectionMode="SelectionMode.MultiSelection">
-                @foreach (var barco in _listaFiltrada)
-                {
-                    <MudListItem Value="@barco">
-                        <div class="d-flex justify-space-between">
-                            <MudText>@barco.CodigoBarco - @barco.NombreB</MudText>
-                            <MudText Typo="Typo.caption" 
-                                     Class="mud-text-secondary">@barco.CodigoEmpresa</MudText>
-                        </div>
-                    </MudListItem>
-                    @* Debajo del contenedor de MudChips *@
-                    <MudExpansionPanels Class="mt-4" MultiExpansion="true">
-                        <MudExpansionPanel Text="Revisar y Editar Emails de Envío" Icon="@Icons.Material.Filled.EditNotifications">
-                            <MudTable Items="@_tempSeleccion" Dense="true" Hover="true" Breakpoint="Breakpoint.Sm" Elevation="0">
+               </ItemTemplate>
+             
+             
+             </MudAutocomplete>
+
+@*             <MudAutocomplete T="EmpresasDto"
+                             @ref="_autocomplete"
+                             Label="Buscar barcos"
+                             Placeholder="Escribe para buscar y presiona Enter para agregar..."
+                             Value="_empresaSeleccionada"
+                             SearchFunc="BuscarEmpresas"
+                             ToStringFunc="GetDescripcionBarco"
+                             Variant="Variant.Outlined"
+                             Adornment="Adornment.Start"
+                             AdornmentIcon="@Icons.Material.Filled.Search"
+                             Clearable="true"
+                             MaxItems="100"
+                             Dense="false"
+                             ResetValueOnEmptyText="false"
+                             CoerceText="false"
+                             CoerceValue="false"
+                             ShowProgressIndicator="true"
+                             ValueChanged="OnEmpresaSeleccionada"
+                             Strict="false">
+                <ItemTemplate Context="barco">
+                    <MudStack Row Spacing="2" AlignItems="AlignItems.Center" Class="py-1">
+                        <MudIcon Icon="@Icons.Material.Filled.DirectionsBoat" Size="Size.Small" Color="Color.Primary" />
+                        <MudStack Spacing="0" Justify="Justify.FlexStart">
+                            <MudText Typo="Typo.body2"><b>@barco.NombreB</b></MudText>
+                            <MudText Typo="Typo.caption" Class="mud-text-secondary">
+                                @barco.CodigoBarco • @(GetNombreEmpresa(barco.CodigoEmpresa))
+                            </MudText>
+                        </MudStack>
+                    </MudStack>
+                </ItemTemplate>
+            </MudAutocomplete>
+ *@
+            <!-- Chips de barcos seleccionados -->
+            @if (_tempSeleccionBarcos.Any())
+            {
+                <MudPaper Outlined="true" Class="pa-3">
+                    <MudStack Row Justify="Justify.SpaceBetween" AlignItems="AlignItems.Center" Class="mb-2">
+                        <MudText Typo="Typo.subtitle2">
+                            <b>Barcos seleccionados (@_tempSeleccionBarcos.Count)</b>
+                        </MudText>
+                        <MudButton OnClick="LimpiarTodo" 
+                                   Size="Size.Small" 
+                                   Variant="Variant.Text" 
+                                   Color="Color.Error"
+                                   StartIcon="@Icons.Material.Filled.Clear">
+                            Limpiar todo
+                        </MudButton>
+                    </MudStack>
+                    
+                    <MudChipSet T="string" AllClosable="true" OnClose="RemoverBarcoPorCodigo">
+                        @foreach (var barco in _tempSeleccionBarcos.OrderBy(b => b.NombreB))
+                        {
+                            <MudChip T="string" 
+                                     Value="@barco.CodigoBarco.ToString()"
+                                     Color="Color.Primary" 
+                                     Variant="Variant.Filled"
+                                     Icon="@Icons.Material.Filled.DirectionsBoat">
+                                <MudStack Row Spacing="1" AlignItems="AlignItems.Center">
+                                    <MudText Typo="Typo.body2">@barco.NombreB</MudText>
+                                    @if (!string.IsNullOrWhiteSpace(barco.CodigoBarco.ToString()))
+                                    {
+                                        <MudText Typo="Typo.caption" Class="mud-text-secondary">(@barco.CodigoBarco)</MudText>
+                                    }
+                                </MudStack>
+                            </MudChip>
+                        }
+                    </MudChipSet>
+                </MudPaper>
+            }
+            else
+            {
+                <MudAlert Severity="Severity.Info" Dense="true" Icon="@Icons.Material.Filled.Info">
+                    <MudText>Busca un barco y presiona <b>Enter</b> o haz clic para agregarlo a la selección.</MudText>
+                </MudAlert>
+            }
+
+            <!-- Panel de configuración de emails -->
+            @if (_tempSeleccionBarcos.Any())
+            {
+                <MudExpansionPanels MultiExpansion="false" Elevation="1">
+                    <MudExpansionPanel IsInitiallyExpanded="false">
+                        <TitleContent>
+                            <MudStack Row Spacing="2" AlignItems="AlignItems.Center">
+                                <MudIcon Icon="@Icons.Material.Filled.Email" />
+                                <MudText>Configurar Emails de Notificación</MudText>
+                                @{
+                                    var sinEmail = _tempSeleccionBarcos.Count(b => b.Empresa == null ||
+                                    string.IsNullOrWhiteSpace(b.Empresa!.EMail1!) && string.IsNullOrWhiteSpace(b.Empresa!.EMail2!));
+                                }
+                                @if (sinEmail > 0)
+                                {
+                                    <MudChip T="int" Size="Size.Small" Color="Color.Warning">
+                                        @sinEmail sin email
+                                    </MudChip>
+                                }
+                            </MudStack>
+                        </TitleContent>
+                        <ChildContent>
+                            <MudAlert Severity="Severity.Info" Dense="true" Class="mb-3">
+                                Los barcos sin email configurado no recibirán notificaciones automáticas.
+                            </MudAlert>
+                            
+                            <MudTable Items="@_tempSeleccionBarcos.OrderBy(b => b.NombreB)" 
+                                      Dense="true" 
+                                      Hover="true" 
+                                      Breakpoint="Breakpoint.Sm" 
+                                      Elevation="0"
+                                      FixedHeader="true"
+                                      Height="300px">
                                 <HeaderContent>
-                                    <MudTh>Barco / Empresa</MudTh>
+                                    <MudTh><MudTableSortLabel SortBy="new Func<BarcosDto, object>(x => x.NombreB)">Barco</MudTableSortLabel></MudTh>
+                                    <MudTh>Empresa</MudTh>
                                     <MudTh>Email Principal</MudTh>
                                     <MudTh>Email Secundario</MudTh>
-                                    <MudTh>Estado</MudTh>
+                                    <MudTh Style="text-align: center;">Estado</MudTh>
                                 </HeaderContent>
                                 <RowTemplate>
-                                    <MudTd DataLabel="Barco">@context.NombreB</MudTd>
+                                    <MudTd DataLabel="Barco">@context.NombreA</MudTd>
                                     <MudTd DataLabel="Email 1">
-                                        <MudTextField @bind-Value="context.EMail1" Margin="Margin.Dense" Variant="Variant.Outlined" Placeholder="Vacío" />
+                                        <MudTextField 
+                                            @bind-Value="context.Empresa.EMail1" 
+                                            Margin="Margin.Dense" 
+                                            Variant="Variant.Outlined" 
+                                            Placeholder="Vacío" />
                                     </MudTd>
                                     <MudTd DataLabel="Email 2">
-                                        <MudTextField @bind-Value="context.EMail2" Margin="Margin.Dense" Variant="Variant.Outlined" Placeholder="Vacío" />
+                                        <MudTextField @bind-Value="context.Empresa.EMail2" 
+                                                        Margin="Margin.Dense" 
+                                                        Variant="Variant.Outlined" 
+                                                        Placeholder="Vacío" />
                                     </MudTd>
                                     <MudTd>
-                                        @if (string.IsNullOrEmpty(context.EMail1) && string.IsNullOrEmpty(context.EMail2))
+                                        @if (string.IsNullOrEmpty(context.Empresa.EMail1) && string.IsNullOrEmpty(context.Empresa.EMail2))
                                         {
                                             <MudTooltip Text="Este barco no recibirá avisos por email">
                                                 <MudIcon Icon="@Icons.Material.Filled.Warning" Color="Color.Warning" />
@@ -56,59 +196,24 @@
                                     </MudTd>
                                 </RowTemplate>
                             </MudTable>
-                        </MudExpansionPanel>
-                    </MudExpansionPanels>
-                }
-            </MudList>
-        </div>
+                        </ChildContent>
+                    </MudExpansionPanel>
+                </MudExpansionPanels>
+            }
+        </MudStack>
     </DialogContent>
     <DialogActions>
-        <MudButton OnClick="Cancelar">Cancelar</MudButton>
-        <MudButton Color="Color.Primary" OnClick="Aceptar">Aceptar (@_tempSeleccion.Count())</MudButton>
+        <MudButton OnClick="Cancelar" 
+                   Variant="Variant.Text">
+            Cancelar
+        </MudButton>
+        <MudButton OnClick="Aceptar" 
+                   Color="Color.Primary" 
+                   Variant="Variant.Filled"
+                   Disabled="@(!_tempSeleccionBarcos.Any())"
+                   StartIcon="@Icons.Material.Filled.Check">
+            Confirmar (@_tempSeleccionBarcos.Count)
+        </MudButton>
     </DialogActions>
 </MudDialog>
 
-@code {
-    [CascadingParameter] IMudDialogInstance MudDialog { get; set; }
-    [Parameter] public List<EmpresasDto> EmpresasYaSeleccionadas { get; set; } = new();
-    [Parameter] public List<BarcosDto> BarcosYaSeleccionados { get; set; } = new();
-
-    private string _searchString = "";
-    private List<EmpresasDto> _totalEmpresas = new();
-    private List<BarcosDto> _totalBarcos = new();
-    //private IEnumerable<EmpresasDto> _tempSeleccion = new HashSet<EmpresasDto>();
-    private IReadOnlyCollection<EmpresasDto> _tempSeleccion = new List<EmpresasDto>();
-    private IReadOnlyCollection<BarcosDto> _tempSeleccionBarcos = new List<BarcosDto>();
-    // Filtro en tiempo real
-    private IEnumerable<EmpresasDto> _listaFiltrada => _totalEmpresas
-        .Where(x => string.IsNullOrWhiteSpace(_searchString) ||
-               x.NombreArmador.Contains(_searchString, StringComparison.OrdinalIgnoreCase) ||
-               (x.Barco?.NombreB?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) ?? false));
-
-    private IEnumerable<BarcosDto> _listaFiltradaBarcos => _totalBarcos
-        .Where(x => string.IsNullOrWhiteSpace(_searchString) ||
-                x.NombreB?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true); //||
-    // x.CodigoEmpresa.Contains(_searchString, StringComparison.OrdinalIgnoreCase));
-
-
-
-    protected override async Task OnInitializedAsync()
-    {
-        // Cargar empresas desde el servicio aquí
-        string[] includesEmpresas = new string[] { "Barco" };
-        _totalEmpresas = (await servicioEmpresas.GetAllAsync("api/Empresa",null,includesEmpresas)).ToList();
-        _totalBarcos = (await servicioBarcos.GetAllAsync("api/Barcos")).ToList();
-
-        _tempSeleccion = new HashSet<EmpresasDto>(EmpresasYaSeleccionadas);
-        _tempSeleccionBarcos = new HashSet<BarcosDto>(BarcosYaSeleccionados);
-
-    }
-
-    //private void OnSelectionChanged(IEnumerable<EmpresasDto> values) => _tempSeleccion = values;
-    private void OnSelectionChanged(IReadOnlyCollection<EmpresasDto> values) => _tempSeleccion = values;
-    //private void OnSelectionChanged(IReadOnlyCollection<BarcosDto> values) => _tempSeleccionBarcos = values;
-
-    //private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccionBarcos));
-    private void Aceptar() => MudDialog.Close(DialogResult.Ok(_tempSeleccion));
-    private void Cancelar() => MudDialog.Cancel();
-}

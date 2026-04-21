@@ -1,5 +1,4 @@
 ﻿
-using CRM.Dominio.Entidades;
 using CRM.Dtos;
 using CRM.Web.Shared.Interfaces;
 using Microsoft.AspNetCore.Components;
@@ -67,7 +66,7 @@ namespace CRM.App.Shared.Pages.Tramites
             {
                 query = query.Where(x =>
                     (x.Barco?.NombreB?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
-                    (x.Barco?.CodigoBarco?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    (x.Barco?.CodigoBarco.ToString().Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
                     (x.NombreArmador?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false) ||
                     (x.CodigoEmpresa?.Contains(value, StringComparison.InvariantCultureIgnoreCase) ?? false));
             }
@@ -107,7 +106,7 @@ namespace CRM.App.Shared.Pages.Tramites
                         {
                             queryParams = new Dictionary<string, string>
                             {
-                                { "CodigoBarco", codigoBarco }
+                                { "CodigoBarco", codigoBarco.ToString() }
                             };
                             var empresa = await servicioEmpresas.GetAllAsync("api/Empresa", queryParams, includesEmpresas);
 
@@ -139,8 +138,8 @@ namespace CRM.App.Shared.Pages.Tramites
         {
             await _form.Validate();
             if (!_form.IsValid) return;
-            _masivoDto.EmpresasSeleccionadas = _empresasSeleccionadas.Select(x => x.CodigoEmpresa).ToList();
-            //_masivoDto.EmpresasSeleccionadas = _barcosSeleccionados.Select(x => x.CodigoBarco).ToList(); ;
+            //_masivoDto.EmpresasSeleccionadas = _empresasSeleccionadas.Select(x => x.CodigoEmpresa).ToList();
+            _masivoDto.EmpresasSeleccionadas = _barcosSeleccionados.Select(x => x.Empresa.CodigoEmpresa).ToList();
             
             if (_isEdit)
             {
@@ -182,11 +181,17 @@ namespace CRM.App.Shared.Pages.Tramites
             //    StateHasChanged();
             //}
 
-            if (!result.Canceled && result.Data is IEnumerable<EmpresasDto> seleccion)
+            if (!result.Canceled && result.Data is IEnumerable<BarcosDto> seleccion)
             {
-                _empresasSeleccionadas = new HashSet<EmpresasDto>(seleccion);
+                _barcosSeleccionados = new HashSet<BarcosDto>(seleccion);
                 StateHasChanged();
             }
+
+            //if (!result.Canceled && result.Data is IEnumerable<EmpresasDto> seleccion)
+            //{
+            //    _empresasSeleccionadas = new HashSet<EmpresasDto>(seleccion);
+            //    StateHasChanged();
+            //}
         }
 
 
