@@ -180,8 +180,11 @@ namespace CRM.App.Shared.Pages.Cofradia
                 var pass = BCrypt.Net.BCrypt.HashPassword(usuario.PasswordHash); //PasswordHelper.HashPassword(usuario.PasswordHash);
                 usuario.PasswordHash = pass; // No actualizar la contraseña si no se ha cambiado
                 // Lógica para crear un nuevo usuario
-                await usuarioService.CreateAsync("api/Usuarios/RegistrarUsuario", usuario);
+                usuario.Id = Guid.NewGuid();
+                await usuarioService.CreateAsync("api/Usuarios", usuario);
             }
+
+            Usuarios = (await usuarioService.GetAllAsync("api/Usuarios")).ToList();
 
             StateHasChanged();
         }

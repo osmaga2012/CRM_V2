@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\cofradia\\listausuarios.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\cofradia\\listausuarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\cofradia\\listausuarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\helpers\\authorizedhttpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\helpers\\authorizedhttpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\cofradia\\listausuarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\cofradia\\listausuarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\centrostrabajo\\listadobarcos.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,8 +91,68 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 16,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:254354193:0:{71f361cc-493f-47c0-923f-f2570b6f8618}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1496678418:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0b70bd46-6688-36ac-9352-407daa38242e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1948313171:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:2033337944:0:{71f361cc-493f-47c0-923f-f2570b6f8618}"
@@ -105,27 +165,27 @@
               "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
               "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
               "RelativeToolTip": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAlwLkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAALIAAAAAAAAAAAAlwLwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T17:39:38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ListaUsuarios.razor",
               "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
               "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
               "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
               "RelativeToolTip": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
-              "ViewState": "AgIAAF4BAAAAAAAAAAAswHMBAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAHMBAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-04-21T17:38:19.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ApiClient.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Services\\ApiClient.cs",
               "RelativeDocumentMoniker": "CRM.App.Shared\\Services\\ApiClient.cs",
@@ -133,8 +193,7 @@
               "RelativeToolTip": "CRM.App.Shared\\Services\\ApiClient.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAWwFAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T18:02:27.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-19T18:02:27.555Z"
             },
             {
               "$type": "Document",
@@ -282,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AuthorizedHttpClientHandler.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Helpers\\AuthorizedHttpClientHandler.cs",
               "RelativeDocumentMoniker": "CRM.App.Shared\\Helpers\\AuthorizedHttpClientHandler.cs",
