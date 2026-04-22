@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "CRM.App.Web.Client",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-OybVAxIkLsKuG2V1Rq4Evh8XEMiKPf8NYFFe1iqe1gc=",
+    "hash": "sha256-rV3E1KHONsdmU/ClruRUAU48vQPfYSulTSAGKZQ6OBE=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.3qf6w265iu.js"
@@ -1392,8 +1392,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Shared.wasm",
-        "name": "CRM.App.Shared.597bznt2q9.wasm",
-        "integrity": "sha256-h/fyqisE9Az8JG0xMKDzsvkuRCpj8WkYykLea3QtCHQ=",
+        "name": "CRM.App.Shared.x55zxpbhon.wasm",
+        "integrity": "sha256-G0YTEVoNNQDntHhX8GNy6rF3b7w9eqla8Dye8djwUY8=",
         "cache": "force-cache"
       },
       {
@@ -1404,16 +1404,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Web.Client.wasm",
-        "name": "CRM.App.Web.Client.40deu95fkl.wasm",
-        "integrity": "sha256-VOuDXncQDlxBmg4u/ObY5qrP7emsaR9znDH3bQMWQIg=",
+        "name": "CRM.App.Web.Client.1feabgqviw.wasm",
+        "integrity": "sha256-gw2RsQUOtQ6IdjiUszyIAPeyGuxmcaIbmFZ1u5XmxVs=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "CRM.App.Shared.pdb",
-        "name": "CRM.App.Shared.zo8ouqmus6.pdb",
-        "integrity": "sha256-A6iR6RurSZlDFlnldvqB2QbJpANRi9A5ZlEZKCbvJbQ=",
+        "name": "CRM.App.Shared.mlh8exl3a5.pdb",
+        "integrity": "sha256-Gg0BT1W0bUxc/558hdALjug4LKpHxqQlMXziwfULQBs=",
         "cache": "force-cache"
       },
       {
@@ -1424,8 +1424,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "CRM.App.Web.Client.pdb",
-        "name": "CRM.App.Web.Client.ur962zym8d.pdb",
-        "integrity": "sha256-BjvOSxL5i3rY1etXEDaMkW6nGe9YfmbCguAblB5mAs8=",
+        "name": "CRM.App.Web.Client.mn3pmpanrd.pdb",
+        "integrity": "sha256-PufCWRSkB9OT8hiGUm6anwS6alZ/r3hWH+C+wQ8owR8=",
         "cache": "force-cache"
       }
     ],
