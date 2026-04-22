@@ -1,12 +1,12 @@
 wwwroot\imagenes\logo.png
 wwwroot\imagenes\logo_gandia.png
-wwwroot\index_copia.html
-wwwroot\index.html
 wwwroot\index3.html
+wwwroot\index.html
+wwwroot\index_copia.html
 wwwroot\appsettings.Development.json
 wwwroot\appsettings.json
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\index3.html
+C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\index.html
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\index_copia.html
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\appsettings.Development.json
 C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\appsettings.json
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\index.html
-C:\Users\oscar\source\repos\CRM_V3\CRM.App\CRM_V2\CRM.App.Web.Client\wwwroot\index3.html
