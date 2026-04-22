@@ -3,93 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web.client\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|solutionrelative:crm.app.web.client\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|solutionrelative:crm.app.web\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\layout\\menus\\mainnavmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\layout\\menus\\mainnavmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\doc\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:doc\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\cofradia\\listausuarios.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\cofradia\\listausuarios.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web\\crm.app.web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|solutionrelative:crm.app.web\\crm.app.web.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\cofradia\\listausuarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\cofradia\\listausuarios.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\services\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\helpers\\authorizedhttpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\helpers\\authorizedhttpclienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\centrostrabajo\\listadobarcos.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\centrostrabajo\\listadobarcos.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\centrostrabajo\\listadobarcos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\centrostrabajo\\listadobarcos.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\centrostrabajo\\listadotramitesbarcoempresa.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\centrostrabajo\\listadotramitesbarcoempresa.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\centrostrabajo\\listatramitesbarco.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\centrostrabajo\\listatramitesbarco.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|solutionrelative:crm.app.web.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|solutionrelative:crm.app.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web.client\\wwwroot\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|solutionrelative:crm.app.web.client\\wwwroot\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3068CC98-BA95-45E1-81A9-817934D60976}|CRM.App.Web\\CRM.App.Web.csproj|solutionrelative:crm.app.web\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\login\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\login\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.web.client\\services\\webstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64B2813D-479D-4B18-9FD0-A1473650629A}|CRM.App.Web.Client\\CRM.App.Web.Client.csproj|solutionrelative:crm.app.web.client\\services\\webstorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\pages\\centrostrabajo\\listatramitesbarco.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\pages\\centrostrabajo\\listatramitesbarco.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDD61BED-5C89-E042-BA63-988B516359EE}|..\\..\\..\\CRM\\CRM.Dtos\\CRM.Dtos.csproj|c:\\users\\oscar\\source\\repos\\crm\\crm.dtos\\barcostramitesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BDD61BED-5C89-E042-BA63-988B516359EE}|..\\..\\..\\CRM\\CRM.Dtos\\CRM.Dtos.csproj|c:\\users\\oscar\\source\\repos\\crm\\crm.dtos\\notificacionavisodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{33374198-B94C-8281-4A18-FC9D0BF6BDF5}|..\\..\\..\\CRM\\CRM.API\\CRM.API.csproj|c:\\users\\oscar\\source\\repos\\crm\\crm.api\\servicios\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|c:\\users\\oscar\\source\\repos\\crm_v3\\crm.app\\crm_v2\\crm.app.shared\\crm.app.shared.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F73F697F-DF0B-44B9-8ADC-49522F372EC9}|CRM.App.Shared\\CRM.App.Shared.csproj|solutionrelative:crm.app.shared\\crm.app.shared.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -99,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 28,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainNavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
+              "RelativeDocumentMoniker": "CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
+              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
+              "RelativeToolTip": "CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-22T05:47:32.632Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -167,287 +107,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainNavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
-              "RelativeToolTip": "CRM.App.Shared\\Layout\\Menus\\MainNavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "CRM.App.Shared\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "CRM.App.Shared\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-22T05:34:07.835Z",
+              "WhenOpened": "2026-04-22T05:47:22.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CRM.App.Web",
+              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\CRM.App.Web.csproj",
+              "RelativeDocumentMoniker": "CRM.App.Web\\CRM.App.Web.csproj",
+              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\CRM.App.Web.csproj",
+              "RelativeToolTip": "CRM.App.Web\\CRM.App.Web.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-22T05:38:52.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\doc\\wwwroot\\index.html",
-              "RelativeDocumentMoniker": "doc\\wwwroot\\index.html",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\doc\\wwwroot\\index.html",
-              "RelativeToolTip": "doc\\wwwroot\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-04-21T20:56:09.001Z",
+              "Title": "CRM.App.Shared",
+              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj",
+              "RelativeDocumentMoniker": "CRM.App.Shared\\CRM.App.Shared.csproj",
+              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\CRM.App.Shared.csproj",
+              "RelativeToolTip": "CRM.App.Shared\\CRM.App.Shared.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-22T05:37:49.735Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ListaUsuarios.razor.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAlwL4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T17:39:38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ListaUsuarios.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\Cofradia\\ListaUsuarios.razor",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAHMBAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-21T17:38:19.311Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApiClient.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Services\\ApiClient.cs",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Services\\ApiClient.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Services\\ApiClient.cs",
-              "RelativeToolTip": "CRM.App.Shared\\Services\\ApiClient.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAWwFAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-19T18:02:27.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Services\\AuthService.cs",
-              "RelativeToolTip": "CRM.App.Shared\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T18:57:15.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "CRM.App.Web\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\appsettings.Development.json",
-              "RelativeToolTip": "CRM.App.Web\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-16T18:55:05.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\appsettings.json",
-              "RelativeDocumentMoniker": "CRM.App.Web\\appsettings.json",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\appsettings.json",
-              "RelativeToolTip": "CRM.App.Web\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-16T18:55:02.661Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\Program.cs",
-              "RelativeDocumentMoniker": "CRM.App.Web.Client\\Program.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\Program.cs",
-              "RelativeToolTip": "CRM.App.Web.Client\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T18:54:46.307Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Login\\Login.razor",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\Login\\Login.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\Login\\Login.razor",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\Login\\Login.razor",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAAAJgAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-16T18:44:47.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ListaTramitesBarco.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T06:40:19.366Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\Components\\App.razor",
-              "RelativeDocumentMoniker": "CRM.App.Web\\Components\\App.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web\\Components\\App.razor",
-              "RelativeToolTip": "CRM.App.Web\\Components\\App.razor",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-16T19:50:28.419Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\wwwroot\\index.html",
-              "RelativeDocumentMoniker": "CRM.App.Web.Client\\wwwroot\\index.html",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\wwwroot\\index.html",
-              "RelativeToolTip": "CRM.App.Web.Client\\wwwroot\\index.html",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-04-16T19:50:43.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\wwwroot\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "CRM.App.Web.Client\\wwwroot\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\wwwroot\\appsettings.Development.json",
-              "RelativeToolTip": "CRM.App.Web.Client\\wwwroot\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-16T18:55:14.026Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "WebStorageService.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\Services\\WebStorageService.cs",
-              "RelativeDocumentMoniker": "CRM.App.Web.Client\\Services\\WebStorageService.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Web.Client\\Services\\WebStorageService.cs",
-              "RelativeToolTip": "CRM.App.Web.Client\\Services\\WebStorageService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T17:01:44.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BarcosTramitesDto.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\BarcosTramitesDto.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\CRM\\CRM.Dtos\\BarcosTramitesDto.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\BarcosTramitesDto.cs",
-              "RelativeToolTip": "..\\..\\..\\CRM\\CRM.Dtos\\BarcosTramitesDto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBEAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T06:24:29.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "NotificacionAvisoDto.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\NotificacionAvisoDto.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\CRM\\CRM.Dtos\\NotificacionAvisoDto.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.Dtos\\NotificacionAvisoDto.cs",
-              "RelativeToolTip": "..\\..\\..\\CRM\\CRM.Dtos\\NotificacionAvisoDto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBYAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T17:05:32.646Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthorizedHttpClientHandler.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Helpers\\AuthorizedHttpClientHandler.cs",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Helpers\\AuthorizedHttpClientHandler.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Helpers\\AuthorizedHttpClientHandler.cs",
-              "RelativeToolTip": "CRM.App.Shared\\Helpers\\AuthorizedHttpClientHandler.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAtwBQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-08T05:35:09.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ListadoBarcos.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAGkAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-03T07:15:02.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ListadoTramitesBarcoEmpresa.razor",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoTramitesBarcoEmpresa.razor",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoTramitesBarcoEmpresa.razor",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoTramitesBarcoEmpresa.razor",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoTramitesBarcoEmpresa.razor",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-03T06:22:03.499Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ListadoBarcos.razor.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor.cs",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor.cs",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListadoBarcos.razor.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAcwA8AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-29T09:40:24.066Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ListaTramitesBarco.razor.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor.cs",
-              "RelativeDocumentMoniker": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM_V3\\CRM.App\\CRM_V2\\CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor.cs",
-              "RelativeToolTip": "CRM.App.Shared\\Pages\\CentrosTrabajo\\ListaTramitesBarco.razor.cs",
-              "ViewState": "AgIAAOwAAAAAAAAAAAAUwPkAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T17:51:17.124Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.API\\Servicios\\NotificationService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\CRM\\CRM.API\\Servicios\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\oscar\\source\\repos\\CRM\\CRM.API\\Servicios\\NotificationService.cs",
-              "RelativeToolTip": "..\\..\\..\\CRM\\CRM.API\\Servicios\\NotificationService.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAkwJgAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T06:36:10.635Z"
             }
           ]
         }
